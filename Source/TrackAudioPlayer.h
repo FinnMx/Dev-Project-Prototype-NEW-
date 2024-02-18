@@ -29,6 +29,9 @@ public:
     void play();
     void pause();
     void stop();
+
+    void setGain(float newGain);
+
     float getRMSValue(const int channel) const;
 
 private:

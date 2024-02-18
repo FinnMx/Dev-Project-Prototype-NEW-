@@ -53,13 +53,17 @@ private:
 
     DelayComponent delayComponent;
 
-    InputComponent inputAComponent{"Track A",&track1, formatManager};
-    InputComponent inputBComponent{"Track B",&track2, formatManager};
+    juce::AudioThumbnailCache cache{ 100 };
+    TrackThumbnailComponent trackAThumbnailComponent{ "Track A", cache, formatManager };
+    TrackThumbnailComponent trackBThumbnailComponent{ "Track B", cache, formatManager };
+
+    InputComponent inputAComponent{"Track A",&track1, formatManager,&trackAThumbnailComponent};
+    InputComponent inputBComponent{"Track B",&track2, formatManager,&trackBThumbnailComponent };
 
     KillEQComponent killEQComponent;
     MasterComponent masterComponent;
     ReverbComponent reverbComponent;
-    TrackThumbnailComponent trackThumbnailComponent;
+
     TenBandComponent tenBandComponent;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)

@@ -11,19 +11,30 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include <TrackAudioPlayer.h>
 
 //==============================================================================
 /*
 */
-class TrackThumbnailComponent  : public juce::Component
+class TrackThumbnailComponent  : public juce::Component,
+                                 public juce::ChangeListener
 {
 public:
-    TrackThumbnailComponent();
+    TrackThumbnailComponent(std::string id, juce::AudioThumbnailCache& cache, juce::AudioFormatManager& formatManager);
     ~TrackThumbnailComponent() override;
 
+
+    void changeListenerCallback(juce::ChangeBroadcaster* source) override;
     void paint (juce::Graphics&) override;
     void resized() override;
 
+    void loadFile(juce::File file);
+
 private:
+
+    juce::AudioThumbnail thumbnail;
+    bool isLoaded;
+    std::string id;
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (TrackThumbnailComponent)
 };

@@ -12,10 +12,12 @@
 #include "TrackThumbnailComponent.h"
 
 //==============================================================================
-TrackThumbnailComponent::TrackThumbnailComponent()
+TrackThumbnailComponent::TrackThumbnailComponent(std::string id, juce::AudioThumbnailCache& cache, juce::AudioFormatManager& formatManager) :
+    thumbnail(1000,formatManager,cache),
+    isLoaded(false),
+    id(id)
 {
-    // In your constructor, you should add any child components, and
-    // initialise any special settings that your component needs.
+    thumbnail.addChangeListener(this);
 
 }
 
@@ -23,14 +25,22 @@ TrackThumbnailComponent::~TrackThumbnailComponent()
 {
 }
 
+void TrackThumbnailComponent::changeListenerCallback(juce::ChangeBroadcaster* source) {
+    repaint();
+}
+
+void TrackThumbnailComponent::loadFile(juce::File file) {
+    thumbnail.clear();
+
+    isLoaded = thumbnail.setSource(new juce::FileInputSource(file));
+
+    if (isLoaded) {
+        repaint();
+    }
+}
+
 void TrackThumbnailComponent::paint (juce::Graphics& g)
 {
-    /* This demo code just fills the component's background and
-       draws some placeholder text to get you started.
-
-       You should replace everything in this method with your own
-       drawing code..
-    */
 
     g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));   // clear the background
 
@@ -39,13 +49,19 @@ void TrackThumbnailComponent::paint (juce::Graphics& g)
 
     g.setColour(juce::Colours::white);
     g.setFont(30.0f);
-    g.drawText("Tracks", getLocalBounds(),
+    g.drawText(id, getLocalBounds(),
         juce::Justification::centredTop, true);
+
+    if (isLoaded) {
+        thumbnail.drawChannel(g, getLocalBounds(), 0, thumbnail.getTotalLength(), 0, 1.0f);
+    }
+    else {
+        g.setFont(16.f);
+        g.drawText("No File Is Loaded", getLocalBounds(), juce::Justification::centred,true);
+    }
 }
 
 void TrackThumbnailComponent::resized()
 {
-    // This method is where you should set the bounds of any child
-    // components that your component contains..
 
 }

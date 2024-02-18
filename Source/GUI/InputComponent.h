@@ -13,6 +13,7 @@
 #include <JuceHeader.h>
 #include <TrackAudioPlayer.h>
 #include <GUI/MeterComponent.h>
+#include <GUI/TrackThumbnailComponent.h>
 
 //==============================================================================
 /*
@@ -23,7 +24,7 @@ class InputComponent  : public juce::Component,
                         public juce::Timer
 {
 public:
-    InputComponent(std::string id, TrackAudioPlayer *audioPlayer, juce::AudioFormatManager &formatManager);
+    InputComponent(std::string id, TrackAudioPlayer *audioPlayer, juce::AudioFormatManager &formatManager, TrackThumbnailComponent* trackThumb);
     ~InputComponent() override;
 
     void timerCallback() override;
@@ -34,7 +35,11 @@ public:
     void sliderValueChanged(juce::Slider* slider) override;
 
 private:
+    void initVolSlider();
+
+
     TrackAudioPlayer* player;
+    TrackThumbnailComponent* trackThumbnail;
 
     MeterComponent MeterL, MeterR;
 
@@ -43,6 +48,8 @@ private:
     juce::TextButton trackPlay;
     juce::TextButton trackPause;
     juce::TextButton trackStop;
+
+    juce::Slider volSlider;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (InputComponent)
 };

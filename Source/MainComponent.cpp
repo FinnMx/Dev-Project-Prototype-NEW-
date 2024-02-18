@@ -6,7 +6,6 @@ using namespace std;
 //==============================================================================
 MainComponent::MainComponent() :
     menuBar(nullptr)
-
 {
     // Some platforms require permissions to open input channels so request that here
     if (juce::RuntimePermissions::isRequired(juce::RuntimePermissions::recordAudio)
@@ -31,7 +30,8 @@ MainComponent::MainComponent() :
     addAndMakeVisible(inputBComponent);
     addAndMakeVisible(menuBar);
     addAndMakeVisible(masterComponent);
-    addAndMakeVisible(trackThumbnailComponent);
+    addAndMakeVisible(trackAThumbnailComponent);
+    addAndMakeVisible(trackBThumbnailComponent);
     addAndMakeVisible(tenBandComponent);
     addAndMakeVisible(reverbComponent);
     addAndMakeVisible(delayComponent);
@@ -120,11 +120,18 @@ void MainComponent::resized()
         getHeight() * 0.35
     );
 
-    trackThumbnailComponent.setBounds(
+    trackAThumbnailComponent.setBounds(
         getWidth() * 0.4,
         getHeight() * 0.035,
         getWidth() * 0.375,
-        getHeight() * 0.35
+        getHeight() * 0.175
+    );
+
+    trackBThumbnailComponent.setBounds(
+        getWidth() * 0.4,
+        getHeight() * 0.21,
+        getWidth() * 0.375,
+        getHeight() * 0.175
     );
 
     tenBandComponent.setBounds(

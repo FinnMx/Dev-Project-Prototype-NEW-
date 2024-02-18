@@ -12,13 +12,14 @@
 #include "InputComponent.h"
 
 //==============================================================================
-InputComponent::InputComponent(std::string id, TrackAudioPlayer* audioPlayer, juce::AudioFormatManager& formatManager) :
+InputComponent::InputComponent(std::string id, TrackAudioPlayer* audioPlayer, juce::AudioFormatManager& formatManager, TrackThumbnailComponent* trackThumb) :
     trackLoad("^"),
     trackPlay(">"),
     trackPause("| |"),
     trackStop("[]"),
     player(audioPlayer),
-    trackName(id)
+    trackName(id),
+    trackThumbnail(trackThumb)
 {
     startTimerHz(30);
 
@@ -30,14 +31,28 @@ InputComponent::InputComponent(std::string id, TrackAudioPlayer* audioPlayer, ju
     addAndMakeVisible(MeterL);
     addAndMakeVisible(MeterR);
 
+    initVolSlider();
+    addAndMakeVisible(volSlider);
+
     trackLoad.addListener(this);
     trackPlay.addListener(this);
     trackPause.addListener(this);
     trackStop.addListener(this);
+
+    volSlider.addListener(this);
 }
 
 InputComponent::~InputComponent()
 {
+}
+
+void InputComponent::initVolSlider() {
+    volSlider.setSliderStyle(juce::Slider::SliderStyle::LinearVertical);
+    volSlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 200, 25);
+
+    //SHOULD PROBABLY CHANGE THIS SO ITS IN A RANGE OF -60 TO +60DB!!!!!! SEE THE JUCE::AUDIOTRANSPORTPLAYER.SETGAIN FUNC!!!
+    volSlider.setRange(0.f, +1.f, 0.05f);
+    volSlider.setValue(1.f);
 }
 
 void InputComponent::buttonClicked(juce::Button* button) {
@@ -45,6 +60,7 @@ void InputComponent::buttonClicked(juce::Button* button) {
         juce::FileChooser chooser("Select a file to load for " + trackName,juce::File::getSpecialLocation(juce::File::userMusicDirectory), "*.wav; *.mp3; *.flac;");
         if (chooser.browseForFileToOpen()) {
             player->loadFile(chooser.getResult());
+            trackThumbnail->loadFile(chooser.getResult());
         }
     }
     if (button == &trackPlay) {
@@ -59,10 +75,13 @@ void InputComponent::buttonClicked(juce::Button* button) {
 }
 
 void InputComponent::sliderValueChanged(juce::Slider* slider) {
-
+    if (slider == &volSlider) {
+        player->setGain(volSlider.getValue());
+    }
 }
 
 void InputComponent::timerCallback() {
+
     MeterL.setLevel(player->getRMSValue(0));
     MeterR.setLevel(player->getRMSValue(1));
 
@@ -128,6 +147,13 @@ void InputComponent::resized()
         getWidth() * 0.325,
         getHeight() * 0.175,
         getWidth() * 0.1,
+        getHeight() * 0.6
+    );
+
+    volSlider.setBounds(
+        getWidth() * 0.6,
+        getHeight() * 0.175,
+        getWidth() * 0.15,
         getHeight() * 0.6
     );
     

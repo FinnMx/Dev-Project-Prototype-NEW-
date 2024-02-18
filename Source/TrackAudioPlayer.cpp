@@ -14,6 +14,7 @@
 //==============================================================================
 TrackAudioPlayer::TrackAudioPlayer(juce::AudioFormatManager& _formatManager) : formatManager(_formatManager)
 {
+    transportSource.setGain(0.5f);
 
 }
 
@@ -35,6 +36,7 @@ void TrackAudioPlayer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buf
     bufferToFill.clearActiveBufferRegion();
 
     transportSource.getNextAudioBlock(bufferToFill);
+
     rmsLvlLeft = juce::Decibels::gainToDecibels(bufferToFill.buffer->getRMSLevel(0, 0, bufferToFill.buffer->getNumSamples()));
     rmsLvlRight = juce::Decibels::gainToDecibels(bufferToFill.buffer->getRMSLevel(1, 0, bufferToFill.buffer->getNumSamples()));
 }
@@ -67,6 +69,10 @@ void TrackAudioPlayer::stop() {
     transportSource.setPosition(0.0);
 }
 
+void TrackAudioPlayer::setGain(float newGain) {
+    transportSource.setGain(newGain);
+}
+
 float TrackAudioPlayer::getRMSValue(const int channel) const {
     jassert(channel == 0 || channel == 1);
         if (channel == 0) {
@@ -80,4 +86,5 @@ float TrackAudioPlayer::getRMSValue(const int channel) const {
         }
     
 }
+
 
