@@ -20,10 +20,15 @@ InputComponent::InputComponent(std::string id, TrackAudioPlayer* audioPlayer, ju
     player(audioPlayer),
     trackName(id)
 {
+    startTimerHz(30);
+
     addAndMakeVisible(trackLoad);
     addAndMakeVisible(trackPlay);
     addAndMakeVisible(trackPause);
     addAndMakeVisible(trackStop);
+
+    addAndMakeVisible(MeterL);
+    addAndMakeVisible(MeterR);
 
     trackLoad.addListener(this);
     trackPlay.addListener(this);
@@ -48,10 +53,21 @@ void InputComponent::buttonClicked(juce::Button* button) {
     if (button == &trackStop) {
         player->stop();
     }
+    if (button == &trackPause) {
+        player->pause();
+    }
 }
 
 void InputComponent::sliderValueChanged(juce::Slider* slider) {
 
+}
+
+void InputComponent::timerCallback() {
+    MeterL.setLevel(player->getRMSValue(0));
+    MeterR.setLevel(player->getRMSValue(1));
+
+    MeterL.repaint();
+    MeterR.repaint();
 }
 
 void InputComponent::paint (juce::Graphics& g)
@@ -100,5 +116,20 @@ void InputComponent::resized()
         getWidth() * 0.125,
         getHeight() * 0.1
     );
+
+    MeterL.setBounds(
+        getWidth() * 0.2,
+        getHeight() * 0.175,
+        getWidth() * 0.1,
+        getHeight() * 0.6
+    );
+
+    MeterR.setBounds(
+        getWidth() * 0.325,
+        getHeight() * 0.175,
+        getWidth() * 0.1,
+        getHeight() * 0.6
+    );
+    
 
 }

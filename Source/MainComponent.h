@@ -5,13 +5,13 @@
 #include <JuceHeader.h>
 #include <TrackAudioPlayer.h>
 #include <GUI/DelayComponent.h>
-#include <GUI/FileBrowserComponent.h>
 #include <GUI/InputComponent.h>
 #include <GUI/KillEQComponent.h>
 #include <GUI/MasterComponent.h>
 #include <GUI/ReverbComponent.h>
 #include <GUI/TenBandComponent.h>
 #include <GUI/TrackThumbnailComponent.h>
+#include <GUI/MeterComponent.h>
 
 //==============================================================================
 /*
@@ -54,7 +54,7 @@ private:
     DelayComponent delayComponent;
 
     InputComponent inputAComponent{"Track A",&track1, formatManager};
-    InputComponent inputBComponent{"Track B",&track1, formatManager};
+    InputComponent inputBComponent{"Track B",&track2, formatManager};
 
     KillEQComponent killEQComponent;
     MasterComponent masterComponent;

@@ -12,18 +12,21 @@
 
 #include <JuceHeader.h>
 #include <TrackAudioPlayer.h>
+#include <GUI/MeterComponent.h>
 
 //==============================================================================
 /*
 */
 class InputComponent  : public juce::Component,
                         public juce::Slider::Listener,
-                        public juce::Button::Listener
+                        public juce::Button::Listener,
+                        public juce::Timer
 {
 public:
     InputComponent(std::string id, TrackAudioPlayer *audioPlayer, juce::AudioFormatManager &formatManager);
     ~InputComponent() override;
 
+    void timerCallback() override;
     void paint (juce::Graphics&) override;
     void resized() override;
 
@@ -32,6 +35,8 @@ public:
 
 private:
     TrackAudioPlayer* player;
+
+    MeterComponent MeterL, MeterR;
 
     std::string trackName;
     juce::TextButton trackLoad;

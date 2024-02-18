@@ -27,9 +27,13 @@ public:
 
     void loadFile(juce::File _file);
     void play();
+    void pause();
     void stop();
+    float getRMSValue(const int channel) const;
 
 private:
+    float rmsLvlLeft, rmsLvlRight;
+
     juce::AudioFormatManager& formatManager;
 
     std::unique_ptr<juce::AudioFormatReaderSource> readerSource;

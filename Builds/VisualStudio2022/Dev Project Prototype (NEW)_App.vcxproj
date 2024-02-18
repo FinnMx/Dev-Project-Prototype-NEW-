@@ -138,6 +138,7 @@
     <ClCompile Include="..\..\Source\GUI\InputComponent.cpp" />
     <ClCompile Include="..\..\Source\GUI\KillEQComponent.cpp" />
     <ClCompile Include="..\..\Source\GUI\MasterComponent.cpp" />
+    <ClCompile Include="..\..\Source\GUI\MeterComponent.cpp" />
     <ClCompile Include="..\..\Source\GUI\ReverbComponent.cpp" />
     <ClCompile Include="..\..\Source\GUI\TenBandComponent.cpp" />
     <ClCompile Include="..\..\Source\GUI\TrackThumbnailComponent.cpp" />
@@ -2443,6 +2444,7 @@
     <ClInclude Include="..\..\Source\GUI\InputComponent.h" />
     <ClInclude Include="..\..\Source\GUI\KillEQComponent.h" />
     <ClInclude Include="..\..\Source\GUI\MasterComponent.h" />
+    <ClInclude Include="..\..\Source\GUI\MeterComponent.h" />
     <ClInclude Include="..\..\Source\GUI\ReverbComponent.h" />
     <ClInclude Include="..\..\Source\GUI\TenBandComponent.h" />
     <ClInclude Include="..\..\Source\GUI\TrackThumbnailComponent.h" />

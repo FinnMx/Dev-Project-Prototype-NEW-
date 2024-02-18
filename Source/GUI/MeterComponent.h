@@ -1,9 +1,9 @@
 /*
   ==============================================================================
 
-    ControlComponent.h
-    Created: 12 Feb 2024 3:38:14pm
-    Author:  New Owner
+    MeterComponent.h
+    Created: 18 Feb 2024 2:16:33pm
+    Author:  Finn
 
   ==============================================================================
 */
@@ -15,19 +15,19 @@
 //==============================================================================
 /*
 */
-class ControlComponent  : public juce::Component
+class MeterComponent  : public juce::Component
 {
 public:
-    ControlComponent();
-    ~ControlComponent() override;
+    MeterComponent();
+    ~MeterComponent() override;
 
     void paint (juce::Graphics&) override;
     void resized() override;
 
-private:
-    juce::TextButton playButton;
-    juce::TextButton pauseButton;
-    juce::TextButton stopButton;
+    void setLevel(const float val);
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ControlComponent)
+private:
+    float level = -60.0f;
+
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MeterComponent)
 };

@@ -41,6 +41,8 @@ MainComponent::MainComponent() :
 
 MainComponent::~MainComponent()
 {
+    // This shuts down the audio device and clears the audio source.
+    shutdownAudio();
 }
 
 // Get the horizontal and vertical screen sizes in pixel
