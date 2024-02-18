@@ -1,0 +1,40 @@
+/*
+  ==============================================================================
+
+    TrackAudioPlayer.h
+    Created: 18 Feb 2024 1:14:55am
+    Author:  Finn
+
+  ==============================================================================
+*/
+
+#pragma once
+
+#include <JuceHeader.h>
+
+//==============================================================================
+/*
+*/
+class TrackAudioPlayer  : public juce::AudioSource
+{
+public:
+    TrackAudioPlayer(juce::AudioFormatManager& _formatManager);
+    ~TrackAudioPlayer() override;
+
+    void prepareToPlay(int samplesPerBlockExpected, double sampleRate) override;
+    void getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) override;
+    void releaseResources() override;
+
+    void loadFile(juce::File _file);
+    void play();
+    void stop();
+
+private:
+    juce::AudioFormatManager& formatManager;
+
+    std::unique_ptr<juce::AudioFormatReaderSource> readerSource;
+    juce::AudioTransportSource transportSource;
+    juce::ResamplingAudioSource resampleSource{ &transportSource, false, 2 };
+
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (TrackAudioPlayer)
+};

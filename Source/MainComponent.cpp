@@ -1,53 +1,46 @@
 #include "MainComponent.h"
+#include "wtypes.h"
+#include <iostream>
+using namespace std;
 
 //==============================================================================
 MainComponent::MainComponent() :
-    cMenuBar(nullptr),
-    cGUI(),
-    track1LoadButton("Load"), track1PlayButton("Play"), track1StopButton("Stop"),
-    track2LoadButton("Load"), track2PlayButton("Play"), track2StopButton("Stop"),
-    state(Ready)
+    menuBar(nullptr)
+
 {
-
-    GetDesktopResolution(x, y);
-    setSize(x, y);
-
-    // Components adding
-    addAndMakeVisible(&cGUI);
-    addAndMakeVisible(&cMenuBar);
-    addAndMakeVisible(&track1LoadButton);
-    addAndMakeVisible(&track1PlayButton);
-    addAndMakeVisible(&track1StopButton);
-
-    addAndMakeVisible(&track2LoadButton);
-    addAndMakeVisible(&track2PlayButton);
-    addAndMakeVisible(&track2StopButton);
-
-    audioFormatManager.registerBasicFormats();
-    track1LoadButton.onClick = [this] { track1LoadClicked(); };
-    track1PlayButton.onClick = [this] { track1PlayClicked(); };
-    track1StopButton.onClick = [this] { track1StopClicked(); };
-    track1LoadButton.setEnabled(true);
-    track1StopButton.setEnabled(false);
-
     // Some platforms require permissions to open input channels so request that here
-    if (juce::RuntimePermissions::isRequired (juce::RuntimePermissions::recordAudio)
-        && ! juce::RuntimePermissions::isGranted (juce::RuntimePermissions::recordAudio))
+    if (juce::RuntimePermissions::isRequired(juce::RuntimePermissions::recordAudio)
+        && !juce::RuntimePermissions::isGranted(juce::RuntimePermissions::recordAudio))
     {
-        juce::RuntimePermissions::request (juce::RuntimePermissions::recordAudio,
-                                           [&] (bool granted) { setAudioChannels (granted ? 2 : 0, 2); });
+        juce::RuntimePermissions::request(juce::RuntimePermissions::recordAudio,
+            [&](bool granted) { setAudioChannels(granted ? 2 : 0, 2); });
     }
     else
     {
         // Specify the number of input and output channels that we want to open
-        setAudioChannels (2, 2);
+        setAudioChannels(2, 2);
     }
+
+    GetDesktopResolution(x, y);
+    setSize(x, y);
+
+    formatManager.registerBasicFormats();
+
+    // Components adding
+    addAndMakeVisible(inputAComponent);
+    addAndMakeVisible(inputBComponent);
+    addAndMakeVisible(menuBar);
+    addAndMakeVisible(masterComponent);
+    addAndMakeVisible(trackThumbnailComponent);
+    addAndMakeVisible(tenBandComponent);
+    addAndMakeVisible(reverbComponent);
+    addAndMakeVisible(delayComponent);
+    addAndMakeVisible(killEQComponent);
+
 }
 
 MainComponent::~MainComponent()
 {
-    // This shuts down the audio device and clears the audio source.
-    shutdownAudio();
 }
 
 // Get the horizontal and vertical screen sizes in pixel
@@ -65,59 +58,22 @@ void MainComponent::GetDesktopResolution(int& horizontal, int& vertical)
     vertical = desktop.bottom;
 }
 
-void MainComponent::track1LoadClicked() {
-    juce::FileChooser chooser("Track 1: Load...", juce::File::getSpecialLocation(juce::File::userMusicDirectory), "*.wav; *.mp3; *.flac;");
-
-    if (chooser.browseForFileToOpen()) {
-        // Saves the users choice as a juce::File type, then creates a reader for the filetype.
-        juce::File currentFile = chooser.getResult();
-        juce::AudioFormatReader* reader = audioFormatManager.createReaderFor(currentFile);
-
-        if(reader != nullptr){
-            // Prepares the file to play
-            std::unique_ptr<juce::AudioFormatReaderSource> tempSource(new juce::AudioFormatReaderSource(reader, true));
-
-            audioTransportSourceStateChanged(Ready);
-            // Gets data from the audio file pointed to from tempSource.
-            audioTransportSource.setSource(tempSource.get());
-
-            //prevents the audio from stopping when tempsource is destroyed, practically just passes the pointer to a differnet source
-            playsource.reset(tempSource.release());
-        }
-    }
+void MainComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate) {
+    mixerSource.addInputSource(&track1, false);
+    mixerSource.addInputSource(&track2, false);
+    track1.prepareToPlay(samplesPerBlockExpected, sampleRate);
+    track2.prepareToPlay(samplesPerBlockExpected, sampleRate);
 }
 
-void MainComponent::audioTransportSourceStateChanged(audioTransportSourceStates newState) {
-    if (newState != state) {
-        state = newState;
-
-        switch (state) {
-            case Ready:
-                audioTransportSource.stop();
-                track1PlayButton.setEnabled(true);
-                track1StopButton.setEnabled(false);
-                break;
-            case Starting:
-                track1StopButton.setEnabled(true);
-                track1PlayButton.setEnabled(false);
-                audioTransportSource.start();
-                break;
-            case Stopping:
-                audioTransportSource.stop();
-                audioTransportSource.setPosition(0.0);
-                track1PlayButton.setEnabled(true);
-                track1StopButton.setEnabled(false);
-                break;
-        }
-    }
+void MainComponent::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) {
+    mixerSource.getNextAudioBlock(bufferToFill);
 }
 
-void MainComponent::track1PlayClicked() {
-    audioTransportSourceStateChanged(Starting);
-}
-
-void MainComponent::track1StopClicked() {
-    audioTransportSourceStateChanged(Stopping);
+void MainComponent::releaseResources() {
+    mixerSource.removeAllInputs();
+    mixerSource.releaseResources();
+    track1.releaseResources();
+    track2.releaseResources();
 }
 
 //==============================================================================
@@ -132,48 +88,75 @@ void MainComponent::paint(juce::Graphics& g)
 
 void MainComponent::resized()
 {
-    cGUI.setBounds(getLocalBounds());
 
-    cMenuBar.setBounds(getX(), // X position reletive to main component
+    menuBar.setBounds(getX(), // X position reletive to main component
         getY(), // Y position reletive to main component
         getWidth(), // Width of component
         getHeight() * 0.025); // Height of component
 
-    track1LoadButton.setBounds(getWidth() * 0.01,
-        getHeight() * 0.1,
-        getWidth() * 0.03,
-        getHeight() * 0.03);
+    //-----------------------------------------------
+    //Top Rack
 
-    track1PlayButton.setBounds(getWidth() * 0.01,
-        getHeight() * 0.15,
-        getWidth() * 0.03,
-        getHeight() * 0.03);
+    inputAComponent.setBounds(
+        getX(),
+        getHeight() * 0.035,
+        getWidth() * 0.125,
+        getHeight() * 0.35
+    );
 
-    track1StopButton.setBounds(getWidth() * 0.01,
-        getHeight() * 0.2,
-        getWidth() * 0.03,
-        getHeight() * 0.03);
-}
+    inputBComponent.setBounds(
+        getWidth() * 0.125,
+        getHeight() * 0.035,
+        getWidth() * 0.125,
+        getHeight() * 0.35
+    );
+
+    masterComponent.setBounds(
+        getWidth() * 0.25,
+        getHeight() * 0.035,
+        getWidth() * 0.15,
+        getHeight() * 0.35
+    );
+
+    trackThumbnailComponent.setBounds(
+        getWidth() * 0.4,
+        getHeight() * 0.035,
+        getWidth() * 0.375,
+        getHeight() * 0.35
+    );
+
+    tenBandComponent.setBounds(
+        getWidth() * 0.775,
+        getHeight() * 0.035,
+        getWidth() * 0.225,
+        getHeight() * 0.35
+    );
+
+    //-----------------------------------------------
+    //Middle Rack's
+
+    reverbComponent.setBounds(
+        getX(),
+        getHeight() * 0.39,
+        getWidth(),
+        getHeight() * 0.125
+    );
+
+    delayComponent.setBounds(
+        getX(),
+        getHeight() * 0.52,
+        getWidth(),
+        getHeight() * 0.125
+    );
 
 
+    //-----------------------------------------------
+    //Bottom Rack
 
-//==============================================================================
-void MainComponent::prepareToPlay (int samplesPerBlockExpected, double sampleRate)
-{
-    audioTransportSource.prepareToPlay(samplesPerBlockExpected, sampleRate);
-}
-
-void MainComponent::getNextAudioBlock (const juce::AudioSourceChannelInfo& bufferToFill)
-{
-    bufferToFill.clearActiveBufferRegion();
-
-    audioTransportSource.getNextAudioBlock(bufferToFill);
-}
-
-void MainComponent::releaseResources()
-{
-    // This will be called when the audio device stops, or when it is being
-    // restarted due to a setting change.
-
-    // For more details, see the help for AudioProcessor::releaseResources()
+    killEQComponent.setBounds(
+        getX(),
+        getHeight() * 0.65,
+        getWidth(),
+        getHeight() * 0.28
+    );
 }

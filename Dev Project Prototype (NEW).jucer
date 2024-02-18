@@ -5,6 +5,51 @@
               jucerFormatVersion="1">
   <MAINGROUP id="ncb3RS" name="Dev Project Prototype (NEW)">
     <GROUP id="{E7D65140-8782-E511-8057-9CBD6DBD894E}" name="Source">
+      <GROUP id="{49B6B1E6-C563-79B7-B07D-4D3CDF7D7875}" name="GUI">
+        <FILE id="Hh1Txb" name="ControlComponent.cpp" compile="1" resource="0"
+              file="Source/GUI/ControlComponent.cpp"/>
+        <FILE id="NEehc4" name="ControlComponent.h" compile="0" resource="0"
+              file="Source/GUI/ControlComponent.h"/>
+        <FILE id="oRbxCi" name="DelayComponent.cpp" compile="1" resource="0"
+              file="Source/GUI/DelayComponent.cpp"/>
+        <FILE id="JrPB4G" name="DelayComponent.h" compile="0" resource="0"
+              file="Source/GUI/DelayComponent.h"/>
+        <FILE id="hHEyFz" name="FileBrowserComponent.cpp" compile="1" resource="0"
+              file="Source/GUI/FileBrowserComponent.cpp"/>
+        <FILE id="Dt3LtV" name="FileBrowserComponent.h" compile="0" resource="0"
+              file="Source/GUI/FileBrowserComponent.h"/>
+        <FILE id="cUZydS" name="InputComponent.cpp" compile="1" resource="0"
+              file="Source/GUI/InputComponent.cpp"/>
+        <FILE id="BQEPOt" name="InputComponent.h" compile="0" resource="0"
+              file="Source/GUI/InputComponent.h"/>
+        <FILE id="FCBEKs" name="KillEQComponent.cpp" compile="1" resource="0"
+              file="Source/GUI/KillEQComponent.cpp"/>
+        <FILE id="m2zqee" name="KillEQComponent.h" compile="0" resource="0"
+              file="Source/GUI/KillEQComponent.h"/>
+        <FILE id="ZiNxuX" name="MasterComponent.cpp" compile="1" resource="0"
+              file="Source/GUI/MasterComponent.cpp"/>
+        <FILE id="KO2itW" name="MasterComponent.h" compile="0" resource="0"
+              file="Source/GUI/MasterComponent.h"/>
+        <FILE id="nE502J" name="ReverbComponent.cpp" compile="1" resource="0"
+              file="Source/GUI/ReverbComponent.cpp"/>
+        <FILE id="SQBSuC" name="ReverbComponent.h" compile="0" resource="0"
+              file="Source/GUI/ReverbComponent.h"/>
+        <FILE id="XWZOXD" name="TenBandComponent.cpp" compile="1" resource="0"
+              file="Source/GUI/TenBandComponent.cpp"/>
+        <FILE id="d7U5VM" name="TenBandComponent.h" compile="0" resource="0"
+              file="Source/GUI/TenBandComponent.h"/>
+        <FILE id="dFBxRD" name="TrackThumbnailComponent.cpp" compile="1" resource="0"
+              file="Source/GUI/TrackThumbnailComponent.cpp"/>
+        <FILE id="GZy9Le" name="TrackThumbnailComponent.h" compile="0" resource="0"
+              file="Source/GUI/TrackThumbnailComponent.h"/>
+      </GROUP>
+      <FILE id="zClI0c" name="TrackAudioPlayer.cpp" compile="1" resource="0"
+            file="Source/TrackAudioPlayer.cpp"/>
+      <FILE id="V3L39r" name="TrackAudioPlayer.h" compile="0" resource="0"
+            file="Source/TrackAudioPlayer.h"/>
+      <FILE id="A2PMS7" name="GUIComponent.cpp" compile="1" resource="0"
+            file="Source/GUIComponent.cpp"/>
+      <FILE id="HsukSQ" name="GUIComponent.h" compile="0" resource="0" file="Source/GUIComponent.h"/>
       <FILE id="eH99ny" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
       <FILE id="u3iZ1v" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="xsjmPa" name="MainComponent.cpp" compile="1" resource="0"
@@ -29,10 +74,10 @@
     <VS2022 targetFolder="Builds/VisualStudio2022">
       <CONFIGURATIONS>
         <CONFIGURATION isDebug="1" name="Debug" targetName="Dev Project Prototype (NEW)"
-                       headerPath="K:\dev\NEW DEV PROTOTYPE\Dev Project Prototype (NEW)\Source"
+                       headerPath="K:\dev\NEW DEV PROTOTYPE\Dev Project Prototype (NEW)\Source&#10;&#10;K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI"
                        defines="JUCE_MODAL_LOOPS_PERMITTED=1"/>
         <CONFIGURATION isDebug="0" name="Release" targetName="Dev Project Prototype (NEW)"
-                       headerPath="K:\dev\NEW DEV PROTOTYPE\Dev Project Prototype (NEW)\Source"
+                       headerPath="K:\dev\NEW DEV PROTOTYPE\Dev Project Prototype (NEW)\Source&#10;&#10;K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI"
                        defines="JUCE_MODAL_LOOPS_PERMITTED=1"/>
       </CONFIGURATIONS>
       <MODULEPATHS>

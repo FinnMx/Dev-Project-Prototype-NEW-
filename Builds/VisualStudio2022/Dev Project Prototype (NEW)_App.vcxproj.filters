@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="Dev Project Prototype (NEW)\Source\GUI">
+      <UniqueIdentifier>{BC15A08F-A99E-156D-A180-BB37E4BEB11E}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Dev Project Prototype (NEW)\Source">
       <UniqueIdentifier>{0774A900-8FE3-B8D3-9E50-C3D8B843C8AF}</UniqueIdentifier>
     </Filter>
@@ -594,6 +597,30 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\GUI\DelayComponent.cpp">
+      <Filter>Dev Project Prototype (NEW)\Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\GUI\InputComponent.cpp">
+      <Filter>Dev Project Prototype (NEW)\Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\GUI\KillEQComponent.cpp">
+      <Filter>Dev Project Prototype (NEW)\Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\GUI\MasterComponent.cpp">
+      <Filter>Dev Project Prototype (NEW)\Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\GUI\ReverbComponent.cpp">
+      <Filter>Dev Project Prototype (NEW)\Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\GUI\TenBandComponent.cpp">
+      <Filter>Dev Project Prototype (NEW)\Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\GUI\TrackThumbnailComponent.cpp">
+      <Filter>Dev Project Prototype (NEW)\Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TrackAudioPlayer.cpp">
+      <Filter>Dev Project Prototype (NEW)\Source</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Main.cpp">
       <Filter>Dev Project Prototype (NEW)\Source</Filter>
     </ClCompile>
@@ -2913,11 +2940,32 @@
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_gui_extra.cpp">
       <Filter>JUCE Library Code</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\GUIComponent.cpp">
-      <Filter>Dev Project Prototype %28NEW%29\Source</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\GUI\DelayComponent.h">
+      <Filter>Dev Project Prototype (NEW)\Source\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GUI\InputComponent.h">
+      <Filter>Dev Project Prototype (NEW)\Source\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GUI\KillEQComponent.h">
+      <Filter>Dev Project Prototype (NEW)\Source\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GUI\MasterComponent.h">
+      <Filter>Dev Project Prototype (NEW)\Source\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GUI\ReverbComponent.h">
+      <Filter>Dev Project Prototype (NEW)\Source\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GUI\TenBandComponent.h">
+      <Filter>Dev Project Prototype (NEW)\Source\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GUI\TrackThumbnailComponent.h">
+      <Filter>Dev Project Prototype (NEW)\Source\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TrackAudioPlayer.h">
+      <Filter>Dev Project Prototype (NEW)\Source</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\MainComponent.h">
       <Filter>Dev Project Prototype (NEW)\Source</Filter>
     </ClInclude>
@@ -5773,9 +5821,6 @@
     </ClInclude>
     <ClInclude Include="..\..\JuceLibraryCode\JuceHeader.h">
       <Filter>JUCE Library Code</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\GUIComponent.h">
-      <Filter>Dev Project Prototype %28NEW%29\Source</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

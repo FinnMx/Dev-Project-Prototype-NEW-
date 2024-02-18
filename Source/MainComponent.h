@@ -3,7 +3,15 @@
 #include <iostream>
 
 #include <JuceHeader.h>
-#include <GUIComponent.h>
+#include <TrackAudioPlayer.h>
+#include <GUI/DelayComponent.h>
+#include <GUI/FileBrowserComponent.h>
+#include <GUI/InputComponent.h>
+#include <GUI/KillEQComponent.h>
+#include <GUI/MasterComponent.h>
+#include <GUI/ReverbComponent.h>
+#include <GUI/TenBandComponent.h>
+#include <GUI/TrackThumbnailComponent.h>
 
 //==============================================================================
 /*
@@ -32,39 +40,27 @@ private:
     // Your private member variables go here...
     int x, y;
 
-    // Enum States
-    enum audioTransportSourceStates {
-        Ready,
-        Starting,
-        Stopping
-    };
-
-    audioTransportSourceStates state;
+    //look and feel
 
     // Child components
-    juce::MenuBarComponent cMenuBar;
-    GUIComponent cGUI;
+    juce::MenuBarComponent menuBar;
 
-    //Audio related components
-    juce::AudioFormatManager audioFormatManager;
-    juce::AudioTransportSource audioTransportSource;
+    // Audio components
+    juce::MixerAudioSource mixerSource;
+    juce::AudioFormatManager formatManager;
+    TrackAudioPlayer track1{formatManager};
+    TrackAudioPlayer track2{formatManager};
 
-    std::unique_ptr<juce::AudioFormatReaderSource> playsource;
+    DelayComponent delayComponent;
 
-    //functions
-    void track1LoadClicked();
-    void track1PlayClicked();
-    void track1StopClicked();
-    void audioTransportSourceStateChanged(audioTransportSourceStates newState);
+    InputComponent inputAComponent{"Track A",&track1, formatManager};
+    InputComponent inputBComponent{"Track B",&track1, formatManager};
 
-    //Buttons
-    juce::TextButton track1LoadButton;
-    juce::TextButton track1PlayButton;
-    juce::TextButton track1StopButton;
-
-    juce::TextButton track2LoadButton;
-    juce::TextButton track2PlayButton;
-    juce::TextButton track2StopButton;
+    KillEQComponent killEQComponent;
+    MasterComponent masterComponent;
+    ReverbComponent reverbComponent;
+    TrackThumbnailComponent trackThumbnailComponent;
+    TenBandComponent tenBandComponent;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };
