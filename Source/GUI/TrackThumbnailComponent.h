@@ -16,8 +16,8 @@
 //==============================================================================
 /*
 */
-class TrackThumbnailComponent  : public juce::Component,
-                                 public juce::ChangeListener
+class TrackThumbnailComponent : public juce::Component,
+    public juce::ChangeListener
 {
 public:
     TrackThumbnailComponent(std::string id, juce::AudioThumbnailCache& cache, juce::AudioFormatManager& formatManager);
@@ -25,12 +25,13 @@ public:
 
 
     void changeListenerCallback(juce::ChangeBroadcaster* source) override;
-    void paint (juce::Graphics&) override;
+    void paint(juce::Graphics&) override;
     void resized() override;
 
     void loadFile(juce::File file);
 
 private:
+    juce::Rectangle<int> backDrop;
 
     juce::AudioThumbnail thumbnail;
     bool isLoaded;

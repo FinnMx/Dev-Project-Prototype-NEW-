@@ -53,7 +53,7 @@ void TrackThumbnailComponent::paint (juce::Graphics& g)
         juce::Justification::centredTop, true);
 
     if (isLoaded) {
-        thumbnail.drawChannel(g, getLocalBounds(), 0, thumbnail.getTotalLength(), 0, 1.0f);
+        thumbnail.drawChannel(g, backDrop, 0, thumbnail.getTotalLength(), 0, 1.0f);
     }
     else {
         g.setFont(16.f);
@@ -63,5 +63,8 @@ void TrackThumbnailComponent::paint (juce::Graphics& g)
 
 void TrackThumbnailComponent::resized()
 {
-
+    backDrop.setBounds((int)std::round(getWidth() * 0.05),
+        (int)std::round(getHeight() * 0.25),
+        getWidth() * 0.9,
+        getHeight() * 0.3);
 }

@@ -153,9 +153,8 @@ void InputComponent::resized()
     volSlider.setBounds(
         getWidth() * 0.6,
         getHeight() * 0.175,
-        getWidth() * 0.15,
+        getWidth() * 0.2,
         getHeight() * 0.6
     );
-    
 
 }

@@ -24,7 +24,7 @@ public:
     void paint (juce::Graphics&) override;
     void resized() override;
 
-    void setLevel(const float val);
+    void setLevel(const float val)  ;
 
 private:
     float level = -60.0f;
