@@ -67,9 +67,15 @@ public:
         {
             auto* lf = dynamic_cast<juce::LookAndFeel_V4*>(&getLookAndFeel());
             lf->setColourScheme({
-                     0xff535A62, 0xff403C43, 0xff232027,
-                     0xff535A62, 0xffffffff, 0xff42a2c8,
-                     0xffffffff, 0xff181f22, 0xffffffff
+                     0xff8d8d8d,    //windowBackground 
+                     0xff515151,    //widgetBackground 
+                     0xff232027,    //menuBackground
+                     0xff535A62,    //outline
+                     0xffffffff,    //defaultText
+                     0xffffffff,    //defaultFill
+                     0xffffffff,    //highlightedText
+                     0xff181f22,    //highlightedFill
+                     0xffffffff     //menuText
                 });
 
             setUsingNativeTitleBar (true);

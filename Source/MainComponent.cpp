@@ -85,7 +85,7 @@ void MainComponent::releaseResources() {
 void MainComponent::paint(juce::Graphics& g)
 {
     // (Our component is opaque, so we must completely fill the background with a solid colour)
-    g.fillAll(getLookAndFeel().findColour(juce::Toolbar::backgroundColourId));
+    g.fillAll(getLookAndFeel().findColour(juce::PropertyComponent::backgroundColourId));
 
     g.setFont(juce::Font(16.0f));
     g.setColour(juce::Colours::white);
@@ -169,6 +169,6 @@ void MainComponent::resized()
         getX(),
         getHeight() * 0.65,
         getWidth(),
-        getHeight() * 0.28
+        getHeight() * 0.315
     );
 }
