@@ -12,12 +12,18 @@
 #include "TrackThumbnailComponent.h"
 
 //==============================================================================
-TrackThumbnailComponent::TrackThumbnailComponent(std::string id, juce::AudioThumbnailCache& cache, juce::AudioFormatManager& formatManager) :
+TrackThumbnailComponent::TrackThumbnailComponent(std::string id, juce::AudioThumbnailCache& cache, juce::AudioFormatManager& formatManager, TrackAudioPlayer* audioPlayer) :
     thumbnail(1000,formatManager,cache),
     isLoaded(false),
-    id(id)
+    id(id),
+    player(audioPlayer)
 {
+    startTimerHz(1);
     thumbnail.addChangeListener(this);
+    timeSlider.addListener(this);
+
+    initTimeSliderSlider();
+    addAndMakeVisible(timeSlider);
 
 }
 
@@ -29,6 +35,28 @@ void TrackThumbnailComponent::changeListenerCallback(juce::ChangeBroadcaster* so
     repaint();
 }
 
+void TrackThumbnailComponent::sliderValueChanged(juce::Slider* slider) {
+    
+}
+
+void TrackThumbnailComponent::sliderDragStarted(juce::Slider* slider) {
+    stopTimer();
+}
+
+void TrackThumbnailComponent::sliderDragEnded(juce::Slider* slider) {
+    player->setTrackTime(timeSlider.getValue());
+    startTimerHz(1);
+}
+
+void TrackThumbnailComponent::timerCallback() {
+    timeSlider.setValue(player->getCurrentTrackTime());
+}
+
+void TrackThumbnailComponent::initTimeSliderSlider() {
+    timeSlider.setSliderStyle(juce::Slider::SliderStyle::LinearHorizontal);
+    timeSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
+}
+
 void TrackThumbnailComponent::loadFile(juce::File file) {
     thumbnail.clear();
 
@@ -36,6 +64,9 @@ void TrackThumbnailComponent::loadFile(juce::File file) {
 
     if (isLoaded) {
         repaint();
+        timeSlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 200, 25);
+        timeSlider.setRange(00.00f, player->getTrackLength(),1.f);
+        timeSlider.setValue(0.f);
     }
 }
 
@@ -63,6 +94,11 @@ void TrackThumbnailComponent::paint (juce::Graphics& g)
 
 void TrackThumbnailComponent::resized()
 {
+    timeSlider.setBounds(getWidth() * 0.05,
+        getHeight() * 0.6,
+        getWidth() * 0.9,
+        getHeight() * 0.3);
+
     backDrop.setBounds((int)std::round(getWidth() * 0.05),
         (int)std::round(getHeight() * 0.25),
         getWidth() * 0.9,

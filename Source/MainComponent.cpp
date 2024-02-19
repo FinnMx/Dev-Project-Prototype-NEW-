@@ -69,6 +69,9 @@ void MainComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate
 
 void MainComponent::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) {
     mixerSource.getNextAudioBlock(bufferToFill);
+
+    rmsMasterLeft = juce::Decibels::gainToDecibels(bufferToFill.buffer->getRMSLevel(0, 0, bufferToFill.buffer->getNumSamples()));
+    rmsMasterRight = juce::Decibels::gainToDecibels(bufferToFill.buffer->getRMSLevel(1, 0, bufferToFill.buffer->getNumSamples()));
 }
 
 void MainComponent::releaseResources() {

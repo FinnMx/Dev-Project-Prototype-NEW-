@@ -12,15 +12,24 @@
 #include "MasterComponent.h"
 
 //==============================================================================
-MasterComponent::MasterComponent()
+MasterComponent::MasterComponent(float* rmsMasterLeft, float* rmsMasterRight) : masterLeft(rmsMasterLeft), masterRight(rmsMasterRight)
 {
-    // In your constructor, you should add any child components, and
-    // initialise any special settings that your component needs.
+    startTimerHz(30);
+    addAndMakeVisible(rmsLeft);
+    addAndMakeVisible(rmsRight);
 
 }
 
 MasterComponent::~MasterComponent()
 {
+}
+
+void MasterComponent::timerCallback() {
+    rmsLeft.setLevel(*masterLeft);
+    rmsRight.setLevel(*masterRight);
+
+    rmsLeft.repaint();
+    rmsRight.repaint();
 }
 
 void MasterComponent::paint (juce::Graphics& g)
@@ -45,7 +54,18 @@ void MasterComponent::paint (juce::Graphics& g)
 
 void MasterComponent::resized()
 {
-    // This method is where you should set the bounds of any child
-    // components that your component contains..
+    rmsLeft.setBounds(
+        getWidth() * 0.2,
+        getHeight() * 0.175,
+        getWidth() * 0.1,
+        getHeight() * 0.6
+    );
+
+    rmsRight.setBounds(
+        getWidth() * 0.325,
+        getHeight() * 0.175,
+        getWidth() * 0.1,
+        getHeight() * 0.6
+    );
 
 }

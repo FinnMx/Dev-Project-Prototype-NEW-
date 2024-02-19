@@ -11,19 +11,30 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include <GUI/MeterComponent.h>
 
 //==============================================================================
 /*
 */
-class MasterComponent  : public juce::Component
+class MasterComponent  : public juce::Component,
+                         public juce::Timer
 {
 public:
-    MasterComponent();
+    MasterComponent(float* rmsMasterLeft,float* rmsMasterRight);
     ~MasterComponent() override;
+
+    void timerCallback() override;
 
     void paint (juce::Graphics&) override;
     void resized() override;
 
 private:
+
+    MeterComponent rmsLeft;
+    MeterComponent rmsRight;
+
+    float* masterLeft;
+    float* masterRight;
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MasterComponent)
 };

@@ -65,12 +65,25 @@ void TrackAudioPlayer::pause() {
 }
 
 void TrackAudioPlayer::stop() {
-    transportSource.stop();
     transportSource.setPosition(0.0);
+    transportSource.stop();
+
 }
 
 void TrackAudioPlayer::setGain(float newGain) {
     transportSource.setGain(newGain);
+}
+
+void TrackAudioPlayer::setTrackTime(double newTime) {
+    transportSource.setPosition(newTime);
+}
+
+double TrackAudioPlayer::getTrackLength() {
+    return transportSource.getLengthInSeconds();
+}
+
+double TrackAudioPlayer::getCurrentTrackTime() {
+    return transportSource.getCurrentPosition();
 }
 
 float TrackAudioPlayer::getRMSValue(const int channel) const {
@@ -84,7 +97,7 @@ float TrackAudioPlayer::getRMSValue(const int channel) const {
         else {
             return 0.f;
         }
-    
+
 }
 
 

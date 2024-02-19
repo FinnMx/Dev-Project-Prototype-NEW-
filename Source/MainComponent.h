@@ -39,6 +39,7 @@ private:
     //==============================================================================
     // Your private member variables go here...
     int x, y;
+    float rmsMasterLeft, rmsMasterRight;
 
     //look and feel
 
@@ -51,18 +52,18 @@ private:
     TrackAudioPlayer track1{formatManager};
     TrackAudioPlayer track2{formatManager};
 
-    DelayComponent delayComponent;
-
     juce::AudioThumbnailCache cache{ 100 };
-    TrackThumbnailComponent trackAThumbnailComponent{ "Track A", cache, formatManager };
-    TrackThumbnailComponent trackBThumbnailComponent{ "Track B", cache, formatManager };
+    TrackThumbnailComponent trackAThumbnailComponent{ "Track A", cache, formatManager, &track1 };
+    TrackThumbnailComponent trackBThumbnailComponent{ "Track B", cache, formatManager, &track2 };
 
     InputComponent inputAComponent{"Track A",&track1, formatManager,&trackAThumbnailComponent};
     InputComponent inputBComponent{"Track B",&track2, formatManager,&trackBThumbnailComponent };
 
-    KillEQComponent killEQComponent;
-    MasterComponent masterComponent;
+    MasterComponent masterComponent{ &rmsMasterLeft, &rmsMasterRight };
+
     ReverbComponent reverbComponent;
+    DelayComponent delayComponent;
+    KillEQComponent killEQComponent;
 
     TenBandComponent tenBandComponent;
 

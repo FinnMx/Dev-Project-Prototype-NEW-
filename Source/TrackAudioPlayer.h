@@ -30,6 +30,10 @@ public:
     void pause();
     void stop();
 
+    double getTrackLength();
+    double getCurrentTrackTime();
+    void setTrackTime(double newTime);
+
     void setGain(float newGain);
 
     float getRMSValue(const int channel) const;
