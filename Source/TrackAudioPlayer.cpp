@@ -42,14 +42,15 @@ void TrackAudioPlayer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buf
 }
 
 void TrackAudioPlayer::loadFile(juce::File _file) {
+    double sampleRate = 44100.0;
     juce::AudioFormatReader* reader = formatManager.createReaderFor(_file);
 
     if (reader != nullptr) {
         // Prepares the file to play
         std::unique_ptr<juce::AudioFormatReaderSource> tempSource(new juce::AudioFormatReaderSource(reader, true));
 
-        // Gets data from the audio file pointed to from tempSource.
-        transportSource.setSource(tempSource.get());
+        // Gets data from the audio file pointed to from tempSource. Currently specifying sample rates to stop incorrect playback
+        transportSource.setSource(tempSource.get(), 0, nullptr, sampleRate);
 
         //prevents the audio from stopping when tempsource is destroyed, practically just passes the pointer to a differnet source
         readerSource.reset(tempSource.release());

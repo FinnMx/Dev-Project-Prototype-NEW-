@@ -609,6 +609,9 @@
     <ClCompile Include="..\..\Source\GUI\MasterComponent.cpp">
       <Filter>Dev Project Prototype (NEW)\Source\GUI</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\GUI\MeterComponent.cpp">
+      <Filter>Dev Project Prototype (NEW)\Source\GUI</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\GUI\ReverbComponent.cpp">
       <Filter>Dev Project Prototype (NEW)\Source\GUI</Filter>
     </ClCompile>
@@ -2940,9 +2943,6 @@
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_gui_extra.cpp">
       <Filter>JUCE Library Code</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\GUI\MeterComponent.cpp">
-      <Filter>Dev Project Prototype %28NEW%29\Source\GUI</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\GUI\DelayComponent.h">
@@ -2955,6 +2955,9 @@
       <Filter>Dev Project Prototype (NEW)\Source\GUI</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\GUI\MasterComponent.h">
+      <Filter>Dev Project Prototype (NEW)\Source\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GUI\MeterComponent.h">
       <Filter>Dev Project Prototype (NEW)\Source\GUI</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\GUI\ReverbComponent.h">
@@ -5824,9 +5827,6 @@
     </ClInclude>
     <ClInclude Include="..\..\JuceLibraryCode\JuceHeader.h">
       <Filter>JUCE Library Code</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\GUI\MeterComponent.h">
-      <Filter>Dev Project Prototype %28NEW%29\Source\GUI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

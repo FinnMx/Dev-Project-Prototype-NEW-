@@ -22,6 +22,10 @@
               file="Source/GUI/MasterComponent.cpp"/>
         <FILE id="KO2itW" name="MasterComponent.h" compile="0" resource="0"
               file="Source/GUI/MasterComponent.h"/>
+        <FILE id="Stj0AK" name="MeterComponent.cpp" compile="1" resource="0"
+              file="Source/GUI/MeterComponent.cpp"/>
+        <FILE id="YwVKZA" name="MeterComponent.h" compile="0" resource="0"
+              file="Source/GUI/MeterComponent.h"/>
         <FILE id="nE502J" name="ReverbComponent.cpp" compile="1" resource="0"
               file="Source/GUI/ReverbComponent.cpp"/>
         <FILE id="SQBSuC" name="ReverbComponent.h" compile="0" resource="0"
