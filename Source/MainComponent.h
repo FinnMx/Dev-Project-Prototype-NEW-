@@ -52,6 +52,9 @@ private:
     TrackAudioPlayer track1{formatManager};
     TrackAudioPlayer track2{formatManager};
 
+    // Audio Effect components
+    juce::ResamplingAudioSource resampleSource{ &mixerSource, false, 2 };
+
     juce::AudioThumbnailCache cache{ 100 };
     TrackThumbnailComponent trackAThumbnailComponent{ "Track A", cache, formatManager, &track1 };
     TrackThumbnailComponent trackBThumbnailComponent{ "Track B", cache, formatManager, &track2 };
@@ -61,7 +64,7 @@ private:
 
     MasterComponent masterComponent{ &rmsMasterLeft, &rmsMasterRight };
 
-    ReverbComponent reverbComponent;
+    ReverbComponent reverbComponent{&resampleSource};
     DelayComponent delayComponent;
     KillEQComponent killEQComponent;
 
