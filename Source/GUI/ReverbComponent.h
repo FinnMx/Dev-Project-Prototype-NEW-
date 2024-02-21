@@ -11,19 +11,32 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include <TrackAudioPlayer.h>
 
 //==============================================================================
 /*
 */
-class ReverbComponent  : public juce::Component
+class ReverbComponent  : public juce::Component,
+                         public juce::Slider::Listener
 {
 public:
-    ReverbComponent();
+    ReverbComponent(TrackAudioPlayer* track1, TrackAudioPlayer* track2);
     ~ReverbComponent() override;
+
+    void initSlider();
+    void sliderValueChanged(juce::Slider* slider) override;
 
     void paint (juce::Graphics&) override;
     void resized() override;
 
 private:
+    TrackAudioPlayer* source1;
+    TrackAudioPlayer* source2;
+
+    juce::Slider roomSizeSlider;
+    juce::Slider dampingSlider;
+    juce::Slider wetLevelSlider;
+    juce::Slider dryLevelSlider;
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ReverbComponent)
 };
