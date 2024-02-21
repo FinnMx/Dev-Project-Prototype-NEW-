@@ -12,14 +12,8 @@
 #include "ReverbComponent.h"
 
 //==============================================================================
-ReverbComponent::ReverbComponent(juce::ResamplingAudioSource* resampleSource) : source(resampleSource)
+ReverbComponent::ReverbComponent(TrackAudioPlayer* track1, TrackAudioPlayer* track2) : source1(track1), source2(track2)
 {
-    parameters.roomSize = 0.6f;
-    parameters.damping = 0.6f;
-    parameters.wetLevel = 0.99f;
-    parameters.dryLevel = 0.99f;
-    reverbSource.setParameters(parameters);
-
     initSlider();
 
     addAndMakeVisible(roomSizeSlider);
@@ -27,6 +21,10 @@ ReverbComponent::ReverbComponent(juce::ResamplingAudioSource* resampleSource) : 
     addAndMakeVisible(wetLevelSlider);
     addAndMakeVisible(dryLevelSlider);
 
+    roomSizeSlider.addListener(this);
+    dampingSlider.addListener(this);
+    wetLevelSlider.addListener(this);
+    dryLevelSlider.addListener(this);
 }
 
 void ReverbComponent::initSlider() {
@@ -51,21 +49,13 @@ void ReverbComponent::initSlider() {
     dryLevelSlider.setValue(0.f);
 }
 
-void ReverbComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate) {
-    reverbSource.prepareToPlay(samplesPerBlockExpected, sampleRate);
-    source->prepareToPlay(samplesPerBlockExpected, sampleRate);
-}
-void ReverbComponent::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) {
-    bufferToFill.clearActiveBufferRegion();
-    reverbSource.getNextAudioBlock(bufferToFill);
-}
-void ReverbComponent::releaseResources() {
-    reverbSource.releaseResources();
-    source->releaseResources();
-}
-
 ReverbComponent::~ReverbComponent()
 {
+}
+
+void ReverbComponent::sliderValueChanged(juce::Slider* slider) {
+    source1->setReverbParams(roomSizeSlider.getValue(), dampingSlider.getValue(), wetLevelSlider.getValue(), dryLevelSlider.getValue());
+    source2->setReverbParams(roomSizeSlider.getValue(), dampingSlider.getValue(), wetLevelSlider.getValue(), dryLevelSlider.getValue());
 }
 
 void ReverbComponent::paint (juce::Graphics& g)
@@ -80,16 +70,6 @@ void ReverbComponent::paint (juce::Graphics& g)
     g.setFont(30.0f);
     g.drawText("Reverb", getLocalBounds(),
         juce::Justification::centredTop, true);
-
-    g.setColour(juce::Colours::white);
-    g.setFont(30.0f);
-    g.drawText(std::to_string(getWidth()), getLocalBounds(),
-        juce::Justification::centredLeft, true);
-
-    g.setColour(juce::Colours::white);
-    g.setFont(30.0f);
-    g.drawText(std::to_string(getHeight()), getLocalBounds(),
-        juce::Justification::centredRight, true);
 
 }
 

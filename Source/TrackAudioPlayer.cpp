@@ -14,8 +14,7 @@
 //==============================================================================
 TrackAudioPlayer::TrackAudioPlayer(juce::AudioFormatManager& _formatManager) : formatManager(_formatManager)
 {
-    transportSource.setGain(0.5f);
-
+    setReverbParams(0.f,0.f,0.f, 1.f);
 }
 
 TrackAudioPlayer::~TrackAudioPlayer()
@@ -25,17 +24,17 @@ TrackAudioPlayer::~TrackAudioPlayer()
 void TrackAudioPlayer::prepareToPlay(int samplesPerBlockExpected, double sampleRate){
     transportSource.prepareToPlay(samplesPerBlockExpected, sampleRate);
     resampleSource.prepareToPlay(samplesPerBlockExpected, sampleRate);
+    reverbSource.prepareToPlay(samplesPerBlockExpected, sampleRate);
 }
 
 void TrackAudioPlayer::releaseResources() {
     transportSource.releaseResources();
     resampleSource.releaseResources();
+    reverbSource.releaseResources();
 }
 
 void TrackAudioPlayer::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) {
-    bufferToFill.clearActiveBufferRegion();
-
-    transportSource.getNextAudioBlock(bufferToFill);
+    reverbSource.getNextAudioBlock(bufferToFill);
 
     rmsLvlLeft = juce::Decibels::gainToDecibels(bufferToFill.buffer->getRMSLevel(0, 0, bufferToFill.buffer->getNumSamples()));
     rmsLvlRight = juce::Decibels::gainToDecibels(bufferToFill.buffer->getRMSLevel(1, 0, bufferToFill.buffer->getNumSamples()));
@@ -73,6 +72,14 @@ void TrackAudioPlayer::stop() {
 
 void TrackAudioPlayer::setGain(float newGain) {
     transportSource.setGain(newGain);
+}
+
+void TrackAudioPlayer::setReverbParams(float roomSize, float damping, float wetLevel, float dryLevel){
+    parameters.roomSize = roomSize;
+    parameters.damping = damping;
+    parameters.wetLevel = wetLevel;
+    parameters.dryLevel = dryLevel;
+    reverbSource.setParameters(parameters);
 }
 
 void TrackAudioPlayer::setTrackTime(double newTime) {

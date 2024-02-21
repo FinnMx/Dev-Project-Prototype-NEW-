@@ -11,29 +11,27 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include <TrackAudioPlayer.h>
 
 //==============================================================================
 /*
 */
-class ReverbComponent  : public juce::AudioAppComponent
+class ReverbComponent  : public juce::Component,
+                         public juce::Slider::Listener
 {
 public:
-    ReverbComponent(juce::ResamplingAudioSource* resampleSource);
+    ReverbComponent(TrackAudioPlayer* track1, TrackAudioPlayer* track2);
     ~ReverbComponent() override;
 
-    void prepareToPlay(int samplesPerBlockExpected, double sampleRate) override;
-    void getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) override;
-    void releaseResources() override;
-
     void initSlider();
+    void sliderValueChanged(juce::Slider* slider) override;
 
     void paint (juce::Graphics&) override;
     void resized() override;
 
 private:
-    juce::ResamplingAudioSource* source;
-    juce::ReverbAudioSource reverbSource{ source, false }; // maybe source should be ptr?
-    juce::Reverb::Parameters parameters;
+    TrackAudioPlayer* source1;
+    TrackAudioPlayer* source2;
 
     juce::Slider roomSizeSlider;
     juce::Slider dampingSlider;

@@ -52,9 +52,7 @@ private:
     TrackAudioPlayer track1{formatManager};
     TrackAudioPlayer track2{formatManager};
 
-    // Audio Effect components
-    juce::ResamplingAudioSource resampleSource{ &mixerSource, false, 2 };
-
+    // Thumbnail component
     juce::AudioThumbnailCache cache{ 100 };
     TrackThumbnailComponent trackAThumbnailComponent{ "Track A", cache, formatManager, &track1 };
     TrackThumbnailComponent trackBThumbnailComponent{ "Track B", cache, formatManager, &track2 };
@@ -63,8 +61,10 @@ private:
     InputComponent inputBComponent{"Track B",&track2, formatManager,&trackBThumbnailComponent };
 
     MasterComponent masterComponent{ &rmsMasterLeft, &rmsMasterRight };
+    //PASS TRACK 1 AND TRACK 2 INTO THE REVERBCOMPONENT CLASS AND REMOVE ALL DRY AND LEAVE WET.
+    //THEN ADD THIS COMPONENT TO THE MIXERSOURCE, AND CREATE PrepareToPlay GetNextBlock E.T.C IN THE REVERB COMPONENT
+    ReverbComponent reverbComponent{&track1, &track2};
 
-    ReverbComponent reverbComponent{&resampleSource};
     DelayComponent delayComponent;
     KillEQComponent killEQComponent;
 

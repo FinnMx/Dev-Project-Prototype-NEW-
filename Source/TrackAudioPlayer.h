@@ -35,6 +35,7 @@ public:
     void setTrackTime(double newTime);
 
     void setGain(float newGain);
+    void setReverbParams(float roomSize, float damping, float wetLevel, float dryLevel);
 
     float getRMSValue(const int channel) const;
 
@@ -46,6 +47,11 @@ private:
     std::unique_ptr<juce::AudioFormatReaderSource> readerSource;
     juce::AudioTransportSource transportSource;
     juce::ResamplingAudioSource resampleSource{ &transportSource, false, 2 };
+
+    //Effects
+    juce::ReverbAudioSource reverbSource{&resampleSource, false};
+    juce::Reverb::Parameters parameters;
+
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (TrackAudioPlayer)
 };
