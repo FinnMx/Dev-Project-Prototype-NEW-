@@ -97,7 +97,7 @@ bool TrackAudioProcessor::producesMidi() const {
 }
 
 juce::AudioProcessorEditor* TrackAudioProcessor::createEditor() {
-    return new juce::AudioProcessorEditor();
+    return nullptr;
 }
 
 bool TrackAudioProcessor::hasEditor() const {
