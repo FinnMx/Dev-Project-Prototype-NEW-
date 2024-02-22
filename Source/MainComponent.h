@@ -61,10 +61,8 @@ private:
     InputComponent inputBComponent{"Track B",&track2, formatManager,&trackBThumbnailComponent };
 
     MasterComponent masterComponent{ &rmsMasterLeft, &rmsMasterRight };
-    //PASS TRACK 1 AND TRACK 2 INTO THE REVERBCOMPONENT CLASS AND REMOVE ALL DRY AND LEAVE WET.
-    //THEN ADD THIS COMPONENT TO THE MIXERSOURCE, AND CREATE PrepareToPlay GetNextBlock E.T.C IN THE REVERB COMPONENT
-    ReverbComponent reverbComponent{&track1, &track2};
 
+    ReverbComponent reverbComponent{&track1, &track2};
     DelayComponent delayComponent;
     KillEQComponent killEQComponent;
 

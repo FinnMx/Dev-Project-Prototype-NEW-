@@ -70,7 +70,7 @@ public:
                      0xff8d8d8d,    //windowBackground 
                      0xff515151,    //widgetBackground 
                      0xff232027,    //menuBackground
-                     0xff535A62,    //outline
+                     0xff8d8d8d,    //outline
                      0xffffffff,    //defaultText
                      0xffffffff,    //defaultFill
                      0xffffffff,    //highlightedText
