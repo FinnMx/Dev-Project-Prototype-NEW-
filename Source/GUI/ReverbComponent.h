@@ -36,7 +36,6 @@ private:
     juce::Slider roomSizeSlider;
     juce::Slider dampingSlider;
     juce::Slider wetLevelSlider;
-    juce::Slider dryLevelSlider;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ReverbComponent)
 };

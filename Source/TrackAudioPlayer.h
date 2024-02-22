@@ -35,7 +35,7 @@ public:
     void setTrackTime(double newTime);
 
     void setGain(float newGain);
-    void setReverbParams(float roomSize, float damping, float wetLevel, float dryLevel);
+    void setReverbParams(float roomSize, float damping, float wetLevel);
 
     float getRMSValue(const int channel) const;
 
