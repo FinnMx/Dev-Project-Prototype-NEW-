@@ -19,12 +19,10 @@ ReverbComponent::ReverbComponent(TrackAudioPlayer* track1, TrackAudioPlayer* tra
     addAndMakeVisible(roomSizeSlider);
     addAndMakeVisible(dampingSlider);
     addAndMakeVisible(wetLevelSlider);
-    addAndMakeVisible(dryLevelSlider);
 
     roomSizeSlider.addListener(this);
     dampingSlider.addListener(this);
     wetLevelSlider.addListener(this);
-    dryLevelSlider.addListener(this);
 }
 
 void ReverbComponent::initSlider() {
@@ -42,11 +40,6 @@ void ReverbComponent::initSlider() {
     wetLevelSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
     wetLevelSlider.setRange(0.f, +1.f, 0.01f);
     wetLevelSlider.setValue(0.f);
-
-    dryLevelSlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
-    dryLevelSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
-    dryLevelSlider.setRange(0.f, +1.f, 0.01f);
-    dryLevelSlider.setValue(0.f);
 }
 
 ReverbComponent::~ReverbComponent()
@@ -54,8 +47,8 @@ ReverbComponent::~ReverbComponent()
 }
 
 void ReverbComponent::sliderValueChanged(juce::Slider* slider) {
-    source1->setReverbParams(roomSizeSlider.getValue(), dampingSlider.getValue(), wetLevelSlider.getValue(), dryLevelSlider.getValue());
-    source2->setReverbParams(roomSizeSlider.getValue(), dampingSlider.getValue(), wetLevelSlider.getValue(), dryLevelSlider.getValue());
+    source1->setReverbParams(roomSizeSlider.getValue(), dampingSlider.getValue(), wetLevelSlider.getValue());
+    source2->setReverbParams(roomSizeSlider.getValue(), dampingSlider.getValue(), wetLevelSlider.getValue());
 }
 
 void ReverbComponent::paint (juce::Graphics& g)
@@ -77,31 +70,23 @@ void ReverbComponent::resized()
 {
     roomSizeSlider.setBounds(
         getWidth() * 0.1,
-        getHeight() * 0.25,
+        getHeight() * 0.1,
         getWidth() * 0.2,
-        getHeight() * 0.5
+        getHeight() * 0.8
     );
 
     dampingSlider.setBounds(
         getWidth() * 0.3,
-        getHeight() * 0.25,
+        getHeight() * 0.1,
         getWidth() * 0.2,
-        getHeight() * 0.5
+        getHeight() * 0.8
     );
 
     wetLevelSlider.setBounds(
         getWidth() * 0.5,
-        getHeight() * 0.25,
+        getHeight() * 0.1,
         getWidth() * 0.2,
-        getHeight() * 0.5
+        getHeight() * 0.8
     );
-
-    dryLevelSlider.setBounds(
-        getWidth() * 0.7,
-        getHeight() * 0.25,
-        getWidth() * 0.2,
-        getHeight() * 0.5
-    );
-
 
 }

@@ -14,7 +14,7 @@
 //==============================================================================
 TrackAudioPlayer::TrackAudioPlayer(juce::AudioFormatManager& _formatManager) : formatManager(_formatManager)
 {
-    setReverbParams(0.f,0.f,0.f, 1.f);
+    setReverbParams(0.f,0.f,0.f);
 }
 
 TrackAudioPlayer::~TrackAudioPlayer()
@@ -74,11 +74,11 @@ void TrackAudioPlayer::setGain(float newGain) {
     transportSource.setGain(newGain);
 }
 
-void TrackAudioPlayer::setReverbParams(float roomSize, float damping, float wetLevel, float dryLevel){
+void TrackAudioPlayer::setReverbParams(float roomSize, float damping, float wetLevel){
     parameters.roomSize = roomSize;
     parameters.damping = damping;
     parameters.wetLevel = wetLevel;
-    parameters.dryLevel = dryLevel;
+    parameters.dryLevel = 1.f;
     reverbSource.setParameters(parameters);
 }
 

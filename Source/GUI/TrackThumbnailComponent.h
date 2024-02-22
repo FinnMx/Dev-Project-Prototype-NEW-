@@ -48,6 +48,7 @@ private:
 
     TrackAudioPlayer* player;
     juce::Slider timeSlider;
+    juce::File currentFile;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (TrackThumbnailComponent)
 };

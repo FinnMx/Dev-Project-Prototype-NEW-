@@ -59,6 +59,7 @@ void TrackThumbnailComponent::initTimeSliderSlider() {
 
 void TrackThumbnailComponent::loadFile(juce::File file) {
     thumbnail.clear();
+    currentFile = file;
 
     isLoaded = thumbnail.setSource(new juce::FileInputSource(file));
 
@@ -85,6 +86,8 @@ void TrackThumbnailComponent::paint (juce::Graphics& g)
 
     if (isLoaded) {
         thumbnail.drawChannel(g, backDrop, 0, thumbnail.getTotalLength(), 0, 1.0f);
+        g.setFont(16.f);
+        g.drawText(currentFile.getFileNameWithoutExtension(), getLocalBounds(), juce::Justification::bottomLeft, true);
     }
     else {
         g.setFont(16.f);
