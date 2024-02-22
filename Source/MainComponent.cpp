@@ -63,6 +63,7 @@ void MainComponent::GetDesktopResolution(int& horizontal, int& vertical)
 void MainComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate) {
     track1.prepareToPlay(samplesPerBlockExpected, sampleRate);
     track2.prepareToPlay(samplesPerBlockExpected, sampleRate);
+    audioProcessor.prepareToPlay(samplesPerBlockExpected, sampleRate);
 
     mixerSource.addInputSource(&track1, false);
     mixerSource.addInputSource(&track2, false);
@@ -81,6 +82,7 @@ void MainComponent::releaseResources() {
     mixerSource.releaseResources();
     track1.releaseResources();
     track2.releaseResources();
+    audioProcessor.releaseResources();
 }
 
 //==============================================================================
