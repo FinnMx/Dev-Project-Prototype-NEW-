@@ -47,6 +47,10 @@
       <FILE id="u3iZ1v" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="xsjmPa" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
+      <FILE id="HcS1n3" name="TrackAudioProcessor.cpp" compile="1" resource="0"
+            file="Source/TrackAudioProcessor.cpp"/>
+      <FILE id="piVqsG" name="TrackAudioProcessor.h" compile="0" resource="0"
+            file="Source/TrackAudioProcessor.h"/>
     </GROUP>
   </MAINGROUP>
   <MODULES>

@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include <JuceHeader.h>
+#include <CircularBuffer.h>
 #include <TrackAudioPlayer.h>
 #include <TrackAudioProcessor.h>
 #include <GUI/DelayComponent.h>
@@ -52,7 +53,6 @@ private:
     juce::AudioFormatManager formatManager;
     TrackAudioPlayer track1{formatManager};
     TrackAudioPlayer track2{formatManager};
-    TrackAudioProcessor audioProcessor;
 
     // Thumbnail component
     juce::AudioThumbnailCache cache{ 100 };

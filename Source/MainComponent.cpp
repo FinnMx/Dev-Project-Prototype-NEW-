@@ -63,7 +63,6 @@ void MainComponent::GetDesktopResolution(int& horizontal, int& vertical)
 void MainComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate) {
     track1.prepareToPlay(samplesPerBlockExpected, sampleRate);
     track2.prepareToPlay(samplesPerBlockExpected, sampleRate);
-    audioProcessor.prepareToPlay(samplesPerBlockExpected, sampleRate);
 
     mixerSource.addInputSource(&track1, false);
     mixerSource.addInputSource(&track2, false);
@@ -72,7 +71,6 @@ void MainComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate
 void MainComponent::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) {
     bufferToFill.clearActiveBufferRegion();
     mixerSource.getNextAudioBlock(bufferToFill);
-    audioProcessor.processBlock();
 
     rmsMasterLeft = juce::Decibels::gainToDecibels(bufferToFill.buffer->getRMSLevel(0, 0, bufferToFill.buffer->getNumSamples()));
     rmsMasterRight = juce::Decibels::gainToDecibels(bufferToFill.buffer->getRMSLevel(1, 0, bufferToFill.buffer->getNumSamples()));
@@ -83,7 +81,6 @@ void MainComponent::releaseResources() {
     mixerSource.releaseResources();
     track1.releaseResources();
     track2.releaseResources();
-    audioProcessor.releaseResources();
 }
 
 //==============================================================================

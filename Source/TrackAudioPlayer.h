@@ -12,6 +12,7 @@
 
 #include <JuceHeader.h>
 #include <TrackAudioProcessor.h>
+#include <CircularBuffer.h>
 
 //==============================================================================
 /*
@@ -41,6 +42,7 @@ public:
     float getRMSValue(const int channel) const;
 
 private:
+
     float rmsLvlLeft, rmsLvlRight;
 
     juce::AudioFormatManager& formatManager;
@@ -52,6 +54,7 @@ private:
     //Effects
     juce::ReverbAudioSource reverbSource{&resampleSource, false};
     juce::Reverb::Parameters parameters;
+    CircularBuffer circularBuffer;
 
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (TrackAudioPlayer)
