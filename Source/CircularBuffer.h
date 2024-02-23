@@ -15,7 +15,7 @@
 //==============================================================================
 /*
 */
-class CircularBuffer  : public juce::AudioSource
+class CircularBuffer : public juce::AudioSource
 {
 public:
     CircularBuffer(TrackAudioPlayer* track1, TrackAudioPlayer* track2);
@@ -35,14 +35,15 @@ private:
 
     bool delayStatus{ false };
     float delayGain{ 0.f };
-    float delayTime{ 1.0f };
+    float delayTime{ 1.1f };
 
     int totalNumInputChannels{ 2 }, totalNumOutputChannels{ 2 };
     juce::AudioBuffer<float> delayBuffer;
     int writePosition{ 0 };
+    int positionDifference{ 0 };
 
     TrackAudioPlayer* source1;
     TrackAudioPlayer* source2;
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (CircularBuffer)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(CircularBuffer)
 };
