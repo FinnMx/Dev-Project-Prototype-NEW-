@@ -63,14 +63,16 @@ void MainComponent::GetDesktopResolution(int& horizontal, int& vertical)
 void MainComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate) {
     track1.prepareToPlay(samplesPerBlockExpected, sampleRate);
     track2.prepareToPlay(samplesPerBlockExpected, sampleRate);
+    circularBuffer.prepareToPlay(samplesPerBlockExpected, 44100.0);
 
     mixerSource.addInputSource(&track1, false);
     mixerSource.addInputSource(&track2, false);
 }
 
 void MainComponent::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) {
-    bufferToFill.clearActiveBufferRegion();
+    //bufferToFill.clearActiveBufferRegion();
     mixerSource.getNextAudioBlock(bufferToFill);
+    circularBuffer.getNextAudioBlock(bufferToFill);
 
     rmsMasterLeft = juce::Decibels::gainToDecibels(bufferToFill.buffer->getRMSLevel(0, 0, bufferToFill.buffer->getNumSamples()));
     rmsMasterRight = juce::Decibels::gainToDecibels(bufferToFill.buffer->getRMSLevel(1, 0, bufferToFill.buffer->getNumSamples()));
@@ -81,6 +83,7 @@ void MainComponent::releaseResources() {
     mixerSource.releaseResources();
     track1.releaseResources();
     track2.releaseResources();
+    circularBuffer.releaseResources();
 }
 
 //==============================================================================

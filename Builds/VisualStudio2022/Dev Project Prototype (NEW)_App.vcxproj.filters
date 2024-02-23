@@ -630,9 +630,6 @@
     <ClCompile Include="..\..\Source\MainComponent.cpp">
       <Filter>Dev Project Prototype (NEW)\Source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\TrackAudioProcessor.cpp">
-      <Filter>Dev Project Prototype (NEW)\Source</Filter>
-    </ClCompile>
     <ClCompile Include="C:\JUCE\modules\juce_audio_basics\audio_play_head\juce_AudioPlayHead.cpp">
       <Filter>JUCE Modules\juce_audio_basics\audio_play_head</Filter>
     </ClCompile>
@@ -2979,9 +2976,6 @@
       <Filter>Dev Project Prototype (NEW)\Source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\MainComponent.h">
-      <Filter>Dev Project Prototype (NEW)\Source</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\TrackAudioProcessor.h">
       <Filter>Dev Project Prototype (NEW)\Source</Filter>
     </ClInclude>
     <ClInclude Include="C:\JUCE\modules\juce_audio_basics\audio_play_head\juce_AudioPlayHead.h">

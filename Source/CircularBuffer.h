@@ -25,8 +25,15 @@ public:
     void releaseResources() override;
     void getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) override;
 
+    void setDelayGain(float newGain);
+    void setDelayStatus(bool newStatus);
+
 private:
     void fillBuffer(int channel, int bufferSize, int delayBufferSize, float* channelData);
+    void readFromBuffer(int channel, int bufferSize, int delayBufferSize, const juce::AudioSourceChannelInfo& bufferToFill, juce::AudioBuffer<float>& delayBuffer);
+
+    bool delayStatus{ false };
+    float delayGain{ 0.f };
 
     int totalNumInputChannels{ 2 }, totalNumOutputChannels{ 2 };
     juce::AudioBuffer<float> delayBuffer;

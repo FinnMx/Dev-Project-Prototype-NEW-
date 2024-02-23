@@ -20,8 +20,6 @@ ReverbComponent::ReverbComponent(TrackAudioPlayer* track1, TrackAudioPlayer* tra
     addAndMakeVisible(dampingSlider);
     addAndMakeVisible(wetLevelSlider);
 
-    addAndMakeVisible(roomSizeLabel);
-
     roomSizeSlider.addListener(this);
     dampingSlider.addListener(this);
     wetLevelSlider.addListener(this);

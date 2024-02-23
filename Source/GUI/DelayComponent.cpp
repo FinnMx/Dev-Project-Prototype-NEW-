@@ -12,25 +12,41 @@
 #include "DelayComponent.h"
 
 //==============================================================================
-DelayComponent::DelayComponent()
+DelayComponent::DelayComponent(CircularBuffer* circularBuffer) : circularBuffer(circularBuffer)
 {
-    // In your constructor, you should add any child components, and
-    // initialise any special settings that your component needs.
+    initSlider();
+
+    addAndMakeVisible(gainSlider);
 }
 
 DelayComponent::~DelayComponent()
 {
 }
 
+void  DelayComponent::initSlider() {
+    gainSlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
+    gainSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
+    gainSlider.setRange(0.f, +3.0f, 0.01f);
+    gainSlider.setValue(0.f);
+    gainSliderLabel.attachToComponent(&gainSlider, false);
+    gainSliderLabel.setJustificationType(juce::Justification::centredBottom);
+}
+
+void  DelayComponent::sliderValueChanged(juce::Slider* slider) {
+    circularBuffer->setDelayGain(gainSlider.getValue());
+    val.setText(std::to_string(slider->getValue()), juce::NotificationType{});
+}
+
+void  DelayComponent::sliderDragStarted(juce::Slider* slider) {
+    val.attachToComponent(slider, juce::Justification::centredLeft);
+}
+
+void  DelayComponent::sliderDragEnded(juce::Slider* slider) {
+    val.setText("", juce::NotificationType{});
+}
+
 void DelayComponent::paint (juce::Graphics& g)
 {
-    /* This demo code just fills the component's background and
-       draws some placeholder text to get you started.
-
-       You should replace everything in this method with your own
-       drawing code..
-    */
-
     g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));   // clear the background
 
     g.setColour (getLookAndFeel().findColour(juce::TextEditor::outlineColourId).contrasting(0.15f));
@@ -42,9 +58,14 @@ void DelayComponent::paint (juce::Graphics& g)
         juce::Justification::centredTop, true);
 }
 
+
+
 void DelayComponent::resized()
 {
-    // This method is where you should set the bounds of any child
-    // components that your component contains..
-
+    gainSlider.setBounds(
+        getWidth() * 0.1,
+        getHeight() * 0.2,
+        getWidth() * 0.2,
+        getHeight() * 0.8
+    );
 }

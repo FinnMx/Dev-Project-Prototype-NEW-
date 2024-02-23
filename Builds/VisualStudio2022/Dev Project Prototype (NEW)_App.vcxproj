@@ -146,7 +146,6 @@
     <ClCompile Include="..\..\Source\TrackAudioPlayer.cpp" />
     <ClCompile Include="..\..\Source\Main.cpp" />
     <ClCompile Include="..\..\Source\MainComponent.cpp" />
-    <ClCompile Include="..\..\Source\TrackAudioProcessor.cpp" />
     <ClCompile Include="C:\JUCE\modules\juce_audio_basics\audio_play_head\juce_AudioPlayHead.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
@@ -2453,7 +2452,6 @@
     <ClInclude Include="..\..\Source\GUI\TrackThumbnailComponent.h" />
     <ClInclude Include="..\..\Source\TrackAudioPlayer.h" />
     <ClInclude Include="..\..\Source\MainComponent.h" />
-    <ClInclude Include="..\..\Source\TrackAudioProcessor.h" />
     <ClInclude Include="C:\JUCE\modules\juce_audio_basics\audio_play_head\juce_AudioPlayHead.h" />
     <ClInclude Include="C:\JUCE\modules\juce_audio_basics\buffers\juce_AudioChannelSet.h" />
     <ClInclude Include="C:\JUCE\modules\juce_audio_basics\buffers\juce_AudioDataConverters.h" />

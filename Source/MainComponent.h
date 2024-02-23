@@ -53,6 +53,7 @@ private:
     juce::AudioFormatManager formatManager;
     TrackAudioPlayer track1{formatManager};
     TrackAudioPlayer track2{formatManager};
+    CircularBuffer circularBuffer;
 
     // Thumbnail component
     juce::AudioThumbnailCache cache{ 100 };
@@ -65,7 +66,7 @@ private:
     MasterComponent masterComponent{ &rmsMasterLeft, &rmsMasterRight };
 
     ReverbComponent reverbComponent{&track1, &track2};
-    DelayComponent delayComponent;
+    DelayComponent delayComponent{&circularBuffer};
     KillEQComponent killEQComponent;
 
     TenBandComponent tenBandComponent;
