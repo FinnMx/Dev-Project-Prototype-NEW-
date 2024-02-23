@@ -56,8 +56,13 @@ void TrackAudioPlayer::loadFile(juce::File _file) {
     }
 }
 
+bool TrackAudioPlayer::getPlayingState() {
+    return isPlaying;
+}
+
 void TrackAudioPlayer::play() {
     transportSource.start();
+    isPlaying = true;
 }
 
 void TrackAudioPlayer::pause() {
@@ -67,6 +72,7 @@ void TrackAudioPlayer::pause() {
 void TrackAudioPlayer::stop() {
     transportSource.setPosition(0.0);
     transportSource.stop();
+    isPlaying = false;
 
 }
 

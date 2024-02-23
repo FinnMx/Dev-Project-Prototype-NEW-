@@ -11,8 +11,6 @@
 #pragma once
 
 #include <JuceHeader.h>
-#include <TrackAudioProcessor.h>
-#include <CircularBuffer.h>
 
 //==============================================================================
 /*
@@ -40,10 +38,12 @@ public:
     void setReverbParams(float roomSize, float damping, float wetLevel);
 
     float getRMSValue(const int channel) const;
+    bool getPlayingState();
 
 private:
 
     float rmsLvlLeft, rmsLvlRight;
+    bool isPlaying{ false };
 
     juce::AudioFormatManager& formatManager;
 

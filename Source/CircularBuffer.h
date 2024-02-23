@@ -9,7 +9,7 @@
 */
 
 #pragma once
-
+#include <TrackAudioPlayer.h>
 #include <JuceHeader.h>
 
 //==============================================================================
@@ -18,7 +18,7 @@
 class CircularBuffer  : public juce::AudioSource
 {
 public:
-    CircularBuffer();
+    CircularBuffer(TrackAudioPlayer* track1, TrackAudioPlayer* track2);
     ~CircularBuffer() override;
 
     void prepareToPlay(int samplesPerBlockExpected, double sampleRate) override;
@@ -27,6 +27,7 @@ public:
 
     void setDelayGain(float newGain);
     void setDelayStatus(bool newStatus);
+    void setDelayTime(float newTime);
 
 private:
     void fillBuffer(int channel, int bufferSize, int delayBufferSize, float* channelData);
@@ -34,10 +35,14 @@ private:
 
     bool delayStatus{ false };
     float delayGain{ 0.f };
+    float delayTime{ 1.0f };
 
     int totalNumInputChannels{ 2 }, totalNumOutputChannels{ 2 };
     juce::AudioBuffer<float> delayBuffer;
     int writePosition{ 0 };
+
+    TrackAudioPlayer* source1;
+    TrackAudioPlayer* source2;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (CircularBuffer)
 };

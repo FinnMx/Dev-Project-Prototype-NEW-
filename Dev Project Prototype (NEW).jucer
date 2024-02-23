@@ -5,6 +5,10 @@
               jucerFormatVersion="1">
   <MAINGROUP id="ncb3RS" name="Dev Project Prototype (NEW)">
     <GROUP id="{E7D65140-8782-E511-8057-9CBD6DBD894E}" name="Source">
+      <FILE id="ihJGYJ" name="CircularBuffer.cpp" compile="1" resource="0"
+            file="Source/CircularBuffer.cpp"/>
+      <FILE id="vedvbx" name="CircularBuffer.h" compile="0" resource="0"
+            file="Source/CircularBuffer.h"/>
       <GROUP id="{49B6B1E6-C563-79B7-B07D-4D3CDF7D7875}" name="GUI">
         <FILE id="oRbxCi" name="DelayComponent.cpp" compile="1" resource="0"
               file="Source/GUI/DelayComponent.cpp"/>
@@ -47,10 +51,6 @@
       <FILE id="u3iZ1v" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="xsjmPa" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
-      <FILE id="HcS1n3" name="TrackAudioProcessor.cpp" compile="1" resource="0"
-            file="Source/TrackAudioProcessor.cpp"/>
-      <FILE id="piVqsG" name="TrackAudioProcessor.h" compile="0" resource="0"
-            file="Source/TrackAudioProcessor.h"/>
     </GROUP>
   </MAINGROUP>
   <MODULES>

@@ -17,6 +17,13 @@ DelayComponent::DelayComponent(CircularBuffer* circularBuffer) : circularBuffer(
     initSlider();
 
     addAndMakeVisible(gainSlider);
+    addAndMakeVisible(timeSlider);
+    addAndMakeVisible(onOff);
+
+    gainSlider.addListener(this);
+    timeSlider.addListener(this);
+    onOff.addListener(this);
+
 }
 
 DelayComponent::~DelayComponent()
@@ -30,10 +37,25 @@ void  DelayComponent::initSlider() {
     gainSlider.setValue(0.f);
     gainSliderLabel.attachToComponent(&gainSlider, false);
     gainSliderLabel.setJustificationType(juce::Justification::centredBottom);
+
+    timeSlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
+    timeSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
+    timeSlider.setRange(1.0f, +6.0f, 0.01f);
+    timeSlider.setValue(1.0f);
+    timeSliderLabel.attachToComponent(&timeSlider, false);
+    timeSliderLabel.setJustificationType(juce::Justification::centredBottom);
+}
+
+void DelayComponent::buttonClicked(juce::Button* button) {
+    if (button = &onOff) {
+        circularBuffer->setDelayStatus(button->getToggleState());
+        DBG(std::to_string(button->getToggleState()));
+    }
 }
 
 void  DelayComponent::sliderValueChanged(juce::Slider* slider) {
     circularBuffer->setDelayGain(gainSlider.getValue());
+    circularBuffer->setDelayTime(timeSlider.getValue());
     val.setText(std::to_string(slider->getValue()), juce::NotificationType{});
 }
 
@@ -68,4 +90,16 @@ void DelayComponent::resized()
         getWidth() * 0.2,
         getHeight() * 0.8
     );
+
+    timeSlider.setBounds(
+        getWidth() * 0.3,
+        getHeight() * 0.2,
+        getWidth() * 0.2,
+        getHeight() * 0.8
+    );
+
+    onOff.setBounds(getWidth() * 0.5,
+        getHeight() * 0.2,
+        getWidth() * 0.5,
+        getHeight() * 0.5);
 }

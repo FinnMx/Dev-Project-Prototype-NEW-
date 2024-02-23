@@ -5,7 +5,6 @@
 #include <JuceHeader.h>
 #include <CircularBuffer.h>
 #include <TrackAudioPlayer.h>
-#include <TrackAudioProcessor.h>
 #include <GUI/DelayComponent.h>
 #include <GUI/InputComponent.h>
 #include <GUI/KillEQComponent.h>
@@ -53,7 +52,7 @@ private:
     juce::AudioFormatManager formatManager;
     TrackAudioPlayer track1{formatManager};
     TrackAudioPlayer track2{formatManager};
-    CircularBuffer circularBuffer;
+    CircularBuffer circularBuffer{ &track1, &track2 };
 
     // Thumbnail component
     juce::AudioThumbnailCache cache{ 100 };

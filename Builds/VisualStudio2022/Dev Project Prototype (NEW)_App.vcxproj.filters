@@ -597,6 +597,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\CircularBuffer.cpp">
+      <Filter>Dev Project Prototype (NEW)\Source</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\GUI\DelayComponent.cpp">
       <Filter>Dev Project Prototype (NEW)\Source\GUI</Filter>
     </ClCompile>
@@ -2943,11 +2946,11 @@
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_gui_extra.cpp">
       <Filter>JUCE Library Code</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\CircularBuffer.cpp">
-      <Filter>Dev Project Prototype %28NEW%29\Source</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\CircularBuffer.h">
+      <Filter>Dev Project Prototype (NEW)\Source</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\GUI\DelayComponent.h">
       <Filter>Dev Project Prototype (NEW)\Source\GUI</Filter>
     </ClInclude>
@@ -5830,9 +5833,6 @@
     </ClInclude>
     <ClInclude Include="..\..\JuceLibraryCode\JuceHeader.h">
       <Filter>JUCE Library Code</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\CircularBuffer.h">
-      <Filter>Dev Project Prototype %28NEW%29\Source</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
