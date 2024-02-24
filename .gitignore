@@ -72,3 +72,5 @@ Builds/VisualStudio2022/.vs/Dev Project Prototype (NEW)/FileContentIndex/9304dfa
 Builds/VisualStudio2022/.vs/Dev Project Prototype (NEW)/FileContentIndex/cc6a9e4b-1368-48a4-ad79-29661c3ed85c.vsidx
 Builds/VisualStudio2022/.vs/Dev Project Prototype (NEW)/FileContentIndex/11110b60-441e-4432-8378-172cc26b647f.vsidx
 *.vsidx
+*.db
+*.pdb

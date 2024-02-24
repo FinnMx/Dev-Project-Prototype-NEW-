@@ -5,6 +5,10 @@
               jucerFormatVersion="1">
   <MAINGROUP id="ncb3RS" name="Dev Project Prototype (NEW)">
     <GROUP id="{E7D65140-8782-E511-8057-9CBD6DBD894E}" name="Source">
+      <GROUP id="{F4C3C927-2635-A084-9BB8-9BD0960623EF}" name="Effects">
+        <FILE id="QNj5Y2" name="PitchShifter.h" compile="0" resource="0" file="Source/Effects/PitchShifter.h"/>
+        <FILE id="HIoEkY" name="RingBuffer.h" compile="0" resource="0" file="Source/Effects/RingBuffer.h"/>
+      </GROUP>
       <FILE id="ihJGYJ" name="CircularBuffer.cpp" compile="1" resource="0"
             file="Source/CircularBuffer.cpp"/>
       <FILE id="vedvbx" name="CircularBuffer.h" compile="0" resource="0"
@@ -91,5 +95,26 @@
         <MODULEPATH id="juce_gui_extra" path="C:/JUCE/modules"/>
       </MODULEPATHS>
     </VS2022>
+    <VS2019 targetFolder="Builds/VisualStudio2019" externalLibraries="K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Effects\rubberband-3.3.0\otherbuilds\Debug\rubberband-library.lib&#10;">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" headerPath="K:\dev\NEW DEV PROTOTYPE\Dev Project Prototype (NEW)\Source"
+                       defines="JUCE_MODAL_LOOPS_PERMITTED=1"/>
+        <CONFIGURATION isDebug="0" name="Release" headerPath="K:\dev\NEW DEV PROTOTYPE\Dev Project Prototype (NEW)\Source"
+                       defines="JUCE_MODAL_LOOPS_PERMITTED=1&#10;"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="C:\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_devices" path="C:\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_formats" path="C:\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_processors" path="C:\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_utils" path="C:\JUCE\modules"/>
+        <MODULEPATH id="juce_core" path="C:\JUCE\modules"/>
+        <MODULEPATH id="juce_data_structures" path="C:\JUCE\modules"/>
+        <MODULEPATH id="juce_events" path="C:\JUCE\modules"/>
+        <MODULEPATH id="juce_graphics" path="C:\JUCE\modules"/>
+        <MODULEPATH id="juce_gui_basics" path="C:\JUCE\modules"/>
+        <MODULEPATH id="juce_gui_extra" path="C:\JUCE\modules"/>
+      </MODULEPATHS>
+    </VS2019>
   </EXPORTFORMATS>
 </JUCERPROJECT>

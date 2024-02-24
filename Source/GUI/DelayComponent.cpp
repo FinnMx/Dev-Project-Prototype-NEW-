@@ -40,8 +40,8 @@ void  DelayComponent::initSlider() {
 
     timeSlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     timeSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
-    timeSlider.setRange(1.0f, +6.0f, 0.01f);
-    timeSlider.setValue(1.0f);
+    timeSlider.setRange(0.f, +2.f, 0.01f);
+    timeSlider.setValue(0.0f);
     timeSliderLabel.attachToComponent(&timeSlider, false);
     timeSliderLabel.setJustificationType(juce::Justification::centredBottom);
 }
@@ -54,7 +54,7 @@ void DelayComponent::buttonClicked(juce::Button* button) {
 }
 
 void  DelayComponent::sliderValueChanged(juce::Slider* slider) {
-    circularBuffer->setDelayGain(gainSlider.getValue());
+    circularBuffer->setDelayFeedback(gainSlider.getValue());
     circularBuffer->setDelayTime(timeSlider.getValue());
     val.setText(std::to_string(slider->getValue()), juce::NotificationType{});
 }

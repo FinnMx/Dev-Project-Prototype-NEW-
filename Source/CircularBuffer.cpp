@@ -24,8 +24,20 @@ CircularBuffer::~CircularBuffer()
 }
 
 void CircularBuffer::prepareToPlay(int samplesPerBlockExpected, double sampleRate) {
-    auto delayBufferSize = sampleRate * delayTime;
-    delayBuffer.setSize(2, (int)delayBufferSize);
+    //auto delayBufferSize = sampleRate * delayTime;
+    //delayBuffer.setSize(2, (int)delayBufferSize, true, true);
+
+    juce::dsp::ProcessSpec spec;
+    spec.sampleRate = 44100.0;
+    spec.maximumBlockSize = samplesPerBlockExpected;
+    spec.numChannels = 2;
+
+    smoothedTime.reset(44100.0, 0.007);
+
+    delay.reset();
+    delay.prepare(spec);
+    delay.setDelay(delayTime);
+  
 }
 
 void CircularBuffer::releaseResources() {
@@ -33,13 +45,12 @@ void CircularBuffer::releaseResources() {
 }
 
 void CircularBuffer::setDelayTime(float newTime) {
-    //figure out how to do this properly
-    positionDifference = delayTime - newTime;
-    delayTime = newTime;
+    rampingVal = 480 / delayTime;
+    delayTime = newTime * 44100.f;
 }
 
-void CircularBuffer::setDelayGain(float newGain) {
-    delayGain = newGain;
+void CircularBuffer::setDelayFeedback(float newFeedback) {
+    delayFeedback = newFeedback;
 }
 
 void CircularBuffer::setDelayStatus(bool newStatus) {
@@ -48,37 +59,35 @@ void CircularBuffer::setDelayStatus(bool newStatus) {
 
 
 void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) {
-
+    smoothedTime.reset(44100.0, rampingVal);
     juce::ScopedNoDenormals noDenormals;
 
     for (int i = totalNumInputChannels; i < totalNumOutputChannels; ++i) {
         bufferToFill.buffer->clear(i, 0, bufferToFill.buffer->getNumSamples());
     }
 
-    //usually 480
-    auto bufferSize = bufferToFill.buffer->getNumSamples();
-
-    //the size of our delay buffer for storing samples from the past, anything after the incoming sample rate size (usually 44100) is "past audio"
-    auto delayBufferSize = delayBuffer.getNumSamples();
+    smoothedTime.setTargetValue(delayTime);
+    delay.setDelay((int)smoothedTime.getNextValue());
+    DBG(smoothedTime.getNextValue());
 
     for (int channel = 0; channel < totalNumInputChannels; ++channel) {
-        auto* channelData = bufferToFill.buffer->getWritePointer(channel);
+        if(delayStatus){
+            auto* inSamples = bufferToFill.buffer->getReadPointer(channel);
+            auto* outSamples = bufferToFill.buffer->getWritePointer(channel);
 
-        //fills the circular buffer
-        fillBuffer(channel, bufferSize, delayBufferSize, channelData);
-        //adds to the main buffer
-        if (delayStatus && (source1->getPlayingState() || source2->getPlayingState())) {
-            readFromBuffer(channel, bufferSize, delayBufferSize, bufferToFill, delayBuffer);
-            fillBuffer(channel, bufferSize, delayBufferSize, channelData);
+            for (int i = 0; i < bufferToFill.buffer->getNumSamples(); i++) {
+                float delayedSample = delay.popSample(channel);
+                //MIGHT BE SHIT
+                float inDelay = inSamples[i] + (delayFeedback * delayedSample);
+                delay.pushSample(channel, inDelay);
+                outSamples[i] = inSamples[i] + delayedSample;
+
+            }
         }
     }
-
-    writePosition += bufferSize;
-    writePosition %= delayBufferSize;
-
-    delayBuffer.setSize(2, (int)(44100.0 * delayTime), true);
 }
 
+/*
 void CircularBuffer::readFromBuffer(int channel, int bufferSize, int delayBufferSize, const juce::AudioSourceChannelInfo& bufferToFill, juce::AudioBuffer<float>& delayBuffer) {
     auto readPosition = writePosition - 44100.0;
 
@@ -94,6 +103,7 @@ void CircularBuffer::readFromBuffer(int channel, int bufferSize, int delayBuffer
         if (abs(*sample)) {
             DBG("sample" << *sample);
             bufferToFill.buffer->addFromWithRamp(channel, 0, sample, bufferSize, delayGain, delayGain);
+            //Stretcher.processBuffer(bufferToFill.buffer);
         }
         //else {
             //DBG("diff sample: " << *diffSample);
@@ -133,3 +143,5 @@ void CircularBuffer::fillBuffer(int channel, int bufferSize, int delayBufferSize
         delayBuffer.copyFrom(channel, 0, channelData + numSamplesRemaining, numSamplesAtStart);
     }
 }
+
+*/
