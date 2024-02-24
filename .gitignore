@@ -74,3 +74,4 @@ Builds/VisualStudio2022/.vs/Dev Project Prototype (NEW)/FileContentIndex/11110b6
 *.vsidx
 *.db
 *.pdb
+Source/Effects/PitchShifter.h
