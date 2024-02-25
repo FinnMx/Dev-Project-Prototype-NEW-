@@ -40,7 +40,7 @@ void  DelayComponent::initSlider() {
 
     timeSlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     timeSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
-    timeSlider.setRange(0.f, +2.f, 0.01f);
+    timeSlider.setRange(0.f, +1000.f, 1.f);
     timeSlider.setValue(0.0f);
     timeSliderLabel.attachToComponent(&timeSlider, false);
     timeSliderLabel.setJustificationType(juce::Justification::centredBottom);

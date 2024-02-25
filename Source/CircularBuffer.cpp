@@ -27,16 +27,24 @@ void CircularBuffer::prepareToPlay(int samplesPerBlockExpected, double sampleRat
     //auto delayBufferSize = sampleRate * delayTime;
     //delayBuffer.setSize(2, (int)delayBufferSize, true, true);
 
+    monoFilter.setCoefficients(juce::IIRCoefficients::makeHighPass(44100.f, 350, 1));
+
     juce::dsp::ProcessSpec spec;
     spec.sampleRate = 44100.0;
     spec.maximumBlockSize = samplesPerBlockExpected;
     spec.numChannels = 2;
 
-    smoothedTime.reset(44100.0, 0.0005);
-
     delay.reset();
     delay.prepare(spec);
-    delay.setDelay(delayTime);
+    linear.prepare(spec);
+    mixer.prepare(spec);
+
+    for (auto& volume : delayFeedbackVolume)
+        volume.reset(spec.sampleRate, 0.05);
+
+    linear.reset();
+    std::fill(lastDelayOutput.begin(), lastDelayOutput.end(), 0.0f);
+    mixer.setWetMixProportion(1.f);
 
 }
 
@@ -45,14 +53,17 @@ void CircularBuffer::releaseResources() {
 }
 
 void CircularBuffer::setDelayTime(float newTime) {
-    if(newTime * 44100.f != delayTime){
-        rampingVal = 480 / delayTime;
-        delayTime = newTime * 44100.f;
-    }
+    auto time = std::round(newTime / 1000.0 * 44100.f);
+    std::fill(delayValue.begin(), delayValue.end(), time);
 }
 
 void CircularBuffer::setDelayFeedback(float newFeedback) {
     delayFeedback = newFeedback;
+
+    const auto feedbackGain = juce::Decibels::decibelsToGain(delayFeedback, -100.0f);
+
+    for (auto& volume : delayFeedbackVolume)
+        volume.setTargetValue(delayFeedback);
 }
 
 void CircularBuffer::setDelayStatus(bool newStatus) {
@@ -61,32 +72,42 @@ void CircularBuffer::setDelayStatus(bool newStatus) {
 
 
 void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) {
-    smoothedTime.reset(44100.0, rampingVal);
     juce::ScopedNoDenormals noDenormals;
 
-    for (int i = totalNumInputChannels; i < totalNumOutputChannels; ++i) {
+    for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
         bufferToFill.buffer->clear(i, 0, bufferToFill.buffer->getNumSamples());
-    }
 
-    smoothedTime.setTargetValue(delayTime);
-    delay.setDelay((int)smoothedTime.getNextValue());
-    DBG(smoothedTime.getNextValue());
+    const auto numChannels = juce::jmax(totalNumInputChannels, totalNumOutputChannels);
 
-    for (int channel = 0; channel < totalNumInputChannels; ++channel) {
+    auto audioBlock = juce::dsp::AudioBlock<float>(*bufferToFill.buffer).getSubsetChannelBlock(0, (size_t)numChannels);
+    auto context = juce::dsp::ProcessContextReplacing<float>(audioBlock);
+    const auto& input = context.getInputBlock();
+    const auto& output = context.getOutputBlock();
+
+    mixer.pushDrySamples(input);
+
+    for (size_t channel = 0; channel < numChannels; ++channel)
+    {
+        auto* samplesIn = input.getChannelPointer(channel);
+        auto* samplesOut = output.getChannelPointer(channel);
+
         if (delayStatus) {
-            auto* inSamples = bufferToFill.buffer->getReadPointer(channel);
-            auto* outSamples = bufferToFill.buffer->getWritePointer(channel);
 
-            for (int i = 0; i < bufferToFill.buffer->getNumSamples(); i++) {
-                float delayedSample = delay.popSample(channel, delayTime);
-                //MIGHT BE SHIT
-                float inDelay = inSamples[i] + (delayFeedback * delayedSample);
-                delay.pushSample(channel, inDelay);
-                outSamples[i] = inSamples[i] + delayedSample;
+            for (size_t sample = 0; sample < input.getNumSamples(); ++sample)
+            {
+                auto input = samplesIn[sample] - lastDelayOutput[channel];
+                auto delayAmount = delayValue[channel];
 
+                linear.pushSample(int(channel), input);
+                linear.setDelay((float)delayAmount);
+                samplesOut[sample] = linear.popSample((int)channel);
+
+                lastDelayOutput[channel] = samplesOut[sample] * delayFeedbackVolume[channel].getNextValue();
             }
         }
     }
+
+    mixer.mixWetSamples(output);
 }
 
 /*

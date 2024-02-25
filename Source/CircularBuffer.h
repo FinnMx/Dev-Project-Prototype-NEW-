@@ -30,23 +30,28 @@ public:
     void setDelayTime(float newTime);
 
 private:
+    /*
     void fillBuffer(int channel, int bufferSize, int delayBufferSize, float* channelData);
     void readFromBuffer(int channel, int bufferSize, int delayBufferSize, const juce::AudioSourceChannelInfo& bufferToFill, juce::AudioBuffer<float>& delayBuffer);
+    */
 
     bool delayStatus{ false };
     float delayFeedback{ 0.f };
-    float delayTime{ 1.f };
+    float delayTime{ 0.f };
     float rampingVal{ 0.f };
 
     int totalNumInputChannels{ 2 }, totalNumOutputChannels{ 2 };
-    /*
-    juce::AudioBuffer<float> delayBuffer;
-    int writePosition{ 0 };
-    int positionDifference{ 0 };
-    */
 
-    juce::dsp::DelayLine<float, juce::dsp::DelayLineInterpolationTypes::Linear> delay{132300};
-    juce::LinearSmoothedValue<float> smoothedTime;
+    //========================================================================================
+    static constexpr auto effectDelaySamples = 192000;
+    juce::dsp::DelayLine<float> delay{ effectDelaySamples };
+    juce::dsp::DelayLine<float, juce::dsp::DelayLineInterpolationTypes::Linear> linear{ effectDelaySamples };
+    juce::dsp::DryWetMixer<float> mixer;
+    juce::IIRFilter monoFilter;
+
+    std::array<float, 2> delayValue{ {} };
+    std::array<float, 2> lastDelayOutput;
+    std::array<juce::LinearSmoothedValue<float>, 2> delayFeedbackVolume;
 
     TrackAudioPlayer* source1;
     TrackAudioPlayer* source2;

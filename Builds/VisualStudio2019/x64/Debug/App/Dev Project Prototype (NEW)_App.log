@@ -1,8 +1,23 @@
 ﻿  CircularBuffer.cpp
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\CircularBuffer.cpp(26,72): warning C4100: 'sampleRate': unreferenced formal parameter
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\CircularBuffer.cpp(72,50): warning C4244: 'argument': conversion from 'int' to 'SampleType', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\CircularBuffer.cpp(98,30): warning C4456: declaration of 'input' hides previous local declaration
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\CircularBuffer.cpp(84,17): message : see declaration of 'input'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.29.30133\include\xutility(4595,24): warning C4244: '=': conversion from 'const _Ty' to '_Ty', possible loss of data
           with
           [
-              SampleType=float
+              _Ty=double
           ]
+          and
+          [
+              _Ty=float
+          ]
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\CircularBuffer.cpp(57): message : see reference to function template instantiation 'void std::fill<std::_Array_iterator<_Ty,2>,double>(const _FwdIt,const _FwdIt,const double &)' being compiled
+          with
+          [
+              _Ty=float,
+              _FwdIt=std::_Array_iterator<float,2>
+          ]
+include_juce_gui_basics.obj : warning LNK4204: 'K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Builds\VisualStudio2019\x64\Debug\App\Dev Project Prototype (NEW).pdb' is missing debugging information for referencing module; linking object as if no debug info
+include_juce_core.obj : warning LNK4204: 'K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Builds\VisualStudio2019\x64\Debug\App\Dev Project Prototype (NEW).pdb' is missing debugging information for referencing module; linking object as if no debug info
+include_juce_audio_processors.obj : warning LNK4204: 'K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Builds\VisualStudio2019\x64\Debug\App\Dev Project Prototype (NEW).pdb' is missing debugging information for referencing module; linking object as if no debug info
   Dev Project Prototype (NEW)_App.vcxproj -> K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Builds\VisualStudio2019\x64\Debug\App\Dev Project Prototype (NEW).exe
