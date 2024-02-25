@@ -32,12 +32,12 @@ void CircularBuffer::prepareToPlay(int samplesPerBlockExpected, double sampleRat
     spec.maximumBlockSize = samplesPerBlockExpected;
     spec.numChannels = 2;
 
-    smoothedTime.reset(44100.0, 0.007);
+    smoothedTime.reset(44100.0, 0.0005);
 
     delay.reset();
     delay.prepare(spec);
     delay.setDelay(delayTime);
-  
+
 }
 
 void CircularBuffer::releaseResources() {
@@ -45,8 +45,10 @@ void CircularBuffer::releaseResources() {
 }
 
 void CircularBuffer::setDelayTime(float newTime) {
-    rampingVal = 480 / delayTime;
-    delayTime = newTime * 44100.f;
+    if(newTime * 44100.f != delayTime){
+        rampingVal = 480 / delayTime;
+        delayTime = newTime * 44100.f;
+    }
 }
 
 void CircularBuffer::setDelayFeedback(float newFeedback) {
@@ -71,12 +73,12 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
     DBG(smoothedTime.getNextValue());
 
     for (int channel = 0; channel < totalNumInputChannels; ++channel) {
-        if(delayStatus){
+        if (delayStatus) {
             auto* inSamples = bufferToFill.buffer->getReadPointer(channel);
             auto* outSamples = bufferToFill.buffer->getWritePointer(channel);
 
             for (int i = 0; i < bufferToFill.buffer->getNumSamples(); i++) {
-                float delayedSample = delay.popSample(channel);
+                float delayedSample = delay.popSample(channel, delayTime);
                 //MIGHT BE SHIT
                 float inDelay = inSamples[i] + (delayFeedback * delayedSample);
                 delay.pushSample(channel, inDelay);
