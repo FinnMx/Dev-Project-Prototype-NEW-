@@ -3096,6 +3096,9 @@
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_gui_extra.cpp">
       <Filter>JUCE Library Code</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\GUI\AudioVisualiserComponent.cpp">
+      <Filter>Dev Project Prototype %28NEW%29\Source\GUI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\Effects\PitchShifter.h">
@@ -6130,6 +6133,9 @@
     </ClInclude>
     <ClInclude Include="..\..\JuceLibraryCode\JuceHeader.h">
       <Filter>JUCE Library Code</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GUI\AudioVisualiserComponent.h">
+      <Filter>Dev Project Prototype %28NEW%29\Source\GUI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

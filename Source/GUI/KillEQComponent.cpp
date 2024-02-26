@@ -14,6 +14,8 @@
 //==============================================================================
 KillEQComponent::KillEQComponent()
 {
+    addAndMakeVisible(demo);
+
     // In your constructor, you should add any child components, and
     // initialise any special settings that your component needs.
 
@@ -23,15 +25,21 @@ KillEQComponent::~KillEQComponent()
 {
 }
 
+void KillEQComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate) {
+
+}
+
+void KillEQComponent::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) {
+    demo.getNextAudioBlock(bufferToFill);
+}
+
+void KillEQComponent::releaseResources() {
+
+}
+
 void KillEQComponent::paint (juce::Graphics& g)
 {
-    /* This demo code just fills the component's background and
-       draws some placeholder text to get you started.
-
-       You should replace everything in this method with your own
-       drawing code..
-    */
-
+    demo.repaint();
     g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));   // clear the background
 
     g.setColour (getLookAndFeel().findColour(juce::TextEditor::outlineColourId).contrasting(0.15f));
@@ -45,7 +53,9 @@ void KillEQComponent::paint (juce::Graphics& g)
 
 void KillEQComponent::resized()
 {
-    // This method is where you should set the bounds of any child
-    // components that your component contains..
+    demo.setBounds(getWidth() * 0.05,
+        getHeight() * 0.2,
+        getWidth() * 0.3,
+        getHeight() * 0.5);
 
 }

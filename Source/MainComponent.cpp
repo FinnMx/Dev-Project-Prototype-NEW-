@@ -73,6 +73,7 @@ void MainComponent::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffer
     //bufferToFill.clearActiveBufferRegion();
     mixerSource.getNextAudioBlock(bufferToFill);
     circularBuffer.getNextAudioBlock(bufferToFill);
+    killEQComponent.getNextAudioBlock(bufferToFill);
 
     rmsMasterLeft = juce::Decibels::gainToDecibels(bufferToFill.buffer->getRMSLevel(0, 0, bufferToFill.buffer->getNumSamples()));
     rmsMasterRight = juce::Decibels::gainToDecibels(bufferToFill.buffer->getRMSLevel(1, 0, bufferToFill.buffer->getNumSamples()));

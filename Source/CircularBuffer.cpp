@@ -95,14 +95,24 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
 
             for (size_t sample = 0; sample < input.getNumSamples(); ++sample)
             {
+                // NOT ACTUALLY TOO SURE IF DENORMALISATION IS NEEDED? BUT I THINK THERES LESS POPPING AND CLICKING
+                // WHEN THE FLOAT SAMPLES ARE DENORMALISED?!?!? MAYBE IM GOING CRAZY.
+
                 auto input = samplesIn[sample] - lastDelayOutput[channel];
                 auto delayAmount = delayValue[channel];
+                JUCE_UNDENORMALISE(input);
+                JUCE_UNDENORMALISE(delayAmount);
 
                 linear.pushSample(int(channel), input);
                 linear.setDelay((float)delayAmount);
                 samplesOut[sample] = linear.popSample((int)channel);
+                JUCE_UNDENORMALISE(samplesOut[sample]);
 
-                lastDelayOutput[channel] = samplesOut[sample] * delayFeedbackVolume[channel].getNextValue();
+                auto test = delayFeedbackVolume[channel].getNextValue();
+                JUCE_UNDENORMALISE(test);
+
+                lastDelayOutput[channel] = samplesOut[sample] * test;
+                JUCE_UNDENORMALISE(lastDelayOutput[channel]);
             }
         }
     }
