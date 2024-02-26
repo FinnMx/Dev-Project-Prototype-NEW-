@@ -47,6 +47,7 @@ private:
     juce::dsp::DelayLine<float> delay{ effectDelaySamples };
     juce::dsp::DelayLine<float, juce::dsp::DelayLineInterpolationTypes::Linear> linear{ effectDelaySamples };
     juce::dsp::DryWetMixer<float> mixer;
+
     juce::IIRFilter monoFilter;
 
     std::array<float, 2> delayValue{ {} };

@@ -10,6 +10,7 @@
 
 #include <JuceHeader.h>
 #include "CircularBuffer.h"
+#include <random>
 
 //==============================================================================
 CircularBuffer::CircularBuffer(TrackAudioPlayer* track1, TrackAudioPlayer* track2) : source1(track1), source2(track2)
@@ -81,6 +82,7 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
 
     auto audioBlock = juce::dsp::AudioBlock<float>(*bufferToFill.buffer).getSubsetChannelBlock(0, (size_t)numChannels);
     auto context = juce::dsp::ProcessContextReplacing<float>(audioBlock);
+    
     const auto& input = context.getInputBlock();
     const auto& output = context.getOutputBlock();
 
@@ -99,6 +101,8 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
                 // WHEN THE FLOAT SAMPLES ARE DENORMALISED?!?!? MAYBE IM GOING CRAZY.
 
                 auto input = samplesIn[sample] - lastDelayOutput[channel];
+
+
                 auto delayAmount = delayValue[channel];
                 JUCE_UNDENORMALISE(input);
                 JUCE_UNDENORMALISE(delayAmount);
@@ -108,10 +112,12 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
                 samplesOut[sample] = linear.popSample((int)channel);
                 JUCE_UNDENORMALISE(samplesOut[sample]);
 
+
                 auto test = delayFeedbackVolume[channel].getNextValue();
                 JUCE_UNDENORMALISE(test);
 
                 lastDelayOutput[channel] = samplesOut[sample] * test;
+
                 JUCE_UNDENORMALISE(lastDelayOutput[channel]);
             }
         }
