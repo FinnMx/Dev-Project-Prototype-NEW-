@@ -28,7 +28,7 @@ void CircularBuffer::prepareToPlay(int samplesPerBlockExpected, double sampleRat
     //auto delayBufferSize = sampleRate * delayTime;
     //delayBuffer.setSize(2, (int)delayBufferSize, true, true);
 
-    monoFilter.setCoefficients(juce::IIRCoefficients::makeHighPass(44100.f, 350, 1));
+    //monoFilter.setCoefficients(juce::IIRCoefficients::makeHighPass(44100.f, 350, 1));
 
     juce::dsp::ProcessSpec spec;
     spec.sampleRate = 44100.0;
@@ -102,7 +102,6 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
 
                 auto input = samplesIn[sample] - lastDelayOutput[channel];
 
-
                 auto delayAmount = delayValue[channel];
                 JUCE_UNDENORMALISE(input);
                 JUCE_UNDENORMALISE(delayAmount);
@@ -112,13 +111,10 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
                 samplesOut[sample] = linear.popSample((int)channel);
                 JUCE_UNDENORMALISE(samplesOut[sample]);
 
-
-                auto test = delayFeedbackVolume[channel].getNextValue();
-                JUCE_UNDENORMALISE(test);
-
-                lastDelayOutput[channel] = samplesOut[sample] * test;
+                lastDelayOutput[channel] = samplesOut[sample] * delayFeedbackVolume[channel].getNextValue();;
 
                 JUCE_UNDENORMALISE(lastDelayOutput[channel]);
+                //DBG(sample);
             }
         }
     }

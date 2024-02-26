@@ -43,12 +43,10 @@ private:
     int totalNumInputChannels{ 2 }, totalNumOutputChannels{ 2 };
 
     //========================================================================================
-    static constexpr auto effectDelaySamples = 192000;
+    static constexpr auto effectDelaySamples = 88200;
     juce::dsp::DelayLine<float> delay{ effectDelaySamples };
     juce::dsp::DelayLine<float, juce::dsp::DelayLineInterpolationTypes::Linear> linear{ effectDelaySamples };
     juce::dsp::DryWetMixer<float> mixer;
-
-    juce::IIRFilter monoFilter;
 
     std::array<float, 2> delayValue{ {} };
     std::array<float, 2> lastDelayOutput;

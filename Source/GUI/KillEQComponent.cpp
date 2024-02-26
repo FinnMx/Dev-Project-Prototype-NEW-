@@ -54,8 +54,8 @@ void KillEQComponent::paint (juce::Graphics& g)
 void KillEQComponent::resized()
 {
     demo.setBounds(getWidth() * 0.05,
-        getHeight() * 0.2,
-        getWidth() * 0.3,
+        getHeight() * 0.25,
+        getWidth() * 0.25,
         getHeight() * 0.5);
 
 }

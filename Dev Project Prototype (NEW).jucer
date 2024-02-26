@@ -347,8 +347,6 @@
           <FILE id="fu5r2I" name="rubberband.pc.in" compile="0" resource="1"
                 file="Source/Effects/rubberband-3.3.0/rubberband.pc.in"/>
         </GROUP>
-        <FILE id="QNj5Y2" name="PitchShifter.h" compile="0" resource="0" file="Source/Effects/PitchShifter.h"/>
-        <FILE id="HIoEkY" name="RingBuffer.h" compile="0" resource="0" file="Source/Effects/RingBuffer.h"/>
       </GROUP>
       <FILE id="ihJGYJ" name="CircularBuffer.cpp" compile="1" resource="0"
             file="Source/CircularBuffer.cpp"/>
@@ -377,6 +375,10 @@
               file="Source/GUI/MeterComponent.h"/>
         <FILE id="nE502J" name="ReverbComponent.cpp" compile="1" resource="0"
               file="Source/GUI/ReverbComponent.cpp"/>
+        <FILE id="paE2UH" name="AudioVisualiserComponent.cpp" compile="1" resource="0"
+              file="Source/AudioVisualiserComponent.cpp"/>
+        <FILE id="r6zswL" name="AudioVisualiserComponent.h" compile="0" resource="0"
+              file="Source/AudioVisualiserComponent.h"/>
         <FILE id="SQBSuC" name="ReverbComponent.h" compile="0" resource="0"
               file="Source/GUI/ReverbComponent.h"/>
         <FILE id="XWZOXD" name="TenBandComponent.cpp" compile="1" resource="0"

@@ -175,6 +175,6 @@ void MainComponent::resized()
         getX(),
         getHeight() * 0.65,
         getWidth(),
-        getHeight() * 0.315
+        getHeight() * 0.345
     );
 }

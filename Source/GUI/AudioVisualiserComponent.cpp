@@ -14,7 +14,7 @@
 //==============================================================================
 AudioVisualiserComponent::AudioVisualiserComponent() : forwardFFT(fftOrder), window(fftSize, juce::dsp::WindowingFunction<float>::hann)
 {
-    startTimerHz(30);
+    startTimerHz(15);
 }
 
 AudioVisualiserComponent::~AudioVisualiserComponent()
@@ -107,6 +107,7 @@ void AudioVisualiserComponent::releaseResources() {
 void AudioVisualiserComponent::paint (juce::Graphics& g)
 {
     g.fillAll(getLookAndFeel().findColour(juce::PropertyComponent::backgroundColourId));
+    g.drawLine(0, getHeight() / 2, getWidth(), getHeight() / 2);
     drawFrame(g);
 
     /*
