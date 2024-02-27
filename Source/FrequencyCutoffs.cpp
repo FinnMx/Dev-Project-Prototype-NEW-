@@ -61,6 +61,11 @@ void FrequencyCutoffs::prepareToPlay(int samplesPerBlockExpected, double sampleR
     spec.sampleRate = 44100.f;
     spec.maximumBlockSize = samplesPerBlockExpected;
     spec.numChannels = totalNumOutputChannels;
+
+    subBassFilter.prepare(spec);
+    bassFilter.prepare(spec);
+    midsFilter.prepare(spec);
+    highFilter.prepare(spec);
     //subBassFilter.makeInactive();
     //bassFilter.makeInactive();
     //midsFilter.makeInactive();
@@ -79,7 +84,13 @@ void FrequencyCutoffs::getNextAudioBlock(const juce::AudioSourceChannelInfo& buf
         bufferToFill.buffer->clear(i, 0, bufferToFill.buffer->getNumSamples());
 
     juce::dsp::AudioBlock<float> block(*bufferToFill.buffer);
-
     if(subBassStatus)
         subBassFilter.process(juce::dsp::ProcessContextReplacing<float>(block));
+    if (bassStatus)
+        bassFilter.process(juce::dsp::ProcessContextReplacing<float>(block));
+    if (midsStatus)
+        midsFilter.process(juce::dsp::ProcessContextReplacing<float>(block));
+    if (highStatus)
+        highFilter.process(juce::dsp::ProcessContextReplacing<float>(block));
+
 }
