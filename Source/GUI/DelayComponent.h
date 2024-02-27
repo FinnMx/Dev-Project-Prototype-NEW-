@@ -40,11 +40,13 @@ private:
 
     juce::Slider gainSlider;
     juce::Slider timeSlider;
+    juce::Slider frequencyCutSlider;
 
     juce::ToggleButton onOff;
 
     juce::Label gainSliderLabel{ "Gain", "Gain" };
     juce::Label timeSliderLabel{ "Time", "Time" };
+    juce::Label frequencyCutSliderLabel{ "Frequency", "Frequency" };
     juce::Label val{ "currentSliderVal", "" };
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DelayComponent)

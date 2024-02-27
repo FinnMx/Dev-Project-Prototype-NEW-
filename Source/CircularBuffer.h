@@ -28,6 +28,7 @@ public:
     void setDelayFeedback(float newFeedback);
     void setDelayStatus(bool newStatus);
     void setDelayTime(float newTime);
+    void setDelayCutoffFrequency(float newFrequencyCutoff);
 
 private:
     /*
@@ -39,6 +40,7 @@ private:
     float delayFeedback{ 0.f };
     float delayTime{ 0.f };
     float rampingVal{ 0.f };
+    float frequencyCutoff{ 0.f };
 
     int totalNumInputChannels{ 2 }, totalNumOutputChannels{ 2 };
 
@@ -47,6 +49,9 @@ private:
     juce::dsp::DelayLine<float> delay{ effectDelaySamples };
     juce::dsp::DelayLine<float, juce::dsp::DelayLineInterpolationTypes::Linear> linear{ effectDelaySamples };
     juce::dsp::DryWetMixer<float> mixer;
+
+    //juce::IIRFilter filter;
+    juce::SmoothedValue<float, juce::ValueSmoothingTypes::Linear> smoother;
 
     std::array<float, 2> delayValue{ {} };
     std::array<float, 2> lastDelayOutput;

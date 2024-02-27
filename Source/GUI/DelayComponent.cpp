@@ -30,7 +30,7 @@ DelayComponent::~DelayComponent()
 {
 }
 
-void  DelayComponent::initSlider() {
+void DelayComponent::initSlider() {
     gainSlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     gainSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
     gainSlider.setRange(0.f, +3.0f, 0.01f);
@@ -38,10 +38,17 @@ void  DelayComponent::initSlider() {
     gainSliderLabel.attachToComponent(&gainSlider, false);
     gainSliderLabel.setJustificationType(juce::Justification::centredBottom);
 
+    frequencyCutSlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
+    frequencyCutSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
+    frequencyCutSlider.setRange(0.f, +20000.0f, 0.01f);
+    frequencyCutSlider.setValue(0.f);
+    frequencyCutSliderLabel.attachToComponent(&frequencyCutSlider, false);
+    frequencyCutSliderLabel.setJustificationType(juce::Justification::centredBottom);
+    
     timeSlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     timeSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
-    timeSlider.setRange(0.f, +1000.f, 50.f);
-    timeSlider.setValue(0.0f);
+    timeSlider.setRange(0.f, +1000.f,10.f);
+    timeSlider.setValue(0.f);
     timeSliderLabel.attachToComponent(&timeSlider, false);
     timeSliderLabel.setJustificationType(juce::Justification::centredBottom);
 }
@@ -54,8 +61,9 @@ void DelayComponent::buttonClicked(juce::Button* button) {
 }
 
 void  DelayComponent::sliderValueChanged(juce::Slider* slider) {
-    circularBuffer->setDelayFeedback(gainSlider.getValue());
     circularBuffer->setDelayTime(timeSlider.getValue());
+    circularBuffer->setDelayFeedback(gainSlider.getValue());
+    circularBuffer->setDelayCutoffFrequency(frequencyCutSlider.getValue());
     val.setText(std::to_string(slider->getValue()), juce::NotificationType{});
 }
 
