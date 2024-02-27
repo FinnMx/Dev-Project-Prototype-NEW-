@@ -47,11 +47,14 @@ private:
     //========================================================================================
     static constexpr auto effectDelaySamples = 88200;
     juce::dsp::DelayLine<float> delay{ effectDelaySamples };
-    juce::dsp::DelayLine<float, juce::dsp::DelayLineInterpolationTypes::Linear> linear{ effectDelaySamples };
+    juce::dsp::DelayLine<float, juce::dsp::DelayLineInterpolationTypes::Thiran> linear{ effectDelaySamples };
     juce::dsp::DryWetMixer<float> mixer;
 
-    //juce::IIRFilter filter;
-    juce::SmoothedValue<float, juce::ValueSmoothingTypes::Linear> smoother;
+    juce::IIRFilter filter;
+    
+    //SMOOTHER FOR THE DELAY TIME
+    juce::SmoothedValue<float, juce::ValueSmoothingTypes::Linear> smoother{ 0.f };  
+    juce::dsp::WindowingFunction<float> windower{ 480, juce::dsp::WindowingFunction<float>::WindowingMethod::blackmanHarris };
 
     std::array<float, 2> delayValue{ {} };
     std::array<float, 2> lastDelayOutput;

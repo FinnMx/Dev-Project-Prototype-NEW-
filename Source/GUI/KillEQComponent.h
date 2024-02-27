@@ -12,26 +12,50 @@
 
 #include <JuceHeader.h>
 #include <GUI/AudioVisualiserComponent.h>
+#include <FrequencyCutoffs.h>
 
 //==============================================================================
 /*
 */
-class KillEQComponent  : public juce::AudioAppComponent
+class KillEQComponent  : public juce::AudioAppComponent,
+                         public juce::Slider::Listener,
+                         public juce::Button::Listener
 {
 public:
-    KillEQComponent();
+    KillEQComponent(FrequencyCutoffs* freqCutoffs);
     ~KillEQComponent() override;
+
+    void initSlider();
 
     void prepareToPlay(int samplesPerBlockExpected, double sampleRate) override;
     void getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) override;
     void releaseResources() override;
 
+    void buttonClicked(juce::Button* button) override;
+    void sliderValueChanged(juce::Slider* slider) override;
+
     void paint (juce::Graphics&) override;
     void resized() override;
 
 private:
+    FrequencyCutoffs* freqCutoffs;
 
     AudioVisualiserComponent demo;
+
+    juce::Slider subBassFrequencySlider;
+    juce::Slider bassFrequencySlider;
+    juce::Slider midsFrequencySlider;
+    juce::Slider highFrequencySlider;
+
+    juce::ToggleButton subBassOnOff;
+    juce::ToggleButton bassOnOff;
+    juce::ToggleButton midsOnOff;
+    juce::ToggleButton highOnOff;
+
+    juce::Label subBassFrequencyLabel{ "SubBassFrequencyr", "SubBassFrequency" };
+    juce::Label bassFrequencyLabel{ "bassFrequency", "bassFrequency" };
+    juce::Label midsFrequencyLabel{ "midsFrequency", "midsFrequency" };
+    juce::Label highFrequencyLabel{ "highFrequency", "highFrequency" };
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (KillEQComponent)
 };

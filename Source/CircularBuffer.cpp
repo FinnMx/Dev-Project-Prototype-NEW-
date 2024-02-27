@@ -28,12 +28,13 @@ void CircularBuffer::prepareToPlay(int samplesPerBlockExpected, double sampleRat
     //auto delayBufferSize = sampleRate * delayTime;
     //delayBuffer.setSize(2, (int)delayBufferSize, true, true);
 
-    //monoFilter.setCoefficients(juce::IIRCoefficients::makeHighPass(44100.f, 350, 1));
-
     juce::dsp::ProcessSpec spec;
     spec.sampleRate = 44100.0;
     spec.maximumBlockSize = samplesPerBlockExpected;
     spec.numChannels = 2;
+
+    smoother.reset(44100.f, 2.f);
+    filter.setCoefficients(juce::IIRCoefficients::makeHighPass(44100.f, 350.f, 1));
 
     delay.reset();
     delay.prepare(spec);
@@ -54,8 +55,9 @@ void CircularBuffer::releaseResources() {
 }
 
 void CircularBuffer::setDelayTime(float newTime) {
-    auto time = std::round(newTime / 1000.0 * 44100.f);
-    std::fill(delayValue.begin(), delayValue.end(), time);
+    smoother.setTargetValue(newTime / 1000.0 * 44100.f);
+    //auto time = std::round(newTime / 1000.0 * 44100.f);
+    //std::fill(delayValue.begin(), delayValue.end(), time);
 }
 
 void CircularBuffer::setDelayCutoffFrequency(float newFrequencyCutoff) {
@@ -74,7 +76,7 @@ void CircularBuffer::setDelayFeedback(float newFeedback) {
 
 void CircularBuffer::setDelayStatus(bool newStatus) {
     if (newStatus == true) {
-        mixer.setWetMixProportion(1.f);
+        mixer.setWetMixProportion(.4f);
     } else if (newStatus == false) {
         mixer.setWetMixProportion(0.f);
     }
@@ -83,7 +85,7 @@ void CircularBuffer::setDelayStatus(bool newStatus) {
 
 
 void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) {
-    //juce::ScopedNoDenormals noDenormals;
+    juce::ScopedNoDenormals noDenormals;
 
     for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
         bufferToFill.buffer->clear(i, 0, bufferToFill.buffer->getNumSamples());
@@ -111,14 +113,11 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
                 //SAMPLESIN[IN] IS THE RAW SAMPLE IN
                 auto input = samplesIn[sample] - lastDelayOutput[channel];
 
-                //filter.processSamples(&input, 1);
-
-                auto delayAmount = delayValue[channel];
                 //JUCE_UNDENORMALISE(input);
                 //JUCE_UNDENORMALISE(delayAmount);
 
                 linear.pushSample(int(channel), input);
-                linear.setDelay((float)delayAmount);
+                linear.setDelay(smoother.getNextValue());
                 samplesOut[sample] = linear.popSample((int)channel);
                 //JUCE_UNDENORMALISE(samplesOut[sample]);
 
@@ -128,6 +127,9 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
                 //JUCE_UNDENORMALISE(lastDelayOutput[channel]);
                 //DBG(sample);
             }
+
+            //windower.multiplyWithWindowingTable(samplesOut, 480);
+          
     }
 
     mixer.mixWetSamples(output);

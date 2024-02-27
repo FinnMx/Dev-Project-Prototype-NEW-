@@ -3081,6 +3081,9 @@
     <ClCompile Include="..\..\Source\GUI\AudioVisualiserComponent.cpp">
       <Filter>Dev Project Prototype %28NEW%29\Source\GUI</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\FrequencyCutoffs.cpp">
+      <Filter>Dev Project Prototype %28NEW%29\Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\CircularBuffer.h">
@@ -6109,6 +6112,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\GUI\AudioVisualiserComponent.h">
       <Filter>Dev Project Prototype %28NEW%29\Source\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\FrequencyCutoffs.h">
+      <Filter>Dev Project Prototype %28NEW%29\Source</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

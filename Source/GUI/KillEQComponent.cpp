@@ -12,17 +12,81 @@
 #include "KillEQComponent.h"
 
 //==============================================================================
-KillEQComponent::KillEQComponent()
+KillEQComponent::KillEQComponent(FrequencyCutoffs* freqCutoffs) : freqCutoffs(freqCutoffs)
 {
+    initSlider();
+
     addAndMakeVisible(demo);
 
-    // In your constructor, you should add any child components, and
-    // initialise any special settings that your component needs.
+    addAndMakeVisible(subBassFrequencySlider);
+    addAndMakeVisible(bassFrequencySlider);
+    addAndMakeVisible(midsFrequencySlider);
+    addAndMakeVisible(highFrequencySlider);
+    subBassFrequencySlider.addListener(this);
+    bassFrequencySlider.addListener(this);
+    midsFrequencySlider.addListener(this);
+    highFrequencySlider.addListener(this);
 
+    addAndMakeVisible(subBassOnOff);
+    addAndMakeVisible(bassOnOff);
+    addAndMakeVisible(midsOnOff);
+    addAndMakeVisible(highOnOff);
+    subBassOnOff.addListener(this);
+    bassOnOff.addListener(this);
+    midsOnOff.addListener(this);
+    highOnOff.addListener(this);
 }
 
 KillEQComponent::~KillEQComponent()
 {
+}
+
+void KillEQComponent::initSlider() {
+    subBassFrequencySlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
+    subBassFrequencySlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
+    subBassFrequencySlider.setRange(20.f, +240.f, 1.f);
+    subBassFrequencySlider.setValue(+240.f);
+    subBassFrequencyLabel.attachToComponent(&subBassFrequencySlider, false);
+    subBassFrequencyLabel.setJustificationType(juce::Justification::centredBottom);
+
+    bassFrequencySlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
+    bassFrequencySlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
+    bassFrequencySlider.setRange(240.f, +350.f, 1.f);
+    bassFrequencySlider.setValue(+350.f);
+    bassFrequencyLabel.attachToComponent(&bassFrequencySlider, false);
+    bassFrequencyLabel.setJustificationType(juce::Justification::centredBottom);
+
+    midsFrequencySlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
+    midsFrequencySlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
+    midsFrequencySlider.setRange(350.f, +5000.f, 1.f);
+    midsFrequencySlider.setValue(+5000.f);
+    midsFrequencyLabel.attachToComponent(&midsFrequencySlider, false);
+    midsFrequencyLabel.setJustificationType(juce::Justification::centredBottom);
+
+    highFrequencySlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
+    highFrequencySlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
+    highFrequencySlider.setRange(5000.f, +20000.f, 1.f);
+    highFrequencySlider.setValue(+9000.f);
+    highFrequencyLabel.attachToComponent(&highFrequencySlider, false);
+    highFrequencyLabel.setJustificationType(juce::Justification::centredBottom);
+}
+
+void KillEQComponent::sliderValueChanged(juce::Slider* slider) {
+    freqCutoffs->setSubBassFilter(subBassFrequencySlider.getValue());
+    freqCutoffs->setbassFilterr(bassFrequencySlider.getValue());
+    freqCutoffs->setmidsFilter(midsFrequencySlider.getValue());
+    freqCutoffs->sethighFilter(highFrequencySlider.getValue());
+}
+
+void KillEQComponent::buttonClicked(juce::Button* button) {
+    if (button = &subBassOnOff)
+        freqCutoffs->setSubBassStatus(button->getToggleState());
+    if (button = &bassOnOff)
+        freqCutoffs->setBassStatus(button->getToggleState());
+    if (button = &midsOnOff)
+        freqCutoffs->setMidsStatus(button->getToggleState());
+    if (button = &highOnOff)
+        freqCutoffs->setHighStatus(button->getToggleState());
 }
 
 void KillEQComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate) {
@@ -57,5 +121,61 @@ void KillEQComponent::resized()
         getHeight() * 0.25,
         getWidth() * 0.25,
         getHeight() * 0.5);
+
+    subBassFrequencySlider.setBounds(
+        getWidth() * 0.3,
+        getHeight() * 0.25,
+        getWidth() * 0.2,
+        getHeight() * 0.3
+    );
+
+    subBassOnOff.setBounds(
+        getWidth() * 0.3,
+        getHeight() * 0.5,
+        getWidth() * 0.2,
+        getHeight() * 0.3
+    );
+
+    bassFrequencySlider.setBounds(
+        getWidth() * 0.45,
+        getHeight() * 0.25,
+        getWidth() * 0.2,
+        getHeight() * 0.3
+    );
+
+    bassOnOff.setBounds(
+        getWidth() * 0.45,
+        getHeight() * 0.5,
+        getWidth() * 0.2,
+        getHeight() * 0.3
+    );
+
+    midsFrequencySlider.setBounds(
+        getWidth() * 0.6,
+        getHeight() * 0.25,
+        getWidth() * 0.2,
+        getHeight() * 0.3
+    );
+
+    midsOnOff.setBounds(
+        getWidth() * 0.6,
+        getHeight() * 0.5,
+        getWidth() * 0.2,
+        getHeight() * 0.3
+    );
+
+    highFrequencySlider.setBounds(
+        getWidth() * 0.75,
+        getHeight() * 0.25,
+        getWidth() * 0.2,
+        getHeight() * 0.3
+    );
+
+    highOnOff.setBounds(
+        getWidth() * 0.75,
+        getHeight() * 0.5,
+        getWidth() * 0.2,
+        getHeight() * 0.3
+    );
 
 }

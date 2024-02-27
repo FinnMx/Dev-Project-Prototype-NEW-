@@ -64,6 +64,7 @@ void MainComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate
     track1.prepareToPlay(samplesPerBlockExpected, sampleRate);
     track2.prepareToPlay(samplesPerBlockExpected, sampleRate);
     circularBuffer.prepareToPlay(samplesPerBlockExpected, 44100.0);
+    freqCutoffs.prepareToPlay(samplesPerBlockExpected, sampleRate);
 
     mixerSource.addInputSource(&track1, false);
     mixerSource.addInputSource(&track2, false);
@@ -73,6 +74,7 @@ void MainComponent::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffer
     //bufferToFill.clearActiveBufferRegion();
     mixerSource.getNextAudioBlock(bufferToFill);
     circularBuffer.getNextAudioBlock(bufferToFill);
+    freqCutoffs.getNextAudioBlock(bufferToFill);
     killEQComponent.getNextAudioBlock(bufferToFill);
 
     rmsMasterLeft = juce::Decibels::gainToDecibels(bufferToFill.buffer->getRMSLevel(0, 0, bufferToFill.buffer->getNumSamples()));

@@ -13,6 +13,7 @@
 #include <GUI/TenBandComponent.h>
 #include <GUI/TrackThumbnailComponent.h>
 #include <GUI/MeterComponent.h>
+#include <FrequencyCutoffs.h>
 
 //==============================================================================
 /*
@@ -53,6 +54,7 @@ private:
     TrackAudioPlayer track1{formatManager};
     TrackAudioPlayer track2{formatManager};
     CircularBuffer circularBuffer{ &track1, &track2 };
+    FrequencyCutoffs freqCutoffs;
 
     // Thumbnail component
     juce::AudioThumbnailCache cache{ 100 };
@@ -66,7 +68,7 @@ private:
 
     ReverbComponent reverbComponent{&track1, &track2};
     DelayComponent delayComponent{&circularBuffer};
-    KillEQComponent killEQComponent;
+    KillEQComponent killEQComponent{ &freqCutoffs };
 
     TenBandComponent tenBandComponent;
 
