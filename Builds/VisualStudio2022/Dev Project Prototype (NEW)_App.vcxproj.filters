@@ -622,6 +622,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\FrequencyCutoffs.cpp">
+      <Filter>Dev Project Prototype (NEW)\Source</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\CircularBuffer.cpp">
       <Filter>Dev Project Prototype (NEW)\Source</Filter>
     </ClCompile>
@@ -3231,6 +3234,12 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\Crossfade.h">
+      <Filter>Dev Project Prototype (NEW)\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\FrequencyCutoffs.h">
+      <Filter>Dev Project Prototype (NEW)\Source</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\CircularBuffer.h">
       <Filter>Dev Project Prototype (NEW)\Source</Filter>
     </ClInclude>

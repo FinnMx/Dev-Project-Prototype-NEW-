@@ -5,6 +5,11 @@
               jucerFormatVersion="1">
   <MAINGROUP id="ncb3RS" name="Dev Project Prototype (NEW)">
     <GROUP id="{E7D65140-8782-E511-8057-9CBD6DBD894E}" name="Source">
+      <FILE id="kAqM4G" name="Crossfade.h" compile="0" resource="0" file="Source/Crossfade.h"/>
+      <FILE id="gC16lb" name="FrequencyCutoffs.cpp" compile="1" resource="0"
+            file="Source/FrequencyCutoffs.cpp"/>
+      <FILE id="EZF6kB" name="FrequencyCutoffs.h" compile="0" resource="0"
+            file="Source/FrequencyCutoffs.h"/>
       <GROUP id="{F4C3C927-2635-A084-9BB8-9BD0960623EF}" name="Effects"/>
       <FILE id="ihJGYJ" name="CircularBuffer.cpp" compile="1" resource="0"
             file="Source/CircularBuffer.cpp"/>

@@ -141,6 +141,7 @@
     <Lib/>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\FrequencyCutoffs.cpp"/>
     <ClCompile Include="..\..\Source\CircularBuffer.cpp"/>
     <ClCompile Include="..\..\Source\GUI\DelayComponent.cpp"/>
     <ClCompile Include="..\..\Source\GUI\InputComponent.cpp"/>
@@ -2555,6 +2556,8 @@
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_gui_extra.cpp"/>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\Crossfade.h"/>
+    <ClInclude Include="..\..\Source\FrequencyCutoffs.h"/>
     <ClInclude Include="..\..\Source\CircularBuffer.h"/>
     <ClInclude Include="..\..\Source\GUI\DelayComponent.h"/>
     <ClInclude Include="..\..\Source\GUI\InputComponent.h"/>
