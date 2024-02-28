@@ -74,6 +74,8 @@ Builds/VisualStudio2022/.vs/Dev Project Prototype (NEW)/FileContentIndex/11110b6
 *.vsidx
 *.db
 *.pdb
+*.opendb
+*.opensdf
 Source/Effects/PitchShifter.h
 Builds/VisualStudio2019/x64/Release/App/Dev Project Prototype (NEW).iobj
 *.obj

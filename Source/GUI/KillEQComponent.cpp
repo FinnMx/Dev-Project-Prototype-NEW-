@@ -44,29 +44,29 @@ KillEQComponent::~KillEQComponent()
 void KillEQComponent::initSlider() {
     subBassFrequencySlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     subBassFrequencySlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
-    subBassFrequencySlider.setRange(20.f, +240.f, 1.f);
-    subBassFrequencySlider.setValue(+240.f);
+    subBassFrequencySlider.setRange(20.f, +95.f, 1.f);
+    subBassFrequencySlider.setValue(+95.f);
     subBassFrequencyLabel.attachToComponent(&subBassFrequencySlider, false);
     subBassFrequencyLabel.setJustificationType(juce::Justification::centredBottom);
 
     bassFrequencySlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     bassFrequencySlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
-    bassFrequencySlider.setRange(240.f, +350.f, 1.f);
-    bassFrequencySlider.setValue(+350.f);
+    bassFrequencySlider.setRange(95.f, +250.f, 1.f);
+    bassFrequencySlider.setValue(+250.f);
     bassFrequencyLabel.attachToComponent(&bassFrequencySlider, false);
     bassFrequencyLabel.setJustificationType(juce::Justification::centredBottom);
 
     midsFrequencySlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     midsFrequencySlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
-    midsFrequencySlider.setRange(350.f, +5000.f, 1.f);
-    midsFrequencySlider.setValue(+5000.f);
+    midsFrequencySlider.setRange(250.f, +3500.f, 1.f);
+    midsFrequencySlider.setValue(+3500.f);
     midsFrequencyLabel.attachToComponent(&midsFrequencySlider, false);
     midsFrequencyLabel.setJustificationType(juce::Justification::centredBottom);
 
     highFrequencySlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     highFrequencySlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
-    highFrequencySlider.setRange(5000.f, +20000.f, 1.f);
-    highFrequencySlider.setValue(+9000.f);
+    highFrequencySlider.setRange(3500.f, +20000.f, 1.f);
+    highFrequencySlider.setValue(+5000.f);
     highFrequencyLabel.attachToComponent(&highFrequencySlider, false);
     highFrequencyLabel.setJustificationType(juce::Justification::centredBottom);
 }
