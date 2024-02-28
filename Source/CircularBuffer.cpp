@@ -13,7 +13,7 @@
 #include <random>
 
 //==============================================================================
-CircularBuffer::CircularBuffer()
+CircularBuffer::CircularBuffer() : bandFilter(juce::dsp::IIR::Coefficients<float>::makeBandPass(44100.f, 1400.f, 0.5f))
 {
     // In your constructor, you should add any child components, and
     // initialise any special settings that your component needs.
@@ -27,16 +27,16 @@ CircularBuffer::~CircularBuffer()
 void CircularBuffer::prepareToPlay(int samplesPerBlockExpected, double sampleRate) {
     //auto delayBufferSize = sampleRate * delayTime;
     //delayBuffer.setSize(2, (int)delayBufferSize, true, true);
-    filter.setCoefficients(juce::IIRCoefficients::makeHighPass(44100.f, 2000, 1));
-    filter.setCoefficients(juce::IIRCoefficients::makeLowPass(44100.f, 10000, 1));
+    //filter.setCoefficients(juce::IIRCoefficients::makeHighPass(44100.f, 2000.f, 1));
+    //filter.setCoefficients(juce::IIRCoefficients::makeLowPass(44100.f, 10000.f, 1));
 
     juce::dsp::ProcessSpec spec;
     spec.sampleRate = 44100.0;
     spec.maximumBlockSize = samplesPerBlockExpected;
     spec.numChannels = 2;
 
+    bandFilter.prepare(spec);
     smoother.reset(44100.f, 2.f);
-    filter.reset();
 
     delay.reset();
     delay.prepare(spec);
@@ -99,12 +99,16 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
     copyBuffer.copyFrom(0, 0, data, bufferToFill.buffer->getNumSamples());
     copyBuffer.copyFrom(1, 0, data, bufferToFill.buffer->getNumSamples());
 
+    copyBuffer.applyGain(0.75f);
+
     auto audioBlock = juce::dsp::AudioBlock<float>(copyBuffer).getSubsetChannelBlock(0, (size_t)numChannels);
     auto context = juce::dsp::ProcessContextReplacing<float>(audioBlock);
 
+    bandFilter.process(context);
+
     const auto& input = context.getInputBlock();
     const auto& output = context.getOutputBlock();
-    //mixer.pushDrySamples(input);
+
     for (size_t channel = 0; channel < numChannels; ++channel)
     {
         auto* samplesIn = input.getChannelPointer(channel);
@@ -112,8 +116,6 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
 
             for (size_t sample = 0; sample < input.getNumSamples(); ++sample)
             {
-
-                //SAMPLESIN[IN] IS THE RAW SAMPLE IN
                 
                 if (delayStatus) {
                     auto input = samplesIn[sample] - lastDelayOutput[channel];
@@ -126,76 +128,12 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
 
                 linear.setDelay(smoother.getNextValue());
                 samplesOut[sample] = linear.popSample((int)channel);
-                filter.processSingleSampleRaw(samplesOut[sample]);
 
                 //SAMPLESOUT[OUT] IS THE RAW SAMPLE IN
                 lastDelayOutput[channel] = samplesOut[sample] * delayFeedbackVolume[channel].getNextValue();;
             }
 
-            windower.multiplyWithWindowingTable(samplesOut, 480);
+            //windower.multiplyWithWindowingTable(samplesOut, 480);
             bufferToFill.buffer->addFrom(channel, 0, samplesOut, 480, 0.3f);
     }
-
-    //tempSource.getNextAudioBlock(copyBuffer);
-
-   //mixer.mixWetSamples(output);
 }
-
-/*
-void CircularBuffer::readFromBuffer(int channel, int bufferSize, int delayBufferSize, const juce::AudioSourceChannelInfo& bufferToFill, juce::AudioBuffer<float>& delayBuffer) {
-    auto readPosition = writePosition - 44100.0;
-
-    if (readPosition < 0) {
-        readPosition += delayBufferSize;
-    }
-
-    if (readPosition + bufferSize < delayBufferSize) {
-        //THIS NEEDS A CLOSER LOOKAT, IT IS RESPONSIBLE FOR THE READING OF THE DELAY BUFFER AND CAN FUCK UP WHEN THE TIME IS CHANGED, IF THE DELAYBUFFER DOES NOT KEEP PREVIOUS VALS IT WILL TRY AND READ SHIT DATA
-        //DBG("error val: " << *(delayBuffer.getReadPointer(channel, readPosition)));
-        const float* sample = delayBuffer.getReadPointer(channel, readPosition);
-        //const float* diffSample = delayBuffer.getReadPointer(channel, readPosition + positionDifference);
-        if (abs(*sample)) {
-            DBG("sample" << *sample);
-            bufferToFill.buffer->addFromWithRamp(channel, 0, sample, bufferSize, delayGain, delayGain);
-            //Stretcher.processBuffer(bufferToFill.buffer);
-        }
-        //else {
-            //DBG("diff sample: " << *diffSample);
-            //bufferToFill.buffer->addFromWithRamp(channel, 0, diffSample , bufferSize, delayGain, delayGain);
-        //}
-    }
-    else {
-        auto numSamplesRemaining = delayBufferSize - readPosition;
-        bufferToFill.buffer->addFromWithRamp(channel, 0, delayBuffer.getReadPointer(channel, readPosition), numSamplesRemaining, delayGain, delayGain);
-
-        auto numSamplesAtStart = bufferSize - numSamplesRemaining;
-        bufferToFill.buffer->addFromWithRamp(channel, numSamplesRemaining, delayBuffer.getReadPointer(channel, 0), numSamplesAtStart, delayGain, delayGain);
-    }
-}
-
-void CircularBuffer::fillBuffer(int channel, int bufferSize, int delayBufferSize, float* channelData) {
-    //if we are not about to go over the delay buffer size then fill it with the buffer chunk
-    if (delayBufferSize >= bufferSize + writePosition) {
-        delayBuffer.copyFrom(channel, writePosition, channelData, bufferSize);
-    }
-    else {
-        // We are going over so we need to figure out how much space is left that we can fill from our buffer
-        auto numSamplesRemaining = abs(delayBufferSize - writePosition);
-
-        //DBG("samples remaining: " << numSamplesRemaining);
-
-        if (writePosition < delayBufferSize) {
-            //fills the delay buffer completley
-            delayBuffer.copyFrom(channel, writePosition, channelData, numSamplesRemaining);
-        }
-
-        //gets the size of how many samples we couldnt fill
-        auto numSamplesAtStart = abs(bufferSize - numSamplesRemaining);
-
-        //DBG("samples at start: " << numSamplesAtStart);
-        // Copy remaining samples to the start (start of the buffer loop)
-        delayBuffer.copyFrom(channel, 0, channelData + numSamplesRemaining, numSamplesAtStart);
-    }
-}
-
-*/

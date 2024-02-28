@@ -49,16 +49,20 @@ private:
     juce::dsp::DelayLine<float> delay{ effectDelaySamples };
     juce::dsp::DelayLine<float, juce::dsp::DelayLineInterpolationTypes::Thiran> linear{ effectDelaySamples };
 
-    juce::IIRFilter filter;
+    //juce::IIRFilter filter;
 
     //====================================================================
     // TEST STUFF
     juce::AudioBuffer<float> copyBuffer;
+    juce::dsp::ProcessorDuplicator<juce::dsp::IIR::Filter<float>, juce::dsp::IIR::Coefficients<float>> bandFilter;
     //====================================================================
     
     //SMOOTHER FOR THE DELAY TIME
     juce::SmoothedValue<float, juce::ValueSmoothingTypes::Linear> smoother{ 0.f };  
-    juce::dsp::WindowingFunction<float> windower{ 480, juce::dsp::WindowingFunction<float>::WindowingMethod::hann };
+    juce::dsp::WindowingFunction<float> windower{ 480, juce::dsp::WindowingFunction<float>::WindowingMethod::hamming };
+
+    float yn{ 0 };
+
 
     std::array<float, 2> delayValue{ {} };
     std::array<float, 2> lastDelayOutput;
