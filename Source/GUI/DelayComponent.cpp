@@ -30,10 +30,25 @@ DelayComponent::~DelayComponent()
 {
 }
 
+void DelayComponent::handleMidi(int control, int value) {
+    const juce::MessageManagerLock mmLock;
+    switch (control) {
+    case 36:
+        onOff.triggerClick();
+        break;
+    case 20:
+        gainSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.f, 1.0f));
+        break;
+    case 21:
+        timeSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.f, 1000.f));
+        break;
+    }
+}
+
 void DelayComponent::initSlider() {
     gainSlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     gainSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
-    gainSlider.setRange(0.f, +3.0f, 0.01f);
+    gainSlider.setRange(0.f, +1.0f, 0.01f);
     gainSlider.setValue(0.f);
     gainSliderLabel.attachToComponent(&gainSlider, false);
     gainSliderLabel.setJustificationType(juce::Justification::centredBottom);

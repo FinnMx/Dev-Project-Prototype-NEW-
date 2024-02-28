@@ -71,6 +71,23 @@ void KillEQComponent::initSlider() {
     highFrequencyLabel.setJustificationType(juce::Justification::centredBottom);
 }
 
+void KillEQComponent::handleMidi(int control) {
+    switch (control) {
+    case 49:
+        subBassOnOff.triggerClick();
+        break;
+    case 41:
+        bassOnOff.triggerClick();
+        break;
+    case 42:
+        midsOnOff.triggerClick();
+        break;
+    case 46:
+        highOnOff.triggerClick();
+        break;
+    }
+}
+
 void KillEQComponent::sliderValueChanged(juce::Slider* slider) {
     freqCutoffs->setSubBassFilter(subBassFrequencySlider.getValue());
     freqCutoffs->setbassFilterr(bassFrequencySlider.getValue());

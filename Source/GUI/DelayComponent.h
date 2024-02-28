@@ -30,6 +30,8 @@ public:
     void sliderDragStarted(juce::Slider* slider) override;
     void sliderDragEnded(juce::Slider* slider) override;
 
+    void handleMidi(int control, int value = 0);
+
     void buttonClicked(juce::Button* button) override;
 
     void paint (juce::Graphics&) override;

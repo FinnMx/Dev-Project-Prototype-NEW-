@@ -7,6 +7,8 @@ using namespace std;
 MainComponent::MainComponent() :
     menuBar(nullptr)
 {
+    getMidiDevice();
+
     // Some platforms require permissions to open input channels so request that here
     if (juce::RuntimePermissions::isRequired(juce::RuntimePermissions::recordAudio)
         && !juce::RuntimePermissions::isGranted(juce::RuntimePermissions::recordAudio))
@@ -45,6 +47,76 @@ MainComponent::~MainComponent()
     shutdownAudio();
 }
 
+void MainComponent::getMidiDevice() {
+    auto midiInputs = juce::MidiInput::getAvailableDevices();
+
+    juce::StringArray midiInputNames;
+
+    for (auto input : midiInputs)
+        midiInputNames.add(input.name);
+   
+
+    // find the first enabled device and use that by default
+    for (auto input : midiInputs)
+    {
+        if (deviceManager.isMidiInputDeviceEnabled(input.identifier))
+        {
+            setMidiInput(input);
+            break;
+        }
+    }
+
+    if (!midiInputs.isEmpty())
+        setMidiInput(midiInputs.getFirst());
+}
+
+void MainComponent::setMidiInput(juce::MidiDeviceInfo& id) {
+    deviceManager.setMidiInputDeviceEnabled(id.identifier, true);
+    deviceManager.addMidiInputDeviceCallback(id.identifier, this);
+}
+
+void MainComponent::handleIncomingMidiMessage(juce::MidiInput* source, const juce::MidiMessage& message){
+    DBG(message.getControllerNumber());
+    if (message.isController()) {
+        switch (message.getControllerNumber()) {
+            //knobs
+        case 20:
+            delayComponent.handleMidi(20, message.getControllerValue());
+            break;
+        case 21:
+            delayComponent.handleMidi(21, message.getControllerValue());
+            break;
+        case 22:
+            break;
+        case 23:
+            break;
+            //bottom pads
+        case 36:
+            delayComponent.handleMidi(36);
+            break;
+        case 37:
+            break;
+        case 38:
+            break;
+        case 39:
+            break;
+            //top pads
+        case 49:
+            killEQComponent.handleMidi(49);
+            break;
+        case 41:
+            killEQComponent.handleMidi(41);
+            break;
+        case 42:
+            killEQComponent.handleMidi(42);
+            break;
+        case 46:
+            killEQComponent.handleMidi(46);
+            break;
+        }
+    }
+}
+    
 // Get the horizontal and vertical screen sizes in pixel
 void MainComponent::GetDesktopResolution(int& horizontal, int& vertical)
 {
@@ -63,8 +135,8 @@ void MainComponent::GetDesktopResolution(int& horizontal, int& vertical)
 void MainComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate) {
     track1.prepareToPlay(samplesPerBlockExpected, sampleRate);
     track2.prepareToPlay(samplesPerBlockExpected, sampleRate);
-    circularBuffer.prepareToPlay(samplesPerBlockExpected, 44100.0);
     freqCutoffs.prepareToPlay(samplesPerBlockExpected, sampleRate);
+    circularBuffer.prepareToPlay(samplesPerBlockExpected, 44100.0);
 
     mixerSource.addInputSource(&track1, false);
     mixerSource.addInputSource(&track2, false);

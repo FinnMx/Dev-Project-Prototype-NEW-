@@ -13,7 +13,7 @@
 #include <random>
 
 //==============================================================================
-CircularBuffer::CircularBuffer() : bandFilter(juce::dsp::IIR::Coefficients<float>::makeBandPass(44100.f, 1400.f, 0.5f))
+CircularBuffer::CircularBuffer() : bandFilter(juce::dsp::IIR::Coefficients<float>::makeBandPass(44100.f, 14000.f, 0.5f))
 {
     // In your constructor, you should add any child components, and
     // initialise any special settings that your component needs.
@@ -99,7 +99,7 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
     copyBuffer.copyFrom(0, 0, data, bufferToFill.buffer->getNumSamples());
     copyBuffer.copyFrom(1, 0, data, bufferToFill.buffer->getNumSamples());
 
-    copyBuffer.applyGain(0.75f);
+    copyBuffer.applyGain(1.f);
 
     auto audioBlock = juce::dsp::AudioBlock<float>(copyBuffer).getSubsetChannelBlock(0, (size_t)numChannels);
     auto context = juce::dsp::ProcessContextReplacing<float>(audioBlock);
