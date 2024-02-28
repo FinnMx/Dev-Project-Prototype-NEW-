@@ -50,10 +50,12 @@ private:
 
     // Audio components
     juce::MixerAudioSource mixerSource;
+    //juce::MixerAudioSource effectsMixer;
+
     juce::AudioFormatManager formatManager;
     TrackAudioPlayer track1{formatManager};
     TrackAudioPlayer track2{formatManager};
-    CircularBuffer circularBuffer{ &track1, &track2 };
+    CircularBuffer circularBuffer{};
     FrequencyCutoffs freqCutoffs;
 
     // Thumbnail component

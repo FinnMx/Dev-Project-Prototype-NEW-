@@ -18,7 +18,7 @@
 class CircularBuffer : public juce::AudioSource
 {
 public:
-    CircularBuffer(TrackAudioPlayer* track1, TrackAudioPlayer* track2);
+    CircularBuffer();
     ~CircularBuffer() override;
 
     void prepareToPlay(int samplesPerBlockExpected, double sampleRate) override;
@@ -48,20 +48,21 @@ private:
     static constexpr auto effectDelaySamples = 88200;
     juce::dsp::DelayLine<float> delay{ effectDelaySamples };
     juce::dsp::DelayLine<float, juce::dsp::DelayLineInterpolationTypes::Thiran> linear{ effectDelaySamples };
-    juce::dsp::DryWetMixer<float> mixer;
 
     juce::IIRFilter filter;
+
+    //====================================================================
+    // TEST STUFF
+    juce::AudioBuffer<float> copyBuffer;
+    //====================================================================
     
     //SMOOTHER FOR THE DELAY TIME
     juce::SmoothedValue<float, juce::ValueSmoothingTypes::Linear> smoother{ 0.f };  
-    juce::dsp::WindowingFunction<float> windower{ 480, juce::dsp::WindowingFunction<float>::WindowingMethod::blackmanHarris };
+    juce::dsp::WindowingFunction<float> windower{ 480, juce::dsp::WindowingFunction<float>::WindowingMethod::hann };
 
     std::array<float, 2> delayValue{ {} };
     std::array<float, 2> lastDelayOutput;
     std::array<juce::LinearSmoothedValue<float>, 2> delayFeedbackVolume;
-
-    TrackAudioPlayer* source1;
-    TrackAudioPlayer* source2;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(CircularBuffer)
 };
