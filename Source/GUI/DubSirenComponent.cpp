@@ -63,7 +63,7 @@ void DubSirenComponent::buttonClicked(juce::Button* button) {
 void DubSirenComponent::sliderValueChanged(juce::Slider* slider) {
     dubSiren->setFrequency(frequencySlider.getValue());
     dubSiren->setLfoFrequency(lfoFrequencySlider.getValue());
-    dubSiren->setModulationDepth(volumeSlider.getValue());
+    dubSiren->setVolume(volumeSlider.getValue());
 }
 
 void DubSirenComponent::handleMidi(int control, int value) {
