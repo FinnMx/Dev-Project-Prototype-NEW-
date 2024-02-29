@@ -3087,6 +3087,9 @@
     <ClCompile Include="..\..\Source\GUI\DubSirenComponent.cpp">
       <Filter>Dev Project Prototype %28NEW%29\Source\GUI</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\DubSiren.cpp">
+      <Filter>Dev Project Prototype %28NEW%29\Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\Crossfade.h">
@@ -6124,6 +6127,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\GUI\DubSirenComponent.h">
       <Filter>Dev Project Prototype %28NEW%29\Source\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\DubSiren.h">
+      <Filter>Dev Project Prototype %28NEW%29\Source</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

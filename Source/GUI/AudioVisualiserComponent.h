@@ -11,6 +11,7 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include <FrequencyCutoffs.h>
 
 //==============================================================================
 /*
@@ -19,7 +20,7 @@ class AudioVisualiserComponent : public juce::AudioAppComponent,
                                  public juce::Timer
 {
 public:
-    AudioVisualiserComponent();
+    AudioVisualiserComponent(FrequencyCutoffs* freqCutoffs);
     ~AudioVisualiserComponent() override;
 
     void timerCallback() override;
@@ -43,6 +44,7 @@ public:
     };
 
 private:
+    FrequencyCutoffs* freqCutoffs;
 
     juce::dsp::FFT forwardFFT;                      
     juce::dsp::WindowingFunction<float> window;     

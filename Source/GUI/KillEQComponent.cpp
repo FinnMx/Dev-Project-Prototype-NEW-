@@ -16,7 +16,7 @@ KillEQComponent::KillEQComponent(FrequencyCutoffs* freqCutoffs) : freqCutoffs(fr
 {
     initSlider();
 
-    addAndMakeVisible(demo);
+    addAndMakeVisible(visualiser);
 
     addAndMakeVisible(subBassFrequencySlider);
     addAndMakeVisible(bassFrequencySlider);
@@ -112,7 +112,7 @@ void KillEQComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRa
 }
 
 void KillEQComponent::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) {
-    demo.getNextAudioBlock(bufferToFill);
+    visualiser.getNextAudioBlock(bufferToFill);
 }
 
 void KillEQComponent::releaseResources() {
@@ -121,7 +121,7 @@ void KillEQComponent::releaseResources() {
 
 void KillEQComponent::paint (juce::Graphics& g)
 {
-    demo.repaint();
+    visualiser.repaint();
     g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));   // clear the background
 
     g.setColour (getLookAndFeel().findColour(juce::TextEditor::outlineColourId).contrasting(0.15f));
@@ -135,7 +135,7 @@ void KillEQComponent::paint (juce::Graphics& g)
 
 void KillEQComponent::resized()
 {
-    demo.setBounds(getWidth() * 0.05,
+    visualiser.setBounds(getWidth() * 0.05,
         getHeight() * 0.25,
         getWidth() * 0.25,
         getHeight() * 0.5);

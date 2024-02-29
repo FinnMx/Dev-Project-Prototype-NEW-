@@ -87,14 +87,6 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
     
     const auto numChannels = juce::jmax(totalNumInputChannels, totalNumOutputChannels);
 
-    /*
-    auto audioBlock = juce::dsp::AudioBlock<float>(*bufferToFill.buffer).getSubsetChannelBlock(0, (size_t)numChannels);
-    auto context = juce::dsp::ProcessContextReplacing<float>(audioBlock);
-    
-    const auto& input = context.getInputBlock();
-    const auto& output = context.getOutputBlock();
-    */
-
     copyBuffer.setSize(2, bufferToFill.buffer->getNumSamples());
     auto* data = bufferToFill.buffer->getReadPointer(0);
     copyBuffer.copyFrom(0, 0, data, bufferToFill.buffer->getNumSamples());

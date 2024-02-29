@@ -12,40 +12,38 @@
 #include "DubSirenComponent.h"
 
 //==============================================================================
-DubSirenComponent::DubSirenComponent()
+DubSirenComponent::DubSirenComponent(DubSiren* dubSiren) : dubSiren(dubSiren)
 {
-    // In your constructor, you should add any child components, and
-    // initialise any special settings that your component needs.
-
+    addAndMakeVisible(trigger);
+    trigger.addListener(this);
 }
 
 DubSirenComponent::~DubSirenComponent()
 {
 }
 
+void DubSirenComponent::buttonClicked(juce::Button* button) {
+    if (button = &trigger)
+        dubSiren->setTrigger(button->getToggleState());
+}
+
 void DubSirenComponent::paint (juce::Graphics& g)
 {
-    /* This demo code just fills the component's background and
-       draws some placeholder text to get you started.
+    g.fillAll(getLookAndFeel().findColour(juce::ResizableWindow::backgroundColourId));   // clear the background
 
-       You should replace everything in this method with your own
-       drawing code..
-    */
+    g.setColour(getLookAndFeel().findColour(juce::TextEditor::outlineColourId).contrasting(0.15f));
+    g.drawRect(getLocalBounds(), 1);   // draw an outline around the component
 
-    g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));   // clear the background
-
-    g.setColour (juce::Colours::grey);
-    g.drawRect (getLocalBounds(), 1);   // draw an outline around the component
-
-    g.setColour (juce::Colours::white);
-    g.setFont (14.0f);
-    g.drawText ("DubSirenComponent", getLocalBounds(),
-                juce::Justification::centred, true);   // draw some placeholder text
+    g.setColour(juce::Colours::white);
+    g.setFont(30.0f);
+    g.drawText("Dub Siren", getLocalBounds(),
+        juce::Justification::centredTop, true);
 }
 
 void DubSirenComponent::resized()
 {
-    // This method is where you should set the bounds of any child
-    // components that your component contains..
-
+    trigger.setBounds(getWidth() * 0.7,
+        getHeight() * 0.2,
+        getWidth() * 0.5,
+        getHeight() * 0.5);
 }

@@ -31,6 +31,8 @@ public:
     void setMidsStatus(bool newmidsStatus);
     void setHighStatus(bool newhighStatus);
 
+    std::vector<juce::dsp::IIR::Coefficients<float>*> getCoefficients();
+
     void prepareToPlay(int samplesPerBlockExpected, double sampleRate) override;
     void releaseResources() override;
     void getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) override;
@@ -52,6 +54,11 @@ private:
     juce::SmoothedValue<float, juce::ValueSmoothingTypes::Linear> bassSmoother{ 0.f };
     juce::SmoothedValue<float, juce::ValueSmoothingTypes::Linear> midsSmoother{ 0.f };
     juce::SmoothedValue<float, juce::ValueSmoothingTypes::Linear> highSmoother{ 0.f };
+
+    juce::dsp::IIR::Coefficients<float> subBassCoefficient;
+    juce::dsp::IIR::Coefficients<float> bassCoefficient;
+    juce::dsp::IIR::Coefficients<float> midsCoefficient;
+    juce::dsp::IIR::Coefficients<float> highCoefficient;
 
     juce::dsp::ProcessorDuplicator<juce::dsp::IIR::Filter<float>, juce::dsp::IIR::Coefficients<float>> subBassFilter;
     juce::dsp::ProcessorDuplicator<juce::dsp::IIR::Filter<float>, juce::dsp::IIR::Coefficients<float>> bassFilter;

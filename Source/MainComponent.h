@@ -14,6 +14,7 @@
 #include <GUI/TrackThumbnailComponent.h>
 #include <GUI/MeterComponent.h>
 #include <FrequencyCutoffs.h>
+#include <GUI/DubSirenComponent.h>
 
 //==============================================================================
 /*
@@ -81,6 +82,9 @@ private:
     ReverbComponent reverbComponent{&track1, &track2};
     DelayComponent delayComponent{&circularBuffer};
     KillEQComponent killEQComponent{ &freqCutoffs };
+
+    DubSiren dubSirenPlayer;
+    DubSirenComponent dubSiren{ &dubSirenPlayer };
 
     TenBandComponent tenBandComponent;
 

@@ -38,6 +38,7 @@ MainComponent::MainComponent() :
     addAndMakeVisible(reverbComponent);
     addAndMakeVisible(delayComponent);
     addAndMakeVisible(killEQComponent);
+    addAndMakeVisible(dubSiren);
 
 }
 
@@ -151,14 +152,18 @@ void MainComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate
 
     mixerSource.addInputSource(&track1, false);
     mixerSource.addInputSource(&track2, false);
+
+    dubSirenPlayer.prepareToPlay(samplesPerBlockExpected, sampleRate);
 }
 
 void MainComponent::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) {
     //bufferToFill.clearActiveBufferRegion();
     mixerSource.getNextAudioBlock(bufferToFill);
-    circularBuffer.getNextAudioBlock(bufferToFill);
+   //circularBuffer.getNextAudioBlock(bufferToFill);
     freqCutoffs.getNextAudioBlock(bufferToFill);
     killEQComponent.getNextAudioBlock(bufferToFill);
+    dubSirenPlayer.getNextAudioBlock(bufferToFill);
+    circularBuffer.getNextAudioBlock(bufferToFill);
 
     rmsMasterLeft = juce::Decibels::gainToDecibels(bufferToFill.buffer->getRMSLevel(0, 0, bufferToFill.buffer->getNumSamples()));
     rmsMasterRight = juce::Decibels::gainToDecibels(bufferToFill.buffer->getRMSLevel(1, 0, bufferToFill.buffer->getNumSamples()));
@@ -170,6 +175,8 @@ void MainComponent::releaseResources() {
     track1.releaseResources();
     track2.releaseResources();
     circularBuffer.releaseResources();
+
+    dubSirenPlayer.releaseResources();
 }
 
 //==============================================================================
@@ -238,17 +245,24 @@ void MainComponent::resized()
     //-----------------------------------------------
     //Middle Rack's
 
-    reverbComponent.setBounds(
+    dubSiren.setBounds(
         getX(),
         getHeight() * 0.39,
-        getWidth(),
+        getWidth() * 0.25,
+        getHeight() * 0.255
+    );
+
+    reverbComponent.setBounds(
+        getWidth() * 0.25,
+        getHeight() * 0.39,
+        getWidth() * 0.75,
         getHeight() * 0.125
     );
 
     delayComponent.setBounds(
-        getX(),
+        getWidth() * 0.25,
         getHeight() * 0.52,
-        getWidth(),
+        getWidth() * 0.75,
         getHeight() * 0.125
     );
 

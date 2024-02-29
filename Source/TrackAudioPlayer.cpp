@@ -35,6 +35,7 @@ void TrackAudioPlayer::releaseResources() {
 
 void TrackAudioPlayer::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) {
     reverbSource.getNextAudioBlock(bufferToFill);
+    //resampleSource.getNextAudioBlock(bufferToFill);
 
     rmsLvlLeft = juce::Decibels::gainToDecibels(bufferToFill.buffer->getRMSLevel(0, 0, bufferToFill.buffer->getNumSamples()));
     rmsLvlRight = juce::Decibels::gainToDecibels(bufferToFill.buffer->getRMSLevel(1, 0, bufferToFill.buffer->getNumSamples()));

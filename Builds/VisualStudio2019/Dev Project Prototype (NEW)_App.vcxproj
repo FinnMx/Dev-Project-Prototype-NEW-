@@ -134,6 +134,7 @@
     <Lib />
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\DubSiren.cpp" />
     <ClCompile Include="..\..\Source\FrequencyCutoffs.cpp" />
     <ClCompile Include="..\..\Source\CircularBuffer.cpp" />
     <ClCompile Include="..\..\Source\GUI\AudioVisualiserComponent.cpp" />
@@ -2551,6 +2552,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\Crossfade.h" />
+    <ClInclude Include="..\..\Source\DubSiren.h" />
     <ClInclude Include="..\..\Source\FrequencyCutoffs.h" />
     <ClInclude Include="..\..\Source\CircularBuffer.h" />
     <ClInclude Include="..\..\Source\GUI\AudioVisualiserComponent.h" />

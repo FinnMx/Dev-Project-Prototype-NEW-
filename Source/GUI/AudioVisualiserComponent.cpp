@@ -12,7 +12,7 @@
 #include "AudioVisualiserComponent.h"
 
 //==============================================================================
-AudioVisualiserComponent::AudioVisualiserComponent() : forwardFFT(fftOrder), window(fftSize, juce::dsp::WindowingFunction<float>::hann)
+AudioVisualiserComponent::AudioVisualiserComponent(FrequencyCutoffs* freqCutoffs) : freqCutoffs(freqCutoffs) ,forwardFFT(fftOrder), window(fftSize, juce::dsp::WindowingFunction<float>::hann)
 {
     startTimerHz(60);
 }
@@ -111,6 +111,43 @@ void AudioVisualiserComponent::paint (juce::Graphics& g)
     drawFrame(g);
 
     /*
+    auto bounds = getLocalBounds();
+    auto responseArea = bounds;
+    auto rW = responseArea.getWidth();
+    auto sampleRate = 44100.f;
+
+    std::vector<double> magnitude;
+    magnitude.resize(rW);
+
+    for (int i = 0; i < rW; ++i) {
+        double mag = 1.f;
+        auto freq = juce::mapToLog10((double)i / (double)rW, 20.0, 20000.0);
+
+        auto temp = freqCutoffs->getCoefficients();
+
+        for each (juce::dsp::IIR::Coefficients<float>*cof in temp)
+        {
+            mag *= cof->getMagnitudeForFrequency(freq, sampleRate);
+        }
+        magnitude[i] = juce::Decibels::gainToDecibels(mag);
+    }
+
+    juce::Path responseCurve;
+
+    const double outputMin = responseArea.getBottom();
+    const double outputMax = responseArea.getY();
+    auto map = [outputMin, outputMax](double input) {
+        return juce::jmap(input, -24.0, 24.0, outputMin, outputMax);
+    };
+
+    responseCurve.startNewSubPath(responseArea.getX(), map(magnitude.front()));
+
+    for (size_t i = 1; i < magnitude.size(); ++i) {
+        responseCurve.lineTo(responseArea.getX() + i, map(magnitude[i]));
+    }
+    
+
+
     g.setColour (juce::Colours::grey);
     g.drawRect (getLocalBounds(), 1);   // draw an outline around the component
     */

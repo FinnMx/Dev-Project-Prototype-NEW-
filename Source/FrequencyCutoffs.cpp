@@ -12,10 +12,10 @@
 #include "FrequencyCutoffs.h"
 
 //==============================================================================
-FrequencyCutoffs::FrequencyCutoffs() : subBassFilter(juce::dsp::IIR::Coefficients<float>::makeHighPass(44100.f, 95.f, 1)),
-bassFilter(juce::dsp::IIR::Coefficients<float>::makeHighPass(44100.f, 250.f, 1)),
-midsFilter(juce::dsp::IIR::Coefficients<float>::makeLowPass(44100.f, 3500.f, 1)),
-highFilter(juce::dsp::IIR::Coefficients<float>::makeLowPass(44100.f, 5000.f, 1))
+FrequencyCutoffs::FrequencyCutoffs() : subBassFilter(subBassCoefficient.makeHighPass(44100.f, 95.f, 1)),
+bassFilter(bassCoefficient.makeHighPass(44100.f, 250.f, 1)),
+midsFilter(midsCoefficient.makeLowPass(44100.f, 3500.f, 1)),
+highFilter(highCoefficient.makeLowPass(44100.f, 5000.f, 1))
 {
 
 }
@@ -25,19 +25,19 @@ FrequencyCutoffs::~FrequencyCutoffs()
 }
 
 void FrequencyCutoffs::setSubBassFilter(float newFreq) {
-    *subBassFilter.state = *juce::dsp::IIR::Coefficients<float>::makeHighPass(44100.f, newFreq, 1);
+    *subBassFilter.state = *subBassCoefficient.makeHighPass(44100.f, newFreq, 1);
 }
 
 void FrequencyCutoffs::setbassFilterr(float newFreq) {
-    *bassFilter.state = *juce::dsp::IIR::Coefficients<float>::makeHighPass(44100.f, newFreq, 0.7);
+    *bassFilter.state = *bassCoefficient.makeHighPass(44100.f, newFreq, 0.7);
 }
 
 void FrequencyCutoffs::setmidsFilter(float newFreq) {
-    *midsFilter.state = *juce::dsp::IIR::Coefficients<float>::makeLowPass(44100.f, newFreq, 1);
+    *midsFilter.state = *midsCoefficient.makeLowPass(44100.f, newFreq, 1);
 }
 
 void FrequencyCutoffs::sethighFilter(float newFreq) {
-    *highFilter.state = *juce::dsp::IIR::Coefficients<float>::makeLowPass(44100.f, newFreq, 1);
+    *highFilter.state = *highCoefficient.makeLowPass(44100.f, newFreq, 1);
 }
 
 void FrequencyCutoffs::setSubBassStatus(bool newsubBassStatus) {
@@ -102,6 +102,7 @@ void FrequencyCutoffs::getNextAudioBlock(const juce::AudioSourceChannelInfo& buf
         case true:
             subBassSmoother.setTargetValue(subBassFreq);
             subBassFilter.process(juce::dsp::ProcessContextReplacing<float>(block));
+            
             break;
         default:
             break;
@@ -131,4 +132,15 @@ void FrequencyCutoffs::getNextAudioBlock(const juce::AudioSourceChannelInfo& buf
         break;
     }
 
+}
+
+std::vector<juce::dsp::IIR::Coefficients<float>*> FrequencyCutoffs::getCoefficients(){
+    std::vector<juce::dsp::IIR::Coefficients<float>*> tempVec;
+
+    tempVec.push_back(&subBassCoefficient);
+    tempVec.push_back(&bassCoefficient);
+    tempVec.push_back(&midsCoefficient);
+    tempVec.push_back(&highCoefficient);
+
+    return tempVec;
 }
