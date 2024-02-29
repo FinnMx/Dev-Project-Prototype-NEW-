@@ -30,10 +30,14 @@ public:
     void sliderDragStarted(juce::Slider* slider) override;
     void sliderDragEnded(juce::Slider* slider) override;
 
+    void setFocus(bool newFocus);
+
     void paint (juce::Graphics&) override;
     void resized() override;
 
 private:
+    bool isFocused{ false };
+
     TrackAudioPlayer* source1;
     TrackAudioPlayer* source2;
 

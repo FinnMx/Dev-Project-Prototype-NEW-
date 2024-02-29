@@ -34,10 +34,14 @@ public:
 
     void buttonClicked(juce::Button* button) override;
 
+    void setFocus(bool newFocus);
+
     void paint (juce::Graphics&) override;
     void resized() override;
 
 private:
+    bool isFocused{ true };
+
     CircularBuffer* circularBuffer;
 
     juce::Slider gainSlider;

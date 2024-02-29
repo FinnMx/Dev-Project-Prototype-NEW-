@@ -84,10 +84,17 @@ void DubSirenComponent::handleMidi(int control, int value) {
     }
 }
 
+void DubSirenComponent::setFocus(bool newFocus) {
+    isFocused = newFocus;
+    repaint();
+}
 
 void DubSirenComponent::paint (juce::Graphics& g)
 {
-    g.fillAll(getLookAndFeel().findColour(juce::ResizableWindow::backgroundColourId));   // clear the background
+    if (isFocused)
+        g.fillAll(getLookAndFeel().findColour(juce::ResizableWindow::backgroundColourId).withAlpha(.1f));   // clear the background
+    if (!isFocused)
+        g.fillAll(getLookAndFeel().findColour(juce::ResizableWindow::backgroundColourId));
 
     g.setColour(getLookAndFeel().findColour(juce::TextEditor::outlineColourId).contrasting(0.15f));
     g.drawRect(getLocalBounds(), 1);   // draw an outline around the component

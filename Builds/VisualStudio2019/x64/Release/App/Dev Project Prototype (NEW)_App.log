@@ -1,1 +1,17 @@
-﻿  Dev Project Prototype (NEW)_App.vcxproj -> K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Builds\VisualStudio2019\x64\Release\App\Dev Project Prototype (NEW).exe
+﻿  DubSiren.cpp
+  FrequencyCutoffs.cpp
+  CircularBuffer.cpp
+  AudioVisualiserComponent.cpp
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\DubSiren.cpp(29,66): warning C4100: 'sampleRate': unreferenced formal parameter
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\CircularBuffer.h(12,10): fatal error C1083: Cannot open include file: 'TrackAudioPlayer.h': No such file or directory (compiling source file ..\..\Source\CircularBuffer.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\FrequencyCutoffs.cpp(32,76): warning C4305: 'argument': truncation from 'double' to 'NumericType'
+          with
+          [
+              NumericType=float
+          ]
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\FrequencyCutoffs.cpp(66,74): warning C4100: 'sampleRate': unreferenced formal parameter
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\AudioVisualiserComponent.h(14,10): fatal error C1083: Cannot open include file: 'FrequencyCutoffs.h': No such file or directory (compiling source file ..\..\Source\GUI\AudioVisualiserComponent.cpp)
+  DelayComponent.cpp
+  DubSirenComponent.cpp
+  InputComponent.cpp
+  KillEQComponent.cpp

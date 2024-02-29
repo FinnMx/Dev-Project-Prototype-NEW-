@@ -82,10 +82,17 @@ void ReverbComponent::sliderDragEnded(juce::Slider* slider) {
     val.setText("", juce::NotificationType{});
 }
 
+void ReverbComponent::setFocus(bool newFocus) {
+    isFocused = newFocus;
+    repaint();
+}
+
 void ReverbComponent::paint (juce::Graphics& g)
 {
-
-    g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));   // clear the background
+    if (isFocused)
+        g.fillAll(getLookAndFeel().findColour(juce::ResizableWindow::backgroundColourId).withAlpha(.1f));   // clear the background
+    if (!isFocused)
+        g.fillAll(getLookAndFeel().findColour(juce::ResizableWindow::backgroundColourId));
 
     g.setColour (getLookAndFeel().findColour(juce::TextEditor::outlineColourId).contrasting(0.15f));
     g.drawRect (getLocalBounds(), 1);   // draw an outline around the component

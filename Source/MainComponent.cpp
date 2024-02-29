@@ -80,6 +80,24 @@ void MainComponent::setMidiSet() {
     midiset++;
     if (midiset > 3)
         midiset = 1;
+
+    switch (midiset) {
+    case 1:
+        delayComponent.setFocus(true);
+        reverbComponent.setFocus(false);
+        dubSiren.setFocus(false);
+        break;
+    case 2:
+        delayComponent.setFocus(false);
+        reverbComponent.setFocus(true);
+        dubSiren.setFocus(false);
+        break;
+    case 3:
+        delayComponent.setFocus(false);
+        reverbComponent.setFocus(false);
+        dubSiren.setFocus(true);
+        break;
+    }
 }
 
 void MainComponent::handleIncomingMidiMessage(juce::MidiInput* source, const juce::MidiMessage& message){

@@ -31,11 +31,15 @@ public:
     void buttonClicked(juce::Button* button) override;
     void sliderValueChanged(juce::Slider* slider) override;
 
+    void setFocus(bool newFocus);
+
     void paint (juce::Graphics&) override;
     void resized() override;
 
 private:
     DubSiren* dubSiren;
+
+    bool isFocused { false };
 
     juce::Slider frequencySlider;
     juce::Slider lfoFrequencySlider;
