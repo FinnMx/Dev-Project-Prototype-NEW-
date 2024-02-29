@@ -3084,6 +3084,9 @@
     <ClCompile Include="..\..\Source\GUI\AudioVisualiserComponent.cpp">
       <Filter>Dev Project Prototype %28NEW%29\Source\GUI</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\GUI\DubSirenComponent.cpp">
+      <Filter>Dev Project Prototype %28NEW%29\Source\GUI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\Crossfade.h">
@@ -6117,6 +6120,9 @@
       <Filter>JUCE Library Code</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\GUI\AudioVisualiserComponent.h">
+      <Filter>Dev Project Prototype %28NEW%29\Source\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GUI\DubSirenComponent.h">
       <Filter>Dev Project Prototype %28NEW%29\Source\GUI</Filter>
     </ClInclude>
   </ItemGroup>

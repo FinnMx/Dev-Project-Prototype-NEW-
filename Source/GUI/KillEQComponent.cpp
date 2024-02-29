@@ -72,6 +72,7 @@ void KillEQComponent::initSlider() {
 }
 
 void KillEQComponent::handleMidi(int control) {
+    const juce::MessageManagerLock mmLock;
     switch (control) {
     case 49:
         subBassOnOff.triggerClick();

@@ -13,7 +13,7 @@
 #include <random>
 
 //==============================================================================
-CircularBuffer::CircularBuffer() : bandFilter(juce::dsp::IIR::Coefficients<float>::makeBandPass(44100.f, 14000.f, 0.5f))
+CircularBuffer::CircularBuffer() : bandFilter(juce::dsp::IIR::Coefficients<float>::makeBandPass(44100.f, frequencyBand, 0.5f))
 {
     // In your constructor, you should add any child components, and
     // initialise any special settings that your component needs.
@@ -54,14 +54,15 @@ void CircularBuffer::releaseResources() {
 }
 
 void CircularBuffer::setDelayTime(float newTime) {
-    smoother.setTargetValue(newTime / 1000.0 * 44100.f);
+    if(newTime >= 0)
+        smoother.setTargetValue(newTime / 1000.0 * 44100.f);
     //auto time = std::round(newTime / 1000.0 * 44100.f);
     //std::fill(delayValue.begin(), delayValue.end(), time);
 }
 
-void CircularBuffer::setDelayCutoffFrequency(float newFrequencyCutoff) {
-    frequencyCutoff = newFrequencyCutoff;
-    //filter.setCoefficients(juce::IIRCoefficients::makeHighPass(44100.f, frequencyCutoff, 1));
+void CircularBuffer::setDelayCutoffFrequency(float newFrequency) {
+    frequencyBand = newFrequency;
+    *bandFilter.state = *juce::dsp::IIR::Coefficients<float>::makeBandPass(44100.f, newFrequency, 0.5f);
 }
 
 void CircularBuffer::setDelayFeedback(float newFeedback) {
@@ -99,7 +100,7 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
     copyBuffer.copyFrom(0, 0, data, bufferToFill.buffer->getNumSamples());
     copyBuffer.copyFrom(1, 0, data, bufferToFill.buffer->getNumSamples());
 
-    copyBuffer.applyGain(1.f);
+    copyBuffer.applyGain(3.f);
 
     auto audioBlock = juce::dsp::AudioBlock<float>(copyBuffer).getSubsetChannelBlock(0, (size_t)numChannels);
     auto context = juce::dsp::ProcessContextReplacing<float>(audioBlock);

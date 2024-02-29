@@ -40,7 +40,7 @@ private:
     float delayFeedback{ 0.f };
     float delayTime{ 0.f };
     float rampingVal{ 0.f };
-    float frequencyCutoff{ 0.f };
+    float frequencyBand{ 14000.f };
 
     int totalNumInputChannels{ 2 }, totalNumOutputChannels{ 2 };
 

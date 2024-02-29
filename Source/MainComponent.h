@@ -53,6 +53,7 @@ private:
 
     //MIDI
     juce::AudioDeviceManager deviceManager;
+    bool midiset{ true };
 
     // Child components
     juce::MenuBarComponent menuBar;

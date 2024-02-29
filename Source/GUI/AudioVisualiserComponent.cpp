@@ -14,7 +14,7 @@
 //==============================================================================
 AudioVisualiserComponent::AudioVisualiserComponent() : forwardFFT(fftOrder), window(fftSize, juce::dsp::WindowingFunction<float>::hann)
 {
-    startTimerHz(15);
+    startTimerHz(60);
 }
 
 AudioVisualiserComponent::~AudioVisualiserComponent()

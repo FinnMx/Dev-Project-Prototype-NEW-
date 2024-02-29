@@ -18,6 +18,7 @@ DelayComponent::DelayComponent(CircularBuffer* circularBuffer) : circularBuffer(
 
     addAndMakeVisible(gainSlider);
     addAndMakeVisible(timeSlider);
+    addAndMakeVisible(frequencyCutSlider);
     addAndMakeVisible(onOff);
 
     gainSlider.addListener(this);
@@ -42,6 +43,9 @@ void DelayComponent::handleMidi(int control, int value) {
     case 21:
         timeSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.f, 1000.f));
         break;
+    case 22:
+        frequencyCutSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 400.f, 18000.f));
+        break;
     }
 }
 
@@ -55,8 +59,8 @@ void DelayComponent::initSlider() {
 
     frequencyCutSlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     frequencyCutSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
-    frequencyCutSlider.setRange(0.f, +20000.0f, 0.01f);
-    frequencyCutSlider.setValue(0.f);
+    frequencyCutSlider.setRange(400.f, +18000.0f, 0.01f);
+    frequencyCutSlider.setValue(14000.f);
     frequencyCutSliderLabel.attachToComponent(&frequencyCutSlider, false);
     frequencyCutSliderLabel.setJustificationType(juce::Justification::centredBottom);
     
@@ -74,7 +78,7 @@ void DelayComponent::buttonClicked(juce::Button* button) {
    
 }
 
-void  DelayComponent::sliderValueChanged(juce::Slider* slider) {
+void DelayComponent::sliderValueChanged(juce::Slider* slider) {
     circularBuffer->setDelayTime(timeSlider.getValue());
     circularBuffer->setDelayFeedback(gainSlider.getValue());
     circularBuffer->setDelayCutoffFrequency(frequencyCutSlider.getValue());
@@ -120,7 +124,13 @@ void DelayComponent::resized()
         getHeight() * 0.8
     );
 
-    onOff.setBounds(getWidth() * 0.5,
+    frequencyCutSlider.setBounds(getWidth() * 0.5,
+        getHeight() * 0.2,
+        getWidth() * 0.2,
+        getHeight() * 0.8
+    );
+
+    onOff.setBounds(getWidth() * 0.7,
         getHeight() * 0.2,
         getWidth() * 0.5,
         getHeight() * 0.5);

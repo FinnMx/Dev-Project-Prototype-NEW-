@@ -81,12 +81,22 @@ void MainComponent::handleIncomingMidiMessage(juce::MidiInput* source, const juc
         switch (message.getControllerNumber()) {
             //knobs
         case 20:
-            delayComponent.handleMidi(20, message.getControllerValue());
+            if(midiset)
+                delayComponent.handleMidi(20, message.getControllerValue());
+            if (!midiset)
+                reverbComponent.handleMidi(20, message.getControllerValue());
             break;
         case 21:
-            delayComponent.handleMidi(21, message.getControllerValue());
+            if (midiset)
+                delayComponent.handleMidi(21, message.getControllerValue());
+            if (!midiset)
+                reverbComponent.handleMidi(21, message.getControllerValue());
             break;
         case 22:
+            if (midiset)
+                delayComponent.handleMidi(22, message.getControllerValue());
+            if (!midiset)
+                reverbComponent.handleMidi(22, message.getControllerValue());
             break;
         case 23:
             break;
@@ -99,6 +109,7 @@ void MainComponent::handleIncomingMidiMessage(juce::MidiInput* source, const juc
         case 38:
             break;
         case 39:
+            midiset = !midiset;
             break;
             //top pads
         case 49:
