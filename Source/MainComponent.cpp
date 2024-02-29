@@ -76,28 +76,40 @@ void MainComponent::setMidiInput(juce::MidiDeviceInfo& id) {
     deviceManager.addMidiInputDeviceCallback(id.identifier, this);
 }
 
+void MainComponent::setMidiSet() {
+    midiset++;
+    if (midiset > 3)
+        midiset = 1;
+}
+
 void MainComponent::handleIncomingMidiMessage(juce::MidiInput* source, const juce::MidiMessage& message){
     DBG(message.getControllerNumber());
     if (message.isController()) {
         switch (message.getControllerNumber()) {
             //knobs
         case 20:
-            if(midiset)
+            if(midiset == 1)
                 delayComponent.handleMidi(20, message.getControllerValue());
-            if (!midiset)
+            if (midiset == 2)
                 reverbComponent.handleMidi(20, message.getControllerValue());
+            if (midiset == 3)
+                dubSiren.handleMidi(20, message.getControllerValue());
             break;
         case 21:
-            if (midiset)
+            if (midiset == 1)
                 delayComponent.handleMidi(21, message.getControllerValue());
-            if (!midiset)
+            if (midiset == 2)
                 reverbComponent.handleMidi(21, message.getControllerValue());
+            if (midiset == 3)
+                dubSiren.handleMidi(21, message.getControllerValue());
             break;
         case 22:
-            if (midiset)
+            if (midiset == 1)
                 delayComponent.handleMidi(22, message.getControllerValue());
-            if (!midiset)
+            if (midiset == 2)
                 reverbComponent.handleMidi(22, message.getControllerValue());
+            if (midiset == 3)
+                dubSiren.handleMidi(22, message.getControllerValue());
             break;
         case 23:
             break;
@@ -106,11 +118,12 @@ void MainComponent::handleIncomingMidiMessage(juce::MidiInput* source, const juc
             delayComponent.handleMidi(36);
             break;
         case 37:
+            dubSiren.handleMidi(37);
             break;
         case 38:
             break;
         case 39:
-            midiset = !midiset;
+            setMidiSet();
             break;
             //top pads
         case 49:

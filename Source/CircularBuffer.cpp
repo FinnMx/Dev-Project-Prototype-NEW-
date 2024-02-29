@@ -119,7 +119,10 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
                     linear.pushSample(int(channel), input);
                 }
 
-                linear.setDelay(smoother.getNextValue());
+                auto smoothedVal = smoother.getNextValue();
+                if(smoothedVal > 0)
+                    linear.setDelay(smoother.getNextValue());
+
                 samplesOut[sample] = linear.popSample((int)channel);
 
                 //SAMPLESOUT[OUT] IS THE RAW SAMPLE IN

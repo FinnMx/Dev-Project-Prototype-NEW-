@@ -38,6 +38,7 @@ public:
     void handleIncomingMidiMessage(juce::MidiInput* source, const juce::MidiMessage& message) override;
     void setMidiInput(juce::MidiDeviceInfo& id);
     void getMidiDevice();
+    void setMidiSet();
 
     //==============================================================================
     void paint (juce::Graphics& g) override;
@@ -54,7 +55,7 @@ private:
 
     //MIDI
     juce::AudioDeviceManager deviceManager;
-    bool midiset{ true };
+    int midiset{ 1 }; // make this an ENUM
 
     // Child components
     juce::MenuBarComponent menuBar;

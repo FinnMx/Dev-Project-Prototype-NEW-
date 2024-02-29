@@ -26,6 +26,10 @@ public:
     void releaseResources() override;
 
     void setTrigger(bool newTrigger);
+    void setFrequency(float newFrequency);
+    void setLfoFrequency(float newLfoFrequency);
+    void setModulationDepth(float newModulationDepth);
+    void setVolume(float newVolume);
 
     void updateAngleDelta();
 
@@ -33,9 +37,15 @@ private:
     juce::AudioBuffer<float> copyBuffer;
     bool trigger{ false };
 
-    float frequency{ 100 };
+    float frequency{ 340 };
+    float lfoFrequency{ 0.5 };
+    float modulationDepth{ 60.0 };
+    float volume{ 0.5f };
+
     juce::dsp::Oscillator<float> oscillator;
     juce::dsp::Oscillator<float> lfoOscillator;
+
+    juce::IIRFilter filter;
 
     int totalNumInputChannels{ 2 }, totalNumOutputChannels{ 2 };
 
