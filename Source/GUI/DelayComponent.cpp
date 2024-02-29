@@ -94,6 +94,7 @@ void  DelayComponent::sliderDragEnded(juce::Slider* slider) {
 }
 
 void DelayComponent::setFocus(bool newFocus) {
+    const juce::MessageManagerLock mmLock;
     isFocused = newFocus;
     repaint();
 }

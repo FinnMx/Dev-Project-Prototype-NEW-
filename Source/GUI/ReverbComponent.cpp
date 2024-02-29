@@ -83,6 +83,7 @@ void ReverbComponent::sliderDragEnded(juce::Slider* slider) {
 }
 
 void ReverbComponent::setFocus(bool newFocus) {
+    const juce::MessageManagerLock mmLock;
     isFocused = newFocus;
     repaint();
 }

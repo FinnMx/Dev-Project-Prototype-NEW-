@@ -49,7 +49,7 @@ void DubSirenComponent::initSlider() {
 
     volumeSlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     volumeSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
-    volumeSlider.setRange(0.f, +1.f, 0.1f);
+    volumeSlider.setRange(0.f, +6.f, 0.1f);
     volumeSlider.setValue(0.5f);
     volumeSliderLabel.attachToComponent(&volumeSlider, false);
     volumeSliderLabel.setJustificationType(juce::Justification::centredBottom);
@@ -79,12 +79,13 @@ void DubSirenComponent::handleMidi(int control, int value) {
         lfoFrequencySlider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.f, 2.f));
         break;
     case 22:
-        volumeSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.f, 1.f));
+        volumeSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.f, 6.f));
         break;
     }
 }
 
 void DubSirenComponent::setFocus(bool newFocus) {
+    const juce::MessageManagerLock mmLock;
     isFocused = newFocus;
     repaint();
 }

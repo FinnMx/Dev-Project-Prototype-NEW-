@@ -77,6 +77,7 @@ void MainComponent::setMidiInput(juce::MidiDeviceInfo& id) {
 }
 
 void MainComponent::setMidiSet() {
+    
     midiset++;
     if (midiset > 3)
         midiset = 1;
