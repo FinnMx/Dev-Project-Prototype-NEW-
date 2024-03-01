@@ -27,8 +27,6 @@ DubSiren::~DubSiren()
 }
 
 void DubSiren::prepareToPlay(int samplesPerBlockExpected, double sampleRate) {
-    updateAngleDelta();
-
     juce::dsp::ProcessSpec spec;
     spec.sampleRate = 44100.0;
     spec.maximumBlockSize = samplesPerBlockExpected;
@@ -36,7 +34,7 @@ void DubSiren::prepareToPlay(int samplesPerBlockExpected, double sampleRate) {
 
     oscillator.prepare(spec);
     lfoOscillator.prepare(spec);
-    filter.setCoefficients(juce::IIRCoefficients::makeHighPass(44100.f, 500.f, 1.f));
+    //filter.setCoefficients(juce::IIRCoefficients::makeHighPass(44100.f, 5000.f, 1.f));
 }
 
 void DubSiren::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) {
@@ -68,9 +66,6 @@ void DubSiren::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFil
             leftBuffer[sample] = currentSample * level;
             rightBuffer[sample] = currentSample * level;
         }
-
-        filter.processSamples(leftBuffer, 480);
-        filter.processSamples(rightBuffer, 480);
 
         //LAST FLOAT SHOULD BE A VOLUME VALUE
         bufferToFill.buffer->addFrom(0, 0, leftBuffer, 480, volume);

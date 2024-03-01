@@ -12,12 +12,16 @@
 #include "FrequencyCutoffs.h"
 
 //==============================================================================
-FrequencyCutoffs::FrequencyCutoffs() : subBassFilter(subBassCoefficient.makeHighPass(44100.f, 95.f, 1)),
-bassFilter(bassCoefficient.makeHighPass(44100.f, 250.f, 1)),
-midsFilter(midsCoefficient.makeLowPass(44100.f, 3500.f, 1)),
-highFilter(highCoefficient.makeLowPass(44100.f, 5000.f, 1))
+FrequencyCutoffs::FrequencyCutoffs()
 {
-
+    subBassCoefficient = *juce::dsp::IIR::Coefficients<float>::makeHighPass(44100.f, 95.f, 1);
+    bassCoefficient = *juce::dsp::IIR::Coefficients<float>::makeHighPass(44100.f, 250.f, 1);
+    midsCoefficient = *juce::dsp::IIR::Coefficients<float>::makeLowPass(44100.f, 3500.f, 1);
+    highCoefficient = *juce::dsp::IIR::Coefficients<float>::makeLowPass(44100.f, 5000.f, 1);
+    *subBassFilter.state = subBassCoefficient; 
+    *bassFilter.state = bassCoefficient;
+    *midsFilter.state = midsCoefficient;
+    *highFilter.state = highCoefficient;
 }
 
 FrequencyCutoffs::~FrequencyCutoffs()
@@ -25,19 +29,23 @@ FrequencyCutoffs::~FrequencyCutoffs()
 }
 
 void FrequencyCutoffs::setSubBassFilter(float newFreq) {
-    *subBassFilter.state = *subBassCoefficient.makeHighPass(44100.f, newFreq, 1);
+    subBassCoefficient = *juce::dsp::IIR::Coefficients<float>::makeHighPass(44100.f, newFreq, 1);
+    *subBassFilter.state = subBassCoefficient;
 }
 
 void FrequencyCutoffs::setbassFilterr(float newFreq) {
-    *bassFilter.state = *bassCoefficient.makeHighPass(44100.f, newFreq, 0.7);
+    bassCoefficient = *juce::dsp::IIR::Coefficients<float>::makeHighPass(44100.f, newFreq, 0.7);
+    *bassFilter.state = bassCoefficient;
 }
 
 void FrequencyCutoffs::setmidsFilter(float newFreq) {
-    *midsFilter.state = *midsCoefficient.makeLowPass(44100.f, newFreq, 1);
+    midsCoefficient = *juce::dsp::IIR::Coefficients<float>::makeLowPass(44100.f, newFreq, 1);
+    *midsFilter.state = midsCoefficient;
 }
 
 void FrequencyCutoffs::sethighFilter(float newFreq) {
-    *highFilter.state = *highCoefficient.makeLowPass(44100.f, newFreq, 1);
+    highCoefficient = *juce::dsp::IIR::Coefficients<float>::makeLowPass(44100.f, newFreq, 1);
+    *highFilter.state = highCoefficient;
 }
 
 void FrequencyCutoffs::setSubBassStatus(bool newsubBassStatus) {
@@ -79,10 +87,6 @@ void FrequencyCutoffs::prepareToPlay(int samplesPerBlockExpected, double sampleR
     bassFilter.prepare(spec);
     midsFilter.prepare(spec);
     highFilter.prepare(spec);
-    //subBassFilter.makeInactive();
-    //bassFilter.makeInactive();
-    //midsFilter.makeInactive();
-    //highFilter.makeInactive();
 
 }
 
