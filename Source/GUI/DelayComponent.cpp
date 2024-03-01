@@ -24,6 +24,7 @@ DelayComponent::DelayComponent(CircularBuffer* circularBuffer) : circularBuffer(
 
     gainSlider.addListener(this);
     timeSlider.addListener(this);
+    frequencyCutSlider.addListener(this);
     onOff.addListener(this);
 
 }

@@ -15,7 +15,7 @@
 //==============================================================================
 CircularBuffer::CircularBuffer()
 {
-    filterCoefficient = *juce::dsp::IIR::Coefficients<float>::makeBandPass(44100.f, frequencyBand, 0.5f);
+    filterCoefficient = *juce::dsp::IIR::Coefficients<float>::makeBandPass(44100.f, frequencyBand, 1.0f);
     *bandFilter.state = filterCoefficient;
 }
 
