@@ -46,6 +46,7 @@ void AudioVisualiserComponent::getNextAudioBlock(const juce::AudioSourceChannelI
 
 void AudioVisualiserComponent::pushNextSampleIntoFifo(float sample) noexcept
 {
+
     if (fifoIndex == fftSize)               
     {
         if (!nextFFTBlockReady)            
@@ -80,7 +81,7 @@ void AudioVisualiserComponent::drawNextFrameOfSpectrum()
             - juce::Decibels::gainToDecibels((float)fftSize)),
             mindB, maxdB, 0.0f, 1.0f);
 
-        scopeData[i] = level;                                   // [4]
+        scopeData[i] = level;                                   
     }
 }
 

@@ -45,10 +45,10 @@ private:
     bool midsStatus{ false };
     bool highStatus{ false };
 
-    float subBassFreq{};
-    float bassFreq{};
-    float midsFreq{};
-    float highFreq{};
+    float subBassFreq{ 95.f };
+    float bassFreq{ 250.f };
+    float midsFreq{ 3500.f };
+    float highFreq{ 5000.f };
 
     juce::SmoothedValue<float, juce::ValueSmoothingTypes::Linear> subBassSmoother{ 0.f };
     juce::SmoothedValue<float, juce::ValueSmoothingTypes::Linear> bassSmoother{ 0.f };
