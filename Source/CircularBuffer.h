@@ -25,6 +25,8 @@ public:
     void releaseResources() override;
     void getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) override;
 
+    std::vector<juce::dsp::IIR::Coefficients<float>*> getCoefficients();
+
     void setDelayFeedback(float newFeedback);
     void setDelayStatus(bool newStatus);
     void setDelayTime(float newTime);
@@ -54,6 +56,8 @@ private:
     //====================================================================
     // TEST STUFF
     juce::AudioBuffer<float> copyBuffer;
+
+    juce::dsp::IIR::Coefficients<float> filterCoefficient;
     juce::dsp::ProcessorDuplicator<juce::dsp::IIR::Filter<float>, juce::dsp::IIR::Coefficients<float>> bandFilter;
     //====================================================================
     

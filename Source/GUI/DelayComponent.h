@@ -12,11 +12,12 @@
 
 #include <JuceHeader.h>
 #include <CircularBuffer.h>
+#include <GUI/AudioVisualiserComponent.h>
 
 //==============================================================================
 /*
 */
-class DelayComponent  : public juce::Component,
+class DelayComponent  : public juce::AudioAppComponent,
                         public juce::Slider::Listener,
                         public juce::Button::Listener
 {
@@ -29,6 +30,10 @@ public:
     void sliderValueChanged(juce::Slider* slider) override;
     void sliderDragStarted(juce::Slider* slider) override;
     void sliderDragEnded(juce::Slider* slider) override;
+
+    void prepareToPlay(int samplesPerBlockExpected, double sampleRate) override;
+    void getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) override;
+    void releaseResources() override;
 
     void handleMidi(int control, int value = 0);
 
@@ -43,6 +48,7 @@ private:
     bool isFocused{ true };
 
     CircularBuffer* circularBuffer;
+    AudioVisualiserComponent visualiser;
 
     juce::Slider gainSlider;
     juce::Slider timeSlider;

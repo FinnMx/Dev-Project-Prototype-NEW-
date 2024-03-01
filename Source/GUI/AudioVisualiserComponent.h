@@ -20,7 +20,7 @@ class AudioVisualiserComponent : public juce::AudioAppComponent,
                                  public juce::Timer
 {
 public:
-    AudioVisualiserComponent(FrequencyCutoffs* freqCutoffs);
+    AudioVisualiserComponent();
     ~AudioVisualiserComponent() override;
 
     void timerCallback() override;
@@ -28,6 +28,8 @@ public:
     void prepareToPlay(int samplesPerBlockExpected, double sampleRate) override;
     void getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) override;
     void releaseResources() override;
+
+    void getCoefficients(std::vector<juce::dsp::IIR::Coefficients<float>*> tempVec);
 
     void paint (juce::Graphics&) override;
     void drawFrame(juce::Graphics& g);
@@ -44,7 +46,7 @@ public:
     };
 
 private:
-    FrequencyCutoffs* freqCutoffs;
+    std::vector<juce::dsp::IIR::Coefficients<float>*> coffVec;
 
     juce::dsp::FFT forwardFFT;                      
     juce::dsp::WindowingFunction<float> window;     

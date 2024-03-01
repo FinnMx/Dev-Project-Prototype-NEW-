@@ -194,6 +194,7 @@ void MainComponent::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffer
    //circularBuffer.getNextAudioBlock(bufferToFill);
     freqCutoffs.getNextAudioBlock(bufferToFill);
     killEQComponent.getNextAudioBlock(bufferToFill);
+    delayComponent.getNextAudioBlock(bufferToFill);
     dubSirenPlayer.getNextAudioBlock(bufferToFill);
     circularBuffer.getNextAudioBlock(bufferToFill);
 

@@ -12,7 +12,7 @@
 #include "AudioVisualiserComponent.h"
 
 //==============================================================================
-AudioVisualiserComponent::AudioVisualiserComponent(FrequencyCutoffs* freqCutoffs) : freqCutoffs(freqCutoffs) ,forwardFFT(fftOrder), window(fftSize, juce::dsp::WindowingFunction<float>::hann)
+AudioVisualiserComponent::AudioVisualiserComponent() : forwardFFT(fftOrder), window(fftSize, juce::dsp::WindowingFunction<float>::hann)
 {
     startTimerHz(60);
 }
@@ -105,6 +105,10 @@ void AudioVisualiserComponent::releaseResources() {
 
 }
 
+void AudioVisualiserComponent::getCoefficients(std::vector<juce::dsp::IIR::Coefficients<float>*> tempVec) {
+    coffVec = tempVec;
+}
+
 void AudioVisualiserComponent::paint (juce::Graphics& g)
 {
     g.fillAll(getLookAndFeel().findColour(juce::PropertyComponent::backgroundColourId));
@@ -123,7 +127,7 @@ void AudioVisualiserComponent::paint (juce::Graphics& g)
         double mag = 1.f;
         auto freq = juce::mapToLog10((double)i / (double)rW, 20.0, 20000.0);
 
-        auto temp = freqCutoffs->getCoefficients();
+        auto temp = coffVec;
 
         for each (juce::dsp::IIR::Coefficients<float>*cof in temp)
         {

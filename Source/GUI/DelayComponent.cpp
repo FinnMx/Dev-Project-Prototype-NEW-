@@ -20,6 +20,7 @@ DelayComponent::DelayComponent(CircularBuffer* circularBuffer) : circularBuffer(
     addAndMakeVisible(timeSlider);
     addAndMakeVisible(frequencyCutSlider);
     addAndMakeVisible(onOff);
+    addAndMakeVisible(visualiser);
 
     gainSlider.addListener(this);
     timeSlider.addListener(this);
@@ -93,6 +94,20 @@ void  DelayComponent::sliderDragEnded(juce::Slider* slider) {
     val.setText("", juce::NotificationType{});
 }
 
+
+void DelayComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate) {
+
+}
+
+void DelayComponent::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) {
+    visualiser.getCoefficients(circularBuffer->getCoefficients());
+    visualiser.getNextAudioBlock(bufferToFill);
+}
+
+void DelayComponent::releaseResources() {
+
+}
+
 void DelayComponent::setFocus(bool newFocus) {
     const juce::MessageManagerLock mmLock;
     isFocused = newFocus;
@@ -101,6 +116,8 @@ void DelayComponent::setFocus(bool newFocus) {
 
 void DelayComponent::paint (juce::Graphics& g)
 {
+
+    visualiser.repaint();
     if (isFocused)
         g.fillAll(getLookAndFeel().findColour(juce::ResizableWindow::backgroundColourId).withAlpha(.1f));   // clear the background
     if (!isFocused)
@@ -142,5 +159,10 @@ void DelayComponent::resized()
     onOff.setBounds(getWidth() * 0.7,
         getHeight() * 0.2,
         getWidth() * 0.5,
+        getHeight() * 0.5);
+
+    visualiser.setBounds(getWidth() * 0.75,
+        getHeight() * 0.2,
+        getWidth() * 0.2,
         getHeight() * 0.5);
 }

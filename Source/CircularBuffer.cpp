@@ -13,11 +13,10 @@
 #include <random>
 
 //==============================================================================
-CircularBuffer::CircularBuffer() : bandFilter(juce::dsp::IIR::Coefficients<float>::makeBandPass(44100.f, frequencyBand, 0.5f))
+CircularBuffer::CircularBuffer()
 {
-    // In your constructor, you should add any child components, and
-    // initialise any special settings that your component needs.
-
+    filterCoefficient = *juce::dsp::IIR::Coefficients<float>::makeBandPass(44100.f, frequencyBand, 0.5f);
+    *bandFilter.state = filterCoefficient;
 }
 
 CircularBuffer::~CircularBuffer()
@@ -56,13 +55,13 @@ void CircularBuffer::releaseResources() {
 void CircularBuffer::setDelayTime(float newTime) {
     if(newTime >= 0)
         smoother.setTargetValue(newTime / 1000.0 * 44100.f);
-    //auto time = std::round(newTime / 1000.0 * 44100.f);
-    //std::fill(delayValue.begin(), delayValue.end(), time);
 }
 
 void CircularBuffer::setDelayCutoffFrequency(float newFrequency) {
+    //NEEDS CHANGING
     frequencyBand = newFrequency;
-    *bandFilter.state = *juce::dsp::IIR::Coefficients<float>::makeBandPass(44100.f, newFrequency, 0.5f);
+    filterCoefficient = *juce::dsp::IIR::Coefficients<float>::makeBandPass(44100.f, newFrequency, 1.0f);
+    *bandFilter.state = filterCoefficient;
 }
 
 void CircularBuffer::setDelayFeedback(float newFeedback) {
@@ -76,6 +75,14 @@ void CircularBuffer::setDelayFeedback(float newFeedback) {
 
 void CircularBuffer::setDelayStatus(bool newStatus) {
     delayStatus = newStatus;
+}
+
+std::vector<juce::dsp::IIR::Coefficients<float>*> CircularBuffer::getCoefficients() {
+    std::vector<juce::dsp::IIR::Coefficients<float>*> tempVec;
+
+    tempVec.push_back(&filterCoefficient);
+
+    return tempVec;
 }
 
 

@@ -43,7 +43,7 @@ public:
 private:
     FrequencyCutoffs* freqCutoffs;
 
-    AudioVisualiserComponent visualiser{ freqCutoffs };
+    AudioVisualiserComponent visualiser;
 
     juce::Slider subBassFrequencySlider;
     juce::Slider bassFrequencySlider;

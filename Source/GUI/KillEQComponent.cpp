@@ -112,6 +112,7 @@ void KillEQComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRa
 }
 
 void KillEQComponent::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) {
+    visualiser.getCoefficients(freqCutoffs->getCoefficients());
     visualiser.getNextAudioBlock(bufferToFill);
 }
 
