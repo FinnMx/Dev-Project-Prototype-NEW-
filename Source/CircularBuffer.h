@@ -33,21 +33,19 @@ public:
     void setDelayCutoffFrequency(float newFrequencyCutoff);
 
 private:
-    /*
-    void fillBuffer(int channel, int bufferSize, int delayBufferSize, float* channelData);
-    void readFromBuffer(int channel, int bufferSize, int delayBufferSize, const juce::AudioSourceChannelInfo& bufferToFill, juce::AudioBuffer<float>& delayBuffer);
-    */
-
     bool delayStatus{ false };
     float delayFeedback{ 0.f };
     float delayTime{ 0.f };
     float rampingVal{ 0.f };
-    float frequencyBand{ 14000.f };
+
+    float lowFrequencyBand{ 20000.f };
+    float highFrequencyBand{ 18500.f };
 
     int totalNumInputChannels{ 2 }, totalNumOutputChannels{ 2 };
 
     //========================================================================================
     static constexpr auto effectDelaySamples = 88200;
+
     juce::dsp::DelayLine<float> delay{ effectDelaySamples };
     juce::dsp::DelayLine<float, juce::dsp::DelayLineInterpolationTypes::Thiran> linear{ effectDelaySamples };
 
@@ -57,8 +55,10 @@ private:
     // TEST STUFF
     juce::AudioBuffer<float> copyBuffer;
 
-    juce::dsp::IIR::Coefficients<float> filterCoefficient;
-    juce::dsp::ProcessorDuplicator<juce::dsp::IIR::Filter<float>, juce::dsp::IIR::Coefficients<float>> bandFilter;
+    juce::dsp::IIR::Coefficients<float> lowFilterCoefficient;
+    juce::dsp::ProcessorDuplicator<juce::dsp::IIR::Filter<float>, juce::dsp::IIR::Coefficients<float>> lowFilter;
+    juce::dsp::IIR::Coefficients<float> highFilterCoefficient;
+    juce::dsp::ProcessorDuplicator<juce::dsp::IIR::Filter<float>, juce::dsp::IIR::Coefficients<float>> highFilter;
     //====================================================================
     
     //SMOOTHER FOR THE DELAY TIME

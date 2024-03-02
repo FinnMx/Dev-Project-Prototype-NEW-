@@ -15,8 +15,10 @@
 //==============================================================================
 CircularBuffer::CircularBuffer()
 {
-    filterCoefficient = *juce::dsp::IIR::Coefficients<float>::makeBandPass(44100.f, frequencyBand, 1.0f);
-    *bandFilter.state = filterCoefficient;
+    lowFilterCoefficient = *juce::dsp::IIR::Coefficients<float>::makeLowPass(44100.f, lowFrequencyBand, 1.0f);
+    *lowFilter.state = lowFilterCoefficient;
+    highFilterCoefficient = *juce::dsp::IIR::Coefficients<float>::makeHighPass(44100.f, highFrequencyBand, 1.0f);
+    *highFilter.state = highFilterCoefficient;
 }
 
 CircularBuffer::~CircularBuffer()
@@ -24,17 +26,14 @@ CircularBuffer::~CircularBuffer()
 }
 
 void CircularBuffer::prepareToPlay(int samplesPerBlockExpected, double sampleRate) {
-    //auto delayBufferSize = sampleRate * delayTime;
-    //delayBuffer.setSize(2, (int)delayBufferSize, true, true);
-    //filter.setCoefficients(juce::IIRCoefficients::makeHighPass(44100.f, 2000.f, 1));
-    //filter.setCoefficients(juce::IIRCoefficients::makeLowPass(44100.f, 10000.f, 1));
 
     juce::dsp::ProcessSpec spec;
     spec.sampleRate = 44100.0;
     spec.maximumBlockSize = samplesPerBlockExpected;
     spec.numChannels = 2;
 
-    bandFilter.prepare(spec);
+    lowFilter.prepare(spec);
+    highFilter.prepare(spec);
     smoother.reset(44100.f, 2.f);
 
     delay.reset();
@@ -58,10 +57,12 @@ void CircularBuffer::setDelayTime(float newTime) {
 }
 
 void CircularBuffer::setDelayCutoffFrequency(float newFrequency) {
-    //NEEDS CHANGING
-    frequencyBand = newFrequency;
-    filterCoefficient = *juce::dsp::IIR::Coefficients<float>::makeBandPass(44100.f, newFrequency, 1.0f);
-    *bandFilter.state = filterCoefficient;
+    lowFrequencyBand = newFrequency + 750.f;
+    highFrequencyBand = newFrequency - 750.f;
+    lowFilterCoefficient = *juce::dsp::IIR::Coefficients<float>::makeLowPass(44100.f, lowFrequencyBand, 1.0f);
+    *lowFilter.state = lowFilterCoefficient;
+    highFilterCoefficient = *juce::dsp::IIR::Coefficients<float>::makeHighPass(44100.f, highFrequencyBand, 1.0f);
+    *highFilter.state = highFilterCoefficient;
 }
 
 void CircularBuffer::setDelayFeedback(float newFeedback) {
@@ -80,7 +81,8 @@ void CircularBuffer::setDelayStatus(bool newStatus) {
 std::vector<juce::dsp::IIR::Coefficients<float>*> CircularBuffer::getCoefficients() {
     std::vector<juce::dsp::IIR::Coefficients<float>*> tempVec;
 
-    tempVec.push_back(&filterCoefficient);
+    tempVec.push_back(&lowFilterCoefficient);
+    tempVec.push_back(&highFilterCoefficient);
 
     return tempVec;
 }
@@ -99,12 +101,13 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
     copyBuffer.copyFrom(0, 0, data, bufferToFill.buffer->getNumSamples());
     copyBuffer.copyFrom(1, 0, data, bufferToFill.buffer->getNumSamples());
 
-    copyBuffer.applyGain(3.f);
+    copyBuffer.applyGain(1.f);
 
     auto audioBlock = juce::dsp::AudioBlock<float>(copyBuffer).getSubsetChannelBlock(0, (size_t)numChannels);
     auto context = juce::dsp::ProcessContextReplacing<float>(audioBlock);
 
-    bandFilter.process(context);
+    lowFilter.process(context);
+    highFilter.process(context);
 
     const auto& input = context.getInputBlock();
     const auto& output = context.getOutputBlock();

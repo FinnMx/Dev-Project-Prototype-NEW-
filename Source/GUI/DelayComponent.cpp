@@ -61,8 +61,8 @@ void DelayComponent::initSlider() {
 
     frequencyCutSlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     frequencyCutSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
-    frequencyCutSlider.setRange(400.f, +18000.0f, 0.01f);
-    frequencyCutSlider.setValue(14000.f);
+    frequencyCutSlider.setRange(1000.f, +19250.0f, 0.01f);
+    frequencyCutSlider.setValue(19250.f);
     frequencyCutSliderLabel.attachToComponent(&frequencyCutSlider, false);
     frequencyCutSliderLabel.setJustificationType(juce::Justification::centredBottom);
     
