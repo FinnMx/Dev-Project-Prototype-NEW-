@@ -17,15 +17,17 @@ DubSirenComponent::DubSirenComponent(DubSiren* dubSiren) : dubSiren(dubSiren)
     initSlider();
 
     addAndMakeVisible(trigger);
-    addAndMakeVisible(frequencySlider);
-    addAndMakeVisible(lfoFrequencySlider);
+    //addAndMakeVisible(frequencySlider);
+    //addAndMakeVisible(lfoFrequencySlider);
     addAndMakeVisible(volumeSlider);
+    addAndMakeVisible(presetSlider);
 
     trigger.addListener(this);
 
-    frequencySlider.addListener(this);
-    lfoFrequencySlider.addListener(this);
+    //frequencySlider.addListener(this);
+    //lfoFrequencySlider.addListener(this);
     volumeSlider.addListener(this);
+    presetSlider.addListener(this);
 }
 
 DubSirenComponent::~DubSirenComponent()
@@ -33,6 +35,7 @@ DubSirenComponent::~DubSirenComponent()
 }
 
 void DubSirenComponent::initSlider() {
+    /*
     frequencySlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     frequencySlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
     frequencySlider.setRange(30.f, +1000.0f, 0.01f);
@@ -46,6 +49,7 @@ void DubSirenComponent::initSlider() {
     lfoFrequencySlider.setValue(0.5f);
     lfoFrequencySliderLabel.attachToComponent(&lfoFrequencySlider, false);
     lfoFrequencySliderLabel.setJustificationType(juce::Justification::centredBottom);
+    */
 
     volumeSlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     volumeSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
@@ -53,6 +57,13 @@ void DubSirenComponent::initSlider() {
     volumeSlider.setValue(0.5f);
     volumeSliderLabel.attachToComponent(&volumeSlider, false);
     volumeSliderLabel.setJustificationType(juce::Justification::centredBottom);
+
+    presetSlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
+    presetSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
+    presetSlider.setRange(1.f, +5.f, 1.f);
+    presetSlider.setValue(1.f);
+    presetSliderLabel.attachToComponent(&presetSlider, false);
+    presetSliderLabel.setJustificationType(juce::Justification::centredBottom);
 }
 
 void DubSirenComponent::buttonClicked(juce::Button* button) {
@@ -61,8 +72,30 @@ void DubSirenComponent::buttonClicked(juce::Button* button) {
 }
 
 void DubSirenComponent::sliderValueChanged(juce::Slider* slider) {
-    dubSiren->setFrequency(frequencySlider.getValue());
-    dubSiren->setLfoFrequency(lfoFrequencySlider.getValue());
+    //dubSiren->setFrequency(frequencySlider.getValue());
+    //dubSiren->setLfoFrequency(lfoFrequencySlider.getValue());
+    switch ((int)presetSlider.getValue()) {
+    case 1:
+        dubSiren->setFrequency(130.81f);
+        dubSiren->setLfoFrequency(0.1f);
+        break;
+    case 2:
+        dubSiren->setFrequency(130.81f);
+        dubSiren->setLfoFrequency(0.75f);
+        break;
+    case 3:
+        dubSiren->setFrequency(261.63f);
+        dubSiren->setLfoFrequency(0.1f);
+        break;
+    case 4:
+        dubSiren->setFrequency(261.63f);
+        dubSiren->setLfoFrequency(0.75f);
+        break;
+    case 5:
+        dubSiren->setFrequency(523.25f);
+        dubSiren->setLfoFrequency(0.05f);
+        break;
+    }
     dubSiren->setVolume(volumeSlider.getValue());
     val.setText(std::to_string(slider->getValue()), juce::NotificationType{});
 }
@@ -82,10 +115,10 @@ void DubSirenComponent::handleMidi(int control, int value) {
         trigger.triggerClick();
         break;
     case 20:
-        frequencySlider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.f, 1000.0f));
+        //frequencySlider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.f, 1000.0f));
         break;
     case 21:
-        lfoFrequencySlider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.f, 2.f));
+        //lfoFrequencySlider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.f, 2.f));
         break;
     case 22:
         volumeSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.f, 6.f));
@@ -117,6 +150,7 @@ void DubSirenComponent::paint (juce::Graphics& g)
 
 void DubSirenComponent::resized()
 {
+    /*
     frequencySlider.setBounds(getWidth() * 0.1,
         getHeight() * 0.25,
         getWidth() * 0.3,
@@ -124,6 +158,11 @@ void DubSirenComponent::resized()
 
     
     lfoFrequencySlider.setBounds(getWidth() * 0.6,
+        getHeight() * 0.25,
+        getWidth() * 0.3,
+        getHeight() * 0.4);
+        */
+    presetSlider.setBounds(getWidth() * 0.1,
         getHeight() * 0.25,
         getWidth() * 0.3,
         getHeight() * 0.4);

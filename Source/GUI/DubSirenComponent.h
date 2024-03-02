@@ -47,12 +47,16 @@ private:
     juce::Slider lfoFrequencySlider;
     juce::Slider volumeSlider;
 
+    juce::Slider presetSlider;
+
     juce::ToggleButton trigger;
 
     juce::Label frequencySliderLabel{ "Frequency", "Frequency" };
     juce::Label lfoFrequencySliderLabel{ "LfoFrequency", "LfoFrequency" };
     juce::Label volumeSliderLabel{ "Volume", "Volume" };
     juce::Label val{ "currentSliderVal", "" };
+
+    juce::Label presetSliderLabel{ "Peset", "Preset" };
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DubSirenComponent)
 };

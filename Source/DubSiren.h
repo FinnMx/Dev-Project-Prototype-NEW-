@@ -34,11 +34,12 @@ public:
     void updateAngleDelta();
 
 private:
+
     juce::AudioBuffer<float> copyBuffer;
     bool trigger{ false };
 
-    float frequency{ 340 };
-    float lfoFrequency{ 0.5 };
+    float frequency{ 130 };
+    float lfoFrequency{ 0.1 };
     float modulationDepth{ 60.0 };
     float volume{ 0.5f };
 
