@@ -35,8 +35,8 @@ DubSirenComponent::~DubSirenComponent()
 void DubSirenComponent::initSlider() {
     frequencySlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     frequencySlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
-    frequencySlider.setRange(0.f, +1000.0f, 0.01f);
-    frequencySlider.setValue(440.f);
+    frequencySlider.setRange(30.f, +1000.0f, 0.01f);
+    frequencySlider.setValue(30.f);
     frequencySliderLabel.attachToComponent(&frequencySlider, false);
     frequencySliderLabel.setJustificationType(juce::Justification::centredBottom);
 
@@ -64,6 +64,15 @@ void DubSirenComponent::sliderValueChanged(juce::Slider* slider) {
     dubSiren->setFrequency(frequencySlider.getValue());
     dubSiren->setLfoFrequency(lfoFrequencySlider.getValue());
     dubSiren->setVolume(volumeSlider.getValue());
+    val.setText(std::to_string(slider->getValue()), juce::NotificationType{});
+}
+
+void DubSirenComponent::sliderDragStarted(juce::Slider* slider) {
+    val.attachToComponent(slider, juce::Justification::centredLeft);
+}
+
+void DubSirenComponent::sliderDragEnded(juce::Slider* slider) {
+    val.setText("", juce::NotificationType{});
 }
 
 void DubSirenComponent::handleMidi(int control, int value) {

@@ -134,10 +134,10 @@ void MainComponent::handleIncomingMidiMessage(juce::MidiInput* source, const juc
             break;
             //bottom pads
         case 36:
-            delayComponent.handleMidi(36);
+            dubSiren.handleMidi(37);
             break;
         case 37:
-            dubSiren.handleMidi(37);
+            delayComponent.handleMidi(36);
             break;
         case 38:
             break;
@@ -194,8 +194,8 @@ void MainComponent::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffer
    //circularBuffer.getNextAudioBlock(bufferToFill);
     freqCutoffs.getNextAudioBlock(bufferToFill);
     killEQComponent.getNextAudioBlock(bufferToFill);
-    delayComponent.getNextAudioBlock(bufferToFill);
     dubSirenPlayer.getNextAudioBlock(bufferToFill);
+    delayComponent.getNextAudioBlock(bufferToFill);
     circularBuffer.getNextAudioBlock(bufferToFill);
 
     rmsMasterLeft = juce::Decibels::gainToDecibels(bufferToFill.buffer->getRMSLevel(0, 0, bufferToFill.buffer->getNumSamples()));
