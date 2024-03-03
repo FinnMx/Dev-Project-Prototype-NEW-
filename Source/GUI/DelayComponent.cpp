@@ -52,12 +52,14 @@ void DelayComponent::handleMidi(int control, int value) {
 }
 
 void DelayComponent::initSlider() {
+    //FEEDBACK!!!! NOT GAIN!!!!!
     gainSlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     gainSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
     gainSlider.setRange(0.f, +1.0f, 0.01f);
     gainSlider.setValue(0.f);
     gainSliderLabel.attachToComponent(&gainSlider, false);
     gainSliderLabel.setJustificationType(juce::Justification::centredBottom);
+    gainSlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 200, 25);
 
     frequencyCutSlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     frequencyCutSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
@@ -65,6 +67,7 @@ void DelayComponent::initSlider() {
     frequencyCutSlider.setValue(19250.f);
     frequencyCutSliderLabel.attachToComponent(&frequencyCutSlider, false);
     frequencyCutSliderLabel.setJustificationType(juce::Justification::centredBottom);
+    frequencyCutSlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 200, 25);
     
     timeSlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     timeSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
@@ -72,6 +75,7 @@ void DelayComponent::initSlider() {
     timeSlider.setValue(0.f);
     timeSliderLabel.attachToComponent(&timeSlider, false);
     timeSliderLabel.setJustificationType(juce::Justification::centredBottom);
+    timeSlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 200, 25);
 }
 
 void DelayComponent::buttonClicked(juce::Button* button) {
@@ -84,15 +88,15 @@ void DelayComponent::sliderValueChanged(juce::Slider* slider) {
     circularBuffer->setDelayTime(timeSlider.getValue());
     circularBuffer->setDelayFeedback(gainSlider.getValue());
     circularBuffer->setDelayCutoffFrequency(frequencyCutSlider.getValue());
-    val.setText(std::to_string(slider->getValue()), juce::NotificationType{});
+    //val.setText(std::to_string(slider->getValue()), juce::NotificationType{});
 }
 
 void  DelayComponent::sliderDragStarted(juce::Slider* slider) {
-    val.attachToComponent(slider, juce::Justification::centredLeft);
+    //val.attachToComponent(slider, juce::Justification::centredLeft);
 }
 
 void  DelayComponent::sliderDragEnded(juce::Slider* slider) {
-    val.setText("", juce::NotificationType{});
+    //val.setText("", juce::NotificationType{});
 }
 
 

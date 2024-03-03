@@ -43,8 +43,6 @@ public:
 private:
     FrequencyCutoffs* freqCutoffs;
 
-    AudioVisualiserComponent visualiser;
-
     juce::Slider subBassFrequencySlider;
     juce::Slider bassFrequencySlider;
     juce::Slider midsFrequencySlider;
@@ -59,6 +57,8 @@ private:
     juce::Label bassFrequencyLabel{ "bassFrequency", "bassFrequency" };
     juce::Label midsFrequencyLabel{ "midsFrequency", "midsFrequency" };
     juce::Label highFrequencyLabel{ "highFrequency", "highFrequency" };
+
+    AudioVisualiserComponent visualiser;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (KillEQComponent)
 };

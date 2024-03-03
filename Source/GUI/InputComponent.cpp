@@ -51,7 +51,7 @@ void InputComponent::initVolSlider() {
     volSlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 200, 25);
 
     //SHOULD PROBABLY CHANGE THIS SO ITS IN A RANGE OF -60 TO +60DB!!!!!! SEE THE JUCE::AUDIOTRANSPORTPLAYER.SETGAIN FUNC!!!
-    volSlider.setRange(0.f, +1.f, 0.05f);
+    volSlider.setRange(0.f, +1.f, 0.01f);
     volSlider.setValue(1.f);
 }
 

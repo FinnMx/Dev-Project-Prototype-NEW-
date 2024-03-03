@@ -101,7 +101,7 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
     copyBuffer.copyFrom(0, 0, data, bufferToFill.buffer->getNumSamples());
     copyBuffer.copyFrom(1, 0, data, bufferToFill.buffer->getNumSamples());
 
-    copyBuffer.applyGain(1.f);
+    copyBuffer.applyGain(2.f);
 
     auto audioBlock = juce::dsp::AudioBlock<float>(copyBuffer).getSubsetChannelBlock(0, (size_t)numChannels);
     auto context = juce::dsp::ProcessContextReplacing<float>(audioBlock);

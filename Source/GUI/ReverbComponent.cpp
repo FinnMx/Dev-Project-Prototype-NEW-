@@ -32,6 +32,7 @@ void ReverbComponent::initSlider() {
     roomSizeSlider.setValue(0.f);
     roomSizeLabel.attachToComponent(&roomSizeSlider, false);
     roomSizeLabel.setJustificationType(juce::Justification::centredBottom);
+    roomSizeSlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 200, 25);
 
     dampingSlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     dampingSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
@@ -39,6 +40,7 @@ void ReverbComponent::initSlider() {
     dampingSlider.setValue(0.f);
     dampingLabel.attachToComponent(&dampingSlider, false);
     dampingLabel.setJustificationType(juce::Justification::centredBottom);
+    dampingSlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 200, 25);
 
     wetLevelSlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     wetLevelSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
@@ -46,6 +48,7 @@ void ReverbComponent::initSlider() {
     wetLevelSlider.setValue(0.f);
     WetLevelLabel.attachToComponent(&wetLevelSlider, false);
     WetLevelLabel.setJustificationType(juce::Justification::centredBottom);
+    wetLevelSlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 200, 25);
 }
 
 ReverbComponent::~ReverbComponent()
@@ -70,16 +73,16 @@ void ReverbComponent::handleMidi(int control, int value) {
 void ReverbComponent::sliderValueChanged(juce::Slider* slider) {
     source1->setReverbParams(roomSizeSlider.getValue(), dampingSlider.getValue(), wetLevelSlider.getValue());
     source2->setReverbParams(roomSizeSlider.getValue(), dampingSlider.getValue(), wetLevelSlider.getValue());
-    val.setText(std::to_string(slider->getValue()), juce::NotificationType{});
+    //val.setText(std::to_string(slider->getValue()), juce::NotificationType{});
 }
 
 void ReverbComponent::sliderDragStarted(juce::Slider* slider) {
     //JANK
-    val.attachToComponent(slider, juce::Justification::centredLeft);
+    //val.attachToComponent(slider, juce::Justification::centredLeft);
 }
 void ReverbComponent::sliderDragEnded(juce::Slider* slider) {
     //JANK
-    val.setText("", juce::NotificationType{});
+    //val.setText("", juce::NotificationType{});
 }
 
 void ReverbComponent::setFocus(bool newFocus) {

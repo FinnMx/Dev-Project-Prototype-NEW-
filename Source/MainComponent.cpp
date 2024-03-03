@@ -189,14 +189,13 @@ void MainComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate
 }
 
 void MainComponent::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) {
-    //bufferToFill.clearActiveBufferRegion();
     mixerSource.getNextAudioBlock(bufferToFill);
-   //circularBuffer.getNextAudioBlock(bufferToFill);
     freqCutoffs.getNextAudioBlock(bufferToFill);
-    killEQComponent.getNextAudioBlock(bufferToFill);
     dubSirenPlayer.getNextAudioBlock(bufferToFill);
-    delayComponent.getNextAudioBlock(bufferToFill);
+
     circularBuffer.getNextAudioBlock(bufferToFill);
+    delayComponent.getNextAudioBlock(bufferToFill);
+    killEQComponent.getNextAudioBlock(bufferToFill);
 
     rmsMasterLeft = juce::Decibels::gainToDecibels(bufferToFill.buffer->getRMSLevel(0, 0, bufferToFill.buffer->getNumSamples()));
     rmsMasterRight = juce::Decibels::gainToDecibels(bufferToFill.buffer->getRMSLevel(1, 0, bufferToFill.buffer->getNumSamples()));
@@ -281,22 +280,22 @@ void MainComponent::resized()
     dubSiren.setBounds(
         getX(),
         getHeight() * 0.39,
-        getWidth() * 0.25,
-        getHeight() * 0.255
+        getWidth() * 0.15,
+        getHeight() * 0.32
     );
 
     reverbComponent.setBounds(
-        getWidth() * 0.25,
+        getWidth() * 0.15,
         getHeight() * 0.39,
-        getWidth() * 0.75,
-        getHeight() * 0.125
+        getWidth() * 0.85,
+        getHeight() * 0.16
     );
 
     delayComponent.setBounds(
-        getWidth() * 0.25,
-        getHeight() * 0.52,
-        getWidth() * 0.75,
-        getHeight() * 0.125
+        getWidth() * 0.15,
+        getHeight() * 0.55,
+        getWidth() * 0.85,
+        getHeight() * 0.16
     );
 
 
@@ -305,8 +304,9 @@ void MainComponent::resized()
 
     killEQComponent.setBounds(
         getX(),
-        getHeight() * 0.65,
+        getHeight() * 0.72,
         getWidth(),
-        getHeight() * 0.345
+        getHeight() * 0.275
+
     );
 }

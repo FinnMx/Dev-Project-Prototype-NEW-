@@ -50,13 +50,13 @@ private:
     CircularBuffer* circularBuffer;
     AudioVisualiserComponent visualiser;
 
-    juce::Slider gainSlider;
+    juce::Slider gainSlider; // FEEDBACK!!!!! NOT GAIn!!!
     juce::Slider timeSlider;
     juce::Slider frequencyCutSlider;
 
     juce::ToggleButton onOff;
 
-    juce::Label gainSliderLabel{ "Gain", "Gain" };
+    juce::Label gainSliderLabel{ "Feedback", "Feedback" };
     juce::Label timeSliderLabel{ "Time", "Time" };
     juce::Label frequencyCutSliderLabel{ "Frequency", "Frequency" };
     juce::Label val{ "currentSliderVal", "" };

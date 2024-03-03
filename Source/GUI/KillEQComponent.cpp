@@ -145,56 +145,56 @@ void KillEQComponent::resized()
         getWidth() * 0.3,
         getHeight() * 0.25,
         getWidth() * 0.2,
-        getHeight() * 0.3
+        getHeight() * 0.4
     );
 
     subBassOnOff.setBounds(
         getWidth() * 0.3,
-        getHeight() * 0.5,
+        getHeight() * 0.6,
         getWidth() * 0.2,
-        getHeight() * 0.3
+        getHeight() * 0.1
     );
 
     bassFrequencySlider.setBounds(
         getWidth() * 0.45,
         getHeight() * 0.25,
         getWidth() * 0.2,
-        getHeight() * 0.3
+        getHeight() * 0.4
     );
 
     bassOnOff.setBounds(
         getWidth() * 0.45,
-        getHeight() * 0.5,
+        getHeight() * 0.6,
         getWidth() * 0.2,
-        getHeight() * 0.3
+        getHeight() * 0.1
     );
 
     midsFrequencySlider.setBounds(
         getWidth() * 0.6,
         getHeight() * 0.25,
         getWidth() * 0.2,
-        getHeight() * 0.3
+        getHeight() * 0.4
     );
 
     midsOnOff.setBounds(
         getWidth() * 0.6,
-        getHeight() * 0.5,
+        getHeight() * 0.6,
         getWidth() * 0.2,
-        getHeight() * 0.3
+        getHeight() * 0.1
     );
 
     highFrequencySlider.setBounds(
         getWidth() * 0.75,
         getHeight() * 0.25,
         getWidth() * 0.2,
-        getHeight() * 0.3
+        getHeight() * 0.4
     );
 
     highOnOff.setBounds(
         getWidth() * 0.75,
-        getHeight() * 0.5,
-        getWidth() * 0.2,
-        getHeight() * 0.3
+        getHeight() * 0.6,
+        getWidth() * 0.1,
+        getHeight() * 0.1
     );
 
 }
