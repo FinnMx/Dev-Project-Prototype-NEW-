@@ -47,7 +47,7 @@ private:
     static constexpr auto effectDelaySamples = 88200;
 
     juce::dsp::DelayLine<float> delay{ effectDelaySamples };
-    juce::dsp::DelayLine<float, juce::dsp::DelayLineInterpolationTypes::Lagrange3rd> linear{ effectDelaySamples };
+    juce::dsp::DelayLine<float, juce::dsp::DelayLineInterpolationTypes::Thiran> linear{ effectDelaySamples };
 
     //juce::IIRFilter filter;
 
@@ -59,6 +59,12 @@ private:
     juce::dsp::ProcessorDuplicator<juce::dsp::IIR::Filter<float>, juce::dsp::IIR::Coefficients<float>> lowFilter;
     juce::dsp::IIR::Coefficients<float> highFilterCoefficient;
     juce::dsp::ProcessorDuplicator<juce::dsp::IIR::Filter<float>, juce::dsp::IIR::Coefficients<float>> highFilter;
+    //MORE TEST STUFF
+    juce::IIRFilter testFilterLowL;
+    juce::IIRFilter testFilterLowR;
+    juce::IIRFilter testFilterHighL;
+    juce::IIRFilter testFilterHighR;
+
     //====================================================================
     
     //SMOOTHER FOR THE DELAY TIME

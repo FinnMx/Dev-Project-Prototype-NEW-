@@ -219,7 +219,6 @@ juce::PopupMenu MainComponent::getMenuForIndex(int topLevelMenuIndex, const juce
     {
         menu.addItem("Audio Settings", [&]() {
             addAndMakeVisible(audioSettingsWindow);
-            DBG("Audio Settings");
             });
         menu.addItem("Key Bindings", [&]() {
             addAndMakeVisible(keyBindingsWindow);
@@ -334,4 +333,13 @@ void MainComponent::resized()
         getHeight() * 0.275
 
     );
+
+    //-----------------------------------------------
+    //Settings Menus
+
+    audioSettingsWindow.centreWithSize(getWidth() * 0.4,
+        getHeight() * 0.5);
+
+    keyBindingsWindow.centreWithSize(getWidth() * 0.4,
+        getHeight() * 0.5);
 }

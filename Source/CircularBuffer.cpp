@@ -40,6 +40,11 @@ void CircularBuffer::prepareToPlay(int samplesPerBlockExpected, double sampleRat
     delay.prepare(spec);
     linear.prepare(spec);
 
+    testFilterHighL.setCoefficients(juce::IIRCoefficients::makeHighPass(44100, 1500));
+    testFilterLowL.setCoefficients(juce::IIRCoefficients::makeLowPass(44100, 750));
+    testFilterHighR.setCoefficients(juce::IIRCoefficients::makeHighPass(44100, 1500));
+    testFilterLowR.setCoefficients(juce::IIRCoefficients::makeLowPass(44100, 750));
+
     for (auto& volume : delayFeedbackVolume)
         volume.reset(spec.sampleRate, 0.05);
 
@@ -101,7 +106,7 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
     copyBuffer.copyFrom(0, 0, data, bufferToFill.buffer->getNumSamples());
     copyBuffer.copyFrom(1, 0, data, bufferToFill.buffer->getNumSamples());
 
-    copyBuffer.applyGain(2.f);
+    //copyBuffer.applyGain(0.f);
 
     auto audioBlock = juce::dsp::AudioBlock<float>(copyBuffer).getSubsetChannelBlock(0, (size_t)numChannels);
     auto context = juce::dsp::ProcessContextReplacing<float>(audioBlock);
@@ -114,12 +119,13 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
 
     for (size_t channel = 0; channel < numChannels; ++channel)
     {
+
         auto* samplesIn = input.getChannelPointer(channel);
         auto* samplesOut = output.getChannelPointer(channel);
 
             for (size_t sample = 0; sample < input.getNumSamples(); ++sample)
             {
-                
+                //creates the "loop"
                 if (delayStatus) {
                     auto input = samplesIn[sample] - lastDelayOutput[channel];
                     linear.pushSample(int(channel), input);
@@ -130,8 +136,8 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
                 }
 
                 auto smoothedVal = smoother.getNextValue();
-                if(smoothedVal > 0)
-                    linear.setDelay(smoother.getNextValue());
+                if(smoothedVal > 0 )
+                    linear.setDelay(smoothedVal);
 
                 samplesOut[sample] = linear.popSample((int)channel);
 
@@ -139,7 +145,16 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
                 lastDelayOutput[channel] = samplesOut[sample] * delayFeedbackVolume[channel].getNextValue();;
             }
 
+            //THIS STUFF STOPS THE HARSH ARTIFACTS 
+            if(channel == 0){
+            //testFilterLowL.processSamples(samplesOut, 480);
+            //testFilterHighL.processSamples(samplesOut, 480);
+            }
+            else {
+                //testFilterLowR.processSamples(samplesOut, 480);
+                //testFilterHighR.processSamples(samplesOut, 480);
+            }
             //windower.multiplyWithWindowingTable(samplesOut, 480);
-            bufferToFill.buffer->addFrom(channel, 0, samplesOut, 480, 0.3f);
+            bufferToFill.buffer->addFrom(channel, 0, samplesOut, 480, 1.0f);
     }
 }

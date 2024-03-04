@@ -5,6 +5,8 @@
 #include <JuceHeader.h>
 #include <CircularBuffer.h>
 #include <TrackAudioPlayer.h>
+#include <FrequencyCutoffs.h>
+
 #include <GUI/DelayComponent.h>
 #include <GUI/InputComponent.h>
 #include <GUI/KillEQComponent.h>
@@ -13,8 +15,11 @@
 #include <GUI/TenBandComponent.h>
 #include <GUI/TrackThumbnailComponent.h>
 #include <GUI/MeterComponent.h>
-#include <FrequencyCutoffs.h>
 #include <GUI/DubSirenComponent.h>
+
+#include <Settings/AudioSettingsComponent.h>
+#include <Settings/keyBindingsComponent.h>
+
 
 //==============================================================================
 /*
@@ -58,8 +63,8 @@ private:
     float rmsMasterLeft, rmsMasterRight;
 
     //Setting windows
-    juce::Component::SafePointer<juce::TopLevelWindow> audioSettingsWindow;
-    juce::Component::SafePointer<juce::TopLevelWindow> keyBindingsWindow;
+    AudioSettingsComponent audioSettingsWindow;
+    KeyBindingsComponent keyBindingsWindow;
 
     //MIDI
     juce::AudioDeviceManager deviceManager;
