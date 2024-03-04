@@ -27,6 +27,8 @@ CircularBuffer::~CircularBuffer()
 
 void CircularBuffer::prepareToPlay(int samplesPerBlockExpected, double sampleRate) {
 
+    copyBuffer.clear();
+
     juce::dsp::ProcessSpec spec;
     spec.sampleRate = 44100.0;
     spec.maximumBlockSize = samplesPerBlockExpected;
@@ -68,6 +70,10 @@ void CircularBuffer::setDelayCutoffFrequency(float newFrequency) {
     *lowFilter.state = lowFilterCoefficient;
     highFilterCoefficient = *juce::dsp::IIR::Coefficients<float>::makeHighPass(44100.f, highFrequencyBand, 1.0f);
     *highFilter.state = highFilterCoefficient;
+    testFilterHighL.setCoefficients(juce::IIRCoefficients::makeHighPass(44100, highFrequencyBand));
+    testFilterLowL.setCoefficients(juce::IIRCoefficients::makeLowPass(44100, lowFrequencyBand));
+    testFilterHighR.setCoefficients(juce::IIRCoefficients::makeHighPass(44100, highFrequencyBand));
+    testFilterLowR.setCoefficients(juce::IIRCoefficients::makeLowPass(44100, lowFrequencyBand));
 }
 
 void CircularBuffer::setDelayFeedback(float newFeedback) {
@@ -106,13 +112,13 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
     copyBuffer.copyFrom(0, 0, data, bufferToFill.buffer->getNumSamples());
     copyBuffer.copyFrom(1, 0, data, bufferToFill.buffer->getNumSamples());
 
-    //copyBuffer.applyGain(0.f);
+    copyBuffer.applyGain(3.f);
 
     auto audioBlock = juce::dsp::AudioBlock<float>(copyBuffer).getSubsetChannelBlock(0, (size_t)numChannels);
     auto context = juce::dsp::ProcessContextReplacing<float>(audioBlock);
 
-    lowFilter.process(context);
-    highFilter.process(context);
+    //lowFilter.process(context);
+    //highFilter.process(context);
 
     const auto& input = context.getInputBlock();
     const auto& output = context.getOutputBlock();
@@ -145,15 +151,17 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
                 lastDelayOutput[channel] = samplesOut[sample] * delayFeedbackVolume[channel].getNextValue();;
             }
 
-            //THIS STUFF STOPS THE HARSH ARTIFACTS 
+       
+            //Apply frequency band to the repeating samples 
             if(channel == 0){
-            //testFilterLowL.processSamples(samplesOut, 480);
-            //testFilterHighL.processSamples(samplesOut, 480);
+            testFilterLowL.processSamples(samplesOut, 480);
+            testFilterHighL.processSamples(samplesOut, 480);
             }
             else {
-                //testFilterLowR.processSamples(samplesOut, 480);
-                //testFilterHighR.processSamples(samplesOut, 480);
+                testFilterLowR.processSamples(samplesOut, 480);
+                testFilterHighR.processSamples(samplesOut, 480);
             }
+           
             //windower.multiplyWithWindowingTable(samplesOut, 480);
             bufferToFill.buffer->addFrom(channel, 0, samplesOut, 480, 1.0f);
     }
