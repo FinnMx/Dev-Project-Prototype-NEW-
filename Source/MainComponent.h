@@ -22,7 +22,8 @@
     your controls and content.
 */
 class MainComponent  : public juce::AudioAppComponent,
-                       public juce::MidiInputCallback
+                       public juce::MidiInputCallback,
+                       public juce::MenuBarModel
 {
 public:
     //==============================================================================
@@ -33,6 +34,11 @@ public:
     void prepareToPlay (int samplesPerBlockExpected, double sampleRate) override;
     void getNextAudioBlock (const juce::AudioSourceChannelInfo& bufferToFill) override;
     void releaseResources() override;
+
+    //==============================================================================
+    juce::PopupMenu getMenuForIndex(int topLevelMenuIndex, const juce::String& menuName) override;
+    juce::StringArray getMenuBarNames() override;
+    void menuItemSelected(int menuItemID, int topLevelMenuIndex) override;
 
     //==============================================================================
     void handleIncomingMidiMessage(juce::MidiInput* source, const juce::MidiMessage& message) override;
@@ -51,7 +57,9 @@ private:
     int x, y;
     float rmsMasterLeft, rmsMasterRight;
 
-    //look and feel
+    //Setting windows
+    juce::Component::SafePointer<juce::TopLevelWindow> audioSettingsWindow;
+    juce::Component::SafePointer<juce::TopLevelWindow> keyBindingsWindow;
 
     //MIDI
     juce::AudioDeviceManager deviceManager;

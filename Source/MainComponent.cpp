@@ -5,7 +5,7 @@ using namespace std;
 
 //==============================================================================
 MainComponent::MainComponent() :
-    menuBar(nullptr)
+    menuBar(this)
 {
     getMidiDevice();
 
@@ -119,8 +119,8 @@ void MainComponent::handleIncomingMidiMessage(juce::MidiInput* source, const juc
                 delayComponent.handleMidi(21, message.getControllerValue());
             if (midiset == 2)
                 reverbComponent.handleMidi(21, message.getControllerValue());
-            if (midiset == 3)
-                dubSiren.handleMidi(21, message.getControllerValue());
+            if (midiset == 3);
+                //dubSiren.handleMidi(21, message.getControllerValue());
             break;
         case 22:
             if (midiset == 1)
@@ -209,6 +209,31 @@ void MainComponent::releaseResources() {
     circularBuffer.releaseResources();
 
     dubSirenPlayer.releaseResources();
+}
+//=============================================================================
+
+juce::PopupMenu MainComponent::getMenuForIndex(int topLevelMenuIndex, const juce::String& menuName) {
+    juce::PopupMenu menu;
+
+    if (topLevelMenuIndex == 0)
+    {
+        menu.addItem("Audio Settings", [&]() {
+            addAndMakeVisible(audioSettingsWindow);
+            DBG("Audio Settings");
+            });
+        menu.addItem("Key Bindings", [&]() {
+            addAndMakeVisible(keyBindingsWindow);
+            DBG("Key Bindings"); });
+    }
+
+    return menu;
+}
+
+juce::StringArray MainComponent::getMenuBarNames() {
+    return { "Settings", "Help" };
+}
+
+void MainComponent::menuItemSelected(int menuItemID, int topLevelMenuIndex) {
 }
 
 //==============================================================================

@@ -147,6 +147,8 @@
     <ClCompile Include="..\..\Source\GUI\ReverbComponent.cpp" />
     <ClCompile Include="..\..\Source\GUI\TenBandComponent.cpp" />
     <ClCompile Include="..\..\Source\GUI\TrackThumbnailComponent.cpp" />
+    <ClCompile Include="..\..\Source\Settings\AudioSettingsComponent.cpp" />
+    <ClCompile Include="..\..\Source\Settings\KeyBindingsComponent.cpp" />
     <ClCompile Include="..\..\Source\TrackAudioPlayer.cpp" />
     <ClCompile Include="..\..\Source\Main.cpp" />
     <ClCompile Include="..\..\Source\MainComponent.cpp" />
@@ -2565,6 +2567,8 @@
     <ClInclude Include="..\..\Source\GUI\ReverbComponent.h" />
     <ClInclude Include="..\..\Source\GUI\TenBandComponent.h" />
     <ClInclude Include="..\..\Source\GUI\TrackThumbnailComponent.h" />
+    <ClInclude Include="..\..\Source\Settings\AudioSettingsComponent.h" />
+    <ClInclude Include="..\..\Source\Settings\KeyBindingsComponent.h" />
     <ClInclude Include="..\..\Source\TrackAudioPlayer.h" />
     <ClInclude Include="..\..\Source\MainComponent.h" />
     <ClInclude Include="C:\JUCE\modules\juce_audio_basics\audio_play_head\juce_AudioPlayHead.h" />

@@ -619,6 +619,9 @@
     <Filter Include="JUCE Library Code">
       <UniqueIdentifier>{7ED5A90E-41AF-A1EF-659B-37CEEAB9BA61}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Dev Project Prototype %28NEW%29\Source\Settings">
+      <UniqueIdentifier>{e09acb8f-3335-4918-b2f1-68427ad42855}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\FrequencyCutoffs.cpp">
@@ -3089,6 +3092,12 @@
     </ClCompile>
     <ClCompile Include="..\..\Source\DubSiren.cpp">
       <Filter>Dev Project Prototype %28NEW%29\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Settings\AudioSettingsComponent.cpp">
+      <Filter>Dev Project Prototype %28NEW%29\Source\Settings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Settings\KeyBindingsComponent.cpp">
+      <Filter>Dev Project Prototype %28NEW%29\Source\Settings</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -6130,6 +6139,12 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\DubSiren.h">
       <Filter>Dev Project Prototype %28NEW%29\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Settings\AudioSettingsComponent.h">
+      <Filter>Dev Project Prototype %28NEW%29\Source\Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Settings\KeyBindingsComponent.h">
+      <Filter>Dev Project Prototype %28NEW%29\Source\Settings</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

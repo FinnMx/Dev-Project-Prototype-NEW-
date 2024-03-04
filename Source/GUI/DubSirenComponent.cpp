@@ -115,7 +115,7 @@ void DubSirenComponent::handleMidi(int control, int value) {
         trigger.triggerClick();
         break;
     case 20:
-        //frequencySlider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.f, 1000.0f));
+        presetSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 1.f, 5.f));
         break;
     case 21:
         //lfoFrequencySlider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.f, 2.f));
