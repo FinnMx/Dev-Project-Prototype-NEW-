@@ -31,6 +31,8 @@ public:
     void setModulationDepth(float newModulationDepth);
     void setVolume(float newVolume);
 
+    void setLFOWaveType(int type);
+
     void updateAngleDelta();
 
 private:
@@ -38,13 +40,18 @@ private:
     juce::AudioBuffer<float> copyBuffer;
     bool trigger{ false };
 
-    float frequency{ 130 };
+    float frequency{ 1300 };
     float lfoFrequency{ 0.1 };
     float modulationDepth{ 60.0 };
     float volume{ 0.5f };
 
     juce::dsp::Oscillator<float> oscillator;
-    juce::dsp::Oscillator<float> lfoOscillator;
+
+    juce::dsp::Oscillator<float>* lfoOscillator;
+    juce::dsp::Oscillator<float> sineLFO;
+    juce::dsp::Oscillator<float> sawtoothLFO;
+    juce::dsp::Oscillator<float> triangleLFO;
+    juce::dsp::Oscillator<float> pulseLFO;
 
     juce::IIRFilter filter;
 

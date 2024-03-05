@@ -18,8 +18,14 @@ DubSiren::DubSiren()
     oscillator.initialise([](float x) {return  (x < 0.0f) ? -1.0f : 1.0f; });
     oscillator.setFrequency(frequency);
 
-    lfoOscillator.initialise([](float x) { return std::sin(x * juce::MathConstants<float>::twoPi); });
-    lfoOscillator.setFrequency(lfoFrequency);
+    sawtoothLFO.initialise([](float x) { return std::tanh(x); });
+    sineLFO.initialise([](float x) { return std::sin(x * juce::MathConstants<float>::twoPi); });
+    triangleLFO.initialise([](float x) {return 2.0f * std::fabs(x - 0.5f) - 1.0f; });
+    pulseLFO.initialise([](float x) { return (x < 0.5f) ? 1.0f : -1.0f; });
+
+    //default LFO will be sine
+    lfoOscillator = &sawtoothLFO;
+    lfoOscillator->setFrequency(lfoFrequency);
 }
 
 DubSiren::~DubSiren()
@@ -33,7 +39,11 @@ void DubSiren::prepareToPlay(int samplesPerBlockExpected, double sampleRate) {
     spec.numChannels = 2;
 
     oscillator.prepare(spec);
-    lfoOscillator.prepare(spec);
+    sawtoothLFO.prepare(spec);
+    sineLFO.prepare(spec);
+    pulseLFO.prepare(spec);
+    triangleLFO.prepare(spec);
+    //lfoOscillator->prepare(spec);
     //filter.setCoefficients(juce::IIRCoefficients::makeHighPass(44100.f, 5000.f, 1.f));
 }
 
@@ -58,8 +68,8 @@ void DubSiren::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFil
 
         for (auto sample = 0; sample < copyBuffer.getNumSamples(); ++sample)
         {
-            lfoOscillator.setFrequency(lfoFrequency);
-            auto lfoValue = lfoOscillator.processSample(0.0);
+            lfoOscillator->setFrequency(lfoFrequency);
+            auto lfoValue = lfoOscillator->processSample(0.0);
             oscillator.setFrequency(frequency + (lfoValue * 60.f)); // 60.f IS THE "MODULATION DEPTH"
 
             auto currentSample = oscillator.processSample(0.0); 
@@ -91,6 +101,23 @@ void DubSiren::setModulationDepth(float newModulationDepth) {
 
 void DubSiren::setVolume(float newVolume) {
     volume = newVolume;
+}
+
+void DubSiren::setLFOWaveType(int type) {
+    switch (type) {
+    case 1:
+        lfoOscillator = &sineLFO;
+        break;
+    case 2:
+        lfoOscillator = &sawtoothLFO;
+        break;
+    case 3:
+        lfoOscillator = &triangleLFO;
+        break;
+    case 4:
+        lfoOscillator = &pulseLFO;
+        break;
+    }
 }
 
 void DubSiren::releaseResources() {

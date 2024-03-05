@@ -46,6 +46,7 @@ private:
     juce::Slider frequencySlider;
     juce::Slider lfoFrequencySlider;
     juce::Slider volumeSlider;
+    juce::Slider waveTypeSlider;
 
     juce::Slider presetSlider;
 
@@ -53,6 +54,7 @@ private:
 
     juce::Label frequencySliderLabel{ "Frequency", "Frequency" };
     juce::Label lfoFrequencySliderLabel{ "LfoFrequency", "LfoFrequency" };
+    juce::Label waveTypeSliderLabel{ "LfoFrequency", "LfoFrequency" };
     juce::Label volumeSliderLabel{ "Volume", "Volume" };
     juce::Label val{ "currentSliderVal", "" };
 
