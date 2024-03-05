@@ -63,7 +63,8 @@ private:
     float rmsMasterLeft, rmsMasterRight;
 
     //Setting windows
-    juce::ScopedPointer<AudioSettingsComponent> audioSettingsWindowptr;
+    juce::ScopedPointer<juce::ResizableWindow> window;
+    AudioSettingsComponent audioSettingsWindow;
     juce::ScopedPointer<KeyBindingsComponent> keyBindingsWindowptr;
 
     //MIDI

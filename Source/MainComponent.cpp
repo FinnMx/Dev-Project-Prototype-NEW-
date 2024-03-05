@@ -218,8 +218,13 @@ juce::PopupMenu MainComponent::getMenuForIndex(int topLevelMenuIndex, const juce
     if (topLevelMenuIndex == 0)
     {
         menu.addItem("Audio Settings", [&]() {
-            audioSettingsWindowptr = new AudioSettingsComponent;
-            addAndMakeVisible(*audioSettingsWindowptr);
+            window = new juce::ResizableWindow("Audio Settings", true);
+            window->setUsingNativeTitleBar(true);
+            window->setCentrePosition(400, 400);
+            window->centreWithSize(getWidth() * 0.4, getHeight() * 0.5);
+            window->setVisible(true);
+            window->setResizable(false, false);
+            window->setContentOwned(new AudioSettingsComponent, false);
             });
         menu.addItem("Key Bindings", [&]() {
             //addAndMakeVisible();
@@ -337,10 +342,8 @@ void MainComponent::resized()
 
     //-----------------------------------------------
     //Settings Menus
+    //audioSettingsWindow.centreWithSize(getWidth() * 0.4, getHeight() * 0.5);
 
-    audioSettingsWindow.centreWithSize(getWidth() * 0.4,
-        getHeight() * 0.5);
-
-    keyBindingsWindow.centreWithSize(getWidth() * 0.4,
-        getHeight() * 0.5);
+    if(keyBindingsWindowptr != nullptr)
+        keyBindingsWindowptr->centreWithSize(getWidth() * 0.4, getHeight() * 0.5);
 }

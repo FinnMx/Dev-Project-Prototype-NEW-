@@ -1,12 +1,11 @@
-﻿  Main.cpp
-  MainComponent.cpp
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\DubSiren.h(44,23): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\MainComponent.cpp)
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.h(66,11): warning C4996: 'juce::ScopedPointer<AudioSettingsComponent>': was declared deprecated (compiling source file ..\..\Source\MainComponent.cpp)
-C:\JUCE\modules\juce_core\memory\juce_ScopedPointer.h(34,1): message : see declaration of 'juce::ScopedPointer' (compiling source file ..\..\Source\MainComponent.cpp)
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.h(67,11): warning C4996: 'juce::ScopedPointer<KeyBindingsComponent>': was declared deprecated (compiling source file ..\..\Source\MainComponent.cpp)
-C:\JUCE\modules\juce_core\memory\juce_ScopedPointer.h(34,1): message : see declaration of 'juce::ScopedPointer' (compiling source file ..\..\Source\MainComponent.cpp)
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(9,1): warning C4996: 'juce::ScopedPointer<AudioSettingsComponent>::ScopedPointer': was declared deprecated
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(46): warning C4996: 'juce::ScopedPointer<AudioSettingsComponent>::~ScopedPointer': was declared deprecated
+﻿  MainComponent.cpp
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\DubSiren.h(44,23): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.h(66,11): warning C4996: 'juce::ScopedPointer<juce::ResizableWindow>': was declared deprecated
+C:\JUCE\modules\juce_core\memory\juce_ScopedPointer.h(34,1): message : see declaration of 'juce::ScopedPointer'
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.h(68,11): warning C4996: 'juce::ScopedPointer<KeyBindingsComponent>': was declared deprecated
+C:\JUCE\modules\juce_core\memory\juce_ScopedPointer.h(34,1): message : see declaration of 'juce::ScopedPointer'
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(9,1): warning C4996: 'juce::ScopedPointer<juce::ResizableWindow>::ScopedPointer': was declared deprecated
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(46): warning C4996: 'juce::ScopedPointer<juce::ResizableWindow>::~ScopedPointer': was declared deprecated
 C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(71,43): warning C4239: nonstandard extension used: 'argument': conversion from 'ElementType' to 'juce::MidiDeviceInfo &'
           with
           [
@@ -15,54 +14,57 @@ C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Mai
 C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(71,43): message : A non-const reference may only be bound to an lvalue
 C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(122,30): warning C4390: ';': empty controlled statement found; is this the intent?
 C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(104,64): warning C4100: 'source': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(221,36): warning C4996: 'juce::ScopedPointer<AudioSettingsComponent>::operator =': was declared deprecated
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(222,31): warning C4996: 'juce::ScopedPointer<AudioSettingsComponent>::operator *': was declared deprecated
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(225,66): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(225,47): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(221,20): warning C4996: 'juce::ScopedPointer<juce::ResizableWindow>::operator =': was declared deprecated
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(222,13): warning C4996: 'juce::ScopedPointer<juce::ResizableWindow>::operator ->': was declared deprecated
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(223,13): warning C4996: 'juce::ScopedPointer<juce::ResizableWindow>::operator ->': was declared deprecated
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(224,13): warning C4996: 'juce::ScopedPointer<juce::ResizableWindow>::operator ->': was declared deprecated
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(225,13): warning C4996: 'juce::ScopedPointer<juce::ResizableWindow>::operator ->': was declared deprecated
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(226,13): warning C4996: 'juce::ScopedPointer<juce::ResizableWindow>::operator ->': was declared deprecated
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(227,13): warning C4996: 'juce::ScopedPointer<juce::ResizableWindow>::operator ->': was declared deprecated
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(228,13): warning C4996: 'juce::ScopedPointer<juce::ResizableWindow>::operator ->': was declared deprecated
 C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(215,91): warning C4100: 'menuName': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(236,58): warning C4100: 'topLevelMenuIndex': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(236,42): warning C4100: 'menuItemID': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(255,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(264,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(263,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(262,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(271,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(270,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(269,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(268,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(278,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(277,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(276,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(275,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(285,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(284,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(283,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(282,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\DubSiren.h(44,23): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Main.cpp)
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(292,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(291,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(290,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(289,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(299,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(298,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(297,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(296,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(309,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(308,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(307,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(316,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(315,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(314,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(313,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(323,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(322,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(321,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(320,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.h(66,11): warning C4996: 'juce::ScopedPointer<AudioSettingsComponent>': was declared deprecated (compiling source file ..\..\Source\Main.cpp)
-C:\JUCE\modules\juce_core\memory\juce_ScopedPointer.h(34,1): message : see declaration of 'juce::ScopedPointer' (compiling source file ..\..\Source\Main.cpp)
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(334,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(332,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(341,5): error C2065: 'audioSettingsWindow': undeclared identifier
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(344,5): error C2065: 'keyBindingsWindow': undeclared identifier
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.h(67,11): warning C4996: 'juce::ScopedPointer<KeyBindingsComponent>': was declared deprecated (compiling source file ..\..\Source\Main.cpp)
-C:\JUCE\modules\juce_core\memory\juce_ScopedPointer.h(34,1): message : see declaration of 'juce::ScopedPointer' (compiling source file ..\..\Source\Main.cpp)
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Main.cpp(25,42): warning C4100: 'commandLine': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Main.cpp(47,54): warning C4100: 'commandLine': unreferenced formal parameter
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(242,58): warning C4100: 'topLevelMenuIndex': unreferenced formal parameter
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(242,42): warning C4100: 'menuItemID': unreferenced formal parameter
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(261,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(270,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(269,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(268,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(277,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(276,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(275,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(274,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(284,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(283,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(282,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(281,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(291,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(290,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(289,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(288,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(298,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(297,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(296,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(295,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(305,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(304,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(303,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(302,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(315,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(314,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(313,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(322,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(321,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(320,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(319,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(329,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(328,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(327,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(326,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(340,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(338,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(349,76): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(349,57): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(349,9): warning C4996: 'juce::ScopedPointer<KeyBindingsComponent>::operator ->': was declared deprecated
+  Dev Project Prototype (NEW)_App.vcxproj -> C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Builds\VisualStudio2019\x64\Debug\App\Dev Project Prototype (NEW).exe

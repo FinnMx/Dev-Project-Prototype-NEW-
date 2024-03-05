@@ -15,6 +15,10 @@
 AudioSettingsComponent::AudioSettingsComponent() : apply("Apply"),
                                                    close("Close")
 {
+
+    setCentrePosition(400, 400);
+    setVisible(true);
+
     addAndMakeVisible(close);
     addAndMakeVisible(apply);
     apply.addListener(this);
