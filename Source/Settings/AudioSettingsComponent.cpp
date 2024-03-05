@@ -12,13 +12,26 @@
 #include "AudioSettingsComponent.h"
 
 //==============================================================================
-AudioSettingsComponent::AudioSettingsComponent()
+AudioSettingsComponent::AudioSettingsComponent() : apply("Apply"),
+                                                   close("Close")
 {
-
+    addAndMakeVisible(close);
+    addAndMakeVisible(apply);
+    apply.addListener(this);
+    close.addListener(this);
 }
 
 AudioSettingsComponent::~AudioSettingsComponent()
 {
+}
+
+void AudioSettingsComponent::buttonClicked(juce::Button* button) {
+    if (button == &apply) {
+
+    }
+    else if (button == &close) {
+        delete this;
+    }
 }
 
 void AudioSettingsComponent::paint (juce::Graphics& g)
@@ -37,7 +50,10 @@ void AudioSettingsComponent::paint (juce::Graphics& g)
 
 void AudioSettingsComponent::resized()
 {
-    // This method is where you should set the bounds of any child
-    // components that your component contains..
+
+    close.setBounds(getWidth() * 0.8,
+        getHeight() * 0.8,
+        getWidth() * 0.2,
+        getHeight() * 0.2);
 
 }

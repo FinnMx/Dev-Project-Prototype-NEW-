@@ -218,10 +218,11 @@ juce::PopupMenu MainComponent::getMenuForIndex(int topLevelMenuIndex, const juce
     if (topLevelMenuIndex == 0)
     {
         menu.addItem("Audio Settings", [&]() {
-            addAndMakeVisible(audioSettingsWindow);
+            audioSettingsWindowptr = new AudioSettingsComponent;
+            addAndMakeVisible(*audioSettingsWindowptr);
             });
         menu.addItem("Key Bindings", [&]() {
-            addAndMakeVisible(keyBindingsWindow);
+            //addAndMakeVisible();
             DBG("Key Bindings"); });
     }
 
