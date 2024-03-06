@@ -11,7 +11,7 @@
 #pragma once
 
 #include <JuceHeader.h>
-#include <CircularBuffer.h>
+#include <Audio/CircularBuffer.h>
 #include <GUI/AudioVisualiserComponent.h>
 
 //==============================================================================

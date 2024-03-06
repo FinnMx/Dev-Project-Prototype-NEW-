@@ -3,9 +3,10 @@
 #include <iostream>
 
 #include <JuceHeader.h>
-#include <CircularBuffer.h>
-#include <TrackAudioPlayer.h>
-#include <FrequencyCutoffs.h>
+#include <Audio/CircularBuffer.h>
+#include <Audio/TrackAudioPlayer.h>
+#include <Audio/FrequencyCutoffs.h>
+#include <Audio/TenBandEQ.h>
 
 #include <GUI/DelayComponent.h>
 #include <GUI/InputComponent.h>
@@ -19,6 +20,7 @@
 
 #include <Settings/AudioSettingsComponent.h>
 #include <Settings/keyBindingsComponent.h>
+#include <Settings/PopoutWindow.h>
 
 
 //==============================================================================
@@ -58,17 +60,19 @@ public:
 
 private:
     //==============================================================================
-    // Your private member variables go here...
     int x, y;
     float rmsMasterLeft, rmsMasterRight;
 
+    juce::AudioDeviceManager deviceManager;
+    std::unique_ptr<juce::AudioDeviceSelectorComponent> audioSettings;
+
     //Setting windows
-    juce::ScopedPointer<juce::ResizableWindow> window;
+    juce::ScopedPointer<PopoutWindow> audioWindow;
     AudioSettingsComponent audioSettingsWindow;
-    juce::ScopedPointer<KeyBindingsComponent> keyBindingsWindowptr;
+    juce::ScopedPointer<PopoutWindow> keyBindWindow;
+    KeyBindingsComponent keyBindingsWindow;
 
     //MIDI
-    juce::AudioDeviceManager deviceManager;
     int midiset{ 1 }; // make this an ENUM
 
     // Child components
@@ -76,13 +80,13 @@ private:
 
     // Audio components
     juce::MixerAudioSource mixerSource;
-    //juce::MixerAudioSource effectsMixer;
 
     juce::AudioFormatManager formatManager;
     TrackAudioPlayer track1{formatManager};
     TrackAudioPlayer track2{formatManager};
     CircularBuffer circularBuffer{};
     FrequencyCutoffs freqCutoffs;
+    TenBandEQ tenBandEQ;
 
     // Thumbnail component
     juce::AudioThumbnailCache cache{ 100 };
@@ -101,7 +105,7 @@ private:
     DubSiren dubSirenPlayer;
     DubSirenComponent dubSiren{ &dubSirenPlayer };
 
-    TenBandComponent tenBandComponent;
+    TenBandComponent tenBandComponent{ &tenBandEQ };
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };

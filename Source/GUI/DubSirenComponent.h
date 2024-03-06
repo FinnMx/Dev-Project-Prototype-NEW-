@@ -11,7 +11,7 @@
 #pragma once
 
 #include <JuceHeader.h>
-#include <DubSiren.h>
+#include <Audio/DubSiren.h>
 
 //==============================================================================
 /*

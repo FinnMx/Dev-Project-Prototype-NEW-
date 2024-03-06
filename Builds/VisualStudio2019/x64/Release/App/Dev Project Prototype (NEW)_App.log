@@ -1,294 +1,363 @@
-﻿  DubSiren.cpp
+﻿  CircularBuffer.cpp
+  DubSiren.cpp
   FrequencyCutoffs.cpp
-  CircularBuffer.cpp
+  TenBandEQ.cpp
+  TrackAudioPlayer.cpp
   AudioVisualiserComponent.cpp
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\FrequencyCutoffs.cpp(38,95): warning C4305: 'argument': truncation from 'double' to 'NumericType'
-          with
-          [
-              NumericType=float
-          ]
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\FrequencyCutoffs.cpp(90,74): warning C4100: 'sampleRate': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\CircularBuffer.cpp(28,72): warning C4100: 'sampleRate': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\CircularBuffer.cpp(63,50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\DubSiren.h(44,23): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\DubSiren.cpp)
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\CircularBuffer.cpp(136,34): warning C4456: declaration of 'input' hides previous local declaration
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\CircularBuffer.cpp(123,17): message : see declaration of 'input'
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\CircularBuffer.cpp(140,34): warning C4456: declaration of 'input' hides previous local declaration
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\CircularBuffer.cpp(123,17): message : see declaration of 'input'
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\CircularBuffer.cpp(166,75): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\DubSiren.cpp(35,66): warning C4100: 'sampleRate': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\AudioVisualiserComponent.cpp(33,82): warning C4100: 'sampleRate': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\AudioVisualiserComponent.cpp(33,50): warning C4100: 'samplesPerBlockExpected': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\AudioVisualiserComponent.cpp(115,60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\AudioVisualiserComponent.cpp(115,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\AudioVisualiserComponent.cpp(115,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\AudioVisualiserComponent.cpp(147,59): warning C4244: 'argument': conversion from 'Type' to 'float', possible loss of data
-          with
-          [
-              Type=double
-          ]
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\AudioVisualiserComponent.cpp(147,52): warning C4244: 'argument': conversion from 'ValueType' to 'float', possible loss of data
-          with
-          [
-              ValueType=int
-          ]
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\AudioVisualiserComponent.cpp(150,58): warning C4244: 'argument': conversion from 'Type' to 'float', possible loss of data
-          with
-          [
-              Type=double
-          ]
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\AudioVisualiserComponent.cpp(150,50): warning C4244: 'argument': conversion from 'size_t' to 'float', possible loss of data
   DelayComponent.cpp
   DubSirenComponent.cpp
   InputComponent.cpp
   KillEQComponent.cpp
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\DubSiren.h(44,23): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\GUI\DubSirenComponent.cpp)
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(129,46): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(134,67): warning C4305: 'argument': truncation from 'juce::Justification::Flags' to 'bool'
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(137,55): warning C4100: 'slider': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(93,66): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(94,61): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(95,60): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(204,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(96,60): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(203,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(88,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(92,56): warning C4100: 'slider': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(202,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(89,57): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(201,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(90,72): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(209,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(208,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(87,55): warning C4100: 'slider': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(110,73): warning C4100: 'sampleRate': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(207,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(206,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(94,55): warning C4100: 'slider': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(110,41): warning C4100: 'samplesPerBlockExpected': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(214,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(98,53): warning C4100: 'slider': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(213,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(212,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(103,72): warning C4100: 'sampleRate': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(211,34): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(103,40): warning C4100: 'samplesPerBlockExpected': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(142,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(141,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(140,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(139,37): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(148,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(147,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(146,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(145,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(148,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(155,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(147,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(154,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(146,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(153,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(145,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(152,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(155,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(162,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(154,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(161,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(153,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(160,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(152,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(159,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(161,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(169,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(160,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(168,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(167,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(159,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(166,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(176,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(175,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(174,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(173,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(158,45): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(183,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(182,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(181,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(180,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(190,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(167,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(166,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(189,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(188,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(187,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(165,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(164,32): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(197,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(196,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(172,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(195,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(171,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(194,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(170,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(169,37): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(15,105): warning C4100: 'formatManager': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(79,43): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(115,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(114,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(113,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(112,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(122,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(121,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(120,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(119,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(129,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(128,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(127,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(126,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(136,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(135,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(134,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(133,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(143,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(142,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(141,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(140,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(150,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(149,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(148,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(147,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(157,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(156,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(155,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(154,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   MasterComponent.cpp
   MeterComponent.cpp
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\AudioVisualiserComponent.cpp(33,82): warning C4100: 'sampleRate': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\AudioVisualiserComponent.cpp(33,50): warning C4100: 'samplesPerBlockExpected': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\AudioVisualiserComponent.cpp(115,60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\AudioVisualiserComponent.cpp(115,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\AudioVisualiserComponent.cpp(115,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\AudioVisualiserComponent.cpp(147,59): warning C4244: 'argument': conversion from 'Type' to 'float', possible loss of data
+          with
+          [
+              Type=double
+          ]
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\AudioVisualiserComponent.cpp(147,52): warning C4244: 'argument': conversion from 'ValueType' to 'float', possible loss of data
+          with
+          [
+              ValueType=int
+          ]
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\AudioVisualiserComponent.cpp(150,58): warning C4244: 'argument': conversion from 'Type' to 'float', possible loss of data
+          with
+          [
+              Type=double
+          ]
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\AudioVisualiserComponent.cpp(150,50): warning C4244: 'argument': conversion from 'size_t' to 'float', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(88,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(89,57): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(90,72): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(87,55): warning C4100: 'slider': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(94,55): warning C4100: 'slider': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(98,53): warning C4100: 'slider': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(103,72): warning C4100: 'sampleRate': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(103,40): warning C4100: 'samplesPerBlockExpected': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(148,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(147,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(146,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(145,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(155,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(154,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(153,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(152,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(161,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(160,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(159,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(158,45): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(167,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(166,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(165,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(164,32): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(172,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(171,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(170,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(169,37): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\FrequencyCutoffs.cpp(38,95): warning C4305: 'argument': truncation from 'double' to 'NumericType'
+          with
+          [
+              NumericType=float
+          ]
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\FrequencyCutoffs.cpp(90,74): warning C4100: 'sampleRate': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(93,66): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(94,61): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(95,60): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(96,60): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(92,56): warning C4100: 'slider': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(110,73): warning C4100: 'sampleRate': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(110,41): warning C4100: 'samplesPerBlockExpected': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(142,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(141,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(140,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(139,37): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(148,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(147,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(146,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(145,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(155,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(154,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(153,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(152,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(162,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(161,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(160,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(159,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(169,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(168,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(167,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(166,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(176,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(175,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(174,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(173,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(183,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(182,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(181,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(180,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(190,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(189,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(188,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(187,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(197,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(196,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(195,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(194,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\DubSiren.h(44,23): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\GUI\DubSirenComponent.cpp)
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(129,46): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\InputComponent.cpp(15,105): warning C4100: 'formatManager': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\InputComponent.cpp(79,43): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\InputComponent.cpp(115,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\InputComponent.cpp(114,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\InputComponent.cpp(113,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\InputComponent.cpp(112,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\InputComponent.cpp(122,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\InputComponent.cpp(121,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\InputComponent.cpp(120,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\InputComponent.cpp(119,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\InputComponent.cpp(129,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\InputComponent.cpp(128,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\InputComponent.cpp(127,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\InputComponent.cpp(126,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\InputComponent.cpp(136,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\InputComponent.cpp(135,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\InputComponent.cpp(134,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\InputComponent.cpp(133,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\InputComponent.cpp(143,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\InputComponent.cpp(142,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\InputComponent.cpp(141,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\InputComponent.cpp(140,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\InputComponent.cpp(150,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\InputComponent.cpp(149,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\InputComponent.cpp(148,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\InputComponent.cpp(147,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\InputComponent.cpp(157,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\InputComponent.cpp(156,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\InputComponent.cpp(155,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\InputComponent.cpp(154,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\MasterComponent.cpp(61,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\MasterComponent.cpp(60,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\MasterComponent.cpp(59,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\MasterComponent.cpp(58,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\MasterComponent.cpp(68,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\MasterComponent.cpp(67,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\MasterComponent.cpp(66,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\MasterComponent.cpp(65,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(134,67): warning C4305: 'argument': truncation from 'juce::Justification::Flags' to 'bool'
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(137,55): warning C4100: 'slider': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(204,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(203,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(202,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(201,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(209,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(208,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(207,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(206,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(214,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(213,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(212,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(211,34): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\TenBandEQ.cpp(50,67): warning C4100: 'sampleRate': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\DubSiren.h(44,23): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Audio\DubSiren.cpp)
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\DubSiren.cpp(35,66): warning C4100: 'sampleRate': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(28,72): warning C4100: 'sampleRate': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(63,50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(136,34): warning C4456: declaration of 'input' hides previous local declaration
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(123,17): message : see declaration of 'input'
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(140,34): warning C4456: declaration of 'input' hides previous local declaration
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(123,17): message : see declaration of 'input'
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(166,75): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   ReverbComponent.cpp
   TenBandComponent.cpp
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\MasterComponent.cpp(61,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\MasterComponent.cpp(60,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\MasterComponent.cpp(59,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\MasterComponent.cpp(58,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\MasterComponent.cpp(68,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\MasterComponent.cpp(67,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\MasterComponent.cpp(66,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\MasterComponent.cpp(65,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(74,106): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(74,79): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(74,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(75,106): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(75,79): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(75,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(73,56): warning C4100: 'slider': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(79,55): warning C4100: 'slider': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(83,53): warning C4100: 'slider': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(117,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(116,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(115,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(114,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(124,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(123,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(122,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(121,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(131,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(130,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(129,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(128,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   TrackThumbnailComponent.cpp
   AudioSettingsComponent.cpp
   KeyBindingsComponent.cpp
-  TrackAudioPlayer.cpp
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TrackThumbnailComponent.cpp(34,79): warning C4100: 'source': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TrackThumbnailComponent.cpp(38,64): warning C4100: 'slider': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TrackThumbnailComponent.cpp(42,63): warning C4100: 'slider': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TrackThumbnailComponent.cpp(46,61): warning C4100: 'slider': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TrackThumbnailComponent.cpp(103,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TrackThumbnailComponent.cpp(102,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TrackThumbnailComponent.cpp(101,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TrackThumbnailComponent.cpp(100,37): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TrackThumbnailComponent.cpp(108,21): warning C4244: 'argument': conversion from 'double' to 'ValueType', possible loss of data
-          with
-          [
-              ValueType=int
-          ]
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TrackThumbnailComponent.cpp(107,20): warning C4244: 'argument': conversion from 'double' to 'ValueType', possible loss of data
-          with
-          [
-              ValueType=int
-          ]
+  PopoutWindow.cpp
   Main.cpp
   MainComponent.cpp
   include_juce_audio_basics.cpp
   include_juce_audio_devices.cpp
   include_juce_audio_formats.cpp
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\DubSiren.h(44,23): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Main.cpp)
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Main.cpp(25,42): warning C4100: 'commandLine': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Main.cpp(47,54): warning C4100: 'commandLine': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\DubSiren.h(44,23): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\MainComponent.cpp)
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(71,43): warning C4239: nonstandard extension used: 'argument': conversion from 'ElementType' to 'juce::MidiDeviceInfo &'
+  include_juce_audio_processors_ara.cpp
+  include_juce_audio_processors_lv2_libs.cpp
+  include_juce_audio_utils.cpp
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TrackThumbnailComponent.cpp(34,79): warning C4100: 'source': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TrackThumbnailComponent.cpp(38,64): warning C4100: 'slider': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TrackThumbnailComponent.cpp(42,63): warning C4100: 'slider': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TrackThumbnailComponent.cpp(46,61): warning C4100: 'slider': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TrackThumbnailComponent.cpp(103,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TrackThumbnailComponent.cpp(102,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TrackThumbnailComponent.cpp(101,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TrackThumbnailComponent.cpp(100,37): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TrackThumbnailComponent.cpp(108,21): warning C4244: 'argument': conversion from 'double' to 'ValueType', possible loss of data
+          with
+          [
+              ValueType=int
+          ]
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TrackThumbnailComponent.cpp(107,20): warning C4244: 'argument': conversion from 'double' to 'ValueType', possible loss of data
+          with
+          [
+              ValueType=int
+          ]
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(64,52): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(87,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(86,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(85,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(84,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(92,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(91,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(90,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(89,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(97,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(96,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(95,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(94,40): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(102,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(101,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(100,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(99,40): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(107,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(106,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(105,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(104,40): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(112,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(111,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(110,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(109,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(117,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(116,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(115,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(114,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(122,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(121,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(120,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(119,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(127,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(126,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(125,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(124,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(132,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(131,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(130,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(129,42): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\ReverbComponent.cpp(74,106): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\ReverbComponent.cpp(74,79): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\ReverbComponent.cpp(74,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\ReverbComponent.cpp(75,106): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\ReverbComponent.cpp(75,79): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\ReverbComponent.cpp(75,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\ReverbComponent.cpp(73,56): warning C4100: 'slider': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\ReverbComponent.cpp(79,55): warning C4100: 'slider': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\ReverbComponent.cpp(83,53): warning C4100: 'slider': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\ReverbComponent.cpp(117,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\ReverbComponent.cpp(116,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\ReverbComponent.cpp(115,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\ReverbComponent.cpp(114,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\ReverbComponent.cpp(124,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\ReverbComponent.cpp(123,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\ReverbComponent.cpp(122,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\ReverbComponent.cpp(121,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\ReverbComponent.cpp(131,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\ReverbComponent.cpp(130,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\ReverbComponent.cpp(129,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\ReverbComponent.cpp(128,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\AudioSettingsComponent.cpp(60,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\AudioSettingsComponent.cpp(59,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\AudioSettingsComponent.cpp(57,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\PopoutWindow.cpp(20,31): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\PopoutWindow.cpp(20,22): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\PopoutWindow.cpp(18,5): warning C4996: 'juce::ResizableWindow::setContentComponent': use setContentOwned and setContentNonOwned instead.
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\DubSiren.h(44,23): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Main.cpp)
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.h(70,11): warning C4996: 'juce::ScopedPointer<PopoutWindow>': was declared deprecated (compiling source file ..\..\Source\Main.cpp)
+C:\JUCE\modules\juce_core\memory\juce_ScopedPointer.h(34,1): message : see declaration of 'juce::ScopedPointer' (compiling source file ..\..\Source\Main.cpp)
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.h(72,11): warning C4996: 'juce::ScopedPointer<PopoutWindow>': was declared deprecated (compiling source file ..\..\Source\Main.cpp)
+C:\JUCE\modules\juce_core\memory\juce_ScopedPointer.h(34,1): message : see declaration of 'juce::ScopedPointer' (compiling source file ..\..\Source\Main.cpp)
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Main.cpp(25,42): warning C4100: 'commandLine': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Main.cpp(47,54): warning C4100: 'commandLine': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\DubSiren.h(44,23): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\MainComponent.cpp)
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.h(70,11): warning C4996: 'juce::ScopedPointer<PopoutWindow>': was declared deprecated (compiling source file ..\..\Source\MainComponent.cpp)
+C:\JUCE\modules\juce_core\memory\juce_ScopedPointer.h(34,1): message : see declaration of 'juce::ScopedPointer' (compiling source file ..\..\Source\MainComponent.cpp)
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.h(72,11): warning C4996: 'juce::ScopedPointer<PopoutWindow>': was declared deprecated (compiling source file ..\..\Source\MainComponent.cpp)
+C:\JUCE\modules\juce_core\memory\juce_ScopedPointer.h(34,1): message : see declaration of 'juce::ScopedPointer' (compiling source file ..\..\Source\MainComponent.cpp)
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(9,1): warning C4996: 'juce::ScopedPointer<PopoutWindow>::ScopedPointer': was declared deprecated
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(47,17): warning C4996: 'juce::ScopedPointer<PopoutWindow>::operator =': was declared deprecated
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(48,19): warning C4996: 'juce::ScopedPointer<PopoutWindow>::operator =': was declared deprecated
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(53): warning C4996: 'juce::ScopedPointer<PopoutWindow>::~ScopedPointer': was declared deprecated
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(78,43): warning C4239: nonstandard extension used: 'argument': conversion from 'ElementType' to 'juce::MidiDeviceInfo &'
           with
           [
               ElementType=juce::MidiDeviceInfo
           ]
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(71,43): message : A non-const reference may only be bound to an lvalue
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(122,30): warning C4390: ';': empty controlled statement found; is this the intent?
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(104,64): warning C4100: 'source': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(215,91): warning C4100: 'menuName': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(235,58): warning C4100: 'topLevelMenuIndex': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(235,42): warning C4100: 'menuItemID': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(254,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(263,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(262,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(261,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(270,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(269,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(268,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(267,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(277,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(276,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(275,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(274,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(284,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(283,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(282,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(281,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(291,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(290,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(289,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(288,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(298,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(297,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(296,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(295,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(308,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(307,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(306,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(315,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(314,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(313,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(312,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(322,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(321,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(320,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(319,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(333,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(331,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(341,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(340,51): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(344,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(343,49): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-  include_juce_audio_processors_ara.cpp
-  include_juce_audio_processors_lv2_libs.cpp
-  include_juce_audio_utils.cpp
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(78,43): message : A non-const reference may only be bound to an lvalue
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(129,30): warning C4390: ';': empty controlled statement found; is this the intent?
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(111,64): warning C4100: 'source': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(230,74): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(230,55): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(230,13): warning C4996: 'juce::ScopedPointer<PopoutWindow>::operator ->': was declared deprecated
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(231,13): warning C4996: 'juce::ScopedPointer<PopoutWindow>::operator ->': was declared deprecated
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(234,76): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(234,57): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(234,13): warning C4996: 'juce::ScopedPointer<PopoutWindow>::operator ->': was declared deprecated
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(235,13): warning C4996: 'juce::ScopedPointer<PopoutWindow>::operator ->': was declared deprecated
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(224,91): warning C4100: 'menuName': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(245,58): warning C4100: 'topLevelMenuIndex': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(245,42): warning C4100: 'menuItemID': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(264,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(273,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(272,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(271,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(280,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(279,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(278,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(277,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(287,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(286,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(285,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(284,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(294,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(293,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(292,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(291,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(301,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(300,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(299,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(298,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(308,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(307,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(306,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(305,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(318,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(317,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(316,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(325,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(324,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(323,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(322,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(332,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(331,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(330,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(329,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(343,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(341,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   include_juce_data_structures.cpp
   include_juce_dsp.cpp
   include_juce_events.cpp
   include_juce_graphics.cpp
   include_juce_gui_extra.cpp
+  include_juce_audio_processors.cpp
+  include_juce_core.cpp
+  include_juce_gui_basics.cpp
   Generating code
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(79): warning C4706: assignment within conditional expression
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(82): warning C4706: assignment within conditional expression
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(100): warning C4706: assignment within conditional expression
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(102): warning C4706: assignment within conditional expression
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(104): warning C4706: assignment within conditional expression
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(106): warning C4706: assignment within conditional expression
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(79): warning C4706: assignment within conditional expression
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(82): warning C4706: assignment within conditional expression
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(100): warning C4706: assignment within conditional expression
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(102): warning C4706: assignment within conditional expression
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(104): warning C4706: assignment within conditional expression
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(106): warning C4706: assignment within conditional expression
   Finished generating code
-  Dev Project Prototype (NEW)_App.vcxproj -> C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Builds\VisualStudio2019\x64\Release\App\Dev Project Prototype (NEW).exe
+  Dev Project Prototype (NEW)_App.vcxproj -> K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Builds\VisualStudio2019\x64\Release\App\Dev Project Prototype (NEW).exe

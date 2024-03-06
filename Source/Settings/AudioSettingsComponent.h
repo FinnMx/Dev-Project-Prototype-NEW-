@@ -23,13 +23,15 @@ public:
     ~AudioSettingsComponent() override;
 
     void buttonClicked(juce::Button* button) override;
+    void setAudioSettings(juce::AudioDeviceSelectorComponent* newAudioSettings);
 
     void paint (juce::Graphics&) override;
     void resized() override;
 
 private:
+    juce::AudioDeviceSelectorComponent* audioSettings;
+
     juce::TextButton apply;
-    juce::TextButton close;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AudioSettingsComponent)
 };

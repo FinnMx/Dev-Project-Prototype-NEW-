@@ -12,7 +12,7 @@
 
 #include <JuceHeader.h>
 #include <GUI/AudioVisualiserComponent.h>
-#include <FrequencyCutoffs.h>
+#include <Audio/FrequencyCutoffs.h>
 
 //==============================================================================
 /*

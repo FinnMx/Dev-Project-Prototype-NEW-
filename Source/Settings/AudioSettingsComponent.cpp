@@ -12,17 +12,14 @@
 #include "AudioSettingsComponent.h"
 
 //==============================================================================
-AudioSettingsComponent::AudioSettingsComponent() : apply("Apply"),
-                                                   close("Close")
+AudioSettingsComponent::AudioSettingsComponent() : apply("Apply")
 {
 
     setCentrePosition(400, 400);
     setVisible(true);
 
-    addAndMakeVisible(close);
     addAndMakeVisible(apply);
     apply.addListener(this);
-    close.addListener(this);
 }
 
 AudioSettingsComponent::~AudioSettingsComponent()
@@ -33,9 +30,12 @@ void AudioSettingsComponent::buttonClicked(juce::Button* button) {
     if (button == &apply) {
 
     }
-    else if (button == &close) {
-        delete this;
-    }
+}
+
+void AudioSettingsComponent::setAudioSettings(juce::AudioDeviceSelectorComponent* newAudioSettings) {
+    audioSettings = newAudioSettings;
+    addAndMakeVisible(audioSettings);
+    resized();
 }
 
 void AudioSettingsComponent::paint (juce::Graphics& g)
@@ -54,10 +54,8 @@ void AudioSettingsComponent::paint (juce::Graphics& g)
 
 void AudioSettingsComponent::resized()
 {
-
-    close.setBounds(getWidth() * 0.8,
-        getHeight() * 0.8,
-        getWidth() * 0.2,
-        getHeight() * 0.2);
-
+    audioSettings->setBounds(getWidth() * 0.5,
+        getY(),
+        getWidth() * 0.4,
+        getHeight() * 0.4);
 }

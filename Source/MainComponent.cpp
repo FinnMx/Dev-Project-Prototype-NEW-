@@ -4,9 +4,13 @@
 using namespace std;
 
 //==============================================================================
-MainComponent::MainComponent() :
+MainComponent::MainComponent() : juce::AudioAppComponent(deviceManager),
     menuBar(this)
 {
+    deviceManager.initialise(2, 2, nullptr, true);
+    audioSettings.reset(new juce::AudioDeviceSelectorComponent(deviceManager, 0, 2, 0, 2, true, true, true,true));
+    audioSettingsWindow.setAudioSettings(audioSettings.get());
+
     getMidiDevice();
 
     // Some platforms require permissions to open input channels so request that here
@@ -39,6 +43,9 @@ MainComponent::MainComponent() :
     addAndMakeVisible(delayComponent);
     addAndMakeVisible(killEQComponent);
     addAndMakeVisible(dubSiren);
+
+    audioWindow = new PopoutWindow("Audio Settings", &audioSettingsWindow, x, y);
+    keyBindWindow = new PopoutWindow("Key Bindings", &keyBindingsWindow, x, y);
 
 }
 
@@ -181,6 +188,7 @@ void MainComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate
     track2.prepareToPlay(samplesPerBlockExpected, sampleRate);
     freqCutoffs.prepareToPlay(samplesPerBlockExpected, sampleRate);
     circularBuffer.prepareToPlay(samplesPerBlockExpected, 44100.0);
+    tenBandEQ.prepareToPlay(samplesPerBlockExpected, sampleRate);
 
     mixerSource.addInputSource(&track1, false);
     mixerSource.addInputSource(&track2, false);
@@ -190,6 +198,7 @@ void MainComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate
 
 void MainComponent::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) {
     mixerSource.getNextAudioBlock(bufferToFill);
+    tenBandEQ.getNextAudioBlock(bufferToFill);
     freqCutoffs.getNextAudioBlock(bufferToFill);
     dubSirenPlayer.getNextAudioBlock(bufferToFill);
 
@@ -218,19 +227,14 @@ juce::PopupMenu MainComponent::getMenuForIndex(int topLevelMenuIndex, const juce
     if (topLevelMenuIndex == 0)
     {
         menu.addItem("Audio Settings", [&]() {
-            window = new juce::ResizableWindow("Audio Settings", true);
-            window->setUsingNativeTitleBar(true);
-            window->setCentrePosition(400, 400);
-            window->centreWithSize(getWidth() * 0.4, getHeight() * 0.5);
-            window->setVisible(true);
-            window->setResizable(false, false);
-            window->setContentOwned(new AudioSettingsComponent, false);
+            audioWindow->setCentrePosition(getWidth() * 0.5, getHeight() * 0.5);
+            audioWindow->setVisible(true);
             });
         menu.addItem("Key Bindings", [&]() {
-            //addAndMakeVisible();
-            DBG("Key Bindings"); });
+            keyBindWindow->setCentrePosition(getWidth() * 0.5, getHeight() * 0.5);
+            keyBindWindow->setVisible(true);
+            });
     }
-
     return menu;
 }
 
@@ -343,7 +347,4 @@ void MainComponent::resized()
     //-----------------------------------------------
     //Settings Menus
     //audioSettingsWindow.centreWithSize(getWidth() * 0.4, getHeight() * 0.5);
-
-    if(keyBindingsWindowptr != nullptr)
-        keyBindingsWindowptr->centreWithSize(getWidth() * 0.4, getHeight() * 0.5);
 }
