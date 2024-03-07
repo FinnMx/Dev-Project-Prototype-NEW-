@@ -37,6 +37,8 @@ TenBandComponent::TenBandComponent(TenBandEQ* tenBandEQ) : tenBand(tenBandEQ)
     sliderLabels.push_back(&freq16000SliderLabel);
 
     initSlider();
+    addAndMakeVisible(resetButton);
+    resetButton.addListener(this);
 }
 
 TenBandComponent::~TenBandComponent()
@@ -62,6 +64,15 @@ void TenBandComponent::sliderValueChanged(juce::Slider* slider) {
     for (int i = 0; i <= 9; i++) {
         if (slider == sliders[i])
             tenBand->setNewGain(i, slider->getValue());
+    }
+}
+
+void TenBandComponent::buttonClicked(juce::Button* button) {
+    if (button = &resetButton){
+        for each (juce::Slider* slider in sliders)
+        {
+            slider->setValue(1.0f, juce::NotificationType{});
+        }
     }
 }
 
@@ -131,4 +142,8 @@ void TenBandComponent::resized()
         getWidth() * 0.1,
         getHeight() * 0.6);
 
+    resetButton.setBounds(getWidth() * 0.85,
+        getHeight() * 0.9,
+        getWidth() * 0.15,
+        getHeight() * 0.1);
 }

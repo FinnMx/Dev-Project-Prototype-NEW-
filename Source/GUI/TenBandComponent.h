@@ -17,7 +17,8 @@
 /*
 */
 class TenBandComponent  : public juce::Component,
-                          public juce::Slider::Listener
+                          public juce::Slider::Listener,
+                          public juce::Button::Listener
 {
 public:
     TenBandComponent(TenBandEQ* tenBandEQ);
@@ -25,6 +26,7 @@ public:
 
     void initSlider();
     void sliderValueChanged(juce::Slider* slider) override;
+    void buttonClicked(juce::Button* button) override;
 
     void paint (juce::Graphics&) override;
     void resized() override;
@@ -35,6 +37,8 @@ private:
 
     std::vector<juce::Slider*> sliders;
     std::vector<juce::Label*> sliderLabels;
+
+    juce::TextButton resetButton{ "reset" };
 
     juce::Slider freq30Slider;
     juce::Slider freq62Slider;
