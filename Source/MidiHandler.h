@@ -31,10 +31,10 @@ public:
     int returnCorrespondingAction(int key);
 
 private:
-    const char* filePath{ "midisettings.json" };
-    std::ifstream inFile{ filePath };
+    void processSettings(rapidjson::Document& document);
 
-    rapidjson::Document document;
+    const char* filePath{ "K:/dev/NEW DEV PROTOTYPE (CORRECT ONE)/Dev Project Prototype (NEW)/Source/midisettings.json" };
+
     std::unordered_map<int, std::pair<int, int>> bindings;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MidiHandler)

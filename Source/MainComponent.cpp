@@ -45,7 +45,7 @@ MainComponent::MainComponent() : juce::AudioAppComponent(deviceManager),
 
     audioWindow = new PopoutWindow("Audio Settings", &audioSettingsWindow, x, y);
     keyBindWindow = new PopoutWindow("Key Bindings", &keyBindingsWindow, x, y);
-    midiHandler.bindKey(48, 7, 1);
+    midiHandler.readSettingsFile();
 }
 
 MainComponent::~MainComponent()
