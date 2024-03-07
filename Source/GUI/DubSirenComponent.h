@@ -26,7 +26,7 @@ public:
 
     void initSlider();
 
-    void handleMidi(int control, int value = 0);
+    void handleMidi(int action, int value = 0);
 
     void buttonClicked(juce::Button* button) override;
     void sliderValueChanged(juce::Slider* slider) override;

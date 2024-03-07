@@ -55,16 +55,16 @@ ReverbComponent::~ReverbComponent()
 {
 }
 
-void ReverbComponent::handleMidi(int control, int value) {
+void ReverbComponent::handleMidi(int action, int value) {
     const juce::MessageManagerLock mmLock;
-    switch (control) {
-    case 20:
+    switch (action) {
+    case 0:
         roomSizeSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.f, 1.0f));
         break;
-    case 21:
+    case 1:
         dampingSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.f, 1.f));
         break;
-    case 22:
+    case 2:
         wetLevelSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.f, 1.f));
         break;
     }

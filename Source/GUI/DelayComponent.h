@@ -35,7 +35,7 @@ public:
     void getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) override;
     void releaseResources() override;
 
-    void handleMidi(int control, int value = 0);
+    void handleMidi(int action, int value = 0);
 
     void buttonClicked(juce::Button* button) override;
 

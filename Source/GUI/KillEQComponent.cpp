@@ -71,19 +71,19 @@ void KillEQComponent::initSlider() {
     highFrequencyLabel.setJustificationType(juce::Justification::centredBottom);
 }
 
-void KillEQComponent::handleMidi(int control) {
+void KillEQComponent::handleMidi(int action) {
     const juce::MessageManagerLock mmLock;
-    switch (control) {
-    case 49:
+    switch (action) {
+    case 0:
         subBassOnOff.triggerClick();
         break;
-    case 41:
+    case 1:
         bassOnOff.triggerClick();
         break;
-    case 42:
+    case 2:
         midsOnOff.triggerClick();
         break;
-    case 46:
+    case 3:
         highOnOff.triggerClick();
         break;
     }

@@ -3,10 +3,12 @@
 #include <iostream>
 
 #include <JuceHeader.h>
+#include <MidiHandler.h>
 #include <Audio/CircularBuffer.h>
 #include <Audio/TrackAudioPlayer.h>
 #include <Audio/FrequencyCutoffs.h>
 #include <Audio/TenBandEQ.h>
+#include <Audio/DubSiren.h>
 
 #include <GUI/DelayComponent.h>
 #include <GUI/InputComponent.h>
@@ -29,8 +31,8 @@
     your controls and content.
 */
 class MainComponent  : public juce::AudioAppComponent,
-                       public juce::MidiInputCallback,
-                       public juce::MenuBarModel
+                       public juce::MenuBarModel,
+                       public juce::MidiInputCallback
 {
 public:
     //==============================================================================
@@ -46,13 +48,10 @@ public:
     juce::PopupMenu getMenuForIndex(int topLevelMenuIndex, const juce::String& menuName) override;
     juce::StringArray getMenuBarNames() override;
     void menuItemSelected(int menuItemID, int topLevelMenuIndex) override;
-
     //==============================================================================
     void handleIncomingMidiMessage(juce::MidiInput* source, const juce::MidiMessage& message) override;
     void setMidiInput(juce::MidiDeviceInfo& id);
     void getMidiDevice();
-    void setMidiSet();
-
     //==============================================================================
     void paint (juce::Graphics& g) override;
     void resized() override;
@@ -71,9 +70,6 @@ private:
     AudioSettingsComponent audioSettingsWindow;
     juce::ScopedPointer<PopoutWindow> keyBindWindow;
     KeyBindingsComponent keyBindingsWindow;
-
-    //MIDI
-    int midiset{ 1 }; // make this an ENUM
 
     // Child components
     juce::MenuBarComponent menuBar;
@@ -106,6 +102,10 @@ private:
     DubSirenComponent dubSiren{ &dubSirenPlayer };
 
     TenBandComponent tenBandComponent{ &tenBandEQ };
+
+    //MIDI
+    MidiHandler midiHandler;
+    int midiset{ 1 }; // make this an ENUM
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };

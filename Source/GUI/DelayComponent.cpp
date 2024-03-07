@@ -33,20 +33,20 @@ DelayComponent::~DelayComponent()
 {
 }
 
-void DelayComponent::handleMidi(int control, int value) {
+void DelayComponent::handleMidi(int action, int value) {
     const juce::MessageManagerLock mmLock;
-    switch (control) {
-    case 36:
-        onOff.triggerClick();
-        break;
-    case 20:
+    switch (action) {
+    case 0:
         gainSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.f, 1.0f));
         break;
-    case 21:
+    case 1:
         timeSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.f, 1000.f));
         break;
-    case 22:
+    case 2:
         frequencyCutSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 400.f, 18000.f));
+        break;
+    case 3:
+        onOff.triggerClick();
         break;
     }
 }

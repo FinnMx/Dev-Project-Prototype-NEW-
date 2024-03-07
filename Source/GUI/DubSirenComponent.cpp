@@ -138,19 +138,16 @@ void DubSirenComponent::sliderDragEnded(juce::Slider* slider) {
     val.setText("", juce::NotificationType{});
 }
 
-void DubSirenComponent::handleMidi(int control, int value) {
+void DubSirenComponent::handleMidi(int action, int value) {
     const juce::MessageManagerLock mmLock;
-    switch (control) {
-    case 37:
-        trigger.triggerClick();
-        break;
-    case 20:
+    switch (action) {
+    case 0:
         presetSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 1.f, 8.f));
         break;
-    case 21:
-        //lfoFrequencySlider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.f, 2.f));
+    case 1:
+        trigger.triggerClick();
         break;
-    case 22:
+    case 2:
         volumeSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.f, 6.f));
         break;
     }

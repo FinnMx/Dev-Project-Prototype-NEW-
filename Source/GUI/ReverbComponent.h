@@ -23,7 +23,7 @@ public:
     ReverbComponent(TrackAudioPlayer* track1, TrackAudioPlayer* track2);
     ~ReverbComponent() override;
 
-    void handleMidi(int control, int value = 0);
+    void handleMidi(int action, int value = 0);
 
     void initSlider();
     void sliderValueChanged(juce::Slider* slider) override;

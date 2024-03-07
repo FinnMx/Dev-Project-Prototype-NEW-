@@ -5,16 +5,38 @@
               jucerFormatVersion="1">
   <MAINGROUP id="ncb3RS" name="Dev Project Prototype (NEW)">
     <GROUP id="{E7D65140-8782-E511-8057-9CBD6DBD894E}" name="Source">
-      <FILE id="kAqM4G" name="Crossfade.h" compile="0" resource="0" file="Source/Crossfade.h"/>
-      <FILE id="gC16lb" name="FrequencyCutoffs.cpp" compile="1" resource="0"
-            file="Source/FrequencyCutoffs.cpp"/>
-      <FILE id="EZF6kB" name="FrequencyCutoffs.h" compile="0" resource="0"
-            file="Source/FrequencyCutoffs.h"/>
-      <GROUP id="{F4C3C927-2635-A084-9BB8-9BD0960623EF}" name="Effects"/>
-      <FILE id="ihJGYJ" name="CircularBuffer.cpp" compile="1" resource="0"
-            file="Source/CircularBuffer.cpp"/>
-      <FILE id="vedvbx" name="CircularBuffer.h" compile="0" resource="0"
-            file="Source/CircularBuffer.h"/>
+      <GROUP id="{2068E67D-1D1A-45E4-B7C0-195DCA913D1F}" name="Audio">
+        <FILE id="hBH5xt" name="CircularBuffer.cpp" compile="1" resource="0"
+              file="Source/Audio/CircularBuffer.cpp"/>
+        <FILE id="Pr030Q" name="CircularBuffer.h" compile="0" resource="0"
+              file="Source/Audio/CircularBuffer.h"/>
+        <FILE id="jD3biN" name="Crossfade.h" compile="0" resource="0" file="Source/Audio/Crossfade.h"/>
+        <FILE id="mCCwMT" name="DubSiren.cpp" compile="1" resource="0" file="Source/Audio/DubSiren.cpp"/>
+        <FILE id="lQ9HMv" name="DubSiren.h" compile="0" resource="0" file="Source/Audio/DubSiren.h"/>
+        <FILE id="XBNLtC" name="FrequencyCutoffs.cpp" compile="1" resource="0"
+              file="Source/Audio/FrequencyCutoffs.cpp"/>
+        <FILE id="ZpNZDH" name="FrequencyCutoffs.h" compile="0" resource="0"
+              file="Source/Audio/FrequencyCutoffs.h"/>
+        <FILE id="saIUBn" name="TenBandEQ.cpp" compile="1" resource="0" file="Source/Audio/TenBandEQ.cpp"/>
+        <FILE id="N8R4oZ" name="TenBandEQ.h" compile="0" resource="0" file="Source/Audio/TenBandEQ.h"/>
+        <FILE id="CbY8eS" name="TrackAudioPlayer.cpp" compile="1" resource="0"
+              file="Source/Audio/TrackAudioPlayer.cpp"/>
+        <FILE id="yoXd9F" name="TrackAudioPlayer.h" compile="0" resource="0"
+              file="Source/Audio/TrackAudioPlayer.h"/>
+      </GROUP>
+      <GROUP id="{B91857CA-9832-89FF-D1A9-55764FCFD552}" name="Settings">
+        <FILE id="wMevot" name="AudioSettingsComponent.cpp" compile="1" resource="0"
+              file="Source/Settings/AudioSettingsComponent.cpp"/>
+        <FILE id="bUwSez" name="AudioSettingsComponent.h" compile="0" resource="0"
+              file="Source/Settings/AudioSettingsComponent.h"/>
+        <FILE id="qvcvDe" name="KeyBindingsComponent.cpp" compile="1" resource="0"
+              file="Source/Settings/KeyBindingsComponent.cpp"/>
+        <FILE id="GA3kbR" name="KeyBindingsComponent.h" compile="0" resource="0"
+              file="Source/Settings/KeyBindingsComponent.h"/>
+        <FILE id="uiNmwY" name="PopoutWindow.cpp" compile="1" resource="0"
+              file="Source/Settings/PopoutWindow.cpp"/>
+        <FILE id="NFFosz" name="PopoutWindow.h" compile="0" resource="0" file="Source/Settings/PopoutWindow.h"/>
+      </GROUP>
       <GROUP id="{49B6B1E6-C563-79B7-B07D-4D3CDF7D7875}" name="GUI">
         <FILE id="oRbxCi" name="DelayComponent.cpp" compile="1" resource="0"
               file="Source/GUI/DelayComponent.cpp"/>
@@ -53,10 +75,6 @@
         <FILE id="GZy9Le" name="TrackThumbnailComponent.h" compile="0" resource="0"
               file="Source/GUI/TrackThumbnailComponent.h"/>
       </GROUP>
-      <FILE id="zClI0c" name="TrackAudioPlayer.cpp" compile="1" resource="0"
-            file="Source/TrackAudioPlayer.cpp"/>
-      <FILE id="V3L39r" name="TrackAudioPlayer.h" compile="0" resource="0"
-            file="Source/TrackAudioPlayer.h"/>
       <FILE id="eH99ny" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
       <FILE id="u3iZ1v" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="xsjmPa" name="MainComponent.cpp" compile="1" resource="0"

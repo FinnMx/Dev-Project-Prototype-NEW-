@@ -7,11 +7,10 @@ using namespace std;
 MainComponent::MainComponent() : juce::AudioAppComponent(deviceManager),
     menuBar(this)
 {
+    getMidiDevice();
     deviceManager.initialise(2, 2, nullptr, true);
     audioSettings.reset(new juce::AudioDeviceSelectorComponent(deviceManager, 0, 2, 0, 2, true, true, true,true));
     audioSettingsWindow.setAudioSettings(audioSettings.get());
-
-    getMidiDevice();
 
     // Some platforms require permissions to open input channels so request that here
     if (juce::RuntimePermissions::isRequired(juce::RuntimePermissions::recordAudio)
@@ -46,126 +45,13 @@ MainComponent::MainComponent() : juce::AudioAppComponent(deviceManager),
 
     audioWindow = new PopoutWindow("Audio Settings", &audioSettingsWindow, x, y);
     keyBindWindow = new PopoutWindow("Key Bindings", &keyBindingsWindow, x, y);
-
+    midiHandler.bindKey(48, 7, 1);
 }
 
 MainComponent::~MainComponent()
 {
     // This shuts down the audio device and clears the audio source.
     shutdownAudio();
-}
-
-void MainComponent::getMidiDevice() {
-    auto midiInputs = juce::MidiInput::getAvailableDevices();
-
-    juce::StringArray midiInputNames;
-
-    for (auto input : midiInputs)
-        midiInputNames.add(input.name);
-   
-
-    // find the first enabled device and use that by default
-    for (auto input : midiInputs)
-    {
-        if (deviceManager.isMidiInputDeviceEnabled(input.identifier))
-        {
-            setMidiInput(input);
-            break;
-        }
-    }
-
-    if (!midiInputs.isEmpty())
-        setMidiInput(midiInputs.getFirst());
-}
-
-void MainComponent::setMidiInput(juce::MidiDeviceInfo& id) {
-    deviceManager.setMidiInputDeviceEnabled(id.identifier, true);
-    deviceManager.addMidiInputDeviceCallback(id.identifier, this);
-}
-
-void MainComponent::setMidiSet() {
-    
-    midiset++;
-    if (midiset > 3)
-        midiset = 1;
-
-    switch (midiset) {
-    case 1:
-        delayComponent.setFocus(true);
-        reverbComponent.setFocus(false);
-        dubSiren.setFocus(false);
-        break;
-    case 2:
-        delayComponent.setFocus(false);
-        reverbComponent.setFocus(true);
-        dubSiren.setFocus(false);
-        break;
-    case 3:
-        delayComponent.setFocus(false);
-        reverbComponent.setFocus(false);
-        dubSiren.setFocus(true);
-        break;
-    }
-}
-
-void MainComponent::handleIncomingMidiMessage(juce::MidiInput* source, const juce::MidiMessage& message){
-    DBG(message.getControllerNumber());
-    if (message.isController()) {
-        switch (message.getControllerNumber()) {
-            //knobs
-        case 20:
-            if(midiset == 1)
-                delayComponent.handleMidi(20, message.getControllerValue());
-            if (midiset == 2)
-                reverbComponent.handleMidi(20, message.getControllerValue());
-            if (midiset == 3)
-                dubSiren.handleMidi(20, message.getControllerValue());
-            break;
-        case 21:
-            if (midiset == 1)
-                delayComponent.handleMidi(21, message.getControllerValue());
-            if (midiset == 2)
-                reverbComponent.handleMidi(21, message.getControllerValue());
-            if (midiset == 3);
-                //dubSiren.handleMidi(21, message.getControllerValue());
-            break;
-        case 22:
-            if (midiset == 1)
-                delayComponent.handleMidi(22, message.getControllerValue());
-            if (midiset == 2)
-                reverbComponent.handleMidi(22, message.getControllerValue());
-            if (midiset == 3)
-                dubSiren.handleMidi(22, message.getControllerValue());
-            break;
-        case 23:
-            break;
-            //bottom pads
-        case 36:
-            dubSiren.handleMidi(37);
-            break;
-        case 37:
-            delayComponent.handleMidi(36);
-            break;
-        case 38:
-            break;
-        case 39:
-            setMidiSet();
-            break;
-            //top pads
-        case 49:
-            killEQComponent.handleMidi(49);
-            break;
-        case 41:
-            killEQComponent.handleMidi(41);
-            break;
-        case 42:
-            killEQComponent.handleMidi(42);
-            break;
-        case 46:
-            killEQComponent.handleMidi(46);
-            break;
-        }
-    }
 }
     
 // Get the horizontal and vertical screen sizes in pixel
@@ -239,6 +125,63 @@ juce::StringArray MainComponent::getMenuBarNames() {
 
 void MainComponent::menuItemSelected(int menuItemID, int topLevelMenuIndex) {
 }
+//==============================================================================
+void MainComponent::handleIncomingMidiMessage(juce::MidiInput* source, const juce::MidiMessage& message) {
+    if (message.isController()) {
+        switch (midiHandler.returnCorrespondingComponent(message.getControllerNumber()))
+        {
+        case 0: // INPUT A
+            break;
+        case 1: // INPUT B
+            break;
+        case 2: // THUMBNAIL VIEW
+            break;
+        case 4: // 10BAND EQ
+            break;
+        case 5: // DUB SIREN
+            dubSiren.handleMidi(midiHandler.returnCorrespondingAction(message.getControllerNumber()), message.getControllerValue());
+            break;
+        case 6: // REVERB
+            reverbComponent.handleMidi(midiHandler.returnCorrespondingAction(message.getControllerNumber()), message.getControllerValue());
+            break;
+        case 7: // DELAY
+            delayComponent.handleMidi(midiHandler.returnCorrespondingAction(message.getControllerNumber()), message.getControllerValue());
+            break;
+        case 8: // KILL EQ
+            killEQComponent.handleMidi(midiHandler.returnCorrespondingAction(message.getControllerNumber()));
+            break;
+        }
+    }
+}
+
+
+void MainComponent::setMidiInput(juce::MidiDeviceInfo& id) {
+    deviceManager.setMidiInputDeviceEnabled(id.identifier, true);
+    deviceManager.addMidiInputDeviceCallback(id.identifier, this);
+}
+
+void MainComponent::getMidiDevice() {
+    auto midiInputs = juce::MidiInput::getAvailableDevices();
+
+    juce::StringArray midiInputNames;
+
+    for (auto input : midiInputs)
+        midiInputNames.add(input.name);
+
+    // find the first enabled device and use that by default
+    for (auto input : midiInputs)
+    {
+        if (deviceManager.isMidiInputDeviceEnabled(input.identifier))
+        {
+            setMidiInput(input);
+            break;
+        }
+    }
+
+    if (!midiInputs.isEmpty())
+        setMidiInput(midiInputs.getFirst());
+}
+
 
 //==============================================================================
 void MainComponent::paint(juce::Graphics& g)
