@@ -1,85 +1,73 @@
-﻿  MidiHandler.cpp
+﻿  MainComponent.cpp
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\encodings.h(148,1): warning C4005: 'TRANS': macro redefinition
 C:\JUCE\modules\juce_core\text\juce_LocalisedStrings.h(208): message : see previous definition of 'TRANS'
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(110,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,internal::MaybeAddConst<Const,rapidjson::GenericMember<Encoding,Allocator>>::Type,ptrdiff_t,internal::MaybeAddConst<Const,rapidjson::GenericMember<Encoding,Allocator>>::Type*,internal::MaybeAddConst<Const,rapidjson::GenericMember<Encoding,Allocator>>::Type&>': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.29.30133\include\xutility(5911,54): message : see declaration of 'std::iterator'
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(194): message : see reference to class template instantiation 'rapidjson::GenericMemberIterator<Const,Encoding,Allocator>' being compiled
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(102,19): warning C4996: 'std::iterator<std::random_access_iterator_tag,rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,rapidjson::GenericMember<Encoding,Allocator> *,rapidjson::GenericMember<Encoding,Allocator> &>': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\DubSiren.h(44,23): warning C4305: 'initializing': truncation from 'double' to 'float'
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.h(69,11): warning C4996: 'juce::ScopedPointer<PopoutWindow>': was declared deprecated
+C:\JUCE\modules\juce_core\memory\juce_ScopedPointer.h(34,1): message : see declaration of 'juce::ScopedPointer'
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.h(71,11): warning C4996: 'juce::ScopedPointer<PopoutWindow>': was declared deprecated
+C:\JUCE\modules\juce_core\memory\juce_ScopedPointer.h(34,1): message : see declaration of 'juce::ScopedPointer'
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(9,1): warning C4996: 'juce::ScopedPointer<PopoutWindow>::ScopedPointer': was declared deprecated
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(46,17): warning C4996: 'juce::ScopedPointer<PopoutWindow>::operator =': was declared deprecated
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(47,19): warning C4996: 'juce::ScopedPointer<PopoutWindow>::operator =': was declared deprecated
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(52): warning C4996: 'juce::ScopedPointer<PopoutWindow>::~ScopedPointer': was declared deprecated
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(111,74): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(111,55): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(111,13): warning C4996: 'juce::ScopedPointer<PopoutWindow>::operator ->': was declared deprecated
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(112,13): warning C4996: 'juce::ScopedPointer<PopoutWindow>::operator ->': was declared deprecated
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(115,76): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(115,57): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(115,13): warning C4996: 'juce::ScopedPointer<PopoutWindow>::operator ->': was declared deprecated
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(116,13): warning C4996: 'juce::ScopedPointer<PopoutWindow>::operator ->': was declared deprecated
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(105,91): warning C4100: 'menuName': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(126,58): warning C4100: 'topLevelMenuIndex': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(126,42): warning C4100: 'menuItemID': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(129,64): warning C4100: 'source': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(191,43): warning C4239: nonstandard extension used: 'argument': conversion from 'ElementType' to 'juce::MidiDeviceInfo &'
           with
           [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
+              ElementType=juce::MidiDeviceInfo
           ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.29.30133\include\xutility(5911,54): message : see declaration of 'std::iterator'
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(548): message : see reference to class template instantiation 'rapidjson::GenericMemberIterator<false,Encoding,Allocator>' being compiled
-          with
-          [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ]
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(2024): message : see reference to class template instantiation 'rapidjson::GenericValue<rapidjson::UTF8<char>,rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>>' being compiled
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MidiHandler.cpp(31): message : see reference to class template instantiation 'rapidjson::GenericDocument<rapidjson::UTF8<char>,rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>,rapidjson::CrtAllocator>' being compiled
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(110,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,rapidjson::GenericMember<Encoding,Allocator> *,rapidjson::GenericMember<Encoding,Allocator> &>': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
-          with
-          [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.29.30133\include\xutility(5911,54): message : see declaration of 'std::iterator'
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(121,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,rapidjson::GenericMember<Encoding,Allocator> *,rapidjson::GenericMember<Encoding,Allocator> &>::pointer': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
-          with
-          [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ]
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(123,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,rapidjson::GenericMember<Encoding,Allocator> *,rapidjson::GenericMember<Encoding,Allocator> &>::reference': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
-          with
-          [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ]
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(125,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,rapidjson::GenericMember<Encoding,Allocator> *,rapidjson::GenericMember<Encoding,Allocator> &>::difference_type': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
-          with
-          [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ]
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(102,19): warning C4996: 'std::iterator<std::random_access_iterator_tag,const rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,const rapidjson::GenericMember<Encoding,Allocator> *,const rapidjson::GenericMember<Encoding,Allocator> &>': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
-          with
-          [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.29.30133\include\xutility(5911,54): message : see declaration of 'std::iterator'
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(549): message : see reference to class template instantiation 'rapidjson::GenericMemberIterator<true,Encoding,Allocator>' being compiled
-          with
-          [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ]
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(110,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,const rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,const rapidjson::GenericMember<Encoding,Allocator> *,const rapidjson::GenericMember<Encoding,Allocator> &>': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
-          with
-          [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.29.30133\include\xutility(5911,54): message : see declaration of 'std::iterator'
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(121,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,const rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,const rapidjson::GenericMember<Encoding,Allocator> *,const rapidjson::GenericMember<Encoding,Allocator> &>::pointer': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
-          with
-          [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ]
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(123,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,const rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,const rapidjson::GenericMember<Encoding,Allocator> *,const rapidjson::GenericMember<Encoding,Allocator> &>::reference': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
-          with
-          [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ]
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(125,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,const rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,const rapidjson::GenericMember<Encoding,Allocator> *,const rapidjson::GenericMember<Encoding,Allocator> &>::difference_type': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
-          with
-          [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ]
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(191,43): message : A non-const reference may only be bound to an lvalue
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(211,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(220,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(219,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(218,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(227,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(226,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(225,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(224,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(234,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(233,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(232,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(231,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(241,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(240,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(239,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(238,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(248,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(247,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(246,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(245,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(255,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(254,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(253,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(252,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(265,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(264,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(263,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(272,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(271,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(270,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(269,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(279,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(278,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(277,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(276,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(290,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(288,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(139): warning C4701: potentially uninitialized local variable 'input' used
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(158): warning C4701: potentially uninitialized local variable 'value' used
   Dev Project Prototype (NEW)_App.vcxproj -> K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Builds\VisualStudio2019\x64\Debug\App\Dev Project Prototype (NEW).exe

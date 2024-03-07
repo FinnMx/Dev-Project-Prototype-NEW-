@@ -43,8 +43,8 @@ void DubSiren::prepareToPlay(int samplesPerBlockExpected, double sampleRate) {
     sineLFO.prepare(spec);
     pulseLFO.prepare(spec);
     triangleLFO.prepare(spec);
-    filterL.setCoefficients(juce::IIRCoefficients::makeHighPass(44100.f, 500.f, 1.f));
-    filterR.setCoefficients(juce::IIRCoefficients::makeHighPass(44100.f, 500.f, 1.f));
+    filterL.setCoefficients(juce::IIRCoefficients::makeHighPass(44100.f, 250.f, 1.f));
+    filterR.setCoefficients(juce::IIRCoefficients::makeHighPass(44100.f, 250.f, 1.f));
 }
 
 void DubSiren::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) {

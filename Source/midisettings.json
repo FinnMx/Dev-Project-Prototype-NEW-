@@ -3,8 +3,8 @@
     "inputBBindings" : [],
     "thumbnailViewBindings" : [],
     "10BandEQBindings" : [],
-    "dubSirenBindings" : [],
+    "dubSirenBindings" : ["481", "871", "521"],
     "reverbBindings" : [],
-    "delayBindings" : ["undefined","48","undefined", "undefined"],
-    "killEQBindings" : []
+    "delayBindings" : ["531","541","551", "881"],
+    "killEQBindings" : ["231", "232", "233", "234"]
 }

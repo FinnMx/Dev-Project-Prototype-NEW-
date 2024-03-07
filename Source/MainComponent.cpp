@@ -127,8 +127,18 @@ void MainComponent::menuItemSelected(int menuItemID, int topLevelMenuIndex) {
 }
 //==============================================================================
 void MainComponent::handleIncomingMidiMessage(juce::MidiInput* source, const juce::MidiMessage& message) {
-    if (message.isController()) {
-        switch (midiHandler.returnCorrespondingComponent(message.getControllerNumber()))
+    //auto t = message.getDescription();
+    int input;
+    int value;
+    if (message.isNoteOnOrOff())
+        input = message.getNoteNumber();
+    if (message.isController()){
+        input = message.getControllerNumber();
+        value = message.getControllerValue();
+    }
+    input = (input * 10) + message.getChannel();
+    //DBG(t);
+        switch (midiHandler.returnCorrespondingComponent(input))
         {
         case 0: // INPUT A
             break;
@@ -139,19 +149,18 @@ void MainComponent::handleIncomingMidiMessage(juce::MidiInput* source, const juc
         case 4: // 10BAND EQ
             break;
         case 5: // DUB SIREN
-            dubSiren.handleMidi(midiHandler.returnCorrespondingAction(message.getControllerNumber()), message.getControllerValue());
+            dubSiren.handleMidi(midiHandler.returnCorrespondingAction(input), value);
             break;
         case 6: // REVERB
-            reverbComponent.handleMidi(midiHandler.returnCorrespondingAction(message.getControllerNumber()), message.getControllerValue());
+            reverbComponent.handleMidi(midiHandler.returnCorrespondingAction(input), value);
             break;
         case 7: // DELAY
-            delayComponent.handleMidi(midiHandler.returnCorrespondingAction(message.getControllerNumber()), message.getControllerValue());
+            delayComponent.handleMidi(midiHandler.returnCorrespondingAction(input), value);
             break;
         case 8: // KILL EQ
-            killEQComponent.handleMidi(midiHandler.returnCorrespondingAction(message.getControllerNumber()));
+            killEQComponent.handleMidi(midiHandler.returnCorrespondingAction(input));
             break;
         }
-    }
 }
 
 
