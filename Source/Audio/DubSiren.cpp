@@ -43,8 +43,8 @@ void DubSiren::prepareToPlay(int samplesPerBlockExpected, double sampleRate) {
     sineLFO.prepare(spec);
     pulseLFO.prepare(spec);
     triangleLFO.prepare(spec);
-    //lfoOscillator->prepare(spec);
-    //filter.setCoefficients(juce::IIRCoefficients::makeHighPass(44100.f, 5000.f, 1.f));
+    filterL.setCoefficients(juce::IIRCoefficients::makeHighPass(44100.f, 500.f, 1.f));
+    filterR.setCoefficients(juce::IIRCoefficients::makeHighPass(44100.f, 500.f, 1.f));
 }
 
 void DubSiren::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) {
@@ -70,13 +70,14 @@ void DubSiren::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFil
         {
             lfoOscillator->setFrequency(lfoFrequency);
             auto lfoValue = lfoOscillator->processSample(0.0);
-            oscillator.setFrequency(frequency + (lfoValue * 60.f)); // 60.f IS THE "MODULATION DEPTH"
+            oscillator.setFrequency(frequency + (lfoValue * 100.f)); // 60.f IS THE "MODULATION DEPTH"
 
             auto currentSample = oscillator.processSample(0.0); 
             leftBuffer[sample] = currentSample * level;
             rightBuffer[sample] = currentSample * level;
         }
-
+        filterL.processSamples(leftBuffer, 480);
+        filterR.processSamples(rightBuffer, 480);
         //LAST FLOAT SHOULD BE A VOLUME VALUE
         bufferToFill.buffer->addFrom(0, 0, leftBuffer, 480, volume);
         bufferToFill.buffer->addFrom(1, 0, rightBuffer, 480, volume);

@@ -53,7 +53,8 @@ private:
     juce::dsp::Oscillator<float> triangleLFO;
     juce::dsp::Oscillator<float> pulseLFO;
 
-    juce::IIRFilter filter;
+    juce::IIRFilter filterL;
+    juce::IIRFilter filterR;
 
     int totalNumInputChannels{ 2 }, totalNumOutputChannels{ 2 };
 
