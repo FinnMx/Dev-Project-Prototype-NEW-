@@ -158,7 +158,7 @@ void MainComponent::handleIncomingMidiMessage(juce::MidiInput* source, const juc
 int MainComponent::processMidiInput(juce::MidiMessage message, int& value) {
     value = 0;
     if (message.isNoteOnOrOff()) { return message.getNoteNumber() * message.getVelocity() + message.getChannel(); }
-    if (message.isController()) { value = message.getControllerValue(); return message.getControllerNumber() + message.getChannel(); }
+    if (message.isController()) { value = message.getControllerValue(); return message.getControllerNumber() * 10 + message.getChannel(); }
     return 0;
 }
 
