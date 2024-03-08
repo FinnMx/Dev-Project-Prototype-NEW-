@@ -127,17 +127,9 @@ void MainComponent::menuItemSelected(int menuItemID, int topLevelMenuIndex) {
 }
 //==============================================================================
 void MainComponent::handleIncomingMidiMessage(juce::MidiInput* source, const juce::MidiMessage& message) {
-    //auto t = message.getDescription();
-    int input;
     int value;
-    if (message.isNoteOnOrOff())
-        input = message.getNoteNumber();
-    if (message.isController()){
-        input = message.getControllerNumber();
-        value = message.getControllerValue();
-    }
-    input = (input * 10) + message.getChannel();
-    //DBG(t);
+    int input = processMidiInput(message, value);
+    auto t = message.getRawData();
         switch (midiHandler.returnCorrespondingComponent(input))
         {
         case 0: // INPUT A
@@ -163,6 +155,19 @@ void MainComponent::handleIncomingMidiMessage(juce::MidiInput* source, const juc
         }
 }
 
+int MainComponent::processMidiInput(juce::MidiMessage message, int& value) {
+    value = 0;
+    if (message.isNoteOnOrOff()) { return message.getNoteNumber() * message.getVelocity() + message.getChannel(); }
+    if (message.isController()) { value = message.getControllerValue(); return message.getControllerNumber() + message.getChannel(); }
+    return 0;
+}
+
+unsigned int MainComponent::hash(unsigned int x) {
+    x = ((x >> 16) ^ x) * 0x45d9f3b;
+    x = ((x >> 16) ^ x) * 0x45d9f3b;
+    x = (x >> 16) ^ x;
+    return x;
+}
 
 void MainComponent::setMidiInput(juce::MidiDeviceInfo& id) {
     deviceManager.setMidiInputDeviceEnabled(id.identifier, true);

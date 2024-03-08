@@ -59,6 +59,9 @@ public:
 
 private:
     //==============================================================================
+    int processMidiInput(juce::MidiMessage message, int& value);
+    unsigned int hash(unsigned int x);
+    //==============================================================================
     int x, y;
     float rmsMasterLeft, rmsMasterRight;
 
