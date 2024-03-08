@@ -681,6 +681,9 @@
     <ClCompile Include="..\..\Source\MainComponent.cpp">
       <Filter>Dev Project Prototype (NEW)\Source</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\MidiHandler.cpp">
+      <Filter>Dev Project Prototype (NEW)</Filter>
+    </ClCompile>
     <ClCompile Include="C:\JUCE\modules\juce_audio_basics\audio_play_head\juce_AudioPlayHead.cpp">
       <Filter>JUCE Modules\juce_audio_basics\audio_play_head</Filter>
     </ClCompile>
@@ -3102,9 +3105,6 @@
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_gui_extra.cpp">
       <Filter>JUCE Library Code</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\MidiHandler.cpp">
-      <Filter>Dev Project Prototype %28NEW%29\Source</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\GUI\AudioVisualiserComponent.cpp">
       <Filter>Dev Project Prototype %28NEW%29\Source\GUI</Filter>
     </ClCompile>
@@ -3166,6 +3166,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\MainComponent.h">
       <Filter>Dev Project Prototype (NEW)\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\MidiHandler.h">
+      <Filter>Dev Project Prototype (NEW)</Filter>
     </ClInclude>
     <ClInclude Include="C:\JUCE\modules\juce_audio_basics\audio_play_head\juce_AudioPlayHead.h">
       <Filter>JUCE Modules\juce_audio_basics\audio_play_head</Filter>
@@ -6157,9 +6160,6 @@
     </ClInclude>
     <ClInclude Include="..\..\JuceLibraryCode\JuceHeader.h">
       <Filter>JUCE Library Code</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\MidiHandler.h">
-      <Filter>Dev Project Prototype %28NEW%29\Source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\GUI\AudioVisualiserComponent.h">
       <Filter>Dev Project Prototype %28NEW%29\Source\GUI</Filter>
