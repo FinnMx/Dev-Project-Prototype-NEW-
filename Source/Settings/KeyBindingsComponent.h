@@ -25,7 +25,11 @@ public:
     void resized() override;
 
 private:
-    std::unique_ptr<juce::Label> bindLabel;
+
+    std::string headings[8] = { "Input A Bindings", "Input B Bindings", "Thumbnail Bindings", "10 Band Bindings","Dub Siren Bindings", "Reverb Bindings", "Delay Bindings", "Kill EQ Bindings" };
+    juce::Label headingsLabels[8];
+    float headingLabelsX[8] = { 0.005, 0.005, 0.005, 0.355, 0.355, 0.705, 0.705, 0.705 };
+    float headingLabelsY[8] = { 0.005, 0.355, 0.655, 0.005, 0.555, 0.005, 0.355, 0.655 };
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (KeyBindingsComponent)
 };

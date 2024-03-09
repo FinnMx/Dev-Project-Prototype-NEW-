@@ -14,7 +14,10 @@
 //==============================================================================
 KeyBindingsComponent::KeyBindingsComponent()
 {
-
+    for (int i = 0; i < (sizeof(headingsLabels) / sizeof(*headingsLabels)); i++){
+        headingsLabels[i].setText(headings[i], juce::NotificationType{});
+        addAndMakeVisible(headingsLabels[i]);
+    }
 }
 
 KeyBindingsComponent::~KeyBindingsComponent()
@@ -26,18 +29,15 @@ void KeyBindingsComponent::paint (juce::Graphics& g)
 
     g.fillAll(getLookAndFeel().findColour(juce::PropertyComponent::backgroundColourId));
 
-    g.setColour (juce::Colours::grey);
-    g.drawRect (getLocalBounds(), 1);   // draw an outline around the component
-
-    g.setColour (juce::Colours::white);
-    g.setFont (14.0f);
-    g.drawText ("KeyBindingsComponent", getLocalBounds(),
-                juce::Justification::centred, true);   // draw some placeholder text
 }
 
 void KeyBindingsComponent::resized()
 {
-    // This method is where you should set the bounds of any child
-    // components that your component contains..
-
+    for (int i = 0; i < (sizeof(headingsLabels) / sizeof(*headingsLabels)); i++) {
+            headingsLabels[i].setBounds(
+                getWidth() * headingLabelsX[i],
+                getHeight() * headingLabelsY[i],
+                getWidth() * 0.2,
+                getHeight() * 0.15);
+    }
 }
