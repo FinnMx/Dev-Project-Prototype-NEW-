@@ -129,7 +129,7 @@ void MainComponent::menuItemSelected(int menuItemID, int topLevelMenuIndex) {
 void MainComponent::handleIncomingMidiMessage(juce::MidiInput* source, const juce::MidiMessage& message) {
     int value;
     int input = processMidiInput(message, value);
-    auto t = message.getRawData();
+    DBG(input);
         switch (midiHandler.returnCorrespondingComponent(input))
         {
         case 0: // INPUT A
@@ -153,6 +153,18 @@ void MainComponent::handleIncomingMidiMessage(juce::MidiInput* source, const juc
             killEQComponent.handleMidi(midiHandler.returnCorrespondingAction(input));
             break;
         }
+
+        //RE ENABLE THIS SO BINDS CAN BE MADE
+    //makeBind(input);
+}
+
+void MainComponent::makeBind(int input) {
+    if (keyBindingsWindow.isWaitingForBind()) {
+        std::pair<int, int> componentAndAction = keyBindingsWindow.getComponentAndAction();
+        if (componentAndAction.first != NULL && componentAndAction.second != NULL) {
+
+        }
+    }
 }
 
 int MainComponent::processMidiInput(juce::MidiMessage message, int& value) {

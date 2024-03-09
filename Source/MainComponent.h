@@ -52,6 +52,7 @@ public:
     void handleIncomingMidiMessage(juce::MidiInput* source, const juce::MidiMessage& message) override;
     void setMidiInput(juce::MidiDeviceInfo& id);
     void getMidiDevice();
+    void makeBind(int input);
     //==============================================================================
     void paint (juce::Graphics& g) override;
     void resized() override;
