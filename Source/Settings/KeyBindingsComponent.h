@@ -26,6 +26,7 @@ public:
 
 private:
 
+
     std::string headings[8] = { "Input A Bindings", "Input B Bindings", "Thumbnail Bindings", "10 Band Bindings","Dub Siren Bindings", "Reverb Bindings", "Delay Bindings", "Kill EQ Bindings" };
     juce::Label headingsLabels[8];
     float headingLabelsX[8] = { 0.005, 0.005, 0.005, 0.355, 0.355, 0.705, 0.705, 0.705 };
