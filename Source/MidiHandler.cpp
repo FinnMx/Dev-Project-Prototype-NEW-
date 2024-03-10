@@ -39,7 +39,7 @@ void MidiHandler::readSettingsFile() {
 }
 
 void MidiHandler::processSettings(rapidjson::Document& document) {
-    int componentIndex = 1; // (should technically be 0 to match the standard of the app but whatever JSON is stupid)
+    int componentIndex = 0; // (should technically be 0 to match the standard of the app but whatever JSON is stupid)
     for (rapidjson::Value::ConstMemberIterator it = document.MemberBegin(); it != document.MemberEnd(); ++it) {
 
         const rapidjson::Value& jsonArray = it->value;

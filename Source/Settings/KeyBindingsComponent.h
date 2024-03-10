@@ -29,20 +29,35 @@ public:
     std::pair<int, int> getComponentAndAction();
     void resetBindWait();
 
+    void setComponentAndAction(int component, juce::Button* button);
+
+    void refreshPage();
+
     void paint (juce::Graphics&) override;
     void resized() override;
 
 private:
+    juce::TextButton pageForward{ " > " }, pageBackwards{ " < " };
+    int currentTab{ 0 };
     bool waitingForBind{ false };
+
     std::pair<int, int> currentComponentAndAction{ std::make_pair(NULL, NULL) };
+    int getActionIndex(juce::Button* button);
+    int findIndex(juce::TextButton arr[], juce::Button* button);
 
     std::string headings[8] = { "Input A Bindings", "Input B Bindings", "Thumbnail Bindings", "10 Band Bindings","Dub Siren Bindings", "Reverb Bindings", "Delay Bindings", "Kill EQ Bindings" };
-    juce::Label headingsLabels[8];
-    float headingLabelsX[8] = { 0.005, 0.005, 0.005, 0.355, 0.355, 0.705, 0.705, 0.705 };
-    float headingLabelsY[8] = { 0.005, 0.355, 0.655, 0.005, 0.555, 0.005, 0.355, 0.655 };
+    std::string currentHeading;
 
-    //the index of the array is the component and the value is the amount of parameters
-    int parameterAmounts[8] = { 5,5,2,10,3,3,4,4 };
+    juce::TextButton inputAParameters[5];
+    juce::TextButton inputBParameters[5];
+    juce::TextButton thumbnailParameters[2];
+    juce::TextButton tenBandParameters[10];
+    juce::TextButton dubSirenParameters[3];
+    juce::TextButton reverbParameters[3];
+    juce::TextButton delayParameters[4];
+    juce::TextButton killEQParameters[4];
+    float parameterY[10]{ 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55,0.6, 0.65 };
+
 
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (KeyBindingsComponent)

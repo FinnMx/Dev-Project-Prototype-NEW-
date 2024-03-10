@@ -129,41 +129,40 @@ void MainComponent::menuItemSelected(int menuItemID, int topLevelMenuIndex) {
 void MainComponent::handleIncomingMidiMessage(juce::MidiInput* source, const juce::MidiMessage& message) {
     int value;
     int input = processMidiInput(message, value);
-    DBG(input);
         switch (midiHandler.returnCorrespondingComponent(input))
         {
         case 0: // INPUT A
+            DBG("This worked");
             break;
         case 1: // INPUT B
             break;
         case 2: // THUMBNAIL VIEW
             break;
-        case 4: // 10BAND EQ
+        case 3: // 10BAND EQ
             break;
-        case 5: // DUB SIREN
+        case 4: // DUB SIREN
             dubSiren.handleMidi(midiHandler.returnCorrespondingAction(input), value);
             break;
-        case 6: // REVERB
+        case 5: // REVERB
             reverbComponent.handleMidi(midiHandler.returnCorrespondingAction(input), value);
             break;
-        case 7: // DELAY
+        case 6: // DELAY
             delayComponent.handleMidi(midiHandler.returnCorrespondingAction(input), value);
             break;
-        case 8: // KILL EQ
+        case 7: // KILL EQ
             killEQComponent.handleMidi(midiHandler.returnCorrespondingAction(input));
             break;
         }
 
         //RE ENABLE THIS SO BINDS CAN BE MADE
-    //makeBind(input);
+    makeBind(input);
 }
 
 void MainComponent::makeBind(int input) {
     if (keyBindingsWindow.isWaitingForBind()) {
         std::pair<int, int> componentAndAction = keyBindingsWindow.getComponentAndAction();
-        if (componentAndAction.first != NULL && componentAndAction.second != NULL) {
-
-        }
+        midiHandler.bindKey(input, componentAndAction.first, componentAndAction.second);
+        keyBindingsWindow.resetBindWait();
     }
 }
 
