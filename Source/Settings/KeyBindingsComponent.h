@@ -56,6 +56,10 @@ private:
     juce::TextButton reverbParameters[3];
     juce::TextButton delayParameters[4];
     juce::TextButton killEQParameters[4];
+    int parameterSizes[8]{ 5, 5, 2, 10, 3, 3, 4, 4 };
+
+    juce::TextButton* parameters[8];
+
     float parameterY[10]{ 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55,0.6, 0.65 };
 
 

@@ -57,6 +57,12 @@ void MidiHandler::processSettings(rapidjson::Document& document) {
 }
 
 void MidiHandler::bindKey(int key, int Component, int action) {
+    for (auto it = bindings.begin(); it != bindings.end(); )
+    {
+        if (it->second.first == Component && it->second.second == action) { bindings.erase(it++); }
+        else { ++it; }
+    }
+
     bindings[key] = std::make_pair(Component, action);
 }
 

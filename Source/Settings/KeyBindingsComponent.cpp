@@ -16,6 +16,15 @@ KeyBindingsComponent::KeyBindingsComponent()
 {
     currentHeading = headings[0];
 
+    parameters[0] = inputAParameters;
+    parameters[1] = inputBParameters;
+    parameters[2] = thumbnailParameters;
+    parameters[3] = tenBandParameters;
+    parameters[4] = dubSirenParameters;
+    parameters[5] = reverbParameters;
+    parameters[6] = delayParameters;
+    parameters[7] = killEQParameters;
+
     refreshPage();
 }
 
@@ -32,32 +41,12 @@ void KeyBindingsComponent::refreshPage() {
     addAndMakeVisible(pageBackwards);
     pageForward.addListener(this);
     pageBackwards.addListener(this);
-
-    switch (currentTab) {
-    case 0:
-        for each (juce::TextButton & button in inputAParameters) { addAndMakeVisible(button); button.addListener(this); button.setButtonText("Edit Parameter"); }
-        break;
-    case 1:
-        for each (juce::TextButton & button in inputBParameters) { addAndMakeVisible(button); button.addListener(this); }
-        break;
-    case 2:
-        for each (juce::TextButton & button in thumbnailParameters) { addAndMakeVisible(button); button.addListener(this); }
-        break;
-    case 3:
-        for each (juce::TextButton & button in tenBandParameters) { addAndMakeVisible(button); button.addListener(this); }
-        break;
-    case 4:
-        for each (juce::TextButton & button in dubSirenParameters) { addAndMakeVisible(button); button.addListener(this); }
-        break;
-    case 5:
-        for each (juce::TextButton & button in reverbParameters) { addAndMakeVisible(button); button.addListener(this); }
-        break;
-    case 6:
-        for each (juce::TextButton & button in delayParameters) { addAndMakeVisible(button); button.addListener(this); }
-        break;
-    case 7:
-        for each (juce::TextButton & button in killEQParameters) { addAndMakeVisible(button); button.addListener(this); }
-        break;
+     
+    for (int i = 0; i < parameterSizes[currentTab]; i++)
+    {
+        addAndMakeVisible(parameters[currentTab][i]);
+        parameters[currentTab][i].addListener(this);
+        parameters[currentTab][i].setButtonText("Edit Parameter");
     }
 }
 
