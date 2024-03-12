@@ -90,32 +90,8 @@ int KeyBindingsComponent::findIndex(juce::TextButton arr[], juce::Button* button
 }
 
 int KeyBindingsComponent::getActionIndex(juce::Button* button) {
-    switch (currentTab) {
-    case 0:
-        return findIndex(inputAParameters, button);
-        break;
-    case 1:
-        return findIndex(inputBParameters, button);
-        break;
-    case 2:
-        return findIndex(thumbnailParameters, button);
-        break;
-    case 3:
-        return findIndex(tenBandParameters, button);
-        break;
-    case 4:
-        return findIndex(dubSirenParameters, button);
-        break;
-    case 5:
-        return findIndex(reverbParameters, button);
-        break;
-    case 6:
-        return findIndex(delayParameters, button);
-        break;
-    case 7:
-        return findIndex(killEQParameters, button);
-        break;
-    }
+    return findIndex(parameters[currentTab], button);
+
 }
 
 void KeyBindingsComponent::setComponentAndAction(int component, juce::Button* button) {
@@ -148,7 +124,6 @@ void KeyBindingsComponent::paint (juce::Graphics& g)
 
 void KeyBindingsComponent::resized()
 {
-    //NONE OF THIS WILL EVER RUN MORE THAN ONCE BECAUSE THE WINDOW CANNOT BE RESIZED!!
 
     pageForward.setBounds(getWidth() * 0.9,
         getHeight() * 0.1,
@@ -160,14 +135,11 @@ void KeyBindingsComponent::resized()
         getWidth() * 0.05,
         getHeight() * 0.05);
 
-    for (int i = 0; i <= (sizeof(inputAParameters) / sizeof(*inputAParameters)); i++) { inputAParameters[i].setBounds(getWidth() * 0.1, getHeight() * parameterY[i], getWidth() * 0.15, getHeight() * 0.05); }
-    for (int i = 0; i <= (sizeof(inputBParameters) / sizeof(*inputBParameters)); i++){ inputBParameters[i].setBounds(getWidth() * 0.1, getHeight() * parameterY[i], getWidth() * 0.15, getHeight() * 0.05); }
-    for (int i = 0; i <= (sizeof(thumbnailParameters) / sizeof(*thumbnailParameters)); i++) { thumbnailParameters[i].setBounds(getWidth() * 0.1, getHeight() * parameterY[i], getWidth() * 0.15, getHeight() * 0.05); }
-    for (int i = 0; i <= (sizeof(tenBandParameters) / sizeof(*tenBandParameters)); i++) { tenBandParameters[i].setBounds(getWidth() * 0.1, getHeight() * parameterY[i], getWidth() * 0.15, getHeight() * 0.05); }
-    for (int i = 0; i <= (sizeof(dubSirenParameters) / sizeof(*dubSirenParameters)); i++) { dubSirenParameters[i].setBounds(getWidth() * 0.1, getHeight() * parameterY[i], getWidth() * 0.15, getHeight() * 0.05); }
-    for (int i = 0; i <= (sizeof(reverbParameters) / sizeof(*reverbParameters)); i++) { reverbParameters[i].setBounds(getWidth() * 0.1, getHeight() * parameterY[i], getWidth() * 0.15, getHeight() * 0.05); }
-    for (int i = 0; i <= (sizeof(delayParameters) / sizeof(*delayParameters)); i++) { delayParameters[i].setBounds(getWidth() * 0.1, getHeight() * parameterY[i], getWidth() * 0.15, getHeight() * 0.05); }
-    //FOR SOME REASON THE SIZE OF THING DOESNT WORK??!?!
-    for (int i = 0; i <= 3; i++) { killEQParameters[i].setBounds(getWidth() * 0.1, getHeight() * parameterY[i], getWidth() * 0.15, getHeight() * 0.05); }
+
+    for (int i = 0; i <= sizeof(parameters) / sizeof(*parameters); i++) {
+        for (int j = 0; j < parameterSizes[i]; j++) {
+            parameters[i][j].setBounds(getWidth() * 0.1, getHeight() * parameterY[j], getWidth() * 0.15, getHeight() * 0.05);
+        }
+    }
 
 }
