@@ -634,6 +634,9 @@
     <ClCompile Include="..\..\Source\Audio\DubSiren.cpp">
       <Filter>Dev Project Prototype (NEW)\Source\Audio</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Audio\ExternalInput.cpp">
+      <Filter>Dev Project Prototype (NEW)\Source\Audio</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Audio\FrequencyCutoffs.cpp">
       <Filter>Dev Project Prototype (NEW)\Source\Audio</Filter>
     </ClCompile>
@@ -3265,6 +3268,9 @@
       <Filter>Dev Project Prototype (NEW)\Source\Audio</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Audio\DubSiren.h">
+      <Filter>Dev Project Prototype (NEW)\Source\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Audio\ExternalInput.h">
       <Filter>Dev Project Prototype (NEW)\Source\Audio</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Audio\FrequencyCutoffs.h">

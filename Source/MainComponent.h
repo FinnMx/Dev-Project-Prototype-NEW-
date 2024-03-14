@@ -9,6 +9,7 @@
 #include <Audio/FrequencyCutoffs.h>
 #include <Audio/TenBandEQ.h>
 #include <Audio/DubSiren.h>
+#include <Audio/ExternalInput.h>
 
 #include <GUI/DelayComponent.h>
 #include <GUI/InputComponent.h>
@@ -80,6 +81,7 @@ private:
 
     // Audio components
     juce::MixerAudioSource mixerSource;
+    ExternalInput externalInput{ &deviceManager };
 
     juce::AudioFormatManager formatManager;
     TrackAudioPlayer track1{formatManager};

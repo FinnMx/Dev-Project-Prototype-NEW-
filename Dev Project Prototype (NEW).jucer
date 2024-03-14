@@ -13,6 +13,9 @@
         <FILE id="jD3biN" name="Crossfade.h" compile="0" resource="0" file="Source/Audio/Crossfade.h"/>
         <FILE id="mCCwMT" name="DubSiren.cpp" compile="1" resource="0" file="Source/Audio/DubSiren.cpp"/>
         <FILE id="lQ9HMv" name="DubSiren.h" compile="0" resource="0" file="Source/Audio/DubSiren.h"/>
+        <FILE id="ElSF0f" name="ExternalInput.cpp" compile="1" resource="0"
+              file="Source/Audio/ExternalInput.cpp"/>
+        <FILE id="llH4y3" name="ExternalInput.h" compile="0" resource="0" file="Source/Audio/ExternalInput.h"/>
         <FILE id="XBNLtC" name="FrequencyCutoffs.cpp" compile="1" resource="0"
               file="Source/Audio/FrequencyCutoffs.cpp"/>
         <FILE id="ZpNZDH" name="FrequencyCutoffs.h" compile="0" resource="0"

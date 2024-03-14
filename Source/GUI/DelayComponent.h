@@ -45,7 +45,7 @@ public:
     void resized() override;
 
 private:
-    bool isFocused{ true };
+    bool isFocused{ false };
 
     CircularBuffer* circularBuffer;
     AudioVisualiserComponent visualiser;

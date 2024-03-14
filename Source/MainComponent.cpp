@@ -65,6 +65,7 @@ void MainComponent::GetDesktopResolution(int& horizontal, int& vertical)
 }
 
 void MainComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate) {
+    externalInput.prepareToPlay(samplesPerBlockExpected, sampleRate);
     track1.prepareToPlay(samplesPerBlockExpected, sampleRate);
     track2.prepareToPlay(samplesPerBlockExpected, sampleRate);
     freqCutoffs.prepareToPlay(samplesPerBlockExpected, sampleRate);
@@ -78,6 +79,7 @@ void MainComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate
 }
 
 void MainComponent::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) {
+    externalInput.getNextAudioBlock(bufferToFill);
     mixerSource.getNextAudioBlock(bufferToFill);
     tenBandEQ.getNextAudioBlock(bufferToFill);
     freqCutoffs.getNextAudioBlock(bufferToFill);
@@ -92,6 +94,7 @@ void MainComponent::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffer
 }
 
 void MainComponent::releaseResources() {
+    externalInput.releaseResources();
     mixerSource.removeAllInputs();
     mixerSource.releaseResources();
     track1.releaseResources();
