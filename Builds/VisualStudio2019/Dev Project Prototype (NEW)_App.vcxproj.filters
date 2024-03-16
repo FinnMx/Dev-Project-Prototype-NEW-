@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="Dev Project Prototype (NEW)\Source\Audio">
+      <UniqueIdentifier>{8945D0A1-5F79-2D3B-8CD7-89F78A542156}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dev Project Prototype (NEW)\Source\Settings">
+      <UniqueIdentifier>{A520FD57-A935-DF96-8EF8-55E5C73FAA43}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Dev Project Prototype (NEW)\Source\GUI">
       <UniqueIdentifier>{BC15A08F-A99E-156D-A180-BB37E4BEB11E}</UniqueIdentifier>
     </Filter>
@@ -621,11 +627,32 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\FrequencyCutoffs.cpp">
-      <Filter>Dev Project Prototype (NEW)\Source</Filter>
+    <ClCompile Include="..\..\Source\Audio\CircularBuffer.cpp">
+      <Filter>Dev Project Prototype (NEW)\Source\Audio</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\CircularBuffer.cpp">
-      <Filter>Dev Project Prototype (NEW)\Source</Filter>
+    <ClCompile Include="..\..\Source\Audio\DubSiren.cpp">
+      <Filter>Dev Project Prototype (NEW)\Source\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Audio\ExternalInput.cpp">
+      <Filter>Dev Project Prototype (NEW)\Source\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Audio\FrequencyCutoffs.cpp">
+      <Filter>Dev Project Prototype (NEW)\Source\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Audio\TenBandEQ.cpp">
+      <Filter>Dev Project Prototype (NEW)\Source\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Audio\TrackAudioPlayer.cpp">
+      <Filter>Dev Project Prototype (NEW)\Source\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Settings\AudioSettingsComponent.cpp">
+      <Filter>Dev Project Prototype (NEW)\Source\Settings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Settings\KeyBindingsComponent.cpp">
+      <Filter>Dev Project Prototype (NEW)\Source\Settings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Settings\PopoutWindow.cpp">
+      <Filter>Dev Project Prototype (NEW)\Source\Settings</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\GUI\DelayComponent.cpp">
       <Filter>Dev Project Prototype (NEW)\Source\GUI</Filter>
@@ -651,14 +678,14 @@
     <ClCompile Include="..\..\Source\GUI\TrackThumbnailComponent.cpp">
       <Filter>Dev Project Prototype (NEW)\Source\GUI</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\TrackAudioPlayer.cpp">
-      <Filter>Dev Project Prototype (NEW)\Source</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\Main.cpp">
       <Filter>Dev Project Prototype (NEW)\Source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\MainComponent.cpp">
       <Filter>Dev Project Prototype (NEW)\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\MidiHandler.cpp">
+      <Filter>Dev Project Prototype (NEW)</Filter>
     </ClCompile>
     <ClCompile Include="C:\JUCE\modules\juce_audio_basics\audio_play_head\juce_AudioPlayHead.cpp">
       <Filter>JUCE Modules\juce_audio_basics\audio_play_head</Filter>
@@ -3084,16 +3111,40 @@
     <ClCompile Include="..\..\Source\GUI\AudioVisualiserComponent.cpp">
       <Filter>Dev Project Prototype %28NEW%29\Source\GUI</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\GUI\DubSirenComponent.cpp">
+      <Filter>Dev Project Prototype %28NEW%29\Source\GUI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\Crossfade.h">
-      <Filter>Dev Project Prototype (NEW)\Source</Filter>
+    <ClInclude Include="..\..\Source\Audio\CircularBuffer.h">
+      <Filter>Dev Project Prototype (NEW)\Source\Audio</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\FrequencyCutoffs.h">
-      <Filter>Dev Project Prototype (NEW)\Source</Filter>
+    <ClInclude Include="..\..\Source\Audio\Crossfade.h">
+      <Filter>Dev Project Prototype (NEW)\Source\Audio</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\CircularBuffer.h">
-      <Filter>Dev Project Prototype (NEW)\Source</Filter>
+    <ClInclude Include="..\..\Source\Audio\DubSiren.h">
+      <Filter>Dev Project Prototype (NEW)\Source\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Audio\ExternalInput.h">
+      <Filter>Dev Project Prototype (NEW)\Source\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Audio\FrequencyCutoffs.h">
+      <Filter>Dev Project Prototype (NEW)\Source\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Audio\TenBandEQ.h">
+      <Filter>Dev Project Prototype (NEW)\Source\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Audio\TrackAudioPlayer.h">
+      <Filter>Dev Project Prototype (NEW)\Source\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Settings\AudioSettingsComponent.h">
+      <Filter>Dev Project Prototype (NEW)\Source\Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Settings\KeyBindingsComponent.h">
+      <Filter>Dev Project Prototype (NEW)\Source\Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Settings\PopoutWindow.h">
+      <Filter>Dev Project Prototype (NEW)\Source\Settings</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\GUI\DelayComponent.h">
       <Filter>Dev Project Prototype (NEW)\Source\GUI</Filter>
@@ -3119,11 +3170,11 @@
     <ClInclude Include="..\..\Source\GUI\TrackThumbnailComponent.h">
       <Filter>Dev Project Prototype (NEW)\Source\GUI</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\TrackAudioPlayer.h">
-      <Filter>Dev Project Prototype (NEW)\Source</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\MainComponent.h">
       <Filter>Dev Project Prototype (NEW)\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\MidiHandler.h">
+      <Filter>Dev Project Prototype (NEW)</Filter>
     </ClInclude>
     <ClInclude Include="C:\JUCE\modules\juce_audio_basics\audio_play_head\juce_AudioPlayHead.h">
       <Filter>JUCE Modules\juce_audio_basics\audio_play_head</Filter>
@@ -6117,6 +6168,9 @@
       <Filter>JUCE Library Code</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\GUI\AudioVisualiserComponent.h">
+      <Filter>Dev Project Prototype %28NEW%29\Source\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GUI\DubSirenComponent.h">
       <Filter>Dev Project Prototype %28NEW%29\Source\GUI</Filter>
     </ClInclude>
   </ItemGroup>

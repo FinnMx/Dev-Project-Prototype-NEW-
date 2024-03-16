@@ -4,10 +4,13 @@
 using namespace std;
 
 //==============================================================================
-MainComponent::MainComponent() :
-    menuBar(nullptr)
+MainComponent::MainComponent() : juce::AudioAppComponent(deviceManager),
+    menuBar(this)
 {
     getMidiDevice();
+    deviceManager.initialise(2, 2, nullptr, true);
+    audioSettings.reset(new juce::AudioDeviceSelectorComponent(deviceManager, 0, 2, 0, 2, true, true, true,true));
+    audioSettingsWindow.setAudioSettings(audioSettings.get());
 
     // Some platforms require permissions to open input channels so request that here
     if (juce::RuntimePermissions::isRequired(juce::RuntimePermissions::recordAudio)
@@ -38,13 +41,152 @@ MainComponent::MainComponent() :
     addAndMakeVisible(reverbComponent);
     addAndMakeVisible(delayComponent);
     addAndMakeVisible(killEQComponent);
+    addAndMakeVisible(dubSiren);
 
+    audioWindow = new PopoutWindow("Audio Settings", &audioSettingsWindow, x, y);
+    keyBindWindow = new PopoutWindow("Key Bindings", &keyBindingsWindow, x, y);
+    midiHandler.readSettingsFile();
 }
 
 MainComponent::~MainComponent()
 {
     // This shuts down the audio device and clears the audio source.
     shutdownAudio();
+}
+    
+// Get the horizontal and vertical screen sizes in pixel
+void MainComponent::GetDesktopResolution(int& horizontal, int& vertical)
+{
+    RECT desktop;
+    const HWND hDesktop = GetDesktopWindow();
+    GetWindowRect(hDesktop, &desktop);
+    horizontal = desktop.right;
+    vertical = desktop.bottom;
+}
+
+void MainComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate) {
+    externalInput.prepareToPlay(samplesPerBlockExpected, sampleRate);
+    track1.prepareToPlay(samplesPerBlockExpected, sampleRate);
+    track2.prepareToPlay(samplesPerBlockExpected, sampleRate);
+    freqCutoffs.prepareToPlay(samplesPerBlockExpected, sampleRate);
+    circularBuffer.prepareToPlay(samplesPerBlockExpected, 44100.0);
+    tenBandEQ.prepareToPlay(samplesPerBlockExpected, sampleRate);
+
+    mixerSource.addInputSource(&track1, false);
+    mixerSource.addInputSource(&track2, false);
+
+    dubSirenPlayer.prepareToPlay(samplesPerBlockExpected, sampleRate);
+}
+
+void MainComponent::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) {
+    externalInput.getNextAudioBlock(bufferToFill);
+    mixerSource.getNextAudioBlock(bufferToFill);
+    tenBandEQ.getNextAudioBlock(bufferToFill);
+    freqCutoffs.getNextAudioBlock(bufferToFill);
+    dubSirenPlayer.getNextAudioBlock(bufferToFill);
+
+    circularBuffer.getNextAudioBlock(bufferToFill);
+    delayComponent.getNextAudioBlock(bufferToFill);
+    killEQComponent.getNextAudioBlock(bufferToFill);
+
+    rmsMasterLeft = juce::Decibels::gainToDecibels(bufferToFill.buffer->getRMSLevel(0, 0, bufferToFill.buffer->getNumSamples()));
+    rmsMasterRight = juce::Decibels::gainToDecibels(bufferToFill.buffer->getRMSLevel(1, 0, bufferToFill.buffer->getNumSamples()));
+}
+
+void MainComponent::releaseResources() {
+    externalInput.releaseResources();
+    mixerSource.removeAllInputs();
+    mixerSource.releaseResources();
+    track1.releaseResources();
+    track2.releaseResources();
+    circularBuffer.releaseResources();
+
+    dubSirenPlayer.releaseResources();
+}
+//=============================================================================
+
+juce::PopupMenu MainComponent::getMenuForIndex(int topLevelMenuIndex, const juce::String& menuName) {
+    juce::PopupMenu menu;
+
+    if (topLevelMenuIndex == 0)
+    {
+        menu.addItem("Audio Settings", [&]() {
+            audioWindow->setCentrePosition(getWidth() * 0.5, getHeight() * 0.5);
+            audioWindow->setVisible(true);
+            });
+        menu.addItem("Key Bindings", [&]() {
+            keyBindWindow->setCentrePosition(getWidth() * 0.5, getHeight() * 0.5);
+            keyBindWindow->setVisible(true);
+            });
+    }
+    return menu;
+}
+
+juce::StringArray MainComponent::getMenuBarNames() {
+    return { "Settings", "Help" };
+}
+
+void MainComponent::menuItemSelected(int menuItemID, int topLevelMenuIndex) {
+}
+//==============================================================================
+void MainComponent::handleIncomingMidiMessage(juce::MidiInput* source, const juce::MidiMessage& message) {
+    int value;
+    int input = processMidiInput(message, value);
+        switch (midiHandler.returnCorrespondingComponent(input))
+        {
+        case 1: // INPUT A
+            inputAComponent.handleMidi(midiHandler.returnCorrespondingAction(input), value);
+            break;
+        case 2: // INPUT B
+            inputBComponent.handleMidi(midiHandler.returnCorrespondingAction(input), value);
+            break;
+        case 3: // THUMBNAIL VIEW
+            break;
+        case 4: // 10BAND EQ
+            break;
+        case 5: // DUB SIREN
+            dubSiren.handleMidi(midiHandler.returnCorrespondingAction(input), value);
+            break;
+        case 6: // REVERB
+            reverbComponent.handleMidi(midiHandler.returnCorrespondingAction(input), value);
+            break;
+        case 7: // DELAY
+            delayComponent.handleMidi(midiHandler.returnCorrespondingAction(input), value);
+            break;
+        case 8: // KILL EQ
+            killEQComponent.handleMidi(midiHandler.returnCorrespondingAction(input));
+            break;
+        }
+
+        //RE ENABLE THIS SO BINDS CAN BE MADE
+    makeBind(input);
+}
+
+void MainComponent::makeBind(int input) {
+    if (keyBindingsWindow.isWaitingForBind()) {
+        std::pair<int, int> componentAndAction = keyBindingsWindow.getComponentAndAction();
+        midiHandler.bindKey(input, componentAndAction.first, componentAndAction.second);
+        keyBindingsWindow.resetBindWait();
+    }
+}
+
+int MainComponent::processMidiInput(juce::MidiMessage message, int& value) {
+    value = 0;
+    if (message.isNoteOnOrOff()) { return message.getNoteNumber() * message.getVelocity() + message.getChannel(); }
+    if (message.isController()) { value = message.getControllerValue(); return message.getControllerNumber() * 10 + message.getChannel(); }
+    return NULL;
+}
+
+unsigned int MainComponent::hash(unsigned int x) {
+    x = ((x >> 16) ^ x) * 0x45d9f3b;
+    x = ((x >> 16) ^ x) * 0x45d9f3b;
+    x = (x >> 16) ^ x;
+    return x;
+}
+
+void MainComponent::setMidiInput(juce::MidiDeviceInfo& id) {
+    deviceManager.setMidiInputDeviceEnabled(id.identifier, true);
+    deviceManager.addMidiInputDeviceCallback(id.identifier, this);
 }
 
 void MainComponent::getMidiDevice() {
@@ -54,7 +196,6 @@ void MainComponent::getMidiDevice() {
 
     for (auto input : midiInputs)
         midiInputNames.add(input.name);
-   
 
     // find the first enabled device and use that by default
     for (auto input : midiInputs)
@@ -70,96 +211,6 @@ void MainComponent::getMidiDevice() {
         setMidiInput(midiInputs.getFirst());
 }
 
-void MainComponent::setMidiInput(juce::MidiDeviceInfo& id) {
-    deviceManager.setMidiInputDeviceEnabled(id.identifier, true);
-    deviceManager.addMidiInputDeviceCallback(id.identifier, this);
-}
-
-void MainComponent::handleIncomingMidiMessage(juce::MidiInput* source, const juce::MidiMessage& message){
-    DBG(message.getControllerNumber());
-    if (message.isController()) {
-        switch (message.getControllerNumber()) {
-            //knobs
-        case 20:
-            delayComponent.handleMidi(20, message.getControllerValue());
-            break;
-        case 21:
-            delayComponent.handleMidi(21, message.getControllerValue());
-            break;
-        case 22:
-            break;
-        case 23:
-            break;
-            //bottom pads
-        case 36:
-            delayComponent.handleMidi(36);
-            break;
-        case 37:
-            break;
-        case 38:
-            break;
-        case 39:
-            break;
-            //top pads
-        case 49:
-            killEQComponent.handleMidi(49);
-            break;
-        case 41:
-            killEQComponent.handleMidi(41);
-            break;
-        case 42:
-            killEQComponent.handleMidi(42);
-            break;
-        case 46:
-            killEQComponent.handleMidi(46);
-            break;
-        }
-    }
-}
-    
-// Get the horizontal and vertical screen sizes in pixel
-void MainComponent::GetDesktopResolution(int& horizontal, int& vertical)
-{
-    RECT desktop;
-    // Get a handle to the desktop window
-    const HWND hDesktop = GetDesktopWindow();
-    // Get the size of screen to the variable desktop
-    GetWindowRect(hDesktop, &desktop);
-    // The top left corner will have coordinates (0,0)
-    // and the bottom right corner will have coordinates
-    // (horizontal, vertical)
-    horizontal = desktop.right;
-    vertical = desktop.bottom;
-}
-
-void MainComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate) {
-    track1.prepareToPlay(samplesPerBlockExpected, sampleRate);
-    track2.prepareToPlay(samplesPerBlockExpected, sampleRate);
-    freqCutoffs.prepareToPlay(samplesPerBlockExpected, sampleRate);
-    circularBuffer.prepareToPlay(samplesPerBlockExpected, 44100.0);
-
-    mixerSource.addInputSource(&track1, false);
-    mixerSource.addInputSource(&track2, false);
-}
-
-void MainComponent::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) {
-    //bufferToFill.clearActiveBufferRegion();
-    mixerSource.getNextAudioBlock(bufferToFill);
-    circularBuffer.getNextAudioBlock(bufferToFill);
-    freqCutoffs.getNextAudioBlock(bufferToFill);
-    killEQComponent.getNextAudioBlock(bufferToFill);
-
-    rmsMasterLeft = juce::Decibels::gainToDecibels(bufferToFill.buffer->getRMSLevel(0, 0, bufferToFill.buffer->getNumSamples()));
-    rmsMasterRight = juce::Decibels::gainToDecibels(bufferToFill.buffer->getRMSLevel(1, 0, bufferToFill.buffer->getNumSamples()));
-}
-
-void MainComponent::releaseResources() {
-    mixerSource.removeAllInputs();
-    mixerSource.releaseResources();
-    track1.releaseResources();
-    track2.releaseResources();
-    circularBuffer.releaseResources();
-}
 
 //==============================================================================
 void MainComponent::paint(juce::Graphics& g)
@@ -227,18 +278,25 @@ void MainComponent::resized()
     //-----------------------------------------------
     //Middle Rack's
 
-    reverbComponent.setBounds(
+    dubSiren.setBounds(
         getX(),
         getHeight() * 0.39,
-        getWidth(),
-        getHeight() * 0.125
+        getWidth() * 0.15,
+        getHeight() * 0.32
+    );
+
+    reverbComponent.setBounds(
+        getWidth() * 0.15,
+        getHeight() * 0.39,
+        getWidth() * 0.85,
+        getHeight() * 0.16
     );
 
     delayComponent.setBounds(
-        getX(),
-        getHeight() * 0.52,
-        getWidth(),
-        getHeight() * 0.125
+        getWidth() * 0.15,
+        getHeight() * 0.55,
+        getWidth() * 0.85,
+        getHeight() * 0.16
     );
 
 
@@ -247,8 +305,13 @@ void MainComponent::resized()
 
     killEQComponent.setBounds(
         getX(),
-        getHeight() * 0.65,
+        getHeight() * 0.72,
         getWidth(),
-        getHeight() * 0.345
+        getHeight() * 0.275
+
     );
+
+    //-----------------------------------------------
+    //Settings Menus
+    //audioSettingsWindow.centreWithSize(getWidth() * 0.4, getHeight() * 0.5);
 }

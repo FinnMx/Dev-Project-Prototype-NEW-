@@ -1,0 +1,10 @@
+{
+    "inputABindings" : [],
+    "inputBBindings" : [],
+    "thumbnailViewBindings" : [],
+    "10BandEQBindings" : [],
+    "dubSirenBindings" : ["481", "11050", "521"],
+    "reverbBindings" : [],
+    "delayBindings" : ["531","541","551", "11177"],
+    "killEQBindings" : ["231", "232", "233", "234"]
+}

@@ -12,7 +12,7 @@
 
 #include <JuceHeader.h>
 #include <GUI/AudioVisualiserComponent.h>
-#include <FrequencyCutoffs.h>
+#include <Audio/FrequencyCutoffs.h>
 
 //==============================================================================
 /*
@@ -32,7 +32,7 @@ public:
     void releaseResources() override;
 
     //GET RID OF THIS BEFORE RELEASE
-    void handleMidi(int control);
+    void handleMidi(int action);
 
     void buttonClicked(juce::Button* button) override;
     void sliderValueChanged(juce::Slider* slider) override;
@@ -42,8 +42,6 @@ public:
 
 private:
     FrequencyCutoffs* freqCutoffs;
-
-    AudioVisualiserComponent demo;
 
     juce::Slider subBassFrequencySlider;
     juce::Slider bassFrequencySlider;
@@ -59,6 +57,8 @@ private:
     juce::Label bassFrequencyLabel{ "bassFrequency", "bassFrequency" };
     juce::Label midsFrequencyLabel{ "midsFrequency", "midsFrequency" };
     juce::Label highFrequencyLabel{ "highFrequency", "highFrequency" };
+
+    AudioVisualiserComponent visualiser;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (KillEQComponent)
 };

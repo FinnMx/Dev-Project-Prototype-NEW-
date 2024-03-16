@@ -14,7 +14,7 @@
 //==============================================================================
 AudioVisualiserComponent::AudioVisualiserComponent() : forwardFFT(fftOrder), window(fftSize, juce::dsp::WindowingFunction<float>::hann)
 {
-    startTimerHz(15);
+    startTimerHz(60);
 }
 
 AudioVisualiserComponent::~AudioVisualiserComponent()
@@ -46,6 +46,7 @@ void AudioVisualiserComponent::getNextAudioBlock(const juce::AudioSourceChannelI
 
 void AudioVisualiserComponent::pushNextSampleIntoFifo(float sample) noexcept
 {
+
     if (fifoIndex == fftSize)               
     {
         if (!nextFFTBlockReady)            
@@ -64,15 +65,15 @@ void AudioVisualiserComponent::pushNextSampleIntoFifo(float sample) noexcept
 void AudioVisualiserComponent::drawNextFrameOfSpectrum()
 {
     // first apply a windowing function to our data
-    window.multiplyWithWindowingTable(fftData, fftSize);       // [1]
+    window.multiplyWithWindowingTable(fftData, fftSize);     
 
     // then render our FFT data..
-    forwardFFT.performFrequencyOnlyForwardTransform(fftData);  // [2]
+    forwardFFT.performFrequencyOnlyForwardTransform(fftData);
 
     auto mindB = -100.0f;
     auto maxdB = 0.0f;
 
-    for (int i = 0; i < scopeSize; ++i)                         // [3]
+    for (int i = 0; i < scopeSize; ++i)                       
     {
         auto skewedProportionX = 1.0f - std::exp(std::log(1.0f - (float)i / (float)scopeSize) * 0.2f);
         auto fftDataIndex = juce::jlimit(0, fftSize / 2, (int)(skewedProportionX * (float)fftSize * 0.5f));
@@ -80,7 +81,7 @@ void AudioVisualiserComponent::drawNextFrameOfSpectrum()
             - juce::Decibels::gainToDecibels((float)fftSize)),
             mindB, maxdB, 0.0f, 1.0f);
 
-        scopeData[i] = level;                                   // [4]
+        scopeData[i] = level;                                   
     }
 }
 
@@ -104,15 +105,56 @@ void AudioVisualiserComponent::releaseResources() {
 
 }
 
+void AudioVisualiserComponent::getCoefficients(std::vector<juce::dsp::IIR::Coefficients<float>*> tempVec) {
+    coffVec = tempVec;
+}
+
 void AudioVisualiserComponent::paint (juce::Graphics& g)
 {
     g.fillAll(getLookAndFeel().findColour(juce::PropertyComponent::backgroundColourId));
     g.drawLine(0, getHeight() / 2, getWidth(), getHeight() / 2);
     drawFrame(g);
 
+    auto bounds = getLocalBounds();
+    auto responseArea = bounds;
+    auto rW = responseArea.getWidth();
+    auto sampleRate = 44100.f;
+
+    std::vector<double> magnitude;
+    magnitude.resize(rW);
+
+    for (int i = 0; i < rW; ++i) {
+        double mag = 1.f;
+        auto freq = juce::mapToLog10((double)i / (double)rW, 20.0, 20000.0);
+
+        auto temp = coffVec;
+
+        for each (juce::dsp::IIR::Coefficients<float>*cof in temp)
+        {
+            mag *= cof->getMagnitudeForFrequency(freq, sampleRate);
+        }
+        magnitude[i] = juce::Decibels::gainToDecibels(mag);
+    }
+
+    juce::Path responseCurve;
+
+    const double outputMin = responseArea.getBottom();
+    const double outputMax = responseArea.getY();
+    auto map = [outputMin, outputMax](double input) {
+        return juce::jmap(input, -24.0, 24.0, outputMin, outputMax);
+    };
+
+    responseCurve.startNewSubPath(responseArea.getX(), map(magnitude.front()));
+
+    for (size_t i = 1; i < magnitude.size(); ++i) {
+        responseCurve.lineTo(responseArea.getX() + i, map(magnitude[i]));
+    }
+
+    g.strokePath(responseCurve, juce::PathStrokeType(2.0f));
+
     /*
     g.setColour (juce::Colours::grey);
-    g.drawRect (getLocalBounds(), 1);   // draw an outline around the component
+    g.drawRect (getLocalBounds(), 1);   
     */
 }
 

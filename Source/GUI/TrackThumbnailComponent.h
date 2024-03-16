@@ -11,7 +11,7 @@
 #pragma once
 
 #include <JuceHeader.h>
-#include <TrackAudioPlayer.h>
+#include <Audio/TrackAudioPlayer.h>
 
 //==============================================================================
 /*

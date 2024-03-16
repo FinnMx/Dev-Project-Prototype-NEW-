@@ -16,7 +16,7 @@ KillEQComponent::KillEQComponent(FrequencyCutoffs* freqCutoffs) : freqCutoffs(fr
 {
     initSlider();
 
-    addAndMakeVisible(demo);
+    addAndMakeVisible(visualiser);
 
     addAndMakeVisible(subBassFrequencySlider);
     addAndMakeVisible(bassFrequencySlider);
@@ -71,18 +71,19 @@ void KillEQComponent::initSlider() {
     highFrequencyLabel.setJustificationType(juce::Justification::centredBottom);
 }
 
-void KillEQComponent::handleMidi(int control) {
-    switch (control) {
-    case 49:
+void KillEQComponent::handleMidi(int action) {
+    const juce::MessageManagerLock mmLock;
+    switch (action) {
+    case 0:
         subBassOnOff.triggerClick();
         break;
-    case 41:
+    case 1:
         bassOnOff.triggerClick();
         break;
-    case 42:
+    case 2:
         midsOnOff.triggerClick();
         break;
-    case 46:
+    case 3:
         highOnOff.triggerClick();
         break;
     }
@@ -111,7 +112,8 @@ void KillEQComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRa
 }
 
 void KillEQComponent::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) {
-    demo.getNextAudioBlock(bufferToFill);
+    visualiser.getCoefficients(freqCutoffs->getCoefficients());
+    visualiser.getNextAudioBlock(bufferToFill);
 }
 
 void KillEQComponent::releaseResources() {
@@ -120,7 +122,7 @@ void KillEQComponent::releaseResources() {
 
 void KillEQComponent::paint (juce::Graphics& g)
 {
-    demo.repaint();
+    visualiser.repaint();
     g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));   // clear the background
 
     g.setColour (getLookAndFeel().findColour(juce::TextEditor::outlineColourId).contrasting(0.15f));
@@ -134,7 +136,7 @@ void KillEQComponent::paint (juce::Graphics& g)
 
 void KillEQComponent::resized()
 {
-    demo.setBounds(getWidth() * 0.05,
+    visualiser.setBounds(getWidth() * 0.05,
         getHeight() * 0.25,
         getWidth() * 0.25,
         getHeight() * 0.5);
@@ -143,56 +145,56 @@ void KillEQComponent::resized()
         getWidth() * 0.3,
         getHeight() * 0.25,
         getWidth() * 0.2,
-        getHeight() * 0.3
+        getHeight() * 0.4
     );
 
     subBassOnOff.setBounds(
         getWidth() * 0.3,
-        getHeight() * 0.5,
+        getHeight() * 0.6,
         getWidth() * 0.2,
-        getHeight() * 0.3
+        getHeight() * 0.1
     );
 
     bassFrequencySlider.setBounds(
         getWidth() * 0.45,
         getHeight() * 0.25,
         getWidth() * 0.2,
-        getHeight() * 0.3
+        getHeight() * 0.4
     );
 
     bassOnOff.setBounds(
         getWidth() * 0.45,
-        getHeight() * 0.5,
+        getHeight() * 0.6,
         getWidth() * 0.2,
-        getHeight() * 0.3
+        getHeight() * 0.1
     );
 
     midsFrequencySlider.setBounds(
         getWidth() * 0.6,
         getHeight() * 0.25,
         getWidth() * 0.2,
-        getHeight() * 0.3
+        getHeight() * 0.4
     );
 
     midsOnOff.setBounds(
         getWidth() * 0.6,
-        getHeight() * 0.5,
+        getHeight() * 0.6,
         getWidth() * 0.2,
-        getHeight() * 0.3
+        getHeight() * 0.1
     );
 
     highFrequencySlider.setBounds(
         getWidth() * 0.75,
         getHeight() * 0.25,
         getWidth() * 0.2,
-        getHeight() * 0.3
+        getHeight() * 0.4
     );
 
     highOnOff.setBounds(
         getWidth() * 0.75,
-        getHeight() * 0.5,
-        getWidth() * 0.2,
-        getHeight() * 0.3
+        getHeight() * 0.6,
+        getWidth() * 0.1,
+        getHeight() * 0.1
     );
 
 }

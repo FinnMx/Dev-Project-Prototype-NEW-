@@ -46,12 +46,33 @@ InputComponent::~InputComponent()
 {
 }
 
+void InputComponent::handleMidi(int action, int value) {
+    const juce::MessageManagerLock mmLock;
+    switch (action) {
+    case 0:
+        trackLoad.triggerClick();
+        break;
+    case 1:
+        trackPlay.triggerClick();
+        break;
+    case 2:
+        trackPause.triggerClick();
+        break;
+    case 3:
+        trackStop.triggerClick();
+        break;
+    case 4:
+        volSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.f, 1.0f));
+        break;
+    }
+}
+
 void InputComponent::initVolSlider() {
     volSlider.setSliderStyle(juce::Slider::SliderStyle::LinearVertical);
     volSlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 200, 25);
 
     //SHOULD PROBABLY CHANGE THIS SO ITS IN A RANGE OF -60 TO +60DB!!!!!! SEE THE JUCE::AUDIOTRANSPORTPLAYER.SETGAIN FUNC!!!
-    volSlider.setRange(0.f, +1.f, 0.05f);
+    volSlider.setRange(0.f, +1.f, 0.01f);
     volSlider.setValue(1.f);
 }
 

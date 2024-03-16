@@ -141,8 +141,15 @@
     <Lib/>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\FrequencyCutoffs.cpp"/>
-    <ClCompile Include="..\..\Source\CircularBuffer.cpp"/>
+    <ClCompile Include="..\..\Source\Audio\CircularBuffer.cpp"/>
+    <ClCompile Include="..\..\Source\Audio\DubSiren.cpp"/>
+    <ClCompile Include="..\..\Source\Audio\ExternalInput.cpp"/>
+    <ClCompile Include="..\..\Source\Audio\FrequencyCutoffs.cpp"/>
+    <ClCompile Include="..\..\Source\Audio\TenBandEQ.cpp"/>
+    <ClCompile Include="..\..\Source\Audio\TrackAudioPlayer.cpp"/>
+    <ClCompile Include="..\..\Source\Settings\AudioSettingsComponent.cpp"/>
+    <ClCompile Include="..\..\Source\Settings\KeyBindingsComponent.cpp"/>
+    <ClCompile Include="..\..\Source\Settings\PopoutWindow.cpp"/>
     <ClCompile Include="..\..\Source\GUI\DelayComponent.cpp"/>
     <ClCompile Include="..\..\Source\GUI\InputComponent.cpp"/>
     <ClCompile Include="..\..\Source\GUI\KillEQComponent.cpp"/>
@@ -152,9 +159,9 @@
     <ClCompile Include="..\..\Source\AudioVisualiserComponent.cpp"/>
     <ClCompile Include="..\..\Source\GUI\TenBandComponent.cpp"/>
     <ClCompile Include="..\..\Source\GUI\TrackThumbnailComponent.cpp"/>
-    <ClCompile Include="..\..\Source\TrackAudioPlayer.cpp"/>
     <ClCompile Include="..\..\Source\Main.cpp"/>
     <ClCompile Include="..\..\Source\MainComponent.cpp"/>
+    <ClCompile Include="..\..\Source\MidiHandler.cpp"/>
     <ClCompile Include="C:\JUCE\modules\juce_audio_basics\audio_play_head\juce_AudioPlayHead.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
@@ -2556,9 +2563,16 @@
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_gui_extra.cpp"/>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\Crossfade.h"/>
-    <ClInclude Include="..\..\Source\FrequencyCutoffs.h"/>
-    <ClInclude Include="..\..\Source\CircularBuffer.h"/>
+    <ClInclude Include="..\..\Source\Audio\CircularBuffer.h"/>
+    <ClInclude Include="..\..\Source\Audio\Crossfade.h"/>
+    <ClInclude Include="..\..\Source\Audio\DubSiren.h"/>
+    <ClInclude Include="..\..\Source\Audio\ExternalInput.h"/>
+    <ClInclude Include="..\..\Source\Audio\FrequencyCutoffs.h"/>
+    <ClInclude Include="..\..\Source\Audio\TenBandEQ.h"/>
+    <ClInclude Include="..\..\Source\Audio\TrackAudioPlayer.h"/>
+    <ClInclude Include="..\..\Source\Settings\AudioSettingsComponent.h"/>
+    <ClInclude Include="..\..\Source\Settings\KeyBindingsComponent.h"/>
+    <ClInclude Include="..\..\Source\Settings\PopoutWindow.h"/>
     <ClInclude Include="..\..\Source\GUI\DelayComponent.h"/>
     <ClInclude Include="..\..\Source\GUI\InputComponent.h"/>
     <ClInclude Include="..\..\Source\GUI\KillEQComponent.h"/>
@@ -2568,8 +2582,8 @@
     <ClInclude Include="..\..\Source\GUI\ReverbComponent.h"/>
     <ClInclude Include="..\..\Source\GUI\TenBandComponent.h"/>
     <ClInclude Include="..\..\Source\GUI\TrackThumbnailComponent.h"/>
-    <ClInclude Include="..\..\Source\TrackAudioPlayer.h"/>
     <ClInclude Include="..\..\Source\MainComponent.h"/>
+    <ClInclude Include="..\..\Source\MidiHandler.h"/>
     <ClInclude Include="C:\JUCE\modules\juce_audio_basics\audio_play_head\juce_AudioPlayHead.h"/>
     <ClInclude Include="C:\JUCE\modules\juce_audio_basics\buffers\juce_AudioChannelSet.h"/>
     <ClInclude Include="C:\JUCE\modules\juce_audio_basics\buffers\juce_AudioDataConverters.h"/>

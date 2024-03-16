@@ -1,29 +1,71 @@
 ﻿  CircularBuffer.cpp
+  DubSiren.cpp
+  FrequencyCutoffs.cpp
+  TenBandEQ.cpp
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Audio\DubSiren.h(44,23): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Audio\DubSiren.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Audio\TenBandEQ.cpp(50,67): warning C4100: 'sampleRate': unreferenced formal parameter
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Audio\DubSiren.cpp(35,66): warning C4100: 'sampleRate': unreferenced formal parameter
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Audio\FrequencyCutoffs.cpp(38,95): warning C4305: 'argument': truncation from 'double' to 'NumericType'
+          with
+          [
+              NumericType=float
+          ]
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Audio\FrequencyCutoffs.cpp(90,74): warning C4100: 'sampleRate': unreferenced formal parameter
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Audio\CircularBuffer.cpp(28,72): warning C4100: 'sampleRate': unreferenced formal parameter
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Audio\CircularBuffer.cpp(63,50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Audio\CircularBuffer.cpp(136,34): warning C4456: declaration of 'input' hides previous local declaration
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Audio\CircularBuffer.cpp(123,17): message : see declaration of 'input'
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Audio\CircularBuffer.cpp(140,34): warning C4456: declaration of 'input' hides previous local declaration
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Audio\CircularBuffer.cpp(123,17): message : see declaration of 'input'
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Audio\CircularBuffer.cpp(166,75): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  TrackAudioPlayer.cpp
   AudioVisualiserComponent.cpp
-  DelayComponent.cpp
-  InputComponent.cpp
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(57,57): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(58,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(63,67): warning C4305: 'argument': truncation from 'juce::Justification::Flags' to 'bool'
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(66,53): warning C4100: 'slider': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(91,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(90,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(89,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(88,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(98,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(97,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(96,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(95,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\CircularBuffer.cpp(26,72): warning C4100: 'sampleRate': unreferenced formal parameter
+  DubSirenComponent.cpp
+  AudioSettingsComponent.cpp
 C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\AudioVisualiserComponent.cpp(33,82): warning C4100: 'sampleRate': unreferenced formal parameter
 C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\AudioVisualiserComponent.cpp(33,50): warning C4100: 'samplesPerBlockExpected': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(104,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(103,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(102,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\CircularBuffer.cpp(63,16): warning C4189: 'feedbackGain': local variable is initialized but not referenced
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(101,32): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\CircularBuffer.cpp(98,30): warning C4456: declaration of 'input' hides previous local declaration
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\CircularBuffer.cpp(84,17): message : see declaration of 'input'
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\AudioVisualiserComponent.cpp(115,60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\AudioVisualiserComponent.cpp(115,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\AudioVisualiserComponent.cpp(115,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Audio\DubSiren.h(44,23): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\GUI\DubSirenComponent.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\AudioVisualiserComponent.cpp(147,59): warning C4244: 'argument': conversion from 'Type' to 'float', possible loss of data
+          with
+          [
+              Type=double
+          ]
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\AudioVisualiserComponent.cpp(147,52): warning C4244: 'argument': conversion from 'ValueType' to 'float', possible loss of data
+          with
+          [
+              ValueType=int
+          ]
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\AudioVisualiserComponent.cpp(150,58): warning C4244: 'argument': conversion from 'Type' to 'float', possible loss of data
+          with
+          [
+              Type=double
+          ]
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\AudioVisualiserComponent.cpp(150,50): warning C4244: 'argument': conversion from 'size_t' to 'float', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(129,46): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(134,67): warning C4305: 'argument': truncation from 'juce::Justification::Flags' to 'bool'
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(137,55): warning C4100: 'slider': unreferenced formal parameter
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\AudioSettingsComponent.cpp(60,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\AudioSettingsComponent.cpp(59,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(201,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\AudioSettingsComponent.cpp(57,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(200,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(199,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(198,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(206,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(205,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(204,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(203,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(211,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(210,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(209,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(208,34): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  KeyBindingsComponent.cpp
+  PopoutWindow.cpp
+  DelayComponent.cpp
+  InputComponent.cpp
 C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(15,105): warning C4100: 'formatManager': unreferenced formal parameter
 C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(79,43): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(115,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
@@ -54,51 +96,125 @@ C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI
 C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(156,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(155,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\InputComponent.cpp(154,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\xutility(4460,24): warning C4244: '=': conversion from 'const _Ty' to '_Ty', possible loss of data
-          with
-          [
-              _Ty=double
-          ]
-          and
-          [
-              _Ty=float
-          ] (compiling source file ..\..\Source\CircularBuffer.cpp)
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\CircularBuffer.cpp(57): message : see reference to function template instantiation 'void std::fill<std::_Array_iterator<_Ty,2>,double>(const _FwdIt,const _FwdIt,const double &)' being compiled
-          with
-          [
-              _Ty=float,
-              _FwdIt=std::_Array_iterator<float,2>
-          ]
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(88,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(89,57): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(90,72): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(87,55): warning C4100: 'slider': unreferenced formal parameter
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(94,55): warning C4100: 'slider': unreferenced formal parameter
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(98,53): warning C4100: 'slider': unreferenced formal parameter
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(103,72): warning C4100: 'sampleRate': unreferenced formal parameter
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(103,40): warning C4100: 'samplesPerBlockExpected': unreferenced formal parameter
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(148,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(147,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(146,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(145,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(155,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(154,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(153,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(152,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(161,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(160,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(159,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(158,45): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(167,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(166,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(165,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(164,32): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(172,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(171,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(170,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(169,37): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\PopoutWindow.cpp(20,31): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\PopoutWindow.cpp(20,22): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\PopoutWindow.cpp(18,5): warning C4996: 'juce::ResizableWindow::setContentComponent': use setContentOwned and setContentNonOwned instead.
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.h(59,81): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Settings\KeyBindingsComponent.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(167,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(166,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(165,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(164,38): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(172,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(171,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(170,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(169,40): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(174,197): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(174,177): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(174,149): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(174,130): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(175,196): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(175,176): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(175,148): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(175,129): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(176,206): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(176,186): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(176,158): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(176,139): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(177,200): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(177,180): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(177,152): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(177,133): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(178,203): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(178,183): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(178,155): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(178,136): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(179,197): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(179,177): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(179,149): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(179,130): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(180,194): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(180,174): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(180,146): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(180,127): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(182,144): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(182,124): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(182,96): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(182,77): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   KillEQComponent.cpp
   MasterComponent.cpp
   MeterComponent.cpp
   ReverbComponent.cpp
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(28,73): warning C4100: 'sampleRate': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(28,41): warning C4100: 'samplesPerBlockExpected': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(59,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(58,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(57,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(56,31): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(56,106): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(56,79): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(56,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(57,106): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(57,79): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(57,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(63,67): warning C4305: 'argument': truncation from 'juce::Justification::Flags' to 'bool'
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(65,53): warning C4100: 'slider': unreferenced formal parameter
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(91,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(90,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(89,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(88,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(98,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(97,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(96,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(95,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(105,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(104,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(103,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(102,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(93,66): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(94,61): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(95,60): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(96,60): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(92,56): warning C4100: 'slider': unreferenced formal parameter
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(110,73): warning C4100: 'sampleRate': unreferenced formal parameter
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(110,41): warning C4100: 'samplesPerBlockExpected': unreferenced formal parameter
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(142,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(141,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(140,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(139,37): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(148,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(147,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(146,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(145,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(155,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(154,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(153,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(152,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(162,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(161,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(160,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(159,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(169,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(168,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(167,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(166,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(176,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(175,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(174,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(173,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(183,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(182,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(181,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(180,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(190,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(189,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(188,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(187,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(197,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(196,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(195,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(194,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\MasterComponent.cpp(61,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\MasterComponent.cpp(60,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\MasterComponent.cpp(59,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
@@ -107,10 +223,31 @@ C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI
 C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\MasterComponent.cpp(67,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\MasterComponent.cpp(66,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\MasterComponent.cpp(65,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(74,106): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(74,79): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(74,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(75,106): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(75,79): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(75,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(73,56): warning C4100: 'slider': unreferenced formal parameter
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(79,55): warning C4100: 'slider': unreferenced formal parameter
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(83,53): warning C4100: 'slider': unreferenced formal parameter
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(117,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(116,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(115,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(114,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(124,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(123,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(122,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(121,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(131,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(130,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(129,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\ReverbComponent.cpp(128,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   TenBandComponent.cpp
   TrackThumbnailComponent.cpp
-  TrackAudioPlayer.cpp
   Main.cpp
+  MainComponent.cpp
 C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TrackThumbnailComponent.cpp(34,79): warning C4100: 'source': unreferenced formal parameter
 C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TrackThumbnailComponent.cpp(38,64): warning C4100: 'slider': unreferenced formal parameter
 C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TrackThumbnailComponent.cpp(42,63): warning C4100: 'slider': unreferenced formal parameter
@@ -129,47 +266,228 @@ C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI
           [
               ValueType=int
           ]
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(66,52): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(98,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(97,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(96,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(95,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(103,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(102,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(101,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(100,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(108,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(107,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(106,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(105,40): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(113,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(112,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(111,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(110,40): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(118,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(117,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(116,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(115,40): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(123,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(122,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(121,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(120,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(128,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(127,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(126,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(125,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(133,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(132,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(131,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(130,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(138,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(137,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(136,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(135,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(143,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(142,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(141,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(140,42): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(148,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(147,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(146,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(145,38): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\rapidjson\encodings.h(148,1): warning C4005: 'TRANS': macro redefinition (compiling source file ..\..\Source\Main.cpp)
+C:\JUCE\modules\juce_core\text\juce_LocalisedStrings.h(208): message : see previous definition of 'TRANS' (compiling source file ..\..\Source\Main.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(110,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,internal::MaybeAddConst<Const,rapidjson::GenericMember<Encoding,Allocator>>::Type,ptrdiff_t,internal::MaybeAddConst<Const,rapidjson::GenericMember<Encoding,Allocator>>::Type*,internal::MaybeAddConst<Const,rapidjson::GenericMember<Encoding,Allocator>>::Type&>': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning. (compiling source file ..\..\Source\Main.cpp)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xutility(5911,54): message : see declaration of 'std::iterator' (compiling source file ..\..\Source\Main.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(194): message : see reference to class template instantiation 'rapidjson::GenericMemberIterator<Const,Encoding,Allocator>' being compiled (compiling source file ..\..\Source\Main.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(958,76): warning C4003: not enough arguments for function-like macro invocation 'max' (compiling source file ..\..\Source\Main.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(964,76): warning C4003: not enough arguments for function-like macro invocation 'min' (compiling source file ..\..\Source\Main.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(965,75): warning C4003: not enough arguments for function-like macro invocation 'max' (compiling source file ..\..\Source\Main.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(982,66): warning C4003: not enough arguments for function-like macro invocation 'max' (compiling source file ..\..\Source\Main.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(983,72): warning C4003: not enough arguments for function-like macro invocation 'max' (compiling source file ..\..\Source\Main.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Audio\DubSiren.h(44,23): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Main.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\rapidjson\encodings.h(148,1): warning C4005: 'TRANS': macro redefinition (compiling source file ..\..\Source\MainComponent.cpp)
+C:\JUCE\modules\juce_core\text\juce_LocalisedStrings.h(208): message : see previous definition of 'TRANS' (compiling source file ..\..\Source\MainComponent.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\keyBindingsComponent.h(59,81): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Main.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.h(73,11): warning C4996: 'juce::ScopedPointer<PopoutWindow>': was declared deprecated (compiling source file ..\..\Source\Main.cpp)
+C:\JUCE\modules\juce_core\memory\juce_ScopedPointer.h(34,1): message : see declaration of 'juce::ScopedPointer' (compiling source file ..\..\Source\Main.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.h(75,11): warning C4996: 'juce::ScopedPointer<PopoutWindow>': was declared deprecated (compiling source file ..\..\Source\Main.cpp)
+C:\JUCE\modules\juce_core\memory\juce_ScopedPointer.h(34,1): message : see declaration of 'juce::ScopedPointer' (compiling source file ..\..\Source\Main.cpp)
 C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Main.cpp(25,42): warning C4100: 'commandLine': unreferenced formal parameter
 C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Main.cpp(47,54): warning C4100: 'commandLine': unreferenced formal parameter
-  MainComponent.cpp
-  BinaryData.cpp
-  BinaryData2.cpp
-  BinaryData3.cpp
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(106,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(115,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(114,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(113,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(122,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(121,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(120,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(119,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(129,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(128,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(127,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(126,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(136,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(135,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(134,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(133,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(143,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(142,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(141,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(140,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(150,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(149,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(148,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(147,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(160,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(158,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(167,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(165,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(178,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(176,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-  BinaryData4.cpp
-  BinaryData5.cpp
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(110,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,internal::MaybeAddConst<Const,rapidjson::GenericMember<Encoding,Allocator>>::Type,ptrdiff_t,internal::MaybeAddConst<Const,rapidjson::GenericMember<Encoding,Allocator>>::Type*,internal::MaybeAddConst<Const,rapidjson::GenericMember<Encoding,Allocator>>::Type&>': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning. (compiling source file ..\..\Source\MainComponent.cpp)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xutility(5911,54): message : see declaration of 'std::iterator' (compiling source file ..\..\Source\MainComponent.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(194): message : see reference to class template instantiation 'rapidjson::GenericMemberIterator<Const,Encoding,Allocator>' being compiled (compiling source file ..\..\Source\MainComponent.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Audio\DubSiren.h(44,23): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\MainComponent.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\keyBindingsComponent.h(59,81): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\MainComponent.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.h(73,11): warning C4996: 'juce::ScopedPointer<PopoutWindow>': was declared deprecated (compiling source file ..\..\Source\MainComponent.cpp)
+C:\JUCE\modules\juce_core\memory\juce_ScopedPointer.h(34,1): message : see declaration of 'juce::ScopedPointer' (compiling source file ..\..\Source\MainComponent.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.h(75,11): warning C4996: 'juce::ScopedPointer<PopoutWindow>': was declared deprecated (compiling source file ..\..\Source\MainComponent.cpp)
+C:\JUCE\modules\juce_core\memory\juce_ScopedPointer.h(34,1): message : see declaration of 'juce::ScopedPointer' (compiling source file ..\..\Source\MainComponent.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(9,1): warning C4996: 'juce::ScopedPointer<PopoutWindow>::ScopedPointer': was declared deprecated
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(46,17): warning C4996: 'juce::ScopedPointer<PopoutWindow>::operator =': was declared deprecated
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(47,19): warning C4996: 'juce::ScopedPointer<PopoutWindow>::operator =': was declared deprecated
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(52): warning C4996: 'juce::ScopedPointer<PopoutWindow>::~ScopedPointer': was declared deprecated
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(111,74): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(111,55): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(111,13): warning C4996: 'juce::ScopedPointer<PopoutWindow>::operator ->': was declared deprecated
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(112,13): warning C4996: 'juce::ScopedPointer<PopoutWindow>::operator ->': was declared deprecated
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(115,76): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(115,57): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(115,13): warning C4996: 'juce::ScopedPointer<PopoutWindow>::operator ->': was declared deprecated
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(116,13): warning C4996: 'juce::ScopedPointer<PopoutWindow>::operator ->': was declared deprecated
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(105,91): warning C4100: 'menuName': unreferenced formal parameter
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(126,58): warning C4100: 'topLevelMenuIndex': unreferenced formal parameter
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(126,42): warning C4100: 'menuItemID': unreferenced formal parameter
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(129,64): warning C4100: 'source': unreferenced formal parameter
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(176,50): warning C4458: declaration of 'x' hides class member
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.h(66,9): message : see declaration of 'MainComponent::x' (compiling source file ..\..\Source\MainComponent.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(207,43): warning C4239: nonstandard extension used: 'argument': conversion from 'ElementType' to 'juce::MidiDeviceInfo &'
+          with
+          [
+              ElementType=juce::MidiDeviceInfo
+          ]
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(207,43): message : A non-const reference may only be bound to an lvalue
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(227,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(236,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(235,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(234,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(243,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(242,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(241,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(240,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(250,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(249,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(248,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(247,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(257,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(256,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(255,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(254,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(264,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(263,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(262,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(261,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(271,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(270,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(269,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(268,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(281,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(280,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(279,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(288,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(287,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(286,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(285,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(295,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(294,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(293,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(292,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(306,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MainComponent.cpp(304,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  MidiHandler.cpp
   include_juce_audio_basics.cpp
   include_juce_audio_devices.cpp
   include_juce_audio_formats.cpp
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\rapidjson\encodings.h(148,1): warning C4005: 'TRANS': macro redefinition (compiling source file ..\..\Source\MidiHandler.cpp)
+C:\JUCE\modules\juce_core\text\juce_LocalisedStrings.h(208): message : see previous definition of 'TRANS' (compiling source file ..\..\Source\MidiHandler.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(110,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,internal::MaybeAddConst<Const,rapidjson::GenericMember<Encoding,Allocator>>::Type,ptrdiff_t,internal::MaybeAddConst<Const,rapidjson::GenericMember<Encoding,Allocator>>::Type*,internal::MaybeAddConst<Const,rapidjson::GenericMember<Encoding,Allocator>>::Type&>': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning. (compiling source file ..\..\Source\MidiHandler.cpp)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xutility(5911,54): message : see declaration of 'std::iterator' (compiling source file ..\..\Source\MidiHandler.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(194): message : see reference to class template instantiation 'rapidjson::GenericMemberIterator<Const,Encoding,Allocator>' being compiled (compiling source file ..\..\Source\MidiHandler.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(102,19): warning C4996: 'std::iterator<std::random_access_iterator_tag,rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,rapidjson::GenericMember<Encoding,Allocator> *,rapidjson::GenericMember<Encoding,Allocator> &>': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
+          with
+          [
+              Encoding=rapidjson::UTF8<char>,
+              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
+          ] (compiling source file ..\..\Source\MidiHandler.cpp)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xutility(5911,54): message : see declaration of 'std::iterator' (compiling source file ..\..\Source\MidiHandler.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(548): message : see reference to class template instantiation 'rapidjson::GenericMemberIterator<false,Encoding,Allocator>' being compiled
+          with
+          [
+              Encoding=rapidjson::UTF8<char>,
+              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
+          ] (compiling source file ..\..\Source\MidiHandler.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(2024): message : see reference to class template instantiation 'rapidjson::GenericValue<rapidjson::UTF8<char>,rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>>' being compiled (compiling source file ..\..\Source\MidiHandler.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\MidiHandler.cpp(31): message : see reference to class template instantiation 'rapidjson::GenericDocument<rapidjson::UTF8<char>,rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>,rapidjson::CrtAllocator>' being compiled
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(110,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,rapidjson::GenericMember<Encoding,Allocator> *,rapidjson::GenericMember<Encoding,Allocator> &>': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
+          with
+          [
+              Encoding=rapidjson::UTF8<char>,
+              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
+          ] (compiling source file ..\..\Source\MidiHandler.cpp)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xutility(5911,54): message : see declaration of 'std::iterator' (compiling source file ..\..\Source\MidiHandler.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(121,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,rapidjson::GenericMember<Encoding,Allocator> *,rapidjson::GenericMember<Encoding,Allocator> &>::pointer': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
+          with
+          [
+              Encoding=rapidjson::UTF8<char>,
+              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
+          ] (compiling source file ..\..\Source\MidiHandler.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(123,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,rapidjson::GenericMember<Encoding,Allocator> *,rapidjson::GenericMember<Encoding,Allocator> &>::reference': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
+          with
+          [
+              Encoding=rapidjson::UTF8<char>,
+              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
+          ] (compiling source file ..\..\Source\MidiHandler.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(125,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,rapidjson::GenericMember<Encoding,Allocator> *,rapidjson::GenericMember<Encoding,Allocator> &>::difference_type': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
+          with
+          [
+              Encoding=rapidjson::UTF8<char>,
+              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
+          ] (compiling source file ..\..\Source\MidiHandler.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(102,19): warning C4996: 'std::iterator<std::random_access_iterator_tag,const rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,const rapidjson::GenericMember<Encoding,Allocator> *,const rapidjson::GenericMember<Encoding,Allocator> &>': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
+          with
+          [
+              Encoding=rapidjson::UTF8<char>,
+              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
+          ] (compiling source file ..\..\Source\MidiHandler.cpp)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xutility(5911,54): message : see declaration of 'std::iterator' (compiling source file ..\..\Source\MidiHandler.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(549): message : see reference to class template instantiation 'rapidjson::GenericMemberIterator<true,Encoding,Allocator>' being compiled
+          with
+          [
+              Encoding=rapidjson::UTF8<char>,
+              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
+          ] (compiling source file ..\..\Source\MidiHandler.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(110,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,const rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,const rapidjson::GenericMember<Encoding,Allocator> *,const rapidjson::GenericMember<Encoding,Allocator> &>': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
+          with
+          [
+              Encoding=rapidjson::UTF8<char>,
+              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
+          ] (compiling source file ..\..\Source\MidiHandler.cpp)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xutility(5911,54): message : see declaration of 'std::iterator' (compiling source file ..\..\Source\MidiHandler.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(121,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,const rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,const rapidjson::GenericMember<Encoding,Allocator> *,const rapidjson::GenericMember<Encoding,Allocator> &>::pointer': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
+          with
+          [
+              Encoding=rapidjson::UTF8<char>,
+              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
+          ] (compiling source file ..\..\Source\MidiHandler.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(123,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,const rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,const rapidjson::GenericMember<Encoding,Allocator> *,const rapidjson::GenericMember<Encoding,Allocator> &>::reference': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
+          with
+          [
+              Encoding=rapidjson::UTF8<char>,
+              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
+          ] (compiling source file ..\..\Source\MidiHandler.cpp)
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(125,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,const rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,const rapidjson::GenericMember<Encoding,Allocator> *,const rapidjson::GenericMember<Encoding,Allocator> &>::difference_type': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
+          with
+          [
+              Encoding=rapidjson::UTF8<char>,
+              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
+          ] (compiling source file ..\..\Source\MidiHandler.cpp)
   include_juce_audio_processors_ara.cpp
   include_juce_audio_processors_lv2_libs.cpp
   include_juce_audio_utils.cpp
@@ -182,6 +500,14 @@ C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Mai
   include_juce_core.cpp
   include_juce_gui_basics.cpp
   Generating code
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(50): warning C4706: assignment within conditional expression
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.cpp(130): warning C4715: 'KeyBindingsComponent::getActionIndex': not all control paths return a value
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DubSirenComponent.cpp(79): warning C4706: assignment within conditional expression
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\DelayComponent.cpp(82): warning C4706: assignment within conditional expression
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(100): warning C4706: assignment within conditional expression
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(102): warning C4706: assignment within conditional expression
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(104): warning C4706: assignment within conditional expression
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\KillEQComponent.cpp(106): warning C4706: assignment within conditional expression
+C:\JUCE\modules\juce_dsp\processors\juce_IIRFilter_Impl.h(38): warning C4723: potential divide by 0
+C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Source\GUI\TenBandComponent.cpp(71): warning C4706: assignment within conditional expression
   Finished generating code
   Dev Project Prototype (NEW)_App.vcxproj -> C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Builds\VisualStudio2019\x64\Release\App\Dev Project Prototype (NEW).exe

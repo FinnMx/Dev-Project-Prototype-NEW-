@@ -1,39 +1,15 @@
-﻿  MainComponent.cpp
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(70,43): warning C4239: nonstandard extension used: 'argument': conversion from 'ElementType' to 'juce::MidiDeviceInfo &'
-          with
-          [
-              ElementType=juce::MidiDeviceInfo
-          ]
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(70,43): message : A non-const reference may only be bound to an lvalue
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(78,64): warning C4100: 'source': unreferenced formal parameter
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(180,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(189,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(188,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(187,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(196,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(195,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(194,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(193,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(203,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(202,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(201,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(200,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(210,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(209,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(208,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(207,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(217,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(216,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(215,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(214,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(224,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(223,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(222,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(221,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(234,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(232,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(241,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(239,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(252,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(250,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+﻿  KeyBindingsComponent.cpp
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(63,81): warning C4305: 'initializing': truncation from 'double' to 'float'
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.cpp(131,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.cpp(130,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.cpp(129,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.cpp(128,38): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.cpp(136,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.cpp(135,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.cpp(134,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.cpp(133,40): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.cpp(141,118): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.cpp(141,98): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.cpp(141,70): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.cpp(141,51): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   Dev Project Prototype (NEW)_App.vcxproj -> K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Builds\VisualStudio2019\x64\Debug\App\Dev Project Prototype (NEW).exe

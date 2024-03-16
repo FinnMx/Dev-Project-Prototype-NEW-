@@ -18,10 +18,13 @@ DelayComponent::DelayComponent(CircularBuffer* circularBuffer) : circularBuffer(
 
     addAndMakeVisible(gainSlider);
     addAndMakeVisible(timeSlider);
+    addAndMakeVisible(frequencyCutSlider);
     addAndMakeVisible(onOff);
+    addAndMakeVisible(visualiser);
 
     gainSlider.addListener(this);
     timeSlider.addListener(this);
+    frequencyCutSlider.addListener(this);
     onOff.addListener(this);
 
 }
@@ -30,42 +33,49 @@ DelayComponent::~DelayComponent()
 {
 }
 
-void DelayComponent::handleMidi(int control, int value) {
+void DelayComponent::handleMidi(int action, int value) {
     const juce::MessageManagerLock mmLock;
-    switch (control) {
-    case 36:
-        onOff.triggerClick();
-        break;
-    case 20:
+    switch (action) {
+    case 0:
         gainSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.f, 1.0f));
         break;
-    case 21:
+    case 1:
         timeSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.f, 1000.f));
+        break;
+    case 2:
+        frequencyCutSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 400.f, 18000.f));
+        break;
+    case 3:
+        onOff.triggerClick();
         break;
     }
 }
 
 void DelayComponent::initSlider() {
+    //FEEDBACK!!!! NOT GAIN!!!!!
     gainSlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     gainSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
     gainSlider.setRange(0.f, +1.0f, 0.01f);
     gainSlider.setValue(0.f);
     gainSliderLabel.attachToComponent(&gainSlider, false);
     gainSliderLabel.setJustificationType(juce::Justification::centredBottom);
+    gainSlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 200, 25);
 
     frequencyCutSlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     frequencyCutSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
-    frequencyCutSlider.setRange(0.f, +20000.0f, 0.01f);
-    frequencyCutSlider.setValue(0.f);
+    frequencyCutSlider.setRange(1000.f, +19250.0f, 0.01f);
+    frequencyCutSlider.setValue(19250.f);
     frequencyCutSliderLabel.attachToComponent(&frequencyCutSlider, false);
     frequencyCutSliderLabel.setJustificationType(juce::Justification::centredBottom);
+    frequencyCutSlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 200, 25);
     
     timeSlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     timeSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
-    timeSlider.setRange(0.f, +1000.f, 0.01f);
+    timeSlider.setRange(0.f, +1000.f);
     timeSlider.setValue(0.f);
     timeSliderLabel.attachToComponent(&timeSlider, false);
     timeSliderLabel.setJustificationType(juce::Justification::centredBottom);
+    timeSlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 200, 25);
 }
 
 void DelayComponent::buttonClicked(juce::Button* button) {
@@ -74,24 +84,49 @@ void DelayComponent::buttonClicked(juce::Button* button) {
    
 }
 
-void  DelayComponent::sliderValueChanged(juce::Slider* slider) {
+void DelayComponent::sliderValueChanged(juce::Slider* slider) {
     circularBuffer->setDelayTime(timeSlider.getValue());
     circularBuffer->setDelayFeedback(gainSlider.getValue());
     circularBuffer->setDelayCutoffFrequency(frequencyCutSlider.getValue());
-    val.setText(std::to_string(slider->getValue()), juce::NotificationType{});
+    //val.setText(std::to_string(slider->getValue()), juce::NotificationType{});
 }
 
 void  DelayComponent::sliderDragStarted(juce::Slider* slider) {
-    val.attachToComponent(slider, juce::Justification::centredLeft);
+    //val.attachToComponent(slider, juce::Justification::centredLeft);
 }
 
 void  DelayComponent::sliderDragEnded(juce::Slider* slider) {
-    val.setText("", juce::NotificationType{});
+    //val.setText("", juce::NotificationType{});
+}
+
+
+void DelayComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate) {
+
+}
+
+void DelayComponent::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) {
+    visualiser.getCoefficients(circularBuffer->getCoefficients());
+    visualiser.getNextAudioBlock(bufferToFill);
+}
+
+void DelayComponent::releaseResources() {
+
+}
+
+void DelayComponent::setFocus(bool newFocus) {
+    const juce::MessageManagerLock mmLock;
+    isFocused = newFocus;
+    repaint();
 }
 
 void DelayComponent::paint (juce::Graphics& g)
 {
-    g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));   // clear the background
+
+    visualiser.repaint();
+    if (isFocused)
+        g.fillAll(getLookAndFeel().findColour(juce::ResizableWindow::backgroundColourId).withAlpha(.1f));   // clear the background
+    if (!isFocused)
+        g.fillAll(getLookAndFeel().findColour(juce::ResizableWindow::backgroundColourId));
 
     g.setColour (getLookAndFeel().findColour(juce::TextEditor::outlineColourId).contrasting(0.15f));
     g.drawRect (getLocalBounds(), 1);   // draw an outline around the component
@@ -120,8 +155,19 @@ void DelayComponent::resized()
         getHeight() * 0.8
     );
 
-    onOff.setBounds(getWidth() * 0.5,
+    frequencyCutSlider.setBounds(getWidth() * 0.5,
+        getHeight() * 0.2,
+        getWidth() * 0.2,
+        getHeight() * 0.8
+    );
+
+    onOff.setBounds(getWidth() * 0.7,
         getHeight() * 0.2,
         getWidth() * 0.5,
+        getHeight() * 0.5);
+
+    visualiser.setBounds(getWidth() * 0.75,
+        getHeight() * 0.2,
+        getWidth() * 0.2,
         getHeight() * 0.5);
 }

@@ -11,6 +11,7 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include <Audio/FrequencyCutoffs.h>
 
 //==============================================================================
 /*
@@ -28,6 +29,8 @@ public:
     void getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) override;
     void releaseResources() override;
 
+    void getCoefficients(std::vector<juce::dsp::IIR::Coefficients<float>*> tempVec);
+
     void paint (juce::Graphics&) override;
     void drawFrame(juce::Graphics& g);
     void resized() override;
@@ -43,6 +46,7 @@ public:
     };
 
 private:
+    std::vector<juce::dsp::IIR::Coefficients<float>*> coffVec;
 
     juce::dsp::FFT forwardFFT;                      
     juce::dsp::WindowingFunction<float> window;     

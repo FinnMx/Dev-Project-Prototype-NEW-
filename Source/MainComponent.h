@@ -3,8 +3,14 @@
 #include <iostream>
 
 #include <JuceHeader.h>
-#include <CircularBuffer.h>
-#include <TrackAudioPlayer.h>
+#include <MidiHandler.h>
+#include <Audio/CircularBuffer.h>
+#include <Audio/TrackAudioPlayer.h>
+#include <Audio/FrequencyCutoffs.h>
+#include <Audio/TenBandEQ.h>
+#include <Audio/DubSiren.h>
+#include <Audio/ExternalInput.h>
+
 #include <GUI/DelayComponent.h>
 #include <GUI/InputComponent.h>
 #include <GUI/KillEQComponent.h>
@@ -13,7 +19,12 @@
 #include <GUI/TenBandComponent.h>
 #include <GUI/TrackThumbnailComponent.h>
 #include <GUI/MeterComponent.h>
-#include <FrequencyCutoffs.h>
+#include <GUI/DubSirenComponent.h>
+
+#include <Settings/AudioSettingsComponent.h>
+#include <Settings/keyBindingsComponent.h>
+#include <Settings/PopoutWindow.h>
+
 
 //==============================================================================
 /*
@@ -21,6 +32,7 @@
     your controls and content.
 */
 class MainComponent  : public juce::AudioAppComponent,
+                       public juce::MenuBarModel,
                        public juce::MidiInputCallback
 {
 public:
@@ -34,10 +46,14 @@ public:
     void releaseResources() override;
 
     //==============================================================================
+    juce::PopupMenu getMenuForIndex(int topLevelMenuIndex, const juce::String& menuName) override;
+    juce::StringArray getMenuBarNames() override;
+    void menuItemSelected(int menuItemID, int topLevelMenuIndex) override;
+    //==============================================================================
     void handleIncomingMidiMessage(juce::MidiInput* source, const juce::MidiMessage& message) override;
     void setMidiInput(juce::MidiDeviceInfo& id);
     void getMidiDevice();
-
+    void makeBind(int input);
     //==============================================================================
     void paint (juce::Graphics& g) override;
     void resized() override;
@@ -45,27 +61,34 @@ public:
 
 private:
     //==============================================================================
-    // Your private member variables go here...
+    int processMidiInput(juce::MidiMessage message, int& value);
+    unsigned int hash(unsigned int x);
+    //==============================================================================
     int x, y;
     float rmsMasterLeft, rmsMasterRight;
 
-    //look and feel
-
-    //MIDI
     juce::AudioDeviceManager deviceManager;
+    std::unique_ptr<juce::AudioDeviceSelectorComponent> audioSettings;
+
+    //Setting windows
+    juce::ScopedPointer<PopoutWindow> audioWindow;
+    AudioSettingsComponent audioSettingsWindow;
+    juce::ScopedPointer<PopoutWindow> keyBindWindow;
+    KeyBindingsComponent keyBindingsWindow;
 
     // Child components
     juce::MenuBarComponent menuBar;
 
     // Audio components
     juce::MixerAudioSource mixerSource;
-    //juce::MixerAudioSource effectsMixer;
+    ExternalInput externalInput{ &deviceManager };
 
     juce::AudioFormatManager formatManager;
     TrackAudioPlayer track1{formatManager};
     TrackAudioPlayer track2{formatManager};
     CircularBuffer circularBuffer{};
     FrequencyCutoffs freqCutoffs;
+    TenBandEQ tenBandEQ;
 
     // Thumbnail component
     juce::AudioThumbnailCache cache{ 100 };
@@ -81,7 +104,14 @@ private:
     DelayComponent delayComponent{&circularBuffer};
     KillEQComponent killEQComponent{ &freqCutoffs };
 
-    TenBandComponent tenBandComponent;
+    DubSiren dubSirenPlayer;
+    DubSirenComponent dubSiren{ &dubSirenPlayer };
+
+    TenBandComponent tenBandComponent{ &tenBandEQ };
+
+    //MIDI
+    MidiHandler midiHandler;
+    int midiset{ 1 }; // make this an ENUM
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };

@@ -11,12 +11,13 @@
 #pragma once
 
 #include <JuceHeader.h>
-#include <CircularBuffer.h>
+#include <Audio/CircularBuffer.h>
+#include <GUI/AudioVisualiserComponent.h>
 
 //==============================================================================
 /*
 */
-class DelayComponent  : public juce::Component,
+class DelayComponent  : public juce::AudioAppComponent,
                         public juce::Slider::Listener,
                         public juce::Button::Listener
 {
@@ -30,23 +31,32 @@ public:
     void sliderDragStarted(juce::Slider* slider) override;
     void sliderDragEnded(juce::Slider* slider) override;
 
-    void handleMidi(int control, int value = 0);
+    void prepareToPlay(int samplesPerBlockExpected, double sampleRate) override;
+    void getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) override;
+    void releaseResources() override;
+
+    void handleMidi(int action, int value = 0);
 
     void buttonClicked(juce::Button* button) override;
+
+    void setFocus(bool newFocus);
 
     void paint (juce::Graphics&) override;
     void resized() override;
 
 private:
-    CircularBuffer* circularBuffer;
+    bool isFocused{ false };
 
-    juce::Slider gainSlider;
+    CircularBuffer* circularBuffer;
+    AudioVisualiserComponent visualiser;
+
+    juce::Slider gainSlider; // FEEDBACK!!!!! NOT GAIn!!!
     juce::Slider timeSlider;
     juce::Slider frequencyCutSlider;
 
     juce::ToggleButton onOff;
 
-    juce::Label gainSliderLabel{ "Gain", "Gain" };
+    juce::Label gainSliderLabel{ "Feedback", "Feedback" };
     juce::Label timeSliderLabel{ "Time", "Time" };
     juce::Label frequencyCutSliderLabel{ "Frequency", "Frequency" };
     juce::Label val{ "currentSliderVal", "" };
