@@ -48,7 +48,7 @@ void MidiHandler::processSettings(rapidjson::Document& document) {
             for (rapidjson::SizeType i = 0; i < jsonArray.Size(); i++) {
                 std::string key = jsonArray[i].GetString();
                 if (key != "undefined") {
-                    bindKey(std::stoi(key), componentIndex, i);
+                    bindKey(std::stoi(key), componentIndex + 1, i);
                 }
             }
         }
@@ -62,8 +62,7 @@ void MidiHandler::bindKey(int key, int Component, int action) {
         if (it->second.first == Component && it->second.second == action) { bindings.erase(it++); }
         else { ++it; }
     }
-
-    bindings[key] = std::make_pair(Component, action);
+    bindings[key] = std::make_pair(Component, action); // add one to avoid the unordered map from confusing base 9 with a null value
 }
 
 int MidiHandler::returnCorrespondingComponent(int key) {

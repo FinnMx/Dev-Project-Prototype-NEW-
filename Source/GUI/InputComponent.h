@@ -31,6 +31,8 @@ public:
     void paint (juce::Graphics&) override;
     void resized() override;
 
+    void handleMidi(int action, int value = 0);
+
     void buttonClicked(juce::Button* button) override;
     void sliderValueChanged(juce::Slider* slider) override;
 

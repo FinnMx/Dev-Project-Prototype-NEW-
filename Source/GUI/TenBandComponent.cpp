@@ -71,7 +71,7 @@ void TenBandComponent::buttonClicked(juce::Button* button) {
     if (button = &resetButton){
         for each (juce::Slider* slider in sliders)
         {
-            slider->setValue(1.0f, juce::NotificationType{});
+            slider->setValue(1.0f);
         }
     }
 }

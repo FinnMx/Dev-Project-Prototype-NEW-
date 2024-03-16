@@ -134,25 +134,26 @@ void MainComponent::handleIncomingMidiMessage(juce::MidiInput* source, const juc
     int input = processMidiInput(message, value);
         switch (midiHandler.returnCorrespondingComponent(input))
         {
-        case 0: // INPUT A
-            DBG("This worked");
+        case 1: // INPUT A
+            inputAComponent.handleMidi(midiHandler.returnCorrespondingAction(input), value);
             break;
-        case 1: // INPUT B
+        case 2: // INPUT B
+            inputBComponent.handleMidi(midiHandler.returnCorrespondingAction(input), value);
             break;
-        case 2: // THUMBNAIL VIEW
+        case 3: // THUMBNAIL VIEW
             break;
-        case 3: // 10BAND EQ
+        case 4: // 10BAND EQ
             break;
-        case 4: // DUB SIREN
+        case 5: // DUB SIREN
             dubSiren.handleMidi(midiHandler.returnCorrespondingAction(input), value);
             break;
-        case 5: // REVERB
+        case 6: // REVERB
             reverbComponent.handleMidi(midiHandler.returnCorrespondingAction(input), value);
             break;
-        case 6: // DELAY
+        case 7: // DELAY
             delayComponent.handleMidi(midiHandler.returnCorrespondingAction(input), value);
             break;
-        case 7: // KILL EQ
+        case 8: // KILL EQ
             killEQComponent.handleMidi(midiHandler.returnCorrespondingAction(input));
             break;
         }
@@ -173,7 +174,7 @@ int MainComponent::processMidiInput(juce::MidiMessage message, int& value) {
     value = 0;
     if (message.isNoteOnOrOff()) { return message.getNoteNumber() * message.getVelocity() + message.getChannel(); }
     if (message.isController()) { value = message.getControllerValue(); return message.getControllerNumber() * 10 + message.getChannel(); }
-    return 0;
+    return NULL;
 }
 
 unsigned int MainComponent::hash(unsigned int x) {

@@ -68,7 +68,7 @@ void KeyBindingsComponent::buttonClicked(juce::Button* button) {
     else {
         const juce::MessageManagerLock mmLock;
         waitingForBind = true;
-        setComponentAndAction(currentTab, button);
+        setComponentAndAction(currentTab + 1, button);
         repaint();
     }
 }
