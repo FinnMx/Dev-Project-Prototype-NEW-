@@ -33,7 +33,7 @@ public:
 private:
     void processSettings(rapidjson::Document& document);
 
-    const char* filePath{ "K:/dev/NEW DEV PROTOTYPE (CORRECT ONE)/Dev Project Prototype (NEW)/Source/midisettings.json" };
+    const char* filePath{ "C:/midisettings.json" };
 
     std::unordered_map<int, std::pair<int, int>> bindings;
 
