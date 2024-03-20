@@ -132,6 +132,7 @@ juce::StringArray MainComponent::getMenuBarNames() {
 
 void MainComponent::menuItemSelected(int menuItemID, int topLevelMenuIndex) {
 }
+
 //==============================================================================
 void MainComponent::handleIncomingMidiMessage(juce::MidiInput* source, const juce::MidiMessage& message) {
     int value;
@@ -162,7 +163,6 @@ void MainComponent::handleIncomingMidiMessage(juce::MidiInput* source, const juc
             break;
         }
 
-        //RE ENABLE THIS SO BINDS CAN BE MADE
     makeBind(input);
 }
 
