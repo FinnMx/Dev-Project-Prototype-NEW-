@@ -49,7 +49,7 @@ void KeyBindingsComponent::refreshPage() {
     addAndMakeVisible(pageBackwards);
     pageForward.addListener(this);
     pageBackwards.addListener(this);
-     
+
     for (int i = 0; i < sizeof(parameters) / sizeof(*parameters); i++) {
         for (int j = 0; j < parameterSizes[i]; j++)
         {
@@ -62,11 +62,11 @@ void KeyBindingsComponent::refreshPage() {
 }
 
 void KeyBindingsComponent::buttonClicked(juce::Button* button) {
-        const juce::MessageManagerLock mmLock;
-        waitingForBind = true;
-        setComponentAndAction(currentTab + 1, button);
-        repaint();
-        // refreshPage () change this func so when called buttons change colour etc...
+    const juce::MessageManagerLock mmLock;
+    waitingForBind = true;
+    setComponentAndActionFromButton(button);
+    repaint();
+    // refreshPage () change this func so when called buttons change colour etc...
 }
 
 bool KeyBindingsComponent::isWaitingForBind() {
@@ -75,6 +75,15 @@ bool KeyBindingsComponent::isWaitingForBind() {
 
 std::pair<int, int> KeyBindingsComponent::getComponentAndAction() {
     return currentComponentAndAction;
+}
+
+void KeyBindingsComponent::setComponentAndActionFromButton(juce::Button* button) {
+    for (int i = 0; i < sizeof(parameters) / sizeof(*parameters); i++) {
+        for (int j = 0; j < parameterSizes[i]; j++) {
+            if (button == &parameters[i][j])
+                setComponentAndAction(i + 1, j);
+        }
+    }
 }
 
 int KeyBindingsComponent::findIndex(juce::TextButton arr[], juce::Button* button) {
@@ -90,9 +99,9 @@ int KeyBindingsComponent::getActionIndex(juce::Button* button) {
 
 }
 
-void KeyBindingsComponent::setComponentAndAction(int component, juce::Button* button) {
+void KeyBindingsComponent::setComponentAndAction(int component, int action) {
     currentComponentAndAction.first = component;
-    currentComponentAndAction.second = getActionIndex(button);
+    currentComponentAndAction.second = action;
 }
 
 void KeyBindingsComponent::resetBindWait() {
@@ -101,17 +110,17 @@ void KeyBindingsComponent::resetBindWait() {
     repaint();
 }
 
-void KeyBindingsComponent::paint (juce::Graphics& g)
+void KeyBindingsComponent::paint(juce::Graphics& g)
 {
 
     g.setColour(juce::Colours::white);
     g.setFont(30.0f);
-    g.drawText(currentHeading, getLocalBounds(),
-        juce::Justification::centredTop, true);
-    
+    // g.drawText(currentHeading, getLocalBounds(),
+     //    juce::Justification::centredTop, true);
+
     if (waitingForBind) {
-        g.setColour(juce::Colours::white);
-        g.setFont(16.0f);
+        g.setColour(juce::Colours::black);
+        g.setFont(36.0f);
         g.drawText("Waiting for a input", getLocalBounds(),
             juce::Justification::centredBottom, true);
     }
@@ -119,7 +128,6 @@ void KeyBindingsComponent::paint (juce::Graphics& g)
 
 void KeyBindingsComponent::resized()
 {
-
 
     for (int i = 0; i < sizeof(parameters) / sizeof(*parameters); i++) {
         for (int j = 0; j < parameterSizes[i]; j++) {
