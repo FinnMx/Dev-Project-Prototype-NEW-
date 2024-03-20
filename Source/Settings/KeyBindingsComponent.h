@@ -27,9 +27,10 @@ public:
 
     bool isWaitingForBind();
     std::pair<int, int> getComponentAndAction();
+    void setComponentAndActionFromButton(juce::Button* button);
     void resetBindWait();
 
-    void setComponentAndAction(int component, juce::Button* button);
+    void setComponentAndAction(int component, int action);
 
     void refreshPage();
 
@@ -60,7 +61,19 @@ private:
 
     juce::TextButton* parameters[8];
 
-    float parameterY[10]{ 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55,0.6, 0.65 };
+    float inputAButtonBounds[5][4] = { {0.003, 0.075,0.02,0.04} , {0.003,0.12,0.02,0.04}, {0.003,0.165,0.02,0.04}, {0.003,0.21,0.02,0.04}, {0.078,0.075,0.02,0.2} };
+    float inputBButtonBounds[5][4] = { {0.128,0.075,0.02,0.04} ,{0.128,0.12,0.02,0.04},{0.128,0.165,0.02,0.04},{0.128,0.21,0.02,0.04},{0.203,0.075,0.02,0.2} };
+    float thumbnailButtonBounds[2][4] = { {0.,0.,0.,0.} ,{0.,0.,0.,0.}};
+
+    float tenBandButtonBounds[10][4] = { {0.778,0.085,0.02,0.2} ,{0.8,0.085,0.02,0.2},{0.822,0.085,0.02,0.2},{0.844,0.085,0.02,0.2},{0.866,0.085,0.02,0.2},
+                                         {0.888,0.085,0.02,0.2} ,{0.91,0.085,0.02,0.2},{0.932,0.085,0.02,0.2},{0.954,0.085,0.02,0.2},{0.976,0.085,0.02,0.2} };
+
+    float dubSirenButtonBounds[3][4] = { {0.012,0.495,0.05,0.075} ,{0.03,0.675,0.015,0.025},{0.087,0.63,0.05,0.075} };
+    float reverbButtonBounds[3][4] = { {0.282,0.42,0.075,0.1} , {0.452,0.42,0.075,0.1}, {0.622,0.42,0.075,0.1} };
+    float delayButtonBounds[4][4] = { {0.282,0.588,0.075,0.1} , {0.452,0.588,0.075,0.1}, {0.622,0.588,0.075,0.1},{0.744,0.615,0.015,0.025} };
+    float killEQButtonBounds[4][4] = { {0.3,0.905,0.015,0.025} ,{0.45,0.905,0.015,0.025},{0.6,0.905,0.015,0.025},{0.75,0.905,0.015,0.025} };
+
+    float (*buttonBounds[8])[4];
 
 
 

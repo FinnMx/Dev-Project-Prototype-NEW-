@@ -24,6 +24,14 @@ KeyBindingsComponent::KeyBindingsComponent()
     parameters[5] = reverbParameters;
     parameters[6] = delayParameters;
     parameters[7] = killEQParameters;
+    buttonBounds[0] = inputAButtonBounds;
+    buttonBounds[1] = inputBButtonBounds;
+    buttonBounds[2] = thumbnailButtonBounds;
+    buttonBounds[3] = tenBandButtonBounds;
+    buttonBounds[4] = dubSirenButtonBounds;
+    buttonBounds[5] = reverbButtonBounds;
+    buttonBounds[6] = delayButtonBounds;
+    buttonBounds[7] = killEQButtonBounds;
 
     refreshPage();
 }
@@ -42,35 +50,23 @@ void KeyBindingsComponent::refreshPage() {
     pageForward.addListener(this);
     pageBackwards.addListener(this);
      
-    for (int i = 0; i < parameterSizes[currentTab]; i++)
-    {
-        addAndMakeVisible(parameters[currentTab][i]);
-        parameters[currentTab][i].addListener(this);
-        parameters[currentTab][i].setButtonText("Edit Parameter");
+    for (int i = 0; i < sizeof(parameters) / sizeof(*parameters); i++) {
+        for (int j = 0; j < parameterSizes[i]; j++)
+        {
+            addAndMakeVisible(parameters[i][j]);
+            parameters[i][j].addListener(this);
+            parameters[i][j].setColour(juce::TextButton::buttonColourId, (juce::Colours::lawngreen));
+            parameters[i][j].setAlpha(0.6f);
+        }
     }
 }
 
 void KeyBindingsComponent::buttonClicked(juce::Button* button) {
-    if (button == &pageForward) {
-        if (currentTab == 7)
-            currentTab = -1;
-        currentTab++;
-        refreshPage();
-        return;
-    }
-    if (button == &pageBackwards) {
-        if (currentTab == 0)
-            currentTab = 8;
-        currentTab--;
-        refreshPage();
-        return;
-    }
-    else {
         const juce::MessageManagerLock mmLock;
         waitingForBind = true;
-        setComponentAndAction(currentTab + 1, button);
+        setComponentAndActionFromButton(button);
         repaint();
-    }
+        // refreshPage () change this func so when called buttons change colour etc...
 }
 
 bool KeyBindingsComponent::isWaitingForBind() {
@@ -79,6 +75,15 @@ bool KeyBindingsComponent::isWaitingForBind() {
 
 std::pair<int, int> KeyBindingsComponent::getComponentAndAction() {
     return currentComponentAndAction;
+}
+
+void KeyBindingsComponent::setComponentAndActionFromButton(juce::Button* button) {
+    for (int i = 0; i < sizeof(parameters) / sizeof(*parameters); i++) {
+        for (int j = 0; j < parameterSizes[i]; j++) {
+            if (button == &parameters[i][j])
+                setComponentAndAction(i + 1, j);
+        }
+    }
 }
 
 int KeyBindingsComponent::findIndex(juce::TextButton arr[], juce::Button* button) {
@@ -94,9 +99,9 @@ int KeyBindingsComponent::getActionIndex(juce::Button* button) {
 
 }
 
-void KeyBindingsComponent::setComponentAndAction(int component, juce::Button* button) {
+void KeyBindingsComponent::setComponentAndAction(int component, int action) {
     currentComponentAndAction.first = component;
-    currentComponentAndAction.second = getActionIndex(button);
+    currentComponentAndAction.second = action;
 }
 
 void KeyBindingsComponent::resetBindWait() {
@@ -107,16 +112,15 @@ void KeyBindingsComponent::resetBindWait() {
 
 void KeyBindingsComponent::paint (juce::Graphics& g)
 {
-    g.fillAll(getLookAndFeel().findColour(juce::PropertyComponent::backgroundColourId));
 
     g.setColour(juce::Colours::white);
     g.setFont(30.0f);
-    g.drawText(currentHeading, getLocalBounds(),
-        juce::Justification::centredTop, true);
+   // g.drawText(currentHeading, getLocalBounds(),
+    //    juce::Justification::centredTop, true);
     
     if (waitingForBind) {
-        g.setColour(juce::Colours::white);
-        g.setFont(16.0f);
+        g.setColour(juce::Colours::black);
+        g.setFont(36.0f);
         g.drawText("Waiting for a input", getLocalBounds(),
             juce::Justification::centredBottom, true);
     }
@@ -125,21 +129,18 @@ void KeyBindingsComponent::paint (juce::Graphics& g)
 void KeyBindingsComponent::resized()
 {
 
-    pageForward.setBounds(getWidth() * 0.9,
-        getHeight() * 0.1,
-        getWidth() * 0.05,
-        getHeight() * 0.05);
+    for (int i = 0; i < sizeof(parameters) / sizeof(*parameters); i++) {
+        for (int j = 0; j < parameterSizes[i]; j++) {
+            parameters[i][j].setBounds(getWidth() * buttonBounds[i][j][0], getHeight() * buttonBounds[i][j][1], getWidth() * buttonBounds[i][j][2], getHeight() * buttonBounds[i][j][3]);
+        }
+    }
 
-    pageBackwards.setBounds(getWidth() * 0.85,
-        getHeight() * 0.1,
-        getWidth() * 0.05,
-        getHeight() * 0.05);
-
-
+    /*
     for (int i = 0; i < sizeof(parameters) / sizeof(*parameters); i++) {
         for (int j = 0; j < parameterSizes[i]; j++) {
             parameters[i][j].setBounds(getWidth() * 0.1, getHeight() * parameterY[j], getWidth() * 0.15, getHeight() * 0.05);
         }
     }
+    */
 
 }

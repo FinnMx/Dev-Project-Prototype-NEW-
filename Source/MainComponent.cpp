@@ -44,7 +44,6 @@ MainComponent::MainComponent() : juce::AudioAppComponent(deviceManager),
     addAndMakeVisible(dubSiren);
 
     audioWindow = new PopoutWindow("Audio Settings", &audioSettingsWindow, x, y);
-    keyBindWindow = new PopoutWindow("Key Bindings", &keyBindingsWindow, x, y);
     midiHandler.readSettingsFile();
 }
 
@@ -115,8 +114,13 @@ juce::PopupMenu MainComponent::getMenuForIndex(int topLevelMenuIndex, const juce
             audioWindow->setVisible(true);
             });
         menu.addItem("Key Bindings", [&]() {
-            keyBindWindow->setCentrePosition(getWidth() * 0.5, getHeight() * 0.5);
-            keyBindWindow->setVisible(true);
+            keyBindingsWindow.setCentrePosition(getWidth() * 0.5, getHeight() * 0.5);
+            //keyBindingsWindow.setVisible(!keyBindingsWindow.isShowing());
+            if (!keyBindingsWindow.isShowing())
+                addAndMakeVisible(keyBindingsWindow);
+            else{
+                removeChildComponent(&keyBindingsWindow);
+            }
             });
     }
     return menu;
@@ -128,6 +132,7 @@ juce::StringArray MainComponent::getMenuBarNames() {
 
 void MainComponent::menuItemSelected(int menuItemID, int topLevelMenuIndex) {
 }
+
 //==============================================================================
 void MainComponent::handleIncomingMidiMessage(juce::MidiInput* source, const juce::MidiMessage& message) {
     int value;
@@ -158,7 +163,6 @@ void MainComponent::handleIncomingMidiMessage(juce::MidiInput* source, const juc
             break;
         }
 
-        //RE ENABLE THIS SO BINDS CAN BE MADE
     makeBind(input);
 }
 
@@ -310,6 +314,8 @@ void MainComponent::resized()
         getHeight() * 0.275
 
     );
+
+    keyBindingsWindow.setBounds(getX(), getHeight(), getWidth(), getHeight() * 0.955);
 
     //-----------------------------------------------
     //Settings Menus
