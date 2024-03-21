@@ -98,7 +98,7 @@ private:
     InputComponent inputAComponent{"Track A",&track1, formatManager,&trackAThumbnailComponent};
     InputComponent inputBComponent{"Track B",&track2, formatManager,&trackBThumbnailComponent };
 
-    MasterComponent masterComponent{ &rmsMasterLeft, &rmsMasterRight };
+    MasterComponent masterComponent{ &rmsMasterLeft, &rmsMasterRight, &mixerSource, &externalInput };
 
     ReverbComponent reverbComponent{&track1, &track2};
     DelayComponent delayComponent{&circularBuffer};

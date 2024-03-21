@@ -12,16 +12,34 @@
 #include "MasterComponent.h"
 
 //==============================================================================
-MasterComponent::MasterComponent(float* rmsMasterLeft, float* rmsMasterRight) : masterLeft(rmsMasterLeft), masterRight(rmsMasterRight)
+MasterComponent::MasterComponent(float* rmsMasterLeft, float* rmsMasterRight, juce::MixerAudioSource* mixerSource, ExternalInput* externalInput) : 
+    masterLeft(rmsMasterLeft), masterRight(rmsMasterRight), mixerSource(mixerSource), externalInput(externalInput)
 {
     startTimerHz(30);
     addAndMakeVisible(rmsLeft);
     addAndMakeVisible(rmsRight);
+    addAndMakeVisible(inputToggler);
+
+    inputToggler.addListener(this);
 
 }
 
 MasterComponent::~MasterComponent()
 {
+}
+
+void MasterComponent::buttonClicked(juce::Button* button) {
+    switch (button->getToggleState()) {
+    case true:
+        mixerSource->addInputSource(externalInput, false);
+        break;
+    case false:
+        mixerSource->removeInputSource(externalInput);
+        break;
+    }
+}
+
+void MasterComponent::toggleExternalInput() {
 }
 
 void MasterComponent::timerCallback() {
@@ -34,12 +52,6 @@ void MasterComponent::timerCallback() {
 
 void MasterComponent::paint (juce::Graphics& g)
 {
-    /* This demo code just fills the component's background and
-       draws some placeholder text to get you started.
-
-       You should replace everything in this method with your own
-       drawing code..
-    */
 
     g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));   // clear the background
 
@@ -66,6 +78,13 @@ void MasterComponent::resized()
         getHeight() * 0.175,
         getWidth() * 0.1,
         getHeight() * 0.6
+    );
+
+    inputToggler.setBounds(
+        getWidth() * 0.2,
+        getHeight() * 0.8,
+        getWidth() * 0.1,
+        getHeight() * 0.1
     );
 
 }
