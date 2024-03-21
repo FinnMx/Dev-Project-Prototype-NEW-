@@ -81,46 +81,51 @@ void DubSirenComponent::buttonClicked(juce::Button* button) {
 }
 
 void DubSirenComponent::sliderValueChanged(juce::Slider* slider) {
-    //dubSiren->setFrequency(frequencySlider.getValue());
-    //dubSiren->setLfoFrequency(lfoFrequencySlider.getValue());
-    //dubSiren->setLFOWaveType((int)waveTypeSlider.getValue());
     switch ((int)presetSlider.getValue()) {
     case 1:
+        dubSiren->setWaveType(1);
         dubSiren->setLFOWaveType(3);
-        dubSiren->setFrequency(65.41f);
-        dubSiren->setLfoFrequency(10.f);
+        dubSiren->setFrequency(300.f);
+        dubSiren->setLfoFrequency(5.f);
         break;
     case 2:
-        dubSiren->setLFOWaveType(4);
-        dubSiren->setFrequency(196.00f);
-        dubSiren->setLfoFrequency(1.5f);
+        dubSiren->setWaveType(2);
+        dubSiren->setLFOWaveType(5);
+        dubSiren->setFrequency(250.f);
+        dubSiren->setLfoFrequency(8.f);
         break;
     case 3:
+        dubSiren->setWaveType(1);
         dubSiren->setLFOWaveType(4);
         dubSiren->setFrequency(130.81f);
         dubSiren->setLfoFrequency(3.5f);
         break;
     case 4:
+        dubSiren->setWaveType(1);
         dubSiren->setLFOWaveType(3);
         dubSiren->setFrequency(130.81f);
         dubSiren->setLfoFrequency(7.0f);
         break;
     case 5:
+        dubSiren->setWaveType(1);
         dubSiren->setLFOWaveType(2);
         dubSiren->setFrequency(130.81f);
         dubSiren->setLfoFrequency(5.0f);
         break;
     case 6:
+        dubSiren->setWaveType(1);
         dubSiren->setLFOWaveType(3);
         dubSiren->setFrequency(261.63f);
         dubSiren->setLfoFrequency(0.75f);
         break;
     case 7:
+        dubSiren->setWaveType(1);
         dubSiren->setLFOWaveType(2);
         dubSiren->setFrequency(523.25f);
         dubSiren->setLfoFrequency(0.25f);
         break;
     case 8:
+        dubSiren->setWaveType(1);
         dubSiren->setLFOWaveType(1);
         dubSiren->setFrequency(523.25f);
         dubSiren->setLfoFrequency(0.25f);

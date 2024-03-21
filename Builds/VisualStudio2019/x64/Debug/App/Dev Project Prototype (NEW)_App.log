@@ -1,17 +1,25 @@
-﻿  Main.cpp
+﻿  DubSiren.cpp
+  DubSirenComponent.cpp
+  Main.cpp
   MainComponent.cpp
-  KeyBindingsComponent.cpp
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(64,164): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Settings\KeyBindingsComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(65,159): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Settings\KeyBindingsComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(69,182): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Settings\KeyBindingsComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(71,118): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Settings\KeyBindingsComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(72,113): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Settings\KeyBindingsComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(73,141): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Settings\KeyBindingsComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(74,140): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Settings\KeyBindingsComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.cpp(134,161): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.cpp(134,124): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.cpp(134,88): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.cpp(134,51): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\DubSiren.h(45,23): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\GUI\DubSirenComponent.cpp)
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(134,46): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(139,67): warning C4305: 'argument': truncation from 'juce::Justification::Flags' to 'bool'
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(142,55): warning C4100: 'slider': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(206,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(205,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(204,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(203,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(211,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(210,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(209,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(208,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(216,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(215,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(214,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(213,34): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\DubSiren.h(45,23): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Audio\DubSiren.cpp)
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\DubSiren.cpp(40,66): warning C4100: 'sampleRate': unreferenced formal parameter
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\encodings.h(148,1): warning C4005: 'TRANS': macro redefinition (compiling source file ..\..\Source\MainComponent.cpp)
 C:\JUCE\modules\juce_core\text\juce_LocalisedStrings.h(208): message : see previous definition of 'TRANS' (compiling source file ..\..\Source\MainComponent.cpp)
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\encodings.h(148,1): warning C4005: 'TRANS': macro redefinition (compiling source file ..\..\Source\Main.cpp)
@@ -27,41 +35,30 @@ K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidj
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(965,75): warning C4003: not enough arguments for function-like macro invocation 'max' (compiling source file ..\..\Source\Main.cpp)
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(982,66): warning C4003: not enough arguments for function-like macro invocation 'max' (compiling source file ..\..\Source\Main.cpp)
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(983,72): warning C4003: not enough arguments for function-like macro invocation 'max' (compiling source file ..\..\Source\Main.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\DubSiren.h(44,23): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\MainComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\DubSiren.h(44,23): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Main.cpp)
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\DubSiren.h(45,23): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\MainComponent.cpp)
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\DubSiren.h(45,23): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Main.cpp)
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\keyBindingsComponent.h(64,164): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\MainComponent.cpp)
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\keyBindingsComponent.h(65,159): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\MainComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\keyBindingsComponent.h(64,164): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Main.cpp)
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\keyBindingsComponent.h(69,182): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\MainComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\keyBindingsComponent.h(65,159): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Main.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\keyBindingsComponent.h(69,182): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Main.cpp)
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\keyBindingsComponent.h(71,118): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\MainComponent.cpp)
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\keyBindingsComponent.h(72,113): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\MainComponent.cpp)
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\keyBindingsComponent.h(73,141): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\MainComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\keyBindingsComponent.h(71,118): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Main.cpp)
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\keyBindingsComponent.h(74,140): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\MainComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\keyBindingsComponent.h(72,113): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Main.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\keyBindingsComponent.h(73,141): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Main.cpp)
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.h(74,11): warning C4996: 'juce::ScopedPointer<PopoutWindow>': was declared deprecated (compiling source file ..\..\Source\MainComponent.cpp)
 C:\JUCE\modules\juce_core\memory\juce_ScopedPointer.h(34,1): message : see declaration of 'juce::ScopedPointer' (compiling source file ..\..\Source\MainComponent.cpp)
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.h(76,11): warning C4996: 'juce::ScopedPointer<PopoutWindow>': was declared deprecated (compiling source file ..\..\Source\MainComponent.cpp)
 C:\JUCE\modules\juce_core\memory\juce_ScopedPointer.h(34,1): message : see declaration of 'juce::ScopedPointer' (compiling source file ..\..\Source\MainComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\keyBindingsComponent.h(74,140): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Main.cpp)
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(9,1): warning C4996: 'juce::ScopedPointer<PopoutWindow>::ScopedPointer': was declared deprecated
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(46,17): warning C4996: 'juce::ScopedPointer<PopoutWindow>::operator =': was declared deprecated
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.h(74,11): warning C4996: 'juce::ScopedPointer<PopoutWindow>': was declared deprecated (compiling source file ..\..\Source\Main.cpp)
-C:\JUCE\modules\juce_core\memory\juce_ScopedPointer.h(34,1): message : see declaration of 'juce::ScopedPointer' (compiling source file ..\..\Source\Main.cpp)
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(51): warning C4996: 'juce::ScopedPointer<PopoutWindow>::~ScopedPointer': was declared deprecated
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.h(76,11): warning C4996: 'juce::ScopedPointer<PopoutWindow>': was declared deprecated (compiling source file ..\..\Source\Main.cpp)
-C:\JUCE\modules\juce_core\memory\juce_ScopedPointer.h(34,1): message : see declaration of 'juce::ScopedPointer' (compiling source file ..\..\Source\Main.cpp)
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\keyBindingsComponent.h(64,164): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Main.cpp)
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(114,74): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(114,55): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(114,13): warning C4996: 'juce::ScopedPointer<PopoutWindow>::operator ->': was declared deprecated
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(115,13): warning C4996: 'juce::ScopedPointer<PopoutWindow>::operator ->': was declared deprecated
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(118,79): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(118,60): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Main.cpp(25,42): warning C4100: 'commandLine': unreferenced formal parameter
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Main.cpp(47,54): warning C4100: 'commandLine': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\keyBindingsComponent.h(65,159): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Main.cpp)
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(108,91): warning C4100: 'menuName': unreferenced formal parameter
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(135,58): warning C4100: 'topLevelMenuIndex': unreferenced formal parameter
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(135,42): warning C4100: 'menuItemID': unreferenced formal parameter
@@ -74,6 +71,7 @@ K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainCo
               ElementType=juce::MidiDeviceInfo
           ]
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(218,43): message : A non-const reference may only be bound to an lvalue
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\keyBindingsComponent.h(69,182): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Main.cpp)
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(238,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(247,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(246,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
@@ -112,4 +110,15 @@ K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainCo
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(317,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(315,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(321,78): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\keyBindingsComponent.h(71,118): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Main.cpp)
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\keyBindingsComponent.h(72,113): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Main.cpp)
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\keyBindingsComponent.h(73,141): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Main.cpp)
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\keyBindingsComponent.h(74,140): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Main.cpp)
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.h(74,11): warning C4996: 'juce::ScopedPointer<PopoutWindow>': was declared deprecated (compiling source file ..\..\Source\Main.cpp)
+C:\JUCE\modules\juce_core\memory\juce_ScopedPointer.h(34,1): message : see declaration of 'juce::ScopedPointer' (compiling source file ..\..\Source\Main.cpp)
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.h(76,11): warning C4996: 'juce::ScopedPointer<PopoutWindow>': was declared deprecated (compiling source file ..\..\Source\Main.cpp)
+C:\JUCE\modules\juce_core\memory\juce_ScopedPointer.h(34,1): message : see declaration of 'juce::ScopedPointer' (compiling source file ..\..\Source\Main.cpp)
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Main.cpp(25,42): warning C4100: 'commandLine': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Main.cpp(47,54): warning C4100: 'commandLine': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(79): warning C4706: assignment within conditional expression
   Dev Project Prototype (NEW)_App.vcxproj -> K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Builds\VisualStudio2019\x64\Debug\App\Dev Project Prototype (NEW).exe
