@@ -22,6 +22,17 @@ ExternalInput::~ExternalInput()
 {
 }
 
+void ExternalInput::enableVolume(bool enabled) {
+    switch (enabled) {
+    case true:
+        volume = 1.f;
+        break;
+    case false:
+        volume = 0.f;
+        break;
+    }
+}
+
 void ExternalInput::prepareToPlay(int samplesPerBlockExpected, double sampleRate) {
 
 }
@@ -61,7 +72,7 @@ void ExternalInput::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffer
                 for (auto sample = 0; sample < bufferToFill.numSamples; ++sample)
                 {
                     auto noise = (random.nextFloat() * 2.0f) - 1.0f;
-                    outBuffer[sample] = inBuffer[sample] + (inBuffer[sample]);
+                    outBuffer[sample] = (inBuffer[sample] + (inBuffer[sample])) * volume;
                 }
             }
         }

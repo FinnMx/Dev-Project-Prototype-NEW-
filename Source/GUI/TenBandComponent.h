@@ -24,6 +24,8 @@ public:
     TenBandComponent(TenBandEQ* tenBandEQ);
     ~TenBandComponent() override;
 
+    void handleMidi(int action, int value = 0);
+
     void initSlider();
     void sliderValueChanged(juce::Slider* slider) override;
     void buttonClicked(juce::Button* button) override;

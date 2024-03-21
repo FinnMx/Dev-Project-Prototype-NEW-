@@ -120,6 +120,7 @@ juce::PopupMenu MainComponent::getMenuForIndex(int topLevelMenuIndex, const juce
             if (!keyBindingsWindow.isShowing())
                 addAndMakeVisible(keyBindingsWindow);
             else{
+                keyBindingsWindow.resetBindWait();
                 removeChildComponent(&keyBindingsWindow);
             }
             });
@@ -148,6 +149,7 @@ void MainComponent::handleIncomingMidiMessage(juce::MidiInput* source, const juc
         case 3: // THUMBNAIL VIEW
             break;
         case 4: // 10BAND EQ
+            tenBandComponent.handleMidi(midiHandler.returnCorrespondingAction(input), value);
             break;
         case 5: // DUB SIREN
             dubSiren.handleMidi(midiHandler.returnCorrespondingAction(input), value);

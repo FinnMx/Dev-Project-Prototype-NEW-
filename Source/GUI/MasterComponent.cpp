@@ -29,14 +29,7 @@ MasterComponent::~MasterComponent()
 }
 
 void MasterComponent::buttonClicked(juce::Button* button) {
-    switch (button->getToggleState()) {
-    case true:
-        mixerSource->addInputSource(externalInput, false);
-        break;
-    case false:
-        mixerSource->removeInputSource(externalInput);
-        break;
-    }
+    externalInput->enableVolume(button->getToggleState());
 }
 
 void MasterComponent::toggleExternalInput() {

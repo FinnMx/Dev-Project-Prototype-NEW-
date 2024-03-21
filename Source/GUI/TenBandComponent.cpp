@@ -45,6 +45,44 @@ TenBandComponent::~TenBandComponent()
 {
 }
 
+void TenBandComponent::handleMidi(int action, int value) {
+    const juce::MessageManagerLock mmLock;
+    switch (action) {
+    case 0:
+        freq30Slider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.5f, 7.0f));
+        break;
+    case 1:
+        freq62Slider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.5f, 7.0f));
+        break;
+    case 2:
+        freq125Slider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.5f, 7.0f));
+        break;
+    case 3:
+        freq250Slider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.5f, 7.0f));
+        break;
+    case 4:
+        freq500Slider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.5f, 7.0f));
+        break;
+    case 5:
+        freq1000Slider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.5f, 7.0f));
+        break;
+    case 6:
+        freq2000Slider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.5f, 7.0f));
+        break;
+    case 7:
+        freq4000Slider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.5f, 7.0f));
+        break;
+    case 8:
+        freq8000Slider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.5f, 7.0f));
+        break;
+    case 9:
+        freq16000Slider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.5f, 7.0f));
+        break;
+    case 10:
+        resetButton.triggerClick();
+    }
+}
+
 void TenBandComponent::initSlider() {
     for (int i = 0; i <= 9; i++) 
     {
