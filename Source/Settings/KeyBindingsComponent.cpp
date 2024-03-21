@@ -135,12 +135,5 @@ void KeyBindingsComponent::resized()
         }
     }
 
-    /*
-    for (int i = 0; i < sizeof(parameters) / sizeof(*parameters); i++) {
-        for (int j = 0; j < parameterSizes[i]; j++) {
-            parameters[i][j].setBounds(getWidth() * 0.1, getHeight() * parameterY[j], getWidth() * 0.15, getHeight() * 0.05);
-        }
-    }
-    */
 
 }

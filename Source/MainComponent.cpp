@@ -71,6 +71,7 @@ void MainComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate
     circularBuffer.prepareToPlay(samplesPerBlockExpected, 44100.0);
     tenBandEQ.prepareToPlay(samplesPerBlockExpected, sampleRate);
 
+    mixerSource.addInputSource(&externalInput,false);
     mixerSource.addInputSource(&track1, false);
     mixerSource.addInputSource(&track2, false);
 
@@ -78,7 +79,6 @@ void MainComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate
 }
 
 void MainComponent::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) {
-    externalInput.getNextAudioBlock(bufferToFill);
     mixerSource.getNextAudioBlock(bufferToFill);
     tenBandEQ.getNextAudioBlock(bufferToFill);
     freqCutoffs.getNextAudioBlock(bufferToFill);
@@ -90,6 +90,7 @@ void MainComponent::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffer
 
     rmsMasterLeft = juce::Decibels::gainToDecibels(bufferToFill.buffer->getRMSLevel(0, 0, bufferToFill.buffer->getNumSamples()));
     rmsMasterRight = juce::Decibels::gainToDecibels(bufferToFill.buffer->getRMSLevel(1, 0, bufferToFill.buffer->getNumSamples()));
+
 }
 
 void MainComponent::releaseResources() {
