@@ -17,17 +17,11 @@ DubSirenComponent::DubSirenComponent(DubSiren* dubSiren) : dubSiren(dubSiren)
     initSlider();
 
     addAndMakeVisible(trigger);
-    //addAndMakeVisible(frequencySlider);
-    //addAndMakeVisible(lfoFrequencySlider);
     addAndMakeVisible(volumeSlider);
-    //addAndMakeVisible(waveTypeSlider);
     addAndMakeVisible(presetSlider);
 
     trigger.addListener(this);
 
-    //waveTypeSlider.addListener(this);
-    //frequencySlider.addListener(this);
-    //lfoFrequencySlider.addListener(this);
     volumeSlider.addListener(this);
     presetSlider.addListener(this);
 }
@@ -37,29 +31,6 @@ DubSirenComponent::~DubSirenComponent()
 }
 
 void DubSirenComponent::initSlider() {
-    /*
-    frequencySlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
-    frequencySlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
-    frequencySlider.setRange(30.f, +1000.0f, 0.01f);
-    frequencySlider.setValue(100.f);
-    frequencySliderLabel.attachToComponent(&frequencySlider, false);
-    frequencySliderLabel.setJustificationType(juce::Justification::centredBottom);
-
-    lfoFrequencySlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
-    lfoFrequencySlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
-    lfoFrequencySlider.setRange(0.f, +10.0f, 0.01f);
-    lfoFrequencySlider.setValue(0.5f);
-    lfoFrequencySliderLabel.attachToComponent(&lfoFrequencySlider, false);
-    lfoFrequencySliderLabel.setJustificationType(juce::Justification::centredBottom);
-
-    waveTypeSlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
-    waveTypeSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
-    waveTypeSlider.setRange(1.f, +4.0f, 1.f);
-    waveTypeSlider.setValue(1.f);
-    waveTypeSliderLabel.attachToComponent(&waveTypeSlider, false);
-    waveTypeSliderLabel.setJustificationType(juce::Justification::centredBottom);
-    
-    */
     volumeSlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     volumeSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
     volumeSlider.setRange(0.f, +6.f, 0.1f);

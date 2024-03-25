@@ -47,7 +47,7 @@ private:
     static constexpr auto effectDelaySamples = 88200;
 
     juce::dsp::DelayLine<float> delay{ effectDelaySamples };
-    juce::dsp::DelayLine<float, juce::dsp::DelayLineInterpolationTypes::None> linear{ effectDelaySamples };
+    juce::dsp::DelayLine<float, juce::dsp::DelayLineInterpolationTypes::Lagrange3rd> linear{ effectDelaySamples };
 
     //juce::IIRFilter filter;
 
