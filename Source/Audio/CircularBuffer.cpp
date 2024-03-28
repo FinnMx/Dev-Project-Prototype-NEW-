@@ -133,7 +133,9 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
             for (int sample = 0; sample < input.getNumSamples(); ++sample)
             {
                 auto smoothedVal = smoother.getNextValue();
-
+                //if (smoothedVal > 0)
+                 //   linear.setDelay(smoothedVal);
+                //creates the "loop"
                 if (delayStatus) {
                     auto input = samplesIn[sample] - lastDelayOutput[channel];
                     linear.pushSample(int(channel), input);

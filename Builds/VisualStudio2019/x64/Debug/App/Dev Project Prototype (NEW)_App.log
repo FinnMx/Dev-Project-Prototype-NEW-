@@ -1,9 +1,10 @@
 ﻿  CircularBuffer.cpp
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(28,72): warning C4100: 'sampleRate': unreferenced formal parameter
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(64,50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(140,34): warning C4456: declaration of 'input' hides previous local declaration
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(124,17): message : see declaration of 'input'
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(144,34): warning C4456: declaration of 'input' hides previous local declaration
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(124,17): message : see declaration of 'input'
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(166,75): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  Dev Project Prototype (NEW)_App.vcxproj -> K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Builds\VisualStudio2019\x64\Debug\App\Dev Project Prototype (NEW).exe
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(24,72): warning C4100: 'sampleRate': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(58,50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(87,24): error C2065: 'lowFilterCoefficient': undeclared identifier
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(88,24): error C2065: 'highFilterCoefficient': undeclared identifier
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(129,34): warning C4456: declaration of 'input' hides previous local declaration
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(115,17): message : see declaration of 'input'
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(133,34): warning C4456: declaration of 'input' hides previous local declaration
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(115,17): message : see declaration of 'input'
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(154,75): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
