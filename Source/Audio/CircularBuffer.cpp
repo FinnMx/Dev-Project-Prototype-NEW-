@@ -40,6 +40,7 @@ void CircularBuffer::prepareToPlay(int samplesPerBlockExpected, double sampleRat
 
     delay.reset();
     delay.prepare(spec);
+    linear.reset();
     linear.prepare(spec);
 
     testFilterHighL.setCoefficients(juce::IIRCoefficients::makeHighPass(44100, 1500));
@@ -129,9 +130,10 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
         auto* samplesIn = input.getChannelPointer(channel);
         auto* samplesOut = output.getChannelPointer(channel);
 
-            for (size_t sample = 0; sample < input.getNumSamples(); ++sample)
+            for (int sample = 0; sample < input.getNumSamples(); ++sample)
             {
-                //creates the "loop"
+                auto smoothedVal = smoother.getNextValue();
+
                 if (delayStatus) {
                     auto input = samplesIn[sample] - lastDelayOutput[channel];
                     linear.pushSample(int(channel), input);
@@ -141,11 +143,7 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
                     linear.pushSample(int(channel), input);
                 }
 
-                auto smoothedVal = smoother.getNextValue();
-                if(smoothedVal > 0 )
-                    linear.setDelay(smoothedVal);
-
-                samplesOut[sample] = linear.popSample((int)channel);
+                samplesOut[sample] = linear.popSample((int)channel, smoothedVal); // can change delay time here lol
 
                 //SAMPLESOUT[OUT] IS THE RAW SAMPLE IN
                 lastDelayOutput[channel] = samplesOut[sample] * delayFeedbackVolume[channel].getNextValue();;
