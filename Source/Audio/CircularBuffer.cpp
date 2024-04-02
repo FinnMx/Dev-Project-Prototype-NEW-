@@ -118,9 +118,6 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
     auto audioBlock = juce::dsp::AudioBlock<float>(copyBuffer).getSubsetChannelBlock(0, (size_t)numChannels);
     auto context = juce::dsp::ProcessContextReplacing<float>(audioBlock);
 
-    //lowFilter.process(context);
-    //highFilter.process(context);
-
     const auto& input = context.getInputBlock();
     const auto& output = context.getOutputBlock();
 
@@ -133,9 +130,7 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
             for (int sample = 0; sample < input.getNumSamples(); ++sample)
             {
                 auto smoothedVal = smoother.getNextValue();
-                //if (smoothedVal > 0)
-                 //   linear.setDelay(smoothedVal);
-                //creates the "loop"
+
                 if (delayStatus) {
                     auto input = samplesIn[sample] - lastDelayOutput[channel];
                     linear.pushSample(int(channel), input);
