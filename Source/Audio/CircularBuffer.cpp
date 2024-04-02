@@ -15,6 +15,7 @@
 //==============================================================================
 CircularBuffer::CircularBuffer()
 {
+
     lowFilterCoefficient = *juce::dsp::IIR::Coefficients<float>::makeLowPass(44100.f, lowFrequencyBand, 1.0f);
     *lowFilter.state = lowFilterCoefficient;
     highFilterCoefficient = *juce::dsp::IIR::Coefficients<float>::makeHighPass(44100.f, highFrequencyBand, 1.0f);
@@ -36,7 +37,9 @@ void CircularBuffer::prepareToPlay(int samplesPerBlockExpected, double sampleRat
 
     lowFilter.prepare(spec);
     highFilter.prepare(spec);
-    smoother.reset(44100.f, 2.f);
+
+    for (auto& smooth : smoother)
+        smooth.reset(spec.sampleRate, 0.5f);
 
     delay.reset();
     delay.prepare(spec);
@@ -60,8 +63,11 @@ void CircularBuffer::releaseResources() {
 }
 
 void CircularBuffer::setDelayTime(float newTime) {
-    if(newTime >= 0)
-        smoother.setTargetValue(newTime / 1000.0 * 44100.f);
+    if (newTime >= 0) {
+        for (auto& smooth : smoother)
+            smooth.setTargetValue(newTime / 1000.0 * 44100.f);
+    }
+
 }
 
 void CircularBuffer::setDelayCutoffFrequency(float newFrequency) {
@@ -121,6 +127,7 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
     const auto& input = context.getInputBlock();
     const auto& output = context.getOutputBlock();
 
+
     for (size_t channel = 0; channel < numChannels; ++channel)
     {
 
@@ -129,7 +136,8 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
 
             for (int sample = 0; sample < input.getNumSamples(); ++sample)
             {
-                auto smoothedVal = smoother.getNextValue();
+
+                auto smoothedVal = smoother[channel].getNextValue() * coef;
 
                 if (delayStatus) {
                     auto input = samplesIn[sample] - lastDelayOutput[channel];
@@ -140,9 +148,8 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
                     linear.pushSample(int(channel), input);
                 }
 
-                samplesOut[sample] = linear.popSample((int)channel, smoothedVal); // can change delay time here lol
+                samplesOut[sample] = linear.popSample((int)channel, smoothedVal); 
 
-                //SAMPLESOUT[OUT] IS THE RAW SAMPLE IN
                 lastDelayOutput[channel] = samplesOut[sample] * delayFeedbackVolume[channel].getNextValue();;
             }
 

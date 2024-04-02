@@ -68,8 +68,10 @@ private:
     //====================================================================
     
     //SMOOTHER FOR THE DELAY TIME
-    juce::SmoothedValue<float, juce::ValueSmoothingTypes::Linear> smoother{ 0.f };  
+    //juce::SmoothedValue<float, juce::ValueSmoothingTypes::Linear>* smoother;  
     juce::dsp::WindowingFunction<float> windower{ 480, juce::dsp::WindowingFunction<float>::WindowingMethod::hamming };
+
+    float coef = 1.0f - std::exp(-1.0f / 0.05f);
 
     float yn{ 0 };
 
@@ -77,6 +79,7 @@ private:
     std::array<float, 2> delayValue{ {} };
     std::array<float, 2> lastDelayOutput;
     std::array<juce::LinearSmoothedValue<float>, 2> delayFeedbackVolume;
+    std::array<juce::LinearSmoothedValue<float>, 2> smoother;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(CircularBuffer)
 };
