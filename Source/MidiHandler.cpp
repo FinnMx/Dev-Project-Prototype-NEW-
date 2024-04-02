@@ -62,7 +62,7 @@ void MidiHandler::bindKey(int key, int Component, int action) {
         if (it->second.first == Component && it->second.second == action) { bindings.erase(it++); }
         else { ++it; }
     }
-    bindings[key] = std::make_pair(Component, action); // add one to avoid the unordered map from confusing base 9 with a null value
+    bindings[key] = std::make_pair(Component, action);
 }
 
 int MidiHandler::returnCorrespondingComponent(int key) {
