@@ -83,6 +83,20 @@ void CircularBuffer::setDelayCutoffFrequency(float newFrequency) {
     testFilterLowR.setCoefficients(juce::IIRCoefficients::makeLowPass(44100, lowFrequencyBand));
 }
 
+void CircularBuffer::setDelayLowCutoffFrequency(float newFrequencyCutoff) {
+    lowFilterCoefficient = *juce::dsp::IIR::Coefficients<float>::makeLowPass(44100.f, newFrequencyCutoff, 1.0f);
+    *lowFilter.state = lowFilterCoefficient;
+    testFilterLowL.setCoefficients(juce::IIRCoefficients::makeLowPass(44100, newFrequencyCutoff));
+    testFilterLowR.setCoefficients(juce::IIRCoefficients::makeLowPass(44100, newFrequencyCutoff));
+}
+
+void CircularBuffer::setDelayHighCutoffFrequency(float newFrequencyCutoff) {
+    highFilterCoefficient = *juce::dsp::IIR::Coefficients<float>::makeHighPass(44100.f, newFrequencyCutoff, 1.0f);
+    *highFilter.state = highFilterCoefficient;
+    testFilterHighL.setCoefficients(juce::IIRCoefficients::makeHighPass(44100, newFrequencyCutoff));
+    testFilterHighR.setCoefficients(juce::IIRCoefficients::makeHighPass(44100, newFrequencyCutoff));
+}
+
 void CircularBuffer::setDelayFeedback(float newFeedback) {
     delayFeedback = newFeedback;
 
@@ -152,7 +166,6 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
 
                 lastDelayOutput[channel] = samplesOut[sample] * delayFeedbackVolume[channel].getNextValue();;
             }
-
        
             //Apply frequency band to the repeating samples 
             if(channel == 0){

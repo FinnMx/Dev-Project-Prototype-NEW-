@@ -1,9 +1,36 @@
-﻿  CircularBuffer.cpp
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(29,72): warning C4100: 'sampleRate': unreferenced formal parameter
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(68,52): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(143,34): warning C4456: declaration of 'input' hides previous local declaration
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(127,17): message : see declaration of 'input'
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(147,34): warning C4456: declaration of 'input' hides previous local declaration
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(127,17): message : see declaration of 'input'
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(168,75): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+﻿  DelayComponent.cpp
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(101,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(102,57): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(103,78): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(104,80): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(100,55): warning C4100: 'slider': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(108,55): warning C4100: 'slider': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(112,53): warning C4100: 'slider': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(117,72): warning C4100: 'sampleRate': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(117,40): warning C4100: 'samplesPerBlockExpected': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(162,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(161,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(160,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(159,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(169,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(168,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(167,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(166,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(175,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(174,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(173,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(172,49): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(181,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(180,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(179,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(178,48): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(187,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(186,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(185,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(184,32): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(192,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(191,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(190,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(189,37): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(95): warning C4706: assignment within conditional expression
   Dev Project Prototype (NEW)_App.vcxproj -> K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Builds\VisualStudio2019\x64\Debug\App\Dev Project Prototype (NEW).exe

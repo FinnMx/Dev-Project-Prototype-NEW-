@@ -30,7 +30,11 @@ public:
     void setDelayFeedback(float newFeedback);
     void setDelayStatus(bool newStatus);
     void setDelayTime(float newTime);
+
     void setDelayCutoffFrequency(float newFrequencyCutoff);
+
+    void setDelayLowCutoffFrequency(float newFrequencyCutoff);
+    void setDelayHighCutoffFrequency(float newFrequencyCutoff);
 
 private:
     bool delayStatus{ false };
