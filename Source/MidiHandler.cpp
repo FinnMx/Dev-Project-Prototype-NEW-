@@ -80,7 +80,7 @@ void MidiHandler::resetSettingsFile() {
         rapidjson::Value tempVal(rapidjson::kArrayType);
 
         for (int j = 0; j < parameterSizes[i]; j++) {
-            tempVal.PushBack(returnCorrespondingKey(i,j), document.GetAllocator());
+            tempVal.PushBack(returnCorrespondingKey(i + 1, j), document.GetAllocator());
         }
 
         document.AddMember(rapidjson::GenericStringRef<char>(componentNames[i].data(), static_cast<rapidjson::SizeType>(componentNames[i].length())), tempVal, document.GetAllocator());
