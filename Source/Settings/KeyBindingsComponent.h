@@ -32,6 +32,10 @@ public:
 
     void setComponentAndAction(int component, int action);
 
+    std::string* getHeadings();
+    int* getParameterSizes();
+    int getNumParameters();
+
     void refreshPage();
 
     void paint(juce::Graphics&) override;
@@ -58,6 +62,7 @@ private:
     juce::TextButton delayParameters[5];
     juce::TextButton killEQParameters[4];
     int parameterSizes[8]{ 5, 5, 2, 11, 3, 3, 5, 4 };
+    int numParameters{ sizeof(headings) / sizeof(*headings) };
 
     juce::TextButton* parameters[8];
 

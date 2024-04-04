@@ -104,6 +104,18 @@ void KeyBindingsComponent::setComponentAndAction(int component, int action) {
     currentComponentAndAction.second = action;
 }
 
+std::string* KeyBindingsComponent::getHeadings() {
+    return headings;
+}
+
+int* KeyBindingsComponent::getParameterSizes() {
+    return parameterSizes;
+}
+
+int KeyBindingsComponent::getNumParameters() {
+    return numParameters;
+}
+
 void KeyBindingsComponent::resetBindWait() {
     const juce::MessageManagerLock mmLock;
     waitingForBind = false;

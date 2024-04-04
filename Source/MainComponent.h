@@ -110,7 +110,7 @@ private:
     TenBandComponent tenBandComponent{ &tenBandEQ };
 
     //MIDI
-    MidiHandler midiHandler;
+    MidiHandler midiHandler{ &keyBindingsWindow };
     int midiset{ 1 }; // make this an ENUM
 
     juce::Random random;
