@@ -169,15 +169,15 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
        
             //Apply frequency band to the repeating samples 
             if(channel == 0){
-            testFilterLowL.processSamples(samplesOut, 480);
-            testFilterHighL.processSamples(samplesOut, 480);
+            testFilterLowL.processSamples(samplesOut, bufferToFill.buffer->getNumSamples());
+            testFilterHighL.processSamples(samplesOut, bufferToFill.buffer->getNumSamples());
             }
             else {
-                testFilterLowR.processSamples(samplesOut, 480);
-                testFilterHighR.processSamples(samplesOut, 480);
+                testFilterLowR.processSamples(samplesOut, bufferToFill.buffer->getNumSamples());
+                testFilterHighR.processSamples(samplesOut, bufferToFill.buffer->getNumSamples());
             }
            
             //windower.multiplyWithWindowingTable(samplesOut, 480);
-            bufferToFill.buffer->addFrom(channel, 0, samplesOut, 480, 1.0f);
+            bufferToFill.buffer->addFrom(channel, 0, samplesOut, bufferToFill.buffer->getNumSamples(), 1.0f);
     }
 }

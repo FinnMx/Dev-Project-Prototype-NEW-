@@ -83,11 +83,11 @@ void DubSiren::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFil
             leftBuffer[sample] = currentSample * level;
             rightBuffer[sample] = currentSample * level;
         }
-        filterL.processSamples(leftBuffer, 480);
-        filterR.processSamples(rightBuffer, 480);
+        filterL.processSamples(leftBuffer, bufferToFill.buffer->getNumSamples());
+        filterR.processSamples(rightBuffer, bufferToFill.buffer->getNumSamples());
         //LAST FLOAT SHOULD BE A VOLUME VALUE
-        bufferToFill.buffer->addFrom(0, 0, leftBuffer, 480, volume);
-        bufferToFill.buffer->addFrom(1, 0, rightBuffer, 480, volume);
+        bufferToFill.buffer->addFrom(0, 0, leftBuffer, bufferToFill.buffer->getNumSamples(), volume);
+        bufferToFill.buffer->addFrom(1, 0, rightBuffer, bufferToFill.buffer->getNumSamples(), volume);
     }
 }
 
