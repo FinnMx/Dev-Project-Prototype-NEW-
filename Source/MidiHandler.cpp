@@ -121,8 +121,6 @@ int MidiHandler::returnCorrespondingKey(int Component, int action) {
         if (pair.second.first == Component && pair.second.second == action) {
             return pair.first;
         }
-        else {
-            return 0;
-        }
     }
+    return 0;
 }

@@ -91,6 +91,4 @@ C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Sourc
           ]
 C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\MidiHandler.cpp(48,53): warning C4100: 'document': unreferenced formal parameter
 C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\MidiHandler.cpp(49,9): warning C4189: 'componentIndex': local variable is initialized but not referenced
-C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\MidiHandler.cpp(120): warning C4702: unreachable code
-C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\MidiHandler.cpp(128): warning C4715: 'MidiHandler::returnCorrespondingKey': not all control paths return a value
   Dev Project Prototype (NEW)_App.vcxproj -> C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Builds\VisualStudio2019\x64\Debug\App\Dev Project Prototype (NEW).exe
