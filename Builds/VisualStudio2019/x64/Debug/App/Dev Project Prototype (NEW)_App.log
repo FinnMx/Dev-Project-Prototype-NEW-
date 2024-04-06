@@ -1,94 +1,23 @@
-﻿  MidiHandler.cpp
-C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\rapidjson\encodings.h(148,1): warning C4005: 'TRANS': macro redefinition
-C:\JUCE\modules\juce_core\text\juce_LocalisedStrings.h(208): message : see previous definition of 'TRANS'
-C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(110,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,internal::MaybeAddConst<Const,rapidjson::GenericMember<Encoding,Allocator>>::Type,ptrdiff_t,internal::MaybeAddConst<Const,rapidjson::GenericMember<Encoding,Allocator>>::Type*,internal::MaybeAddConst<Const,rapidjson::GenericMember<Encoding,Allocator>>::Type&>': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xutility(5911,54): message : see declaration of 'std::iterator'
-C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(194): message : see reference to class template instantiation 'rapidjson::GenericMemberIterator<Const,Encoding,Allocator>' being compiled
-C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.h(69,164): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.h(70,159): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.h(74,182): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.h(76,118): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.h(77,113): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.h(78,165): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\Settings\KeyBindingsComponent.h(79,140): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(102,19): warning C4996: 'std::iterator<std::random_access_iterator_tag,rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,rapidjson::GenericMember<Encoding,Allocator> *,rapidjson::GenericMember<Encoding,Allocator> &>': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
+﻿  AudioVisualiserComponent.cpp
+C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\GUI\AudioVisualiserComponent.cpp(33,82): warning C4100: 'sampleRate': unreferenced formal parameter
+C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\GUI\AudioVisualiserComponent.cpp(33,50): warning C4100: 'samplesPerBlockExpected': unreferenced formal parameter
+C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\GUI\AudioVisualiserComponent.cpp(115,60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\GUI\AudioVisualiserComponent.cpp(115,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\GUI\AudioVisualiserComponent.cpp(115,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\GUI\AudioVisualiserComponent.cpp(147,59): warning C4244: 'argument': conversion from 'Type' to 'float', possible loss of data
           with
           [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
+              Type=double
           ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xutility(5911,54): message : see declaration of 'std::iterator'
-C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(548): message : see reference to class template instantiation 'rapidjson::GenericMemberIterator<false,Encoding,Allocator>' being compiled
+C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\GUI\AudioVisualiserComponent.cpp(147,52): warning C4244: 'argument': conversion from 'ValueType' to 'float', possible loss of data
           with
           [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
+              ValueType=int
           ]
-C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(2024): message : see reference to class template instantiation 'rapidjson::GenericValue<rapidjson::UTF8<char>,rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>>' being compiled
-C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\MidiHandler.cpp(32): message : see reference to class template instantiation 'rapidjson::GenericDocument<rapidjson::UTF8<char>,rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>,rapidjson::CrtAllocator>' being compiled
-C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(110,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,rapidjson::GenericMember<Encoding,Allocator> *,rapidjson::GenericMember<Encoding,Allocator> &>': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
+C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\GUI\AudioVisualiserComponent.cpp(150,58): warning C4244: 'argument': conversion from 'Type' to 'float', possible loss of data
           with
           [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
+              Type=double
           ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xutility(5911,54): message : see declaration of 'std::iterator'
-C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(121,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,rapidjson::GenericMember<Encoding,Allocator> *,rapidjson::GenericMember<Encoding,Allocator> &>::pointer': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
-          with
-          [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ]
-C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(123,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,rapidjson::GenericMember<Encoding,Allocator> *,rapidjson::GenericMember<Encoding,Allocator> &>::reference': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
-          with
-          [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ]
-C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(125,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,rapidjson::GenericMember<Encoding,Allocator> *,rapidjson::GenericMember<Encoding,Allocator> &>::difference_type': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
-          with
-          [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ]
-C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(102,19): warning C4996: 'std::iterator<std::random_access_iterator_tag,const rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,const rapidjson::GenericMember<Encoding,Allocator> *,const rapidjson::GenericMember<Encoding,Allocator> &>': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
-          with
-          [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xutility(5911,54): message : see declaration of 'std::iterator'
-C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(549): message : see reference to class template instantiation 'rapidjson::GenericMemberIterator<true,Encoding,Allocator>' being compiled
-          with
-          [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ]
-C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(110,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,const rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,const rapidjson::GenericMember<Encoding,Allocator> *,const rapidjson::GenericMember<Encoding,Allocator> &>': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
-          with
-          [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xutility(5911,54): message : see declaration of 'std::iterator'
-C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(121,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,const rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,const rapidjson::GenericMember<Encoding,Allocator> *,const rapidjson::GenericMember<Encoding,Allocator> &>::pointer': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
-          with
-          [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ]
-C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(123,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,const rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,const rapidjson::GenericMember<Encoding,Allocator> *,const rapidjson::GenericMember<Encoding,Allocator> &>::reference': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
-          with
-          [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ]
-C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\rapidjson\document.h(125,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,const rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,const rapidjson::GenericMember<Encoding,Allocator> *,const rapidjson::GenericMember<Encoding,Allocator> &>::difference_type': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
-          with
-          [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ]
-C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\MidiHandler.cpp(48,53): warning C4100: 'document': unreferenced formal parameter
-C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\MidiHandler.cpp(49,9): warning C4189: 'componentIndex': local variable is initialized but not referenced
+C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Source\GUI\AudioVisualiserComponent.cpp(150,50): warning C4244: 'argument': conversion from 'size_t' to 'float', possible loss of data
   Dev Project Prototype (NEW)_App.vcxproj -> C:\Users\New Owner\Documents\02 04 dev projectg\Dev-Project-Prototype-NEW-\Builds\VisualStudio2019\x64\Debug\App\Dev Project Prototype (NEW).exe

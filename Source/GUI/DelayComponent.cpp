@@ -45,7 +45,7 @@ void DelayComponent::handleMidi(int action, int value) {
         timeSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.f, 1000.f));
         break;
     case 2:
-        highFrequencyCutSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 1000.f, 19250.0f));
+        highFrequencyCutSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 250.f, 19250.0f));
         break;
     case 3:
         lowFrequencyCutSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 1000.f, 19250.0f));
@@ -76,8 +76,8 @@ void DelayComponent::initSlider() {
 
     highFrequencyCutSlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     highFrequencyCutSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
-    highFrequencyCutSlider.setRange(1000.f, +19250.0f, 0.01f);
-    highFrequencyCutSlider.setValue(1000.f);
+    highFrequencyCutSlider.setRange(250.f, +19250.0f, 0.01f);
+    highFrequencyCutSlider.setValue(250.f);
     highFrequencyCutSliderLabel.attachToComponent(&highFrequencyCutSlider, false);
     highFrequencyCutSliderLabel.setJustificationType(juce::Justification::centredBottom);
     highFrequencyCutSlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 200, 25);

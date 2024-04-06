@@ -65,6 +65,7 @@ void TenBandEQ::releaseResources() {
 }
 
 void TenBandEQ::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) {
+    frequencyLevelThread.updateBuffer(*bufferToFill.buffer);
     juce::ScopedNoDenormals noDenormals;
 
     for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
