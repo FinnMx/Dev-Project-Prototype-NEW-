@@ -107,10 +107,13 @@ void TenBandComponent::sliderValueChanged(juce::Slider* slider) {
 
 void TenBandComponent::buttonClicked(juce::Button* button) {
     if (button = &resetButton){
+        tenBand->processFrequencies();
+        /*
         for each (juce::Slider* slider in sliders)
         {
             slider->setValue(1.0f);
         }
+        */
     }
 }
 
