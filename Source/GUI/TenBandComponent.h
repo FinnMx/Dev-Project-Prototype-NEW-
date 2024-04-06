@@ -41,6 +41,7 @@ private:
     std::vector<juce::Label*> sliderLabels;
 
     juce::TextButton resetButton{ "reset" };
+    juce::TextButton autoSetButton{ "auto set" };
 
     juce::Slider freq30Slider;
     juce::Slider freq62Slider;

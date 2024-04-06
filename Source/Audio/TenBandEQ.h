@@ -11,6 +11,7 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include <Threads/FrequencyLevelThread.h>
 
 //==============================================================================
 /*
@@ -48,6 +49,8 @@ private:
     juce::dsp::ProcessorDuplicator<juce::dsp::IIR::Filter<float>, juce::dsp::IIR::Coefficients<float>> freq4000;
     juce::dsp::ProcessorDuplicator<juce::dsp::IIR::Filter<float>, juce::dsp::IIR::Coefficients<float>> freq8000;
     juce::dsp::ProcessorDuplicator<juce::dsp::IIR::Filter<float>, juce::dsp::IIR::Coefficients<float>> freq16000;
+
+    FrequencyLevelThread frequencyLevelThread{ frequencies };
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(TenBandEQ)
 };

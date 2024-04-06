@@ -78,8 +78,10 @@ void TenBandEQ::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFi
         filter->process(context);
     }
 
-    //frequencyLevelThread.updateBuffer(*bufferToFill.buffer);
+    frequencyLevelThread.updateBuffer(*bufferToFill.buffer);
 
+    //================================================================
+    /*
     auto* buffer = bufferToFill.buffer; // Input audio buffer
     const int numSamples = bufferToFill.numSamples;
     const int numChannels = buffer->getNumChannels();
@@ -120,6 +122,7 @@ void TenBandEQ::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFi
     float averageRMS = rmsAccumulator / (numChannels * (numSamples - windowSize));
 
     DBG(juce::Decibels::gainToDecibels(averageRMS));
+    */
 }
 
 void TenBandEQ::calculateFrequencyBandRMS() {
@@ -128,4 +131,5 @@ void TenBandEQ::calculateFrequencyBandRMS() {
 
 
 void TenBandEQ::processFrequencies() {
+    frequencyLevelThread.startThread();
 }
