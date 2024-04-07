@@ -1,6 +1,9 @@
 Builds/VisualStudio2022/x64/Debug/
 Builds/VisualStudio2022/x64/Release/
 
+Builds/VisualStudio2019/x64/Debug/
+Builds/VisualStudio2019/x64/Release/
+
 Builds/VisualStudio2022/x64/Debug/App/Dev Proj.E4E8456D.tlog/rc.command.1.tlog
 Builds/VisualStudio2022/x64/Debug/App/Dev Proj.E4E8456D.tlog/rc.read.1.tlog
 Builds/VisualStudio2022/x64/Debug/App/Dev Proj.E4E8456D.tlog/rc.write.1.tlog
@@ -85,3 +88,122 @@ Builds/VisualStudio2019/.vs/Dev Project Prototype (NEW)/v16/Browse.VC.db-wal
 Builds/VisualStudio2019/.vs/Dev Project Prototype (NEW)/v16/.suo
 Builds/VisualStudio2019/.vs/Dev Project Prototype (NEW)/v16/Browse.VC.db-shm
 Builds/VisualStudio2019/.vs/Dev Project Prototype (NEW)/v16/Browse.VC.db-wal
+Builds/VisualStudio2019/.vs/Dev Project Prototype (NEW)/v16/.suo
+Builds/VisualStudio2019/Dev Project Prototype (NEW)_App.vcxproj
+Builds/VisualStudio2019/x64/Debug/App/AudioVisualiserComponent.obj
+Builds/VisualStudio2019/x64/Debug/App/DelayComponent.obj
+Builds/VisualStudio2019/x64/Debug/App/Dev Proj.E4E8456D.tlog/CL.command.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Dev Proj.E4E8456D.tlog/CL.read.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Dev Proj.E4E8456D.tlog/CL.write.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Dev Proj.E4E8456D.tlog/Dev Project Prototype (NEW)_App.lastbuildstate
+Builds/VisualStudio2019/x64/Debug/App/Dev Proj.E4E8456D.tlog/link.command.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Dev Proj.E4E8456D.tlog/link.read.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Dev Proj.E4E8456D.tlog/link.write.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Dev Proj.E4E8456D.tlog/rc.read.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Dev Proj.E4E8456D.tlog/rc.write.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Dev Project Prototype (NEW).exe
+Builds/VisualStudio2019/x64/Debug/App/Dev Project Prototype (NEW).exe.recipe
+Builds/VisualStudio2019/x64/Debug/App/Dev Project Prototype (NEW).ilk
+Builds/VisualStudio2019/x64/Debug/App/Dev Project Prototype (NEW)_App.log
+Builds/VisualStudio2019/x64/Debug/App/include_juce_audio_basics.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_audio_devices.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_audio_formats.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_audio_processors.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_audio_processors_ara.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_audio_processors_lv2_libs.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_audio_utils.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_core.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_data_structures.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_dsp.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_events.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_graphics.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_gui_basics.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_gui_extra.obj
+Builds/VisualStudio2019/x64/Debug/App/InputComponent.obj
+Builds/VisualStudio2019/x64/Debug/App/KillEQComponent.obj
+Builds/VisualStudio2019/x64/Debug/App/Main.obj
+Builds/VisualStudio2019/x64/Debug/App/MeterComponent.obj
+Builds/VisualStudio2019/x64/Debug/App/ReverbComponent.obj
+Builds/VisualStudio2019/x64/Debug/App/TenBandComponent.obj
+Builds/VisualStudio2019/x64/Debug/App/TrackAudioPlayer.obj
+Builds/VisualStudio2019/x64/Debug/App/TrackThumbnailComponent.obj
+Builds/VisualStudio2019/.vs/Dev Project Prototype (NEW)/v16/.suo
+Builds/VisualStudio2019/Dev Project Prototype (NEW)_App.vcxproj
+Builds/VisualStudio2019/x64/Debug/App/AudioVisualiserComponent.obj
+Builds/VisualStudio2019/x64/Debug/App/DelayComponent.obj
+Builds/VisualStudio2019/x64/Debug/App/Dev Proj.E4E8456D.tlog/CL.command.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Dev Proj.E4E8456D.tlog/CL.read.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Dev Proj.E4E8456D.tlog/CL.write.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Dev Proj.E4E8456D.tlog/Dev Project Prototype (NEW)_App.lastbuildstate
+Builds/VisualStudio2019/x64/Debug/App/Dev Proj.E4E8456D.tlog/link.command.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Dev Proj.E4E8456D.tlog/link.read.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Dev Proj.E4E8456D.tlog/link.write.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Dev Proj.E4E8456D.tlog/rc.read.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Dev Proj.E4E8456D.tlog/rc.write.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Dev Project Prototype (NEW).exe
+Builds/VisualStudio2019/x64/Debug/App/Dev Project Prototype (NEW).exe.recipe
+Builds/VisualStudio2019/x64/Debug/App/Dev Project Prototype (NEW).ilk
+Builds/VisualStudio2019/x64/Debug/App/Dev Project Prototype (NEW)_App.log
+Builds/VisualStudio2019/x64/Debug/App/include_juce_audio_basics.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_audio_devices.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_audio_formats.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_audio_processors.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_audio_processors_ara.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_audio_processors_lv2_libs.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_audio_utils.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_core.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_data_structures.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_dsp.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_events.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_graphics.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_gui_basics.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_gui_extra.obj
+Builds/VisualStudio2019/x64/Debug/App/InputComponent.obj
+Builds/VisualStudio2019/x64/Debug/App/KillEQComponent.obj
+Builds/VisualStudio2019/x64/Debug/App/Main.obj
+Builds/VisualStudio2019/x64/Debug/App/MeterComponent.obj
+Builds/VisualStudio2019/x64/Debug/App/ReverbComponent.obj
+Builds/VisualStudio2019/x64/Debug/App/TenBandComponent.obj
+Builds/VisualStudio2019/x64/Debug/App/TrackAudioPlayer.obj
+Builds/VisualStudio2019/x64/Debug/App/TrackThumbnailComponent.obj
+Builds/VisualStudio2019/.vs/Dev Project Prototype (NEW)/v16/.suo
+Builds/VisualStudio2019/Dev Project Prototype (NEW)_App.vcxproj
+Builds/VisualStudio2019/x64/Debug/App/AudioVisualiserComponent.obj
+Builds/VisualStudio2019/x64/Debug/App/DelayComponent.obj
+Builds/VisualStudio2019/x64/Debug/App/Dev Proj.E4E8456D.tlog/CL.command.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Dev Proj.E4E8456D.tlog/CL.read.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Dev Proj.E4E8456D.tlog/CL.write.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Dev Proj.E4E8456D.tlog/Dev Project Prototype (NEW)_App.lastbuildstate
+Builds/VisualStudio2019/x64/Debug/App/Dev Proj.E4E8456D.tlog/link.command.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Dev Proj.E4E8456D.tlog/link.read.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Dev Proj.E4E8456D.tlog/link.write.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Dev Proj.E4E8456D.tlog/rc.read.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Dev Proj.E4E8456D.tlog/rc.write.1.tlog
+Builds/VisualStudio2019/x64/Debug/App/Dev Project Prototype (NEW).exe
+Builds/VisualStudio2019/x64/Debug/App/Dev Project Prototype (NEW).exe.recipe
+Builds/VisualStudio2019/x64/Debug/App/Dev Project Prototype (NEW).ilk
+Builds/VisualStudio2019/x64/Debug/App/Dev Project Prototype (NEW)_App.log
+Builds/VisualStudio2019/x64/Debug/App/include_juce_audio_basics.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_audio_devices.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_audio_formats.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_audio_processors.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_audio_processors_ara.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_audio_processors_lv2_libs.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_audio_utils.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_core.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_data_structures.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_dsp.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_events.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_graphics.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_gui_basics.obj
+Builds/VisualStudio2019/x64/Debug/App/include_juce_gui_extra.obj
+Builds/VisualStudio2019/x64/Debug/App/InputComponent.obj
+Builds/VisualStudio2019/x64/Debug/App/KillEQComponent.obj
+Builds/VisualStudio2019/x64/Debug/App/Main.obj
+Builds/VisualStudio2019/x64/Debug/App/MeterComponent.obj
+Builds/VisualStudio2019/x64/Debug/App/ReverbComponent.obj
+Builds/VisualStudio2019/x64/Debug/App/TenBandComponent.obj
+Builds/VisualStudio2019/x64/Debug/App/TrackAudioPlayer.obj
+Builds/VisualStudio2019/x64/Debug/App/TrackThumbnailComponent.obj
+Builds/VisualStudio2019/.vs/Dev Project Prototype (NEW)/v16/.suo
+/Builds/VisualStudio2019/.vs
