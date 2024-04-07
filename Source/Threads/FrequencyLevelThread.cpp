@@ -12,7 +12,8 @@
 #include "FrequencyLevelThread.h"
 
 //==============================================================================
-FrequencyLevelThread::FrequencyLevelThread(float* frequencies) : juce::Thread("Frequency Level Thread"), frequencies(frequencies)
+FrequencyLevelThread::FrequencyLevelThread(float* frequencies, float(&averageRMSValues)[10]) : juce::Thread("Frequency Level Thread"),
+                                                                                          frequencies(frequencies), averageRMSValues(averageRMSValues)
 { 
     buffer.clear();
 
@@ -26,8 +27,23 @@ void FrequencyLevelThread::timerCallback() {
     elapsedTime++;
 }
 
+void FrequencyLevelThread::setSliders(std::vector<juce::Slider*>& sliders) {
+    passedSliders = sliders;
+}
+
+float FrequencyLevelThread::dBtodBFS(float dB) {
+    float amplitude = std::pow(10.f, dB / 20.f);
+
+    // Convert linear scale amplitude to dBFS
+    float maxAmplitude = 1.f; // Maximum amplitude (1 for normalized audio)
+    float dBFS = 20.f * std::log10(amplitude / maxAmplitude);
+
+    return dBFS;
+}
+
 void FrequencyLevelThread::run() {
     startTimer(1000);
+    int iterations = 0;
 
     while(elapsedTime <= 5){
         for (int i = 0; i < 10; i++) {
@@ -36,11 +52,14 @@ void FrequencyLevelThread::run() {
             const int numChannels = tempBuffer.getNumChannels();
 
             // Define the frequency of interest
-            const float frequencyOfInterest = frequencies[i]; // Example: 1000 Hz
+            const float frequencyOfInterest = frequencies[i];
 
             // Calculate the number of samples in one cycle of the frequency of interest
             const float sampleRate = 44100.f;
-            const float samplesPerCycle = sampleRate / frequencyOfInterest;
+            float samplesPerCycle = sampleRate / frequencyOfInterest;
+
+            if (samplesPerCycle > 512)
+                samplesPerCycle = 256;
 
             // Define the window size around the frequency of interest
             const int windowSize = static_cast<int>(samplesPerCycle); // Example: Two cycles around the frequency
@@ -68,13 +87,17 @@ void FrequencyLevelThread::run() {
             }
 
             // Calculate the average RMS across channels and samples
-            float averageRMS = rmsAccumulator / (numChannels * (numSamples - windowSize));
-
-            DBG(frequencies[i] << " Hz: " << juce::Decibels::gainToDecibels(averageRMS));
+            averageRMSValues[i] += rmsAccumulator / (numChannels * (numSamples - windowSize));
         }
+        iterations++;
     }
     elapsedTime = 0;
     stopTimer();
+
+    for (int i = 0; i < 10; i++){
+        averageRMSValues[i] = dBtodBFS(averageRMSValues[i] / iterations);
+        DBG(juce::Decibels::gainToDecibels(averageRMSValues[i]));
+    }
 
     signalThreadShouldExit();
 }

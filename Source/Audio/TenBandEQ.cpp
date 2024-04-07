@@ -79,50 +79,6 @@ void TenBandEQ::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFi
     }
 
     frequencyLevelThread.updateBuffer(*bufferToFill.buffer);
-
-    //================================================================
-    /*
-    auto* buffer = bufferToFill.buffer; // Input audio buffer
-    const int numSamples = bufferToFill.numSamples;
-    const int numChannels = buffer->getNumChannels();
-
-    // Define the frequency of interest
-    const float frequencyOfInterest = 1000.0f; // Example: 1000 Hz
-
-    // Calculate the number of samples in one cycle of the frequency of interest
-    const float sampleRate = 44100.f;
-    const float samplesPerCycle = sampleRate / frequencyOfInterest;
-
-    // Define the window size around the frequency of interest
-    const int windowSize = static_cast<int>(samplesPerCycle * 2); // Example: Two cycles around the frequency
-
-    // Initialize RMS accumulator
-    float rmsAccumulator = 0.0f;
-
-    // Iterate over each channel
-    for (int channel = 0; channel < numChannels; ++channel)
-    {
-        // Iterate over the audio samples
-        for (int i = 0; i < numSamples - windowSize; ++i)
-        {
-            // Calculate RMS within the window around the frequency of interest
-            float sumSquared = 0.0f;
-            for (int j = i; j < i + windowSize; ++j)
-            {
-                float sample = buffer->getSample(channel, j);
-                sumSquared += sample * sample;
-            }
-
-            float rms = std::sqrt(sumSquared / windowSize);
-            rmsAccumulator += rms;
-        }
-    }
-
-    // Calculate the average RMS across channels and samples
-    float averageRMS = rmsAccumulator / (numChannels * (numSamples - windowSize));
-
-    DBG(juce::Decibels::gainToDecibels(averageRMS));
-    */
 }
 
 void TenBandEQ::calculateFrequencyBandRMS() {
@@ -130,6 +86,7 @@ void TenBandEQ::calculateFrequencyBandRMS() {
 }
 
 
-void TenBandEQ::processFrequencies() {
+void TenBandEQ::autoAdjustFrequencies(std::vector<juce::Slider*> &sliders) {
+    frequencyLevelThread.setSliders(sliders);
     frequencyLevelThread.startThread();
 }

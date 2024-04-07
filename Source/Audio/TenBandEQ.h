@@ -26,7 +26,7 @@ public:
     void releaseResources() override;
     void getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) override;
 
-    void processFrequencies();
+    void autoAdjustFrequencies(std::vector<juce::Slider*> &sliders);
 
     void setNewGain(int sliderNum, float newGain);
 
@@ -35,6 +35,7 @@ private:
 
     int totalNumInputChannels{ 2 }, totalNumOutputChannels{ 2 };
     float frequencies[10] = { 30.f, 62.f, 125.f, 250.f, 500.f, 1000.f, 2000.f, 4000.f, 8000.f, 16000.f };
+    float averageRMSValues[10] = { 0,0,0,0,0,0,0,0,0,0 };
 
     std::vector<juce::dsp::IIR::Coefficients<float>> coefficients;
     std::vector<juce::dsp::ProcessorDuplicator<juce::dsp::IIR::Filter<float>, juce::dsp::IIR::Coefficients<float>>*> filters;
@@ -50,7 +51,7 @@ private:
     juce::dsp::ProcessorDuplicator<juce::dsp::IIR::Filter<float>, juce::dsp::IIR::Coefficients<float>> freq8000;
     juce::dsp::ProcessorDuplicator<juce::dsp::IIR::Filter<float>, juce::dsp::IIR::Coefficients<float>> freq16000;
 
-    FrequencyLevelThread frequencyLevelThread{ frequencies };
+    FrequencyLevelThread frequencyLevelThread{ frequencies, averageRMSValues };
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(TenBandEQ)
 };
