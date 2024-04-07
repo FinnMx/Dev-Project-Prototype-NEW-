@@ -15,6 +15,8 @@
 #include <fstream>
 #include <windows.h>
 #include <Shlobj.h>
+#include <Knownfolders.h>
+#pragma comment(lib, "Shell32.lib")
 
 #include "rapidjson/document.h"
 #include "rapidjson/writer.h"
@@ -39,12 +41,15 @@ public:
     int returnCorrespondingKey(int Component, int action);
 
 private:
+    void createDirectoryIfNotExists();
+
     void processSettings(rapidjson::Document& document);
     void saveSettings(rapidjson::Document& document);
     void resetSettingsFile();
 
 #ifdef _WIN32
-    char* filePath{ "C:/midisettings.json" };
+    std::string filePath;
+    std::string dirPath;
 
 #elif __APPLE__
     const char* filePath{ "C:/midisettings.json" };

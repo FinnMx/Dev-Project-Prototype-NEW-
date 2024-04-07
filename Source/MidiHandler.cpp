@@ -14,7 +14,18 @@
 //==============================================================================
 MidiHandler::MidiHandler(KeyBindingsComponent* keyBindingsComponent) : keyBindingsComponent(keyBindingsComponent)
 {
-
+    TCHAR szPath[MAX_PATH];
+    if (SUCCEEDED(SHGetFolderPath(NULL, CSIDL_APPDATA, NULL, 0, szPath))) {
+        std::string wstrPath(szPath);
+        std::string strPath(wstrPath.begin(), wstrPath.end());
+        std::replace(strPath.begin(), strPath.end(), '\\', '/');
+        dirPath = strPath + "/3amp";
+        filePath = dirPath + "/midisettings.json";
+        createDirectoryIfNotExists();
+    }
+    else {
+        filePath = ""; // Return empty string if failed to get path
+    }
 }
 
 MidiHandler::~MidiHandler()
@@ -40,6 +51,21 @@ void MidiHandler::readSettingsFile() {
     processSettings(document);
 
     inFile.close();
+}
+
+void MidiHandler::createDirectoryIfNotExists() {
+    CreateDirectory(dirPath.c_str(), NULL);
+
+    HANDLE hFile = CreateFile(filePath.c_str(), GENERIC_WRITE, 0, NULL, CREATE_NEW, FILE_ATTRIBUTE_NORMAL, NULL);
+    if (hFile == INVALID_HANDLE_VALUE) {
+        if (GetLastError() == ERROR_FILE_EXISTS) {
+            DBG("File already exists.");
+        }
+    }
+    else {
+        std::cout << "File created successfully." << std::endl;
+        CloseHandle(hFile);
+    }
 }
 
 void MidiHandler::saveSettingsFile() {
