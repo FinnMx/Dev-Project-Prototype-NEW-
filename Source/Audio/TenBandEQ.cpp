@@ -39,6 +39,7 @@ TenBandEQ::TenBandEQ()
 
 TenBandEQ::~TenBandEQ()
 {
+    frequencyLevelThread.stopThread(1000);
 }
 
 void TenBandEQ::setNewGain(int sliderNum, float newGain) {

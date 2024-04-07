@@ -1,56 +1,6 @@
-﻿  TenBandComponent.cpp
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\TenBandEQ.h(39,105): warning C4305: 'initializing': truncation from 'double' to 'float'
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(105,66): warning C4244: 'argument': conversion from 'Type' to 'float', possible loss of data
-          with
-          [
-              Type=double
-          ]
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(140,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(139,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(138,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(137,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(145,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(144,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(143,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(142,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(150,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(149,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(148,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(147,40): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(155,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(154,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(153,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(152,40): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(160,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(159,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(158,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(157,40): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(165,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(164,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(163,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(162,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(170,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(169,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(168,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(167,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(175,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(174,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(173,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(172,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(180,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(179,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(178,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(177,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(185,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(184,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(183,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(182,42): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(190,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(189,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(188,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(187,38): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(195,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(194,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(193,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\TenBandComponent.cpp(192,40): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+﻿  FrequencyLevelThread.cpp
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Threads\FrequencyLevelThread.cpp(65,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Threads\FrequencyLevelThread.cpp(93,17): warning C4456: declaration of 'i' hides previous local declaration
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Threads\FrequencyLevelThread.cpp(68,18): message : see declaration of 'i'
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Threads\FrequencyLevelThread.cpp(65,20): warning C4996: 'juce::SmoothedValue<float,juce::ValueSmoothingTypes::Linear>::setValue': Use setTargetValue and setCurrentAndTargetValue instead.
   Dev Project Prototype (NEW)_App.vcxproj -> K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Builds\VisualStudio2019\x64\Debug\App\Dev Project Prototype (NEW).exe

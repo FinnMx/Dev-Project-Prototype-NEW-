@@ -17,7 +17,7 @@ frequencies(frequencies), averageRMSValues(averageRMSValues)
 {
     buffer.clear();
     for (auto& smooth : smoother)
-        smooth.reset(44100.f, 0.00001f);
+        smooth.reset(44100.f, 0.001f);
 }
 
 FrequencyLevelThread::~FrequencyLevelThread()
@@ -29,9 +29,13 @@ void FrequencyLevelThread::timerCallback() {
     elapsedTime++;
     for (int i = 0; i < 10; i++) {
         averageRMSValues[i] = juce::Decibels::gainToDecibels(dBtodBFS(averageRMSValues[i] / iterations));
+        DBG(averageRMSValues[i] );
         if (averageRMSValues[i] < targetRMSValues[i]) {
-            smoother[i].setTargetValue(smoother[i].getCurrentValue() + 0.1f);
+            smoother[i].setTargetValue(smoother[i].getCurrentValue() + (targetRMSValues[i] - averageRMSValues[i]) );
+        } else if(averageRMSValues[i] > targetRMSValues[i]){
+            smoother[i].setTargetValue(smoother[i].getCurrentValue() - (averageRMSValues[i] - targetRMSValues[i]));
         }
+        averageRMSValues[i] = 0;
     }
     iterations = 0;
 }
@@ -59,7 +63,6 @@ void FrequencyLevelThread::run() {
 
     for(int i = 0; i < 10; i++)
         smoother[i].setValue(passedSliders[i]->getValue(), true);
-
 
     while(elapsedTime <= 5){
         for (int i = 0; i < 10; i++) {
@@ -105,9 +108,7 @@ void FrequencyLevelThread::run() {
             // Calculate the average RMS across channels and samples
             averageRMSValues[i] += rmsAccumulator / (numChannels * (numSamples - windowSize));
             const juce::MessageManagerLock mmLock;
-            auto test = smoother[i].getNextValue();
-            DBG(i << ": " << test);
-            passedSliders[i]->setValue(test);
+            passedSliders[i]->setValue(smoother[i].getNextValue());
         }
         iterations++;
     }
