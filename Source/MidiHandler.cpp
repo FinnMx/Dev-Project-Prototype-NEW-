@@ -63,8 +63,8 @@ void MidiHandler::createDirectoryIfNotExists() {
         }
     }
     else {
-        std::cout << "File created successfully." << std::endl;
         CloseHandle(hFile);
+        resetSettingsFile();
     }
 }
 
