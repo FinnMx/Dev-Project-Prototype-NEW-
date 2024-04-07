@@ -11,6 +11,7 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include <Threads/FrequencyLevelThread.h>
 
 //==============================================================================
 /*
@@ -25,11 +26,17 @@ public:
     void releaseResources() override;
     void getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) override;
 
+    void autoAdjustFrequencies(std::vector<juce::Slider*> &sliders);
+
     void setNewGain(int sliderNum, float newGain);
 
 private:
+    void calculateFrequencyBandRMS();
+
     int totalNumInputChannels{ 2 }, totalNumOutputChannels{ 2 };
     float frequencies[10] = { 30.f, 62.f, 125.f, 250.f, 500.f, 1000.f, 2000.f, 4000.f, 8000.f, 16000.f };
+    float averageRMSValues[10] = { 0,0,0,0,0,0,0,0,0,0 };
+    float targetRMSValues[10] = { -2.78, -2.80, -2.76, -2.84, -3.17, -3.46, -3.63, -3.72, -3.78, -3.81 };
 
     std::vector<juce::dsp::IIR::Coefficients<float>> coefficients;
     std::vector<juce::dsp::ProcessorDuplicator<juce::dsp::IIR::Filter<float>, juce::dsp::IIR::Coefficients<float>>*> filters;
@@ -45,5 +52,7 @@ private:
     juce::dsp::ProcessorDuplicator<juce::dsp::IIR::Filter<float>, juce::dsp::IIR::Coefficients<float>> freq8000;
     juce::dsp::ProcessorDuplicator<juce::dsp::IIR::Filter<float>, juce::dsp::IIR::Coefficients<float>> freq16000;
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (TenBandEQ)
+    FrequencyLevelThread frequencyLevelThread{ frequencies, averageRMSValues };
+
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(TenBandEQ)
 };

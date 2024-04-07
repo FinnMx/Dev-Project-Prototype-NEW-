@@ -12,8 +12,16 @@
 
 #include <JuceHeader.h>
 #include <iostream>
-#include "rapidjson/document.h"
 #include <fstream>
+#include <windows.h>
+#include <Shlobj.h>
+#include <Knownfolders.h>
+#pragma comment(lib, "Shell32.lib")
+
+#include "rapidjson/document.h"
+#include "rapidjson/writer.h"
+#include "rapidjson/stringbuffer.h"
+#include <Settings/KeyBindingsComponent.h>
 
 //==============================================================================
 /*
@@ -21,19 +29,34 @@
 class MidiHandler  : public juce::Component
 {
 public:
-    MidiHandler();
+    MidiHandler(KeyBindingsComponent* keyBindingsComponent);
     ~MidiHandler() override;
 
     void readSettingsFile();
+    void saveSettingsFile();
 
     void bindKey(int key, int Component, int action);
     int returnCorrespondingComponent(int key);
     int returnCorrespondingAction(int key);
+    int returnCorrespondingKey(int Component, int action);
 
 private:
-    void processSettings(rapidjson::Document& document);
+    void createDirectoryIfNotExists();
 
+    void processSettings(rapidjson::Document& document);
+    void saveSettings(rapidjson::Document& document);
+    void resetSettingsFile();
+
+#ifdef _WIN32
+    std::string filePath;
+    std::string dirPath;
+
+#elif __APPLE__
     const char* filePath{ "C:/midisettings.json" };
+
+#endif
+
+    KeyBindingsComponent* keyBindingsComponent;
 
     std::unordered_map<int, std::pair<int, int>> bindings;
 

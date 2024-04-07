@@ -15,6 +15,7 @@
 //==============================================================================
 CircularBuffer::CircularBuffer()
 {
+
     lowFilterCoefficient = *juce::dsp::IIR::Coefficients<float>::makeLowPass(44100.f, lowFrequencyBand, 1.0f);
     *lowFilter.state = lowFilterCoefficient;
     highFilterCoefficient = *juce::dsp::IIR::Coefficients<float>::makeHighPass(44100.f, highFrequencyBand, 1.0f);
@@ -36,10 +37,13 @@ void CircularBuffer::prepareToPlay(int samplesPerBlockExpected, double sampleRat
 
     lowFilter.prepare(spec);
     highFilter.prepare(spec);
-    smoother.reset(44100.f, 2.f);
+
+    for (auto& smooth : smoother)
+        smooth.reset(spec.sampleRate, 0.5f);
 
     delay.reset();
     delay.prepare(spec);
+    linear.reset();
     linear.prepare(spec);
 
     testFilterHighL.setCoefficients(juce::IIRCoefficients::makeHighPass(44100, 1500));
@@ -59,8 +63,11 @@ void CircularBuffer::releaseResources() {
 }
 
 void CircularBuffer::setDelayTime(float newTime) {
-    if(newTime >= 0)
-        smoother.setTargetValue(newTime / 1000.0 * 44100.f);
+    if (newTime >= 0) {
+        for (auto& smooth : smoother)
+            smooth.setTargetValue(newTime / 1000.0 * 44100.f);
+    }
+
 }
 
 void CircularBuffer::setDelayCutoffFrequency(float newFrequency) {
@@ -74,6 +81,20 @@ void CircularBuffer::setDelayCutoffFrequency(float newFrequency) {
     testFilterLowL.setCoefficients(juce::IIRCoefficients::makeLowPass(44100, lowFrequencyBand));
     testFilterHighR.setCoefficients(juce::IIRCoefficients::makeHighPass(44100, highFrequencyBand));
     testFilterLowR.setCoefficients(juce::IIRCoefficients::makeLowPass(44100, lowFrequencyBand));
+}
+
+void CircularBuffer::setDelayLowCutoffFrequency(float newFrequencyCutoff) {
+    lowFilterCoefficient = *juce::dsp::IIR::Coefficients<float>::makeLowPass(44100.f, newFrequencyCutoff, 1.0f);
+    *lowFilter.state = lowFilterCoefficient;
+    testFilterLowL.setCoefficients(juce::IIRCoefficients::makeLowPass(44100, newFrequencyCutoff));
+    testFilterLowR.setCoefficients(juce::IIRCoefficients::makeLowPass(44100, newFrequencyCutoff));
+}
+
+void CircularBuffer::setDelayHighCutoffFrequency(float newFrequencyCutoff) {
+    highFilterCoefficient = *juce::dsp::IIR::Coefficients<float>::makeHighPass(44100.f, newFrequencyCutoff, 1.0f);
+    *highFilter.state = highFilterCoefficient;
+    testFilterHighL.setCoefficients(juce::IIRCoefficients::makeHighPass(44100, newFrequencyCutoff));
+    testFilterHighR.setCoefficients(juce::IIRCoefficients::makeHighPass(44100, newFrequencyCutoff));
 }
 
 void CircularBuffer::setDelayFeedback(float newFeedback) {
@@ -117,11 +138,9 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
     auto audioBlock = juce::dsp::AudioBlock<float>(copyBuffer).getSubsetChannelBlock(0, (size_t)numChannels);
     auto context = juce::dsp::ProcessContextReplacing<float>(audioBlock);
 
-    //lowFilter.process(context);
-    //highFilter.process(context);
-
     const auto& input = context.getInputBlock();
     const auto& output = context.getOutputBlock();
+
 
     for (size_t channel = 0; channel < numChannels; ++channel)
     {
@@ -129,9 +148,11 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
         auto* samplesIn = input.getChannelPointer(channel);
         auto* samplesOut = output.getChannelPointer(channel);
 
-            for (size_t sample = 0; sample < input.getNumSamples(); ++sample)
+            for (int sample = 0; sample < input.getNumSamples(); ++sample)
             {
-                //creates the "loop"
+
+                auto smoothedVal = smoother[channel].getNextValue() * coef;
+
                 if (delayStatus) {
                     auto input = samplesIn[sample] - lastDelayOutput[channel];
                     linear.pushSample(int(channel), input);
@@ -141,28 +162,22 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
                     linear.pushSample(int(channel), input);
                 }
 
-                auto smoothedVal = smoother.getNextValue();
-                if(smoothedVal > 0 )
-                    linear.setDelay(smoothedVal);
+                samplesOut[sample] = linear.popSample((int)channel, smoothedVal); 
 
-                samplesOut[sample] = linear.popSample((int)channel);
-
-                //SAMPLESOUT[OUT] IS THE RAW SAMPLE IN
                 lastDelayOutput[channel] = samplesOut[sample] * delayFeedbackVolume[channel].getNextValue();;
             }
-
        
             //Apply frequency band to the repeating samples 
             if(channel == 0){
-            testFilterLowL.processSamples(samplesOut, 480);
-            testFilterHighL.processSamples(samplesOut, 480);
+            testFilterLowL.processSamples(samplesOut, bufferToFill.buffer->getNumSamples());
+            testFilterHighL.processSamples(samplesOut, bufferToFill.buffer->getNumSamples());
             }
             else {
-                testFilterLowR.processSamples(samplesOut, 480);
-                testFilterHighR.processSamples(samplesOut, 480);
+                testFilterLowR.processSamples(samplesOut, bufferToFill.buffer->getNumSamples());
+                testFilterHighR.processSamples(samplesOut, bufferToFill.buffer->getNumSamples());
             }
            
             //windower.multiplyWithWindowingTable(samplesOut, 480);
-            bufferToFill.buffer->addFrom(channel, 0, samplesOut, 480, 1.0f);
+            bufferToFill.buffer->addFrom(channel, 0, samplesOut, bufferToFill.buffer->getNumSamples(), 1.0f);
     }
 }

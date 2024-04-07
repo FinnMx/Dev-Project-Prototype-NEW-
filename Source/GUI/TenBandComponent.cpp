@@ -38,11 +38,55 @@ TenBandComponent::TenBandComponent(TenBandEQ* tenBandEQ) : tenBand(tenBandEQ)
 
     initSlider();
     addAndMakeVisible(resetButton);
+    addAndMakeVisible(autoSetButton);
     resetButton.addListener(this);
+    autoSetButton.addListener(this);
 }
 
 TenBandComponent::~TenBandComponent()
 {
+}
+
+void TenBandComponent::handleMidi(int action, int value) {
+    const juce::MessageManagerLock mmLock;
+    switch (action) {
+    case 0:
+        freq30Slider.setValue(juce::jmap((float)value, (float)0, (float)127, -6.f, 6.f));
+        break;
+    case 1:
+        freq62Slider.setValue(juce::jmap((float)value, (float)0, (float)127, -6.f, 6.f));
+        break;
+    case 2:
+        freq125Slider.setValue(juce::jmap((float)value, (float)0, (float)127, -6.f, 6.f));
+        break;
+    case 3:
+        freq250Slider.setValue(juce::jmap((float)value, (float)0, (float)127, -6.f, 6.f));
+        break;
+    case 4:
+        freq500Slider.setValue(juce::jmap((float)value, (float)0, (float)127, -6.f, 6.f));
+        break;
+    case 5:
+        freq1000Slider.setValue(juce::jmap((float)value, (float)0, (float)127, -6.f, 6.f));
+        break;
+    case 6:
+        freq2000Slider.setValue(juce::jmap((float)value, (float)0, (float)127, -6.f, 6.f));
+        break;
+    case 7:
+        freq4000Slider.setValue(juce::jmap((float)value, (float)0, (float)127, -6.f, 6.f));
+        break;
+    case 8:
+        freq8000Slider.setValue(juce::jmap((float)value, (float)0, (float)127, -6.f, 6.f));
+        break;
+    case 9:
+        freq16000Slider.setValue(juce::jmap((float)value, (float)0, (float)127, -6.f, 6.f));
+        break;
+    case 10:
+        autoSetButton.triggerClick();
+        break;
+    case 11:
+        resetButton.triggerClick();
+        break;
+    }
 }
 
 void TenBandComponent::initSlider() {
@@ -51,9 +95,8 @@ void TenBandComponent::initSlider() {
         addAndMakeVisible(sliders[i]);
         sliders[i]->addListener(this);
         sliders[i]->setSliderStyle(juce::Slider::SliderStyle::LinearVertical);
-        sliders[i]->setRange(0.5f, +7.0f, 0.1f);
-        sliders[i]->setSkewFactorFromMidPoint(1.f);
-        sliders[i]->setValue(1.f);
+        sliders[i]->setRange(-6.f, +6.0f, .01f);
+        sliders[i]->setValue(0.f);
         sliderLabels[i]->attachToComponent(sliders[i], false);
         sliderLabels[i]->setJustificationType(juce::Justification::centredBottom);
         sliders[i]->setTextBoxStyle(juce::Slider::TextBoxBelow, true, 50, 25);
@@ -63,16 +106,19 @@ void TenBandComponent::initSlider() {
 void TenBandComponent::sliderValueChanged(juce::Slider* slider) {
     for (int i = 0; i <= 9; i++) {
         if (slider == sliders[i])
-            tenBand->setNewGain(i, slider->getValue());
+            tenBand->setNewGain(i, juce::Decibels::decibelsToGain(slider->getValue()));
     }
 }
 
 void TenBandComponent::buttonClicked(juce::Button* button) {
-    if (button = &resetButton){
+    if (button == &resetButton){
         for each (juce::Slider* slider in sliders)
         {
-            slider->setValue(1.0f);
+            slider->setValue(0.f);
         }
+    }
+    if (button == &autoSetButton) {
+        tenBand->autoAdjustFrequencies(sliders);
     }
 }
 
@@ -143,6 +189,11 @@ void TenBandComponent::resized()
         getHeight() * 0.6);
 
     resetButton.setBounds(getWidth() * 0.85,
+        getHeight() * 0.9,
+        getWidth() * 0.15,
+        getHeight() * 0.1);
+
+    autoSetButton.setBounds(getWidth() * 0.005,
         getHeight() * 0.9,
         getWidth() * 0.15,
         getHeight() * 0.1);

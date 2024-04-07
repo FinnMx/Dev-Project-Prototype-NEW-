@@ -39,6 +39,7 @@ TenBandEQ::TenBandEQ()
 
 TenBandEQ::~TenBandEQ()
 {
+    frequencyLevelThread.stopThread(1000);
 }
 
 void TenBandEQ::setNewGain(int sliderNum, float newGain) {
@@ -77,5 +78,17 @@ void TenBandEQ::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFi
     {
         filter->process(context);
     }
+
+    frequencyLevelThread.updateBuffer(*bufferToFill.buffer);
 }
 
+void TenBandEQ::calculateFrequencyBandRMS() {
+
+}
+
+
+void TenBandEQ::autoAdjustFrequencies(std::vector<juce::Slider*> &sliders) {
+    frequencyLevelThread.setSliders(sliders);
+    frequencyLevelThread.setTargetRMSValues(targetRMSValues);
+    frequencyLevelThread.startThread();
+}

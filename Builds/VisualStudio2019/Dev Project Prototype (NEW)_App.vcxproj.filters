@@ -625,6 +625,9 @@
     <Filter Include="JUCE Library Code">
       <UniqueIdentifier>{7ED5A90E-41AF-A1EF-659B-37CEEAB9BA61}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Dev Project Prototype %28NEW%29\Source\Threads">
+      <UniqueIdentifier>{63686f55-a8de-4d49-aea3-c5b85e5529f7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\Audio\CircularBuffer.cpp">
@@ -3113,6 +3116,9 @@
     </ClCompile>
     <ClCompile Include="..\..\Source\GUI\DubSirenComponent.cpp">
       <Filter>Dev Project Prototype %28NEW%29\Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Threads\FrequencyLevelThread.cpp">
+      <Filter>Dev Project Prototype %28NEW%29\Source\Threads</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -6172,6 +6178,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\GUI\DubSirenComponent.h">
       <Filter>Dev Project Prototype %28NEW%29\Source\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Threads\FrequencyLevelThread.h">
+      <Filter>Dev Project Prototype %28NEW%29\Source\Threads</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

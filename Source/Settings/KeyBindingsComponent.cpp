@@ -49,7 +49,7 @@ void KeyBindingsComponent::refreshPage() {
     addAndMakeVisible(pageBackwards);
     pageForward.addListener(this);
     pageBackwards.addListener(this);
-     
+
     for (int i = 0; i < sizeof(parameters) / sizeof(*parameters); i++) {
         for (int j = 0; j < parameterSizes[i]; j++)
         {
@@ -62,11 +62,11 @@ void KeyBindingsComponent::refreshPage() {
 }
 
 void KeyBindingsComponent::buttonClicked(juce::Button* button) {
-        const juce::MessageManagerLock mmLock;
-        waitingForBind = true;
-        setComponentAndActionFromButton(button);
-        repaint();
-        // refreshPage () change this func so when called buttons change colour etc...
+    const juce::MessageManagerLock mmLock;
+    waitingForBind = true;
+    setComponentAndActionFromButton(button);
+    repaint();
+    // refreshPage () change this func so when called buttons change colour etc...
 }
 
 bool KeyBindingsComponent::isWaitingForBind() {
@@ -104,20 +104,32 @@ void KeyBindingsComponent::setComponentAndAction(int component, int action) {
     currentComponentAndAction.second = action;
 }
 
+std::string* KeyBindingsComponent::getHeadings() {
+    return headings;
+}
+
+int* KeyBindingsComponent::getParameterSizes() {
+    return parameterSizes;
+}
+
+int KeyBindingsComponent::getNumParameters() {
+    return numParameters;
+}
+
 void KeyBindingsComponent::resetBindWait() {
     const juce::MessageManagerLock mmLock;
     waitingForBind = false;
     repaint();
 }
 
-void KeyBindingsComponent::paint (juce::Graphics& g)
+void KeyBindingsComponent::paint(juce::Graphics& g)
 {
 
     g.setColour(juce::Colours::white);
     g.setFont(30.0f);
-   // g.drawText(currentHeading, getLocalBounds(),
-    //    juce::Justification::centredTop, true);
-    
+    // g.drawText(currentHeading, getLocalBounds(),
+     //    juce::Justification::centredTop, true);
+
     if (waitingForBind) {
         g.setColour(juce::Colours::black);
         g.setFont(36.0f);
@@ -135,12 +147,5 @@ void KeyBindingsComponent::resized()
         }
     }
 
-    /*
-    for (int i = 0; i < sizeof(parameters) / sizeof(*parameters); i++) {
-        for (int j = 0; j < parameterSizes[i]; j++) {
-            parameters[i][j].setBounds(getWidth() * 0.1, getHeight() * parameterY[j], getWidth() * 0.15, getHeight() * 0.05);
-        }
-    }
-    */
 
 }

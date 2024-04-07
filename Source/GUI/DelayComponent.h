@@ -52,13 +52,17 @@ private:
 
     juce::Slider gainSlider; // FEEDBACK!!!!! NOT GAIn!!!
     juce::Slider timeSlider;
-    juce::Slider frequencyCutSlider;
+    juce::Slider lowFrequencyCutSlider;
+    juce::Slider highFrequencyCutSlider;
 
     juce::ToggleButton onOff;
 
     juce::Label gainSliderLabel{ "Feedback", "Feedback" };
     juce::Label timeSliderLabel{ "Time", "Time" };
-    juce::Label frequencyCutSliderLabel{ "Frequency", "Frequency" };
+
+    juce::Label lowFrequencyCutSliderLabel{ "Frequency", "Frequency" };
+    juce::Label highFrequencyCutSliderLabel{ "Frequency", "Frequency" };
+
     juce::Label val{ "currentSliderVal", "" };
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DelayComponent)

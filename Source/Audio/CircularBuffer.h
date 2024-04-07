@@ -30,7 +30,11 @@ public:
     void setDelayFeedback(float newFeedback);
     void setDelayStatus(bool newStatus);
     void setDelayTime(float newTime);
+
     void setDelayCutoffFrequency(float newFrequencyCutoff);
+
+    void setDelayLowCutoffFrequency(float newFrequencyCutoff);
+    void setDelayHighCutoffFrequency(float newFrequencyCutoff);
 
 private:
     bool delayStatus{ false };
@@ -47,7 +51,7 @@ private:
     static constexpr auto effectDelaySamples = 88200;
 
     juce::dsp::DelayLine<float> delay{ effectDelaySamples };
-    juce::dsp::DelayLine<float, juce::dsp::DelayLineInterpolationTypes::None> linear{ effectDelaySamples };
+    juce::dsp::DelayLine<float, juce::dsp::DelayLineInterpolationTypes::Lagrange3rd> linear{ effectDelaySamples };
 
     //juce::IIRFilter filter;
 
@@ -68,8 +72,10 @@ private:
     //====================================================================
     
     //SMOOTHER FOR THE DELAY TIME
-    juce::SmoothedValue<float, juce::ValueSmoothingTypes::Linear> smoother{ 0.f };  
+    //juce::SmoothedValue<float, juce::ValueSmoothingTypes::Linear>* smoother;  
     juce::dsp::WindowingFunction<float> windower{ 480, juce::dsp::WindowingFunction<float>::WindowingMethod::hamming };
+
+    float coef = 1.0f - std::exp(-1.0f / 0.05f);
 
     float yn{ 0 };
 
@@ -77,6 +83,7 @@ private:
     std::array<float, 2> delayValue{ {} };
     std::array<float, 2> lastDelayOutput;
     std::array<juce::LinearSmoothedValue<float>, 2> delayFeedbackVolume;
+    std::array<juce::LinearSmoothedValue<float>, 2> smoother;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(CircularBuffer)
 };

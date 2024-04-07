@@ -15,13 +15,18 @@
 //==============================================================================
 DubSiren::DubSiren() 
 {
-    oscillator.initialise([](float x) {return  (x < 0.0f) ? -1.0f : 1.0f; });
-    oscillator.setFrequency(frequency);
+    square.initialise([](float x) {return  (x < 0.0f) ? -1.0f : 1.0f; });
+    sawtooth.initialise([](float x) { return std::tanh(x); });
 
     sawtoothLFO.initialise([](float x) { return std::tanh(x); });
     sineLFO.initialise([](float x) { return std::sin(x * juce::MathConstants<float>::twoPi); });
     triangleLFO.initialise([](float x) {return 2.0f * std::fabs(x - 0.5f) - 1.0f; });
     pulseLFO.initialise([](float x) { return (x < 0.5f) ? 1.0f : -1.0f; });
+    squareLFO.initialise([](float x) {return  (x < 0.0f) ? -1.0f : 1.0f; });
+
+    //default Oscillator will be square
+    oscillator = &square;
+    oscillator->setFrequency(frequency);
 
     //default LFO will be sine
     lfoOscillator = &sawtoothLFO;
@@ -38,7 +43,9 @@ void DubSiren::prepareToPlay(int samplesPerBlockExpected, double sampleRate) {
     spec.maximumBlockSize = samplesPerBlockExpected;
     spec.numChannels = 2;
 
-    oscillator.prepare(spec);
+    square.prepare(spec);
+    sawtooth.prepare(spec);
+
     sawtoothLFO.prepare(spec);
     sineLFO.prepare(spec);
     pulseLFO.prepare(spec);
@@ -70,17 +77,17 @@ void DubSiren::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFil
         {
             lfoOscillator->setFrequency(lfoFrequency);
             auto lfoValue = lfoOscillator->processSample(0.0);
-            oscillator.setFrequency(frequency + (lfoValue * 100.f)); // 60.f IS THE "MODULATION DEPTH"
+            oscillator->setFrequency(frequency + (lfoValue * 100.f)); // 60.f IS THE "MODULATION DEPTH"
 
-            auto currentSample = oscillator.processSample(0.0); 
+            auto currentSample = oscillator->processSample(0.0); 
             leftBuffer[sample] = currentSample * level;
             rightBuffer[sample] = currentSample * level;
         }
-        filterL.processSamples(leftBuffer, 480);
-        filterR.processSamples(rightBuffer, 480);
+        filterL.processSamples(leftBuffer, bufferToFill.buffer->getNumSamples());
+        filterR.processSamples(rightBuffer, bufferToFill.buffer->getNumSamples());
         //LAST FLOAT SHOULD BE A VOLUME VALUE
-        bufferToFill.buffer->addFrom(0, 0, leftBuffer, 480, volume);
-        bufferToFill.buffer->addFrom(1, 0, rightBuffer, 480, volume);
+        bufferToFill.buffer->addFrom(0, 0, leftBuffer, bufferToFill.buffer->getNumSamples(), volume);
+        bufferToFill.buffer->addFrom(1, 0, rightBuffer, bufferToFill.buffer->getNumSamples(), volume);
     }
 }
 
@@ -118,8 +125,23 @@ void DubSiren::setLFOWaveType(int type) {
     case 4:
         lfoOscillator = &pulseLFO;
         break;
+    case 5:
+        lfoOscillator = &squareLFO;
     }
 }
+
+void DubSiren::setWaveType(int type) {
+    switch (type)
+    {
+    case 1:
+        oscillator = &square;
+        break;
+    case 2:
+        oscillator = &sawtooth;
+        break;
+    }
+}
+
 
 void DubSiren::releaseResources() {
 

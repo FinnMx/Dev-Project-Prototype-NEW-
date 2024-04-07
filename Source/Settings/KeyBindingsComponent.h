@@ -16,8 +16,8 @@
 //==============================================================================
 /*
 */
-class KeyBindingsComponent  : public juce::Component,
-                              public::juce::Button::Listener
+class KeyBindingsComponent : public juce::Component,
+    public::juce::Button::Listener
 {
 public:
     KeyBindingsComponent();
@@ -32,9 +32,13 @@ public:
 
     void setComponentAndAction(int component, int action);
 
+    std::string* getHeadings();
+    int* getParameterSizes();
+    int getNumParameters();
+
     void refreshPage();
 
-    void paint (juce::Graphics&) override;
+    void paint(juce::Graphics&) override;
     void resized() override;
 
 private:
@@ -52,30 +56,31 @@ private:
     juce::TextButton inputAParameters[5];
     juce::TextButton inputBParameters[5];
     juce::TextButton thumbnailParameters[2];
-    juce::TextButton tenBandParameters[10];
+    juce::TextButton tenBandParameters[12];
     juce::TextButton dubSirenParameters[3];
     juce::TextButton reverbParameters[3];
-    juce::TextButton delayParameters[4];
+    juce::TextButton delayParameters[5];
     juce::TextButton killEQParameters[4];
-    int parameterSizes[8]{ 5, 5, 2, 10, 3, 3, 4, 4 };
+    int parameterSizes[8]{ 5, 5, 2, 12, 3, 3, 5, 4 };
+    int numParameters{ sizeof(headings) / sizeof(*headings) };
 
     juce::TextButton* parameters[8];
 
     float inputAButtonBounds[5][4] = { {0.003, 0.075,0.02,0.04} , {0.003,0.12,0.02,0.04}, {0.003,0.165,0.02,0.04}, {0.003,0.21,0.02,0.04}, {0.078,0.075,0.02,0.2} };
     float inputBButtonBounds[5][4] = { {0.128,0.075,0.02,0.04} ,{0.128,0.12,0.02,0.04},{0.128,0.165,0.02,0.04},{0.128,0.21,0.02,0.04},{0.203,0.075,0.02,0.2} };
-    float thumbnailButtonBounds[2][4] = { {0.,0.,0.,0.} ,{0.,0.,0.,0.}};
+    float thumbnailButtonBounds[2][4] = { {0.,0.,0.,0.} ,{0.,0.,0.,0.} };
 
-    float tenBandButtonBounds[10][4] = { {0.778,0.085,0.02,0.2} ,{0.8,0.085,0.02,0.2},{0.822,0.085,0.02,0.2},{0.844,0.085,0.02,0.2},{0.866,0.085,0.02,0.2},
-                                         {0.888,0.085,0.02,0.2} ,{0.91,0.085,0.02,0.2},{0.932,0.085,0.02,0.2},{0.954,0.085,0.02,0.2},{0.976,0.085,0.02,0.2} };
+    float tenBandButtonBounds[12][4] = { {0.778,0.085,0.02,0.2} ,{0.8,0.085,0.02,0.2},{0.822,0.085,0.02,0.2},{0.844,0.085,0.02,0.2},{0.866,0.085,0.02,0.2},
+                                         {0.888,0.085,0.02,0.2} ,{0.91,0.085,0.02,0.2},{0.932,0.085,0.02,0.2},{0.954,0.085,0.02,0.2},{0.976,0.085,0.02,0.2}, {0.7725,0.34,0.04,0.04} ,{0.965,0.34,0.04,0.04} };
 
     float dubSirenButtonBounds[3][4] = { {0.012,0.495,0.05,0.075} ,{0.03,0.675,0.015,0.025},{0.087,0.63,0.05,0.075} };
     float reverbButtonBounds[3][4] = { {0.282,0.42,0.075,0.1} , {0.452,0.42,0.075,0.1}, {0.622,0.42,0.075,0.1} };
-    float delayButtonBounds[4][4] = { {0.282,0.588,0.075,0.1} , {0.452,0.588,0.075,0.1}, {0.622,0.588,0.075,0.1},{0.744,0.615,0.015,0.025} };
+    float delayButtonBounds[5][4] = { {0.282,0.588,0.075,0.1} , {0.452,0.588,0.075,0.1}, {0.5975,0.6,0.04,0.06}, {0.6825,0.6,0.04,0.06} ,{0.744,0.615,0.015,0.025} };
     float killEQButtonBounds[4][4] = { {0.3,0.905,0.015,0.025} ,{0.45,0.905,0.015,0.025},{0.6,0.905,0.015,0.025},{0.75,0.905,0.015,0.025} };
 
-    float (*buttonBounds[8])[4];
+    float(*buttonBounds[8])[4];
 
 
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (KeyBindingsComponent)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(KeyBindingsComponent)
 };

@@ -18,13 +18,15 @@ DelayComponent::DelayComponent(CircularBuffer* circularBuffer) : circularBuffer(
 
     addAndMakeVisible(gainSlider);
     addAndMakeVisible(timeSlider);
-    addAndMakeVisible(frequencyCutSlider);
+    addAndMakeVisible(lowFrequencyCutSlider);
+    addAndMakeVisible(highFrequencyCutSlider);
     addAndMakeVisible(onOff);
     addAndMakeVisible(visualiser);
 
     gainSlider.addListener(this);
     timeSlider.addListener(this);
-    frequencyCutSlider.addListener(this);
+    lowFrequencyCutSlider.addListener(this);
+    highFrequencyCutSlider.addListener(this);
     onOff.addListener(this);
 
 }
@@ -43,9 +45,12 @@ void DelayComponent::handleMidi(int action, int value) {
         timeSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.f, 1000.f));
         break;
     case 2:
-        frequencyCutSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 400.f, 18000.f));
+        highFrequencyCutSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 250.f, 19250.0f));
         break;
     case 3:
+        lowFrequencyCutSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 1000.f, 19250.0f));
+        break;
+    case 4:
         onOff.triggerClick();
         break;
     }
@@ -61,13 +66,21 @@ void DelayComponent::initSlider() {
     gainSliderLabel.setJustificationType(juce::Justification::centredBottom);
     gainSlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 200, 25);
 
-    frequencyCutSlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
-    frequencyCutSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
-    frequencyCutSlider.setRange(1000.f, +19250.0f, 0.01f);
-    frequencyCutSlider.setValue(19250.f);
-    frequencyCutSliderLabel.attachToComponent(&frequencyCutSlider, false);
-    frequencyCutSliderLabel.setJustificationType(juce::Justification::centredBottom);
-    frequencyCutSlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 200, 25);
+    lowFrequencyCutSlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
+    lowFrequencyCutSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
+    lowFrequencyCutSlider.setRange(1000.f, +19250.0f, 0.01f);
+    lowFrequencyCutSlider.setValue(19250.f);
+    lowFrequencyCutSliderLabel.attachToComponent(&lowFrequencyCutSlider, false);
+    lowFrequencyCutSliderLabel.setJustificationType(juce::Justification::centredBottom);
+    lowFrequencyCutSlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 200, 25);
+
+    highFrequencyCutSlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
+    highFrequencyCutSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
+    highFrequencyCutSlider.setRange(250.f, +19250.0f, 0.01f);
+    highFrequencyCutSlider.setValue(250.f);
+    highFrequencyCutSliderLabel.attachToComponent(&highFrequencyCutSlider, false);
+    highFrequencyCutSliderLabel.setJustificationType(juce::Justification::centredBottom);
+    highFrequencyCutSlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 200, 25);
     
     timeSlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     timeSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
@@ -87,7 +100,8 @@ void DelayComponent::buttonClicked(juce::Button* button) {
 void DelayComponent::sliderValueChanged(juce::Slider* slider) {
     circularBuffer->setDelayTime(timeSlider.getValue());
     circularBuffer->setDelayFeedback(gainSlider.getValue());
-    circularBuffer->setDelayCutoffFrequency(frequencyCutSlider.getValue());
+    circularBuffer->setDelayLowCutoffFrequency(lowFrequencyCutSlider.getValue());
+    circularBuffer->setDelayHighCutoffFrequency(highFrequencyCutSlider.getValue());
     //val.setText(std::to_string(slider->getValue()), juce::NotificationType{});
 }
 
@@ -155,10 +169,16 @@ void DelayComponent::resized()
         getHeight() * 0.8
     );
 
-    frequencyCutSlider.setBounds(getWidth() * 0.5,
-        getHeight() * 0.2,
-        getWidth() * 0.2,
-        getHeight() * 0.8
+    highFrequencyCutSlider.setBounds(getWidth() * 0.5,
+        getHeight() * 0.3,
+        getWidth() * 0.1,
+        getHeight() * 0.5
+    );
+
+    lowFrequencyCutSlider.setBounds(getWidth() * 0.6,
+        getHeight() * 0.3,
+        getWidth() * 0.1,
+        getHeight() * 0.5
     );
 
     onOff.setBounds(getWidth() * 0.7,

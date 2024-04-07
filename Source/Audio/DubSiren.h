@@ -32,6 +32,7 @@ public:
     void setVolume(float newVolume);
 
     void setLFOWaveType(int type);
+    void setWaveType(int type);
 
     void updateAngleDelta();
 
@@ -45,13 +46,16 @@ private:
     float modulationDepth{ 60.0 };
     float volume{ 0.5f };
 
-    juce::dsp::Oscillator<float> oscillator;
+    juce::dsp::Oscillator<float>* oscillator;
+    juce::dsp::Oscillator<float> square;
+    juce::dsp::Oscillator<float> sawtooth;
 
     juce::dsp::Oscillator<float>* lfoOscillator;
     juce::dsp::Oscillator<float> sineLFO;
     juce::dsp::Oscillator<float> sawtoothLFO;
     juce::dsp::Oscillator<float> triangleLFO;
     juce::dsp::Oscillator<float> pulseLFO;
+    juce::dsp::Oscillator<float> squareLFO;
 
     juce::IIRFilter filterL;
     juce::IIRFilter filterR;

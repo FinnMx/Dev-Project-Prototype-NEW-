@@ -77,12 +77,8 @@ void ReverbComponent::sliderValueChanged(juce::Slider* slider) {
 }
 
 void ReverbComponent::sliderDragStarted(juce::Slider* slider) {
-    //JANK
-    //val.attachToComponent(slider, juce::Justification::centredLeft);
 }
 void ReverbComponent::sliderDragEnded(juce::Slider* slider) {
-    //JANK
-    //val.setText("", juce::NotificationType{});
 }
 
 void ReverbComponent::setFocus(bool newFocus) {
