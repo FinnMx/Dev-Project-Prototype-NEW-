@@ -39,6 +39,8 @@ private:
     float* averageRMSValues;
     float* frequencies;
     int elapsedTime{ 0 };
+    int iterations{ 0 };
+    float test[10] = { 0,0,0,0,0,0,0,0,0,0 };
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (FrequencyLevelThread)
 };

@@ -25,6 +25,11 @@ FrequencyLevelThread::~FrequencyLevelThread()
 
 void FrequencyLevelThread::timerCallback() {
     elapsedTime++;
+    for (int i = 0; i < 10; i++) {
+        averageRMSValues[i] = dBtodBFS(averageRMSValues[i] / iterations);
+        test[i] += juce::Decibels::gainToDecibels(averageRMSValues[i]);
+    }
+    iterations = 0;
 }
 
 void FrequencyLevelThread::setSliders(std::vector<juce::Slider*>& sliders) {
@@ -43,7 +48,6 @@ float FrequencyLevelThread::dBtodBFS(float dB) {
 
 void FrequencyLevelThread::run() {
     startTimer(1000);
-    int iterations = 0;
 
     while(elapsedTime <= 5){
         for (int i = 0; i < 10; i++) {
@@ -92,14 +96,15 @@ void FrequencyLevelThread::run() {
         iterations++;
     }
     elapsedTime = 0;
+    iterations = 0;
     stopTimer();
 
-    for (int i = 0; i < 10; i++){
-        averageRMSValues[i] = dBtodBFS(averageRMSValues[i] / iterations);
-        DBG(juce::Decibels::gainToDecibels(averageRMSValues[i]));
-    }
-
     signalThreadShouldExit();
+
+    for each (float temp in test)
+    {
+        DBG(temp / 6);
+    }
 }
 
 void FrequencyLevelThread::updateBuffer(juce::AudioBuffer<float> newBuffer) {
