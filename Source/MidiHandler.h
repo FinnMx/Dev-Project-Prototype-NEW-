@@ -12,10 +12,13 @@
 
 #include <JuceHeader.h>
 #include <iostream>
+#include <fstream>
+#include <windows.h>
+#include <Shlobj.h>
+
 #include "rapidjson/document.h"
 #include "rapidjson/writer.h"
 #include "rapidjson/stringbuffer.h"
-#include <fstream>
 #include <Settings/KeyBindingsComponent.h>
 
 //==============================================================================
@@ -40,12 +43,15 @@ private:
     void saveSettings(rapidjson::Document& document);
     void resetSettingsFile();
 
+#ifdef _WIN32
+    char* filePath{ "C:/midisettings.json" };
+
+#elif __APPLE__
     const char* filePath{ "C:/midisettings.json" };
 
+#endif
+
     KeyBindingsComponent* keyBindingsComponent;
-   
-    //std::string componentNames[8] = { "inputABindings", "inputBBindings", "thumbnailViewBindings", "10BandEQBindings", "dubSirenBindings", "reverbBindings", "delayBindings", "killEQBindings" };
-    //int parameterSizes[8]{ 5, 5, 2, 11, 3, 3, 5, 4 };
 
     std::unordered_map<int, std::pair<int, int>> bindings;
 

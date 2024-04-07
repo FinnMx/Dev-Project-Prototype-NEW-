@@ -14,6 +14,7 @@
 //==============================================================================
 MidiHandler::MidiHandler(KeyBindingsComponent* keyBindingsComponent) : keyBindingsComponent(keyBindingsComponent)
 {
+
 }
 
 MidiHandler::~MidiHandler()
