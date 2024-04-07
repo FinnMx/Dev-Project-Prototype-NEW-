@@ -13,27 +13,35 @@
 
 //==============================================================================
 FrequencyLevelThread::FrequencyLevelThread(float* frequencies, float(&averageRMSValues)[10]) : juce::Thread("Frequency Level Thread"),
-                                                                                          frequencies(frequencies), averageRMSValues(averageRMSValues)
-{ 
+frequencies(frequencies), averageRMSValues(averageRMSValues)
+{
     buffer.clear();
-
+    for (auto& smooth : smoother)
+        smooth.reset(44100.f, 0.00001f);
 }
 
 FrequencyLevelThread::~FrequencyLevelThread()
 {
+    signalThreadShouldExit();
 }
 
 void FrequencyLevelThread::timerCallback() {
     elapsedTime++;
     for (int i = 0; i < 10; i++) {
-        averageRMSValues[i] = dBtodBFS(averageRMSValues[i] / iterations);
-        test[i] += juce::Decibels::gainToDecibels(averageRMSValues[i]);
+        averageRMSValues[i] = juce::Decibels::gainToDecibels(dBtodBFS(averageRMSValues[i] / iterations));
+        if (averageRMSValues[i] < targetRMSValues[i]) {
+            smoother[i].setTargetValue(smoother[i].getCurrentValue() + 0.1f);
+        }
     }
     iterations = 0;
 }
 
 void FrequencyLevelThread::setSliders(std::vector<juce::Slider*>& sliders) {
     passedSliders = sliders;
+}
+
+void FrequencyLevelThread::setTargetRMSValues(float* newTargetRMSValues) {
+    targetRMSValues = newTargetRMSValues;
 }
 
 float FrequencyLevelThread::dBtodBFS(float dB) {
@@ -48,6 +56,10 @@ float FrequencyLevelThread::dBtodBFS(float dB) {
 
 void FrequencyLevelThread::run() {
     startTimer(1000);
+
+    for(int i = 0; i < 10; i++)
+        smoother[i].setValue(passedSliders[i]->getValue(), true);
+
 
     while(elapsedTime <= 5){
         for (int i = 0; i < 10; i++) {
@@ -92,6 +104,10 @@ void FrequencyLevelThread::run() {
 
             // Calculate the average RMS across channels and samples
             averageRMSValues[i] += rmsAccumulator / (numChannels * (numSamples - windowSize));
+            const juce::MessageManagerLock mmLock;
+            auto test = smoother[i].getNextValue();
+            DBG(i << ": " << test);
+            passedSliders[i]->setValue(test);
         }
         iterations++;
     }
@@ -100,11 +116,6 @@ void FrequencyLevelThread::run() {
     stopTimer();
 
     signalThreadShouldExit();
-
-    for each (float temp in test)
-    {
-        DBG(temp / 6);
-    }
 }
 
 void FrequencyLevelThread::updateBuffer(juce::AudioBuffer<float> newBuffer) {

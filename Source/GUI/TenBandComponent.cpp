@@ -91,7 +91,7 @@ void TenBandComponent::initSlider() {
         addAndMakeVisible(sliders[i]);
         sliders[i]->addListener(this);
         sliders[i]->setSliderStyle(juce::Slider::SliderStyle::LinearVertical);
-        sliders[i]->setRange(0.5f, +7.0f, 0.1f);
+        sliders[i]->setRange(0.5f, +7.0f, 0.01f);
         sliders[i]->setSkewFactorFromMidPoint(1.f);
         sliders[i]->setValue(1.f);
         sliderLabels[i]->attachToComponent(sliders[i], false);

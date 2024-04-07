@@ -88,5 +88,6 @@ void TenBandEQ::calculateFrequencyBandRMS() {
 
 void TenBandEQ::autoAdjustFrequencies(std::vector<juce::Slider*> &sliders) {
     frequencyLevelThread.setSliders(sliders);
+    frequencyLevelThread.setTargetRMSValues(targetRMSValues);
     frequencyLevelThread.startThread();
 }

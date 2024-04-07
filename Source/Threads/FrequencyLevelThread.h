@@ -26,6 +26,7 @@ public:
     void timerCallback() override;
 
     void setSliders(std::vector<juce::Slider*>& sliders);
+    void setTargetRMSValues(float* newTargetRMSValues);
 
     void updateBuffer(juce::AudioBuffer<float> newBuffer);
 
@@ -36,8 +37,12 @@ private:
 
     std::vector<juce::Slider*> passedSliders;
 
+    std::array<juce::LinearSmoothedValue<float>, 10> smoother;
+
     float* averageRMSValues;
+    float* targetRMSValues;
     float* frequencies;
+
     int elapsedTime{ 0 };
     int iterations{ 0 };
     float test[10] = { 0,0,0,0,0,0,0,0,0,0 };
