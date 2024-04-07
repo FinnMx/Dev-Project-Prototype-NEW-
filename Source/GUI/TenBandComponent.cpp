@@ -81,7 +81,11 @@ void TenBandComponent::handleMidi(int action, int value) {
         freq16000Slider.setValue(juce::jmap((float)value, (float)0, (float)127, -6.f, 6.f));
         break;
     case 10:
+        autoSetButton.triggerClick();
+        break;
+    case 11:
         resetButton.triggerClick();
+        break;
     }
 }
 
