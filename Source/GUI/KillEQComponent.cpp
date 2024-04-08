@@ -94,20 +94,24 @@ void KillEQComponent::handleMidi(int action) {
 }
 
 void KillEQComponent::sliderValueChanged(juce::Slider* slider) {
-    freqCutoffs->setSubBassFilter(subBassFrequencySlider.getValue());
-    freqCutoffs->setbassFilterr(bassFrequencySlider.getValue());
-    freqCutoffs->setmidsFilter(midsFrequencySlider.getValue());
-    freqCutoffs->sethighFilter(highFrequencySlider.getValue());
+    if(slider == &subBassFrequencySlider)
+        freqCutoffs->subBassTarget(subBassFrequencySlider.getValue());
+    if (slider == &bassFrequencySlider)
+        freqCutoffs->bassTarget(bassFrequencySlider.getValue());
+    if (slider == &midsFrequencySlider)
+        freqCutoffs->midsTarget(midsFrequencySlider.getValue());
+    if(slider == &highFrequencySlider)
+        freqCutoffs->highTarget(highFrequencySlider.getValue());
 }
 
 void KillEQComponent::buttonClicked(juce::Button* button) {
-    if (button = &subBassOnOff)
+    if (button == &subBassOnOff)
         freqCutoffs->setSubBassStatus(button->getToggleState());
-    if (button = &bassOnOff)
+    if (button == &bassOnOff)
         freqCutoffs->setBassStatus(button->getToggleState());
-    if (button = &midsOnOff)
+    if (button == &midsOnOff)
         freqCutoffs->setMidsStatus(button->getToggleState());
-    if (button = &highOnOff)
+    if (button == &highOnOff)
         freqCutoffs->setHighStatus(button->getToggleState());
 }
 

@@ -1,8 +1,23 @@
 ﻿  FrequencyCutoffs.cpp
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\FrequencyCutoffs.cpp(38,95): warning C4305: 'argument': truncation from 'double' to 'NumericType'
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\FrequencyCutoffs.cpp(34,98): warning C4305: 'argument': truncation from 'double' to 'NumericType'
           with
           [
               NumericType=float
           ]
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\FrequencyCutoffs.cpp(90,74): warning C4100: 'sampleRate': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\FrequencyCutoffs.cpp(41,95): warning C4305: 'argument': truncation from 'double' to 'NumericType'
+          with
+          [
+              NumericType=float
+          ]
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\FrequencyCutoffs.cpp(48,94): warning C4305: 'argument': truncation from 'double' to 'NumericType'
+          with
+          [
+              NumericType=float
+          ]
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\FrequencyCutoffs.cpp(55,94): warning C4305: 'argument': truncation from 'double' to 'NumericType'
+          with
+          [
+              NumericType=float
+          ]
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\FrequencyCutoffs.cpp(92,74): warning C4100: 'sampleRate': unreferenced formal parameter
   Dev Project Prototype (NEW)_App.vcxproj -> K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Builds\VisualStudio2019\x64\Debug\App\Dev Project Prototype (NEW).exe

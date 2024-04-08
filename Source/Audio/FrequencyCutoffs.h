@@ -31,6 +31,11 @@ public:
     void setMidsStatus(bool newmidsStatus);
     void setHighStatus(bool newhighStatus);
 
+    void subBassTarget(float newFreq);
+    void bassTarget(float newFreq);
+    void midsTarget(float newFreq);
+    void highTarget(float newFreq);
+
     std::vector<juce::dsp::IIR::Coefficients<float>*> getCoefficients();
 
     void prepareToPlay(int samplesPerBlockExpected, double sampleRate) override;
