@@ -31,25 +31,25 @@ FrequencyCutoffs::~FrequencyCutoffs()
 void FrequencyCutoffs::setSubBassFilter(float newFreq) {
     subBassCoefficient = *juce::dsp::IIR::Coefficients<float>::makeHighPass(44100.f, newFreq, 1);
     *subBassFilter.state = subBassCoefficient;
-    //subBassFreq = newFreq;
+    subBassFreq = newFreq;
 }
 
 void FrequencyCutoffs::setbassFilterr(float newFreq) {
     bassCoefficient = *juce::dsp::IIR::Coefficients<float>::makeHighPass(44100.f, newFreq, 0.7);
     *bassFilter.state = bassCoefficient;
-    //bassFreq = newFreq;
+    bassFreq = newFreq;
 }
 
 void FrequencyCutoffs::setmidsFilter(float newFreq) {
     midsCoefficient = *juce::dsp::IIR::Coefficients<float>::makeLowPass(44100.f, newFreq, 1);
     *midsFilter.state = midsCoefficient;
-    //midsFreq = newFreq;
+    midsFreq = newFreq;
 }
 
 void FrequencyCutoffs::sethighFilter(float newFreq) {
     highCoefficient = *juce::dsp::IIR::Coefficients<float>::makeLowPass(44100.f, newFreq, 1);
     *highFilter.state = highCoefficient;
-    //highFreq = newFreq;
+    highFreq = newFreq;
 }
 
 void FrequencyCutoffs::setSubBassStatus(bool newsubBassStatus) {

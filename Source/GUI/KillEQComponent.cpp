@@ -48,6 +48,7 @@ void KillEQComponent::initSlider() {
     subBassFrequencySlider.setValue(+95.f);
     subBassFrequencyLabel.attachToComponent(&subBassFrequencySlider, false);
     subBassFrequencyLabel.setJustificationType(juce::Justification::centredBottom);
+    subBassFrequencySlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 200, 25);
 
     bassFrequencySlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     bassFrequencySlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
@@ -55,6 +56,7 @@ void KillEQComponent::initSlider() {
     bassFrequencySlider.setValue(+250.f);
     bassFrequencyLabel.attachToComponent(&bassFrequencySlider, false);
     bassFrequencyLabel.setJustificationType(juce::Justification::centredBottom);
+    bassFrequencySlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 200, 25);
 
     midsFrequencySlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     midsFrequencySlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
@@ -62,6 +64,7 @@ void KillEQComponent::initSlider() {
     midsFrequencySlider.setValue(+3500.f);
     midsFrequencyLabel.attachToComponent(&midsFrequencySlider, false);
     midsFrequencyLabel.setJustificationType(juce::Justification::centredBottom);
+    midsFrequencySlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 200, 25);
 
     highFrequencySlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     highFrequencySlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
@@ -69,6 +72,7 @@ void KillEQComponent::initSlider() {
     highFrequencySlider.setValue(+5000.f);
     highFrequencyLabel.attachToComponent(&highFrequencySlider, false);
     highFrequencyLabel.setJustificationType(juce::Justification::centredBottom);
+    highFrequencySlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 200, 25);
 }
 
 void KillEQComponent::handleMidi(int action) {
