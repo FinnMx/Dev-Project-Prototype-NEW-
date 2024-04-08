@@ -1,2 +1,1 @@
-C:\Users\New Owner\Documents\CURRENT BUILD\Dev-Project-Prototype-NEW-\Builds\VisualStudio2019\x64\Release\App\Dev Project Prototype (NEW).exe
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Builds\VisualStudio2019\x64\Release\App\Dev Project Prototype (NEW).exe

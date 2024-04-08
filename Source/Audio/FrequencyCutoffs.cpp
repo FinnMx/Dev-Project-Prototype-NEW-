@@ -164,7 +164,7 @@ void FrequencyCutoffs::getNextAudioBlock(const juce::AudioSourceChannelInfo& buf
         break;
     case false:
         highSmoother.setTargetValue(20000.f);
-        setmidsFilter(highSmoother.getNextValue());
+        sethighFilter(highSmoother.getNextValue());
         break;
     }
 
