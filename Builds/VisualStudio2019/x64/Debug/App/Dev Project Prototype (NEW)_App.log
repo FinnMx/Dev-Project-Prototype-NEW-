@@ -1,9 +1,38 @@
-﻿  CircularBuffer.cpp
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(29,72): warning C4100: 'sampleRate': unreferenced formal parameter
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(68,52): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(184,34): warning C4456: declaration of 'input' hides previous local declaration
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(168,17): message : see declaration of 'input'
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(188,34): warning C4456: declaration of 'input' hides previous local declaration
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(168,17): message : see declaration of 'input'
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\CircularBuffer.cpp(208,108): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+﻿  FrequencyCutoffs.cpp
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\FrequencyCutoffs.cpp(17,95): warning C4305: 'argument': truncation from 'double' to 'NumericType'
+          with
+          [
+              NumericType=float
+          ]
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\FrequencyCutoffs.cpp(18,93): warning C4305: 'argument': truncation from 'double' to 'NumericType'
+          with
+          [
+              NumericType=float
+          ]
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\FrequencyCutoffs.cpp(19,93): warning C4305: 'argument': truncation from 'double' to 'NumericType'
+          with
+          [
+              NumericType=float
+          ]
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\FrequencyCutoffs.cpp(20,93): warning C4305: 'argument': truncation from 'double' to 'NumericType'
+          with
+          [
+              NumericType=float
+          ]
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\FrequencyCutoffs.cpp(34,98): warning C4305: 'argument': truncation from 'double' to 'NumericType'
+          with
+          [
+              NumericType=float
+          ]
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\FrequencyCutoffs.cpp(48,94): warning C4305: 'argument': truncation from 'double' to 'NumericType'
+          with
+          [
+              NumericType=float
+          ]
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\FrequencyCutoffs.cpp(55,94): warning C4305: 'argument': truncation from 'double' to 'NumericType'
+          with
+          [
+              NumericType=float
+          ]
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\FrequencyCutoffs.cpp(92,74): warning C4100: 'sampleRate': unreferenced formal parameter
   Dev Project Prototype (NEW)_App.vcxproj -> K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Builds\VisualStudio2019\x64\Debug\App\Dev Project Prototype (NEW).exe

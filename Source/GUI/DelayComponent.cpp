@@ -44,18 +44,24 @@ void DelayComponent::handleMidi(int action, int value) {
     const juce::MessageManagerLock mmLock;
     switch (action) {
     case 0:
-        gainSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.f, 1.0f));
+        trackSend.triggerClick();
         break;
     case 1:
-        timeSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.f, 1000.f));
+        sirenSend.triggerClick();
         break;
     case 2:
-        highFrequencyCutSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 250.f, 19250.0f));
+        gainSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.f, 1.0f));
         break;
     case 3:
-        lowFrequencyCutSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 1000.f, 19250.0f));
+        timeSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.f, 1000.f));
         break;
     case 4:
+        highFrequencyCutSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 250.f, 19250.0f));
+        break;
+    case 5:
+        lowFrequencyCutSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 1000.f, 19250.0f));
+        break;
+    case 6:
         onOff.triggerClick();
         break;
     }
