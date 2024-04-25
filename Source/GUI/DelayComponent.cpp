@@ -21,6 +21,9 @@ DelayComponent::DelayComponent(CircularBuffer* circularBuffer) : circularBuffer(
     addAndMakeVisible(lowFrequencyCutSlider);
     addAndMakeVisible(highFrequencyCutSlider);
     addAndMakeVisible(onOff);
+    addAndMakeVisible(sirenSend);
+    addAndMakeVisible(trackSend);
+    addAndMakeVisible(onOff);
     addAndMakeVisible(visualiser);
 
     gainSlider.addListener(this);
@@ -28,6 +31,8 @@ DelayComponent::DelayComponent(CircularBuffer* circularBuffer) : circularBuffer(
     lowFrequencyCutSlider.addListener(this);
     highFrequencyCutSlider.addListener(this);
     onOff.addListener(this);
+    sirenSend.addListener(this);
+    trackSend.addListener(this);
 
 }
 
@@ -92,8 +97,12 @@ void DelayComponent::initSlider() {
 }
 
 void DelayComponent::buttonClicked(juce::Button* button) {
-    if (button = &onOff)
+    if (button == &onOff)
         circularBuffer->setDelayStatus(button->getToggleState());
+    if (button == &trackSend)
+        circularBuffer->updateTrackSendStatus(button->getToggleState());
+    if (button == &sirenSend)
+        circularBuffer->updateSirenSendStatus(button->getToggleState());
    
 }
 
@@ -185,6 +194,16 @@ void DelayComponent::resized()
         getHeight() * 0.2,
         getWidth() * 0.5,
         getHeight() * 0.5);
+
+    sirenSend.setBounds(getWidth() * 0.05,
+        getHeight() * 0.05,
+        getWidth() * 0.1,
+        getHeight() * 0.1);
+
+    trackSend.setBounds(getWidth() * 0.05,
+        getHeight() * 0.5,
+        getWidth() * 0.1,
+        getHeight() * 0.1);
 
     visualiser.setBounds(getWidth() * 0.75,
         getHeight() * 0.2,

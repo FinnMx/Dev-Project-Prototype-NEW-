@@ -36,6 +36,11 @@ public:
     void setDelayLowCutoffFrequency(float newFrequencyCutoff);
     void setDelayHighCutoffFrequency(float newFrequencyCutoff);
 
+    void updateSirenBuffer(juce::AudioBuffer<float> newSirenBuffer);
+    void updateTrackBuffer(juce::AudioBuffer<float> newTrackBuffer);
+    void updateSirenSendStatus(bool newSirenSendStatus);
+    void updateTrackSendStatus(bool newTrackSendStatus);
+
 private:
     bool delayStatus{ false };
     float delayFeedback{ 0.f };
@@ -56,9 +61,13 @@ private:
     //juce::IIRFilter filter;
 
     //====================================================================
-    // TEST STUFF
+    juce::AudioBuffer<float> copySirenBuffer;
+    juce::AudioBuffer<float> copyTrackBuffer;
     juce::AudioBuffer<float> copyBuffer;
+    bool sirenSendStatus{ false };
+    bool trackSendStatus{ false };
 
+    // TEST STUFF
     juce::dsp::IIR::Coefficients<float> lowFilterCoefficient;
     juce::dsp::ProcessorDuplicator<juce::dsp::IIR::Filter<float>, juce::dsp::IIR::Coefficients<float>> lowFilter;
     juce::dsp::IIR::Coefficients<float> highFilterCoefficient;

@@ -119,6 +119,22 @@ std::vector<juce::dsp::IIR::Coefficients<float>*> CircularBuffer::getCoefficient
     return tempVec;
 }
 
+void CircularBuffer::updateSirenBuffer(juce::AudioBuffer<float> newSirenBuffer) {
+    copySirenBuffer = newSirenBuffer;
+}
+
+void CircularBuffer::updateTrackBuffer(juce::AudioBuffer<float> newTrackBuffer) {
+    copyTrackBuffer = newTrackBuffer;
+}
+
+void CircularBuffer::updateSirenSendStatus(bool newSirenSendStatus) {
+    sirenSendStatus = newSirenSendStatus;
+}
+
+void CircularBuffer::updateTrackSendStatus(bool newTrackSendStatus) {
+    trackSendStatus = newTrackSendStatus;
+}
+
 
 void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) {
     juce::ScopedNoDenormals noDenormals;
@@ -129,9 +145,20 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
     const auto numChannels = juce::jmax(totalNumInputChannels, totalNumOutputChannels);
 
     copyBuffer.setSize(2, bufferToFill.buffer->getNumSamples());
-    auto* data = bufferToFill.buffer->getReadPointer(0);
-    copyBuffer.copyFrom(0, 0, data, bufferToFill.buffer->getNumSamples());
-    copyBuffer.copyFrom(1, 0, data, bufferToFill.buffer->getNumSamples());
+
+    if(sirenSendStatus && !trackSendStatus){
+        copyBuffer.copyFrom(0, 0, copySirenBuffer.getReadPointer(0), bufferToFill.buffer->getNumSamples());
+        copyBuffer.copyFrom(1, 0, copySirenBuffer.getReadPointer(0), bufferToFill.buffer->getNumSamples());
+    }else if (trackSendStatus && !sirenSendStatus) {
+        copyBuffer.copyFrom(0, 0, copyTrackBuffer.getReadPointer(0), bufferToFill.buffer->getNumSamples());
+        copyBuffer.copyFrom(1, 0, copyTrackBuffer.getReadPointer(0), bufferToFill.buffer->getNumSamples());
+    }
+    else if (trackSendStatus && sirenSendStatus) {
+        copyBuffer.copyFrom(0, 0, copyTrackBuffer.getReadPointer(0), bufferToFill.buffer->getNumSamples());
+        copyBuffer.copyFrom(1, 0, copyTrackBuffer.getReadPointer(0), bufferToFill.buffer->getNumSamples());
+        copyBuffer.addFrom(0, 0, copySirenBuffer.getReadPointer(0), bufferToFill.buffer->getNumSamples());
+        copyBuffer.addFrom(1, 0, copySirenBuffer.getReadPointer(0), bufferToFill.buffer->getNumSamples());
+    }
 
     copyBuffer.applyGain(1.f);
 
@@ -153,7 +180,7 @@ void CircularBuffer::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffe
 
                 auto smoothedVal = smoother[channel].getNextValue() * coef;
 
-                if (delayStatus) {
+                if (delayStatus && (sirenSendStatus || trackSendStatus)) {
                     auto input = samplesIn[sample] - lastDelayOutput[channel];
                     linear.pushSample(int(channel), input);
                 }

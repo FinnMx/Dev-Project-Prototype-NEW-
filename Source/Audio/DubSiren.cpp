@@ -13,7 +13,7 @@
 #include <cmath>
 
 //==============================================================================
-DubSiren::DubSiren() 
+DubSiren::DubSiren(CircularBuffer* circularBuffer) : circularBuffer(circularBuffer)
 {
     square.initialise([](float x) {return  (x < 0.0f) ? -1.0f : 1.0f; });
     sawtooth.initialise([](float x) { return std::tanh(x); });
@@ -62,7 +62,6 @@ void DubSiren::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFil
 
     const auto numChannels = juce::jmax(totalNumInputChannels, totalNumOutputChannels);
 
-    if (trigger) {
 
         copyBuffer.setSize(2, bufferToFill.buffer->getNumSamples());
         auto* data = bufferToFill.buffer->getReadPointer(0);
@@ -85,10 +84,20 @@ void DubSiren::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFil
         }
         filterL.processSamples(leftBuffer, bufferToFill.buffer->getNumSamples());
         filterR.processSamples(rightBuffer, bufferToFill.buffer->getNumSamples());
+
+        juce::AudioBuffer<float> tempBuffer(2, bufferToFill.buffer->getNumSamples());
+        tempBuffer.clear();
+
+        if (trigger) {
         //LAST FLOAT SHOULD BE A VOLUME VALUE
         bufferToFill.buffer->addFrom(0, 0, leftBuffer, bufferToFill.buffer->getNumSamples(), volume);
         bufferToFill.buffer->addFrom(1, 0, rightBuffer, bufferToFill.buffer->getNumSamples(), volume);
-    }
+
+        //hhhhmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+        tempBuffer.addFrom(0, 0, leftBuffer, bufferToFill.buffer->getNumSamples(), volume);
+        tempBuffer.addFrom(1, 0, rightBuffer, bufferToFill.buffer->getNumSamples(), volume);
+        }
+        circularBuffer->updateSirenBuffer(tempBuffer);
 }
 
 void DubSiren::setTrigger(bool newTrigger) {

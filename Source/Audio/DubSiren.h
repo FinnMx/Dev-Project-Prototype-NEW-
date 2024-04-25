@@ -11,6 +11,7 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include <Audio/CircularBuffer.h>
 
 //==============================================================================
 /*
@@ -18,7 +19,7 @@
 class DubSiren  : public juce::AudioSource
 {
 public:
-    DubSiren();
+    DubSiren(CircularBuffer* circularBuffer);
     ~DubSiren() override;
 
     void prepareToPlay(int samplesPerBlockExpected, double sampleRate) override;
@@ -37,6 +38,7 @@ public:
     void updateAngleDelta();
 
 private:
+    CircularBuffer* circularBuffer;
 
     juce::AudioBuffer<float> copyBuffer;
     bool trigger{ false };

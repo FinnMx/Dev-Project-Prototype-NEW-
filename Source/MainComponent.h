@@ -104,7 +104,7 @@ private:
     DelayComponent delayComponent{&circularBuffer};
     KillEQComponent killEQComponent{ &freqCutoffs };
 
-    DubSiren dubSirenPlayer;
+    DubSiren dubSirenPlayer{ &circularBuffer };
     DubSirenComponent dubSiren{ &dubSirenPlayer };
 
     TenBandComponent tenBandComponent{ &tenBandEQ };

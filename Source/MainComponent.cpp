@@ -81,6 +81,7 @@ void MainComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate
 void MainComponent::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) {
     mixerSource.getNextAudioBlock(bufferToFill);
     tenBandEQ.getNextAudioBlock(bufferToFill);
+    circularBuffer.updateTrackBuffer(*bufferToFill.buffer);
     freqCutoffs.getNextAudioBlock(bufferToFill);
     dubSirenPlayer.getNextAudioBlock(bufferToFill);
 

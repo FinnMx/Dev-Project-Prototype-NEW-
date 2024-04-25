@@ -56,6 +56,8 @@ private:
     juce::Slider highFrequencyCutSlider;
 
     juce::ToggleButton onOff;
+    juce::ToggleButton sirenSend;
+    juce::ToggleButton trackSend;
 
     juce::Label gainSliderLabel{ "Feedback", "Feedback" };
     juce::Label timeSliderLabel{ "Time", "Time" };
