@@ -37,6 +37,7 @@ private:
 
     MeterComponent rmsLeft;
     MeterComponent rmsRight;
+    juce::Label VolumeLabel;
 
     juce::MixerAudioSource* mixerSource;
     ExternalInput* externalInput;

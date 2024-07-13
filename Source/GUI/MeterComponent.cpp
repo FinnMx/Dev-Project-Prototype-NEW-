@@ -38,6 +38,7 @@ void MeterComponent::paint (juce::Graphics& g)
 
     const auto scale = juce::jmap(level, -60.f, +6.f, 0.f, (float)getHeight());
     g.fillRect(bounds.removeFromBottom(scale));
+
 }
 
 void MeterComponent::resized()

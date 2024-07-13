@@ -44,6 +44,7 @@ private:
     TrackThumbnailComponent* trackThumbnail;
 
     MeterComponent MeterL, MeterR;
+    juce::Label VolumeLabel;
 
     std::string trackName;
     juce::TextButton trackLoad;

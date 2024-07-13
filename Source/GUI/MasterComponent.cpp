@@ -19,6 +19,7 @@ MasterComponent::MasterComponent(float* rmsMasterLeft, float* rmsMasterRight, ju
     addAndMakeVisible(rmsLeft);
     addAndMakeVisible(rmsRight);
     addAndMakeVisible(inputToggler);
+    addAndMakeVisible(VolumeLabel);
 
     inputToggler.addListener(this);
 
@@ -41,6 +42,8 @@ void MasterComponent::timerCallback() {
 
     rmsLeft.repaint();
     rmsRight.repaint();
+
+    VolumeLabel.setText(juce::String(((int)*masterLeft + (int)*masterRight) / 2) + "Db", juce::NotificationType{});
 }
 
 void MasterComponent::paint (juce::Graphics& g)
@@ -79,5 +82,11 @@ void MasterComponent::resized()
         getWidth() * 0.1,
         getHeight() * 0.1
     );
+
+    VolumeLabel.setBounds(getWidth() * 0.275,
+        getHeight() * 0.7,
+        getWidth() * 0.1,
+        getHeight() * 0.1);
+    VolumeLabel.setSize(100, 100);
 
 }

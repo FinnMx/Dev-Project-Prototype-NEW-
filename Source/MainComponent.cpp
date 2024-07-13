@@ -92,6 +92,7 @@ void MainComponent::getNextAudioBlock(const juce::AudioSourceChannelInfo& buffer
     rmsMasterLeft = juce::Decibels::gainToDecibels(bufferToFill.buffer->getRMSLevel(0, 0, bufferToFill.buffer->getNumSamples()));
     rmsMasterRight = juce::Decibels::gainToDecibels(bufferToFill.buffer->getRMSLevel(1, 0, bufferToFill.buffer->getNumSamples()));
 
+    bufferToFill.buffer->applyGain(0.15f); // i need to learn about gain and db etc lol... this actually makes my mixer not peak on full volume
 }
 
 void MainComponent::releaseResources() {

@@ -30,6 +30,7 @@ InputComponent::InputComponent(std::string id, TrackAudioPlayer* audioPlayer, ju
 
     addAndMakeVisible(MeterL);
     addAndMakeVisible(MeterR);
+    addAndMakeVisible(VolumeLabel);
 
     initVolSlider();
     addAndMakeVisible(volSlider);
@@ -103,11 +104,17 @@ void InputComponent::sliderValueChanged(juce::Slider* slider) {
 
 void InputComponent::timerCallback() {
 
-    MeterL.setLevel(player->getRMSValue(0));
-    MeterR.setLevel(player->getRMSValue(1));
+    float lRMS = player->getRMSValue(0);
+    float rRMS = player->getRMSValue(1);
+    int RMS = ((int)lRMS + (int)rRMS) / 2;
+
+    MeterL.setLevel(lRMS);
+    MeterR.setLevel(rRMS);
 
     MeterL.repaint();
     MeterR.repaint();
+
+    VolumeLabel.setText(juce::String(RMS) + "Db", juce::NotificationType{});
 }
 
 void InputComponent::paint (juce::Graphics& g)
@@ -170,6 +177,7 @@ void InputComponent::resized()
         getWidth() * 0.1,
         getHeight() * 0.6
     );
+   
 
     volSlider.setBounds(
         getWidth() * 0.6,
@@ -178,4 +186,9 @@ void InputComponent::resized()
         getHeight() * 0.6
     );
 
+    VolumeLabel.setBounds(getWidth() * 0.275,
+        getHeight() * 0.7,
+        getWidth() * 0.1,
+        getHeight() * 0.1);
+    VolumeLabel.setSize(100, 100);
 }
