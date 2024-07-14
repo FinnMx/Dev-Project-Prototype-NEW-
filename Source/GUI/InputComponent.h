@@ -39,6 +39,7 @@ public:
 private:
     void initVolSlider();
 
+    int timerMagic{ 1 };
 
     TrackAudioPlayer* player;
     TrackThumbnailComponent* trackThumbnail;

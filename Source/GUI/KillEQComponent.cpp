@@ -48,7 +48,6 @@ void KillEQComponent::initSlider() {
     subBassFrequencySlider.setValue(+95.f);
     subBassFrequencyLabel.attachToComponent(&subBassFrequencySlider, false);
     subBassFrequencyLabel.setJustificationType(juce::Justification::centredBottom);
-    subBassFrequencySlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 200, 25);
 
     bassFrequencySlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     bassFrequencySlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
@@ -56,7 +55,6 @@ void KillEQComponent::initSlider() {
     bassFrequencySlider.setValue(+250.f);
     bassFrequencyLabel.attachToComponent(&bassFrequencySlider, false);
     bassFrequencyLabel.setJustificationType(juce::Justification::centredBottom);
-    bassFrequencySlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 200, 25);
 
     midsFrequencySlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     midsFrequencySlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
@@ -64,7 +62,6 @@ void KillEQComponent::initSlider() {
     midsFrequencySlider.setValue(+3500.f);
     midsFrequencyLabel.attachToComponent(&midsFrequencySlider, false);
     midsFrequencyLabel.setJustificationType(juce::Justification::centredBottom);
-    midsFrequencySlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 200, 25);
 
     highFrequencySlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     highFrequencySlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
@@ -72,7 +69,6 @@ void KillEQComponent::initSlider() {
     highFrequencySlider.setValue(+5000.f);
     highFrequencyLabel.attachToComponent(&highFrequencySlider, false);
     highFrequencyLabel.setJustificationType(juce::Justification::centredBottom);
-    highFrequencySlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 200, 25);
 }
 
 void KillEQComponent::handleMidi(int action) {
@@ -94,24 +90,20 @@ void KillEQComponent::handleMidi(int action) {
 }
 
 void KillEQComponent::sliderValueChanged(juce::Slider* slider) {
-    if(slider == &subBassFrequencySlider)
-        freqCutoffs->subBassTarget(subBassFrequencySlider.getValue());
-    if (slider == &bassFrequencySlider)
-        freqCutoffs->bassTarget(bassFrequencySlider.getValue());
-    if (slider == &midsFrequencySlider)
-        freqCutoffs->midsTarget(midsFrequencySlider.getValue());
-    if(slider == &highFrequencySlider)
-        freqCutoffs->highTarget(highFrequencySlider.getValue());
+    freqCutoffs->setNewSubBassFreq(subBassFrequencySlider.getValue());
+    freqCutoffs->setNewBassFreq(bassFrequencySlider.getValue());
+    freqCutoffs->setNewMidsFreq(midsFrequencySlider.getValue());
+    freqCutoffs->setNewHighFreq(highFrequencySlider.getValue());
 }
 
 void KillEQComponent::buttonClicked(juce::Button* button) {
-    if (button == &subBassOnOff)
+    if (button = &subBassOnOff)
         freqCutoffs->setSubBassStatus(button->getToggleState());
-    if (button == &bassOnOff)
+    if (button = &bassOnOff)
         freqCutoffs->setBassStatus(button->getToggleState());
-    if (button == &midsOnOff)
+    if (button = &midsOnOff)
         freqCutoffs->setMidsStatus(button->getToggleState());
-    if (button == &highOnOff)
+    if (button = &highOnOff)
         freqCutoffs->setHighStatus(button->getToggleState());
 }
 
@@ -128,13 +120,13 @@ void KillEQComponent::releaseResources() {
 
 }
 
-void KillEQComponent::paint (juce::Graphics& g)
+void KillEQComponent::paint(juce::Graphics& g)
 {
     visualiser.repaint();
-    g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));   // clear the background
+    g.fillAll(getLookAndFeel().findColour(juce::ResizableWindow::backgroundColourId));   // clear the background
 
-    g.setColour (getLookAndFeel().findColour(juce::TextEditor::outlineColourId).contrasting(0.15f));
-    g.drawRect (getLocalBounds(), 1);   // draw an outline around the component
+    g.setColour(getLookAndFeel().findColour(juce::TextEditor::outlineColourId).contrasting(0.15f));
+    g.drawRect(getLocalBounds(), 1);   // draw an outline around the component
 
     g.setColour(juce::Colours::white);
     g.setFont(30.0f);

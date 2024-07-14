@@ -106,7 +106,6 @@ void InputComponent::timerCallback() {
 
     float lRMS = player->getRMSValue(0);
     float rRMS = player->getRMSValue(1);
-    int RMS = ((int)lRMS + (int)rRMS) / 2;
 
     MeterL.setLevel(lRMS);
     MeterR.setLevel(rRMS);
@@ -114,7 +113,13 @@ void InputComponent::timerCallback() {
     MeterL.repaint();
     MeterR.repaint();
 
-    VolumeLabel.setText(juce::String(RMS) + "Db", juce::NotificationType{});
+    timerMagic = timerMagic * 2;
+
+    if(timerMagic == 32){
+        timerMagic = 1;
+        int RMS = ((int)lRMS + (int)rRMS) / 2;
+        VolumeLabel.setText(juce::String(RMS) + "Db", juce::NotificationType{});
+    }
 }
 
 void InputComponent::paint (juce::Graphics& g)

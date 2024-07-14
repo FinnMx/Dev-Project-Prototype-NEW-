@@ -14,10 +14,10 @@
 //==============================================================================
 FrequencyCutoffs::FrequencyCutoffs()
 {
-    subBassCoefficient = *juce::dsp::IIR::Coefficients<float>::makeHighPass(44100.f, 95.f, 1);
-    bassCoefficient = *juce::dsp::IIR::Coefficients<float>::makeHighPass(44100.f, 250.f, 1);
-    midsCoefficient = *juce::dsp::IIR::Coefficients<float>::makeLowPass(44100.f, 3500.f, 1);
-    highCoefficient = *juce::dsp::IIR::Coefficients<float>::makeLowPass(44100.f, 5000.f, 1);
+    subBassCoefficient = *juce::dsp::IIR::Coefficients<float>::makeHighPass(44100.f, 20.f, 1);
+    bassCoefficient = *juce::dsp::IIR::Coefficients<float>::makeHighPass(44100.f, 20.f, 1);
+    midsCoefficient = *juce::dsp::IIR::Coefficients<float>::makeLowPass(44100.f, 20000.f, 1);
+    highCoefficient = *juce::dsp::IIR::Coefficients<float>::makeLowPass(44100.f, 20000.f, 1);
     *subBassFilter.state = subBassCoefficient;
     *bassFilter.state = bassCoefficient;
     *midsFilter.state = midsCoefficient;
@@ -29,62 +29,96 @@ FrequencyCutoffs::~FrequencyCutoffs()
 }
 
 void FrequencyCutoffs::setSubBassFilter(float newFreq) {
-    if (newFreq == 0)
-        return;
+    if (newFreq == 20.f) {
+        subBassCoefficient = *juce::dsp::IIR::Coefficients<float>::makeAllPass(44100, 20);
+        *subBassFilter.state = subBassCoefficient;
+    }
     subBassCoefficient = *juce::dsp::IIR::Coefficients<float>::makeHighPass(44100.f, newFreq, 0.7);
     *subBassFilter.state = subBassCoefficient;
 }
 
 void FrequencyCutoffs::setbassFilterr(float newFreq) {
-    if (newFreq == 0)
-        return;
+    if (newFreq == 20.f) {
+        bassCoefficient = *juce::dsp::IIR::Coefficients<float>::makeAllPass(44100, 20);
+        *bassFilter.state = bassCoefficient;
+    }
     bassCoefficient = *juce::dsp::IIR::Coefficients<float>::makeHighPass(44100.f, newFreq, 0.7);
     *bassFilter.state = bassCoefficient;
 }
 
 void FrequencyCutoffs::setmidsFilter(float newFreq) {
-    if (newFreq == 0)
-        return;
+    if (newFreq == 20000.f) {
+        midsCoefficient = *juce::dsp::IIR::Coefficients<float>::makeAllPass(44100, 20000);
+        *midsFilter.state = midsCoefficient;
+    }
     midsCoefficient = *juce::dsp::IIR::Coefficients<float>::makeLowPass(44100.f, newFreq, 0.7);
     *midsFilter.state = midsCoefficient;
 }
 
 void FrequencyCutoffs::sethighFilter(float newFreq) {
-    if (newFreq == 0)
-        return;
+    if (newFreq == 20000.f) {
+        highCoefficient = *juce::dsp::IIR::Coefficients<float>::makeAllPass(44100, 20000);
+        *highFilter.state = highCoefficient;
+    }
     highCoefficient = *juce::dsp::IIR::Coefficients<float>::makeLowPass(44100.f, newFreq, 0.7);
     *highFilter.state = highCoefficient;
 }
 
+void FrequencyCutoffs::setNewSubBassFreq(float newFreq) {
+    subBassFreq = newFreq;
+    if(subBassStatus)
+        setSubBassFilter(subBassFreq);
+}
+
+void FrequencyCutoffs::setNewBassFreq(float newFreq) {
+    bassFreq = newFreq;
+    if(bassStatus)
+        setbassFilterr(bassFreq);
+}
+
+void FrequencyCutoffs::setNewMidsFreq(float newFreq) {
+    midsFreq = newFreq;
+    if(midsStatus)
+        setmidsFilter(midsFreq);
+}
+
+void FrequencyCutoffs::setNewHighFreq(float newFreq) {
+    highFreq = newFreq;
+    if(highStatus)
+        sethighFilter(highFreq);
+}
+
 void FrequencyCutoffs::setSubBassStatus(bool newsubBassStatus) {
     subBassStatus = newsubBassStatus;
-
+    if (!newsubBassStatus)
+        setSubBassFilter(20.f);
+    if (newsubBassStatus) {
+        setSubBassFilter(subBassFreq);
+    }
 }
 void FrequencyCutoffs::setBassStatus(bool newbassStatus) {
     bassStatus = newbassStatus;
-
+    if (!newbassStatus)
+        setbassFilterr(20.f);
+    if (newbassStatus) {
+        setbassFilterr(bassFreq);
+    }
 }
 void FrequencyCutoffs::setMidsStatus(bool newmidsStatus) {
     midsStatus = newmidsStatus;
+    if (!newmidsStatus)
+        setmidsFilter(20000.f);
+    if (newmidsStatus) {
+        setmidsFilter(midsFreq);
+    }
 }
 void FrequencyCutoffs::setHighStatus(bool newhighStatus) {
     highStatus = newhighStatus;
-}
-
-void FrequencyCutoffs::subBassTarget(float newFreq) {
-    subBassFreq = newFreq;
-}
-
-void FrequencyCutoffs::bassTarget(float newFreq) {
-    bassFreq = newFreq;
-}
-
-void FrequencyCutoffs::midsTarget(float newFreq) {
-    midsFreq = newFreq;
-}
-
-void FrequencyCutoffs::highTarget(float newFreq) {
-    highFreq = newFreq;
+    if (!newhighStatus)
+        sethighFilter(20000.f);
+    if (highStatus) {
+        sethighFilter(highFreq);
+    }
 }
 
 
@@ -120,53 +154,10 @@ void FrequencyCutoffs::getNextAudioBlock(const juce::AudioSourceChannelInfo& buf
 
     juce::dsp::AudioBlock<float> block(*bufferToFill.buffer);
 
-    switch (subBassStatus) {
-    case true:
-        subBassSmoother.setTargetValue(subBassFreq);
-        setSubBassFilter(subBassSmoother.getNextValue());
         subBassFilter.process(juce::dsp::ProcessContextReplacing<float>(block));
-        break;
-    case false:
-        subBassSmoother.setTargetValue(20.f);
-        setSubBassFilter(subBassSmoother.getNextValue());
-        break;
-    }
-
-    switch (bassStatus) {
-    case true:
-        bassSmoother.setTargetValue(bassFreq);
-        setbassFilterr(bassSmoother.getNextValue());
         bassFilter.process(juce::dsp::ProcessContextReplacing<float>(block));
-        break;
-    case false:
-        bassSmoother.setTargetValue(20.f);
-        setbassFilterr(bassSmoother.getNextValue());
-        break;
-    }
-
-    switch (midsStatus) {
-    case true:
-        midsSmoother.setTargetValue(midsFreq);
-        setmidsFilter(midsSmoother.getNextValue());
         midsFilter.process(juce::dsp::ProcessContextReplacing<float>(block));
-        break;
-    case false:
-        midsSmoother.setTargetValue(20000.f);
-        setmidsFilter(midsSmoother.getNextValue());
-        break;
-    }
-
-    switch (highStatus) {
-    case true:
-        highSmoother.setTargetValue(highFreq);
-        sethighFilter(highSmoother.getNextValue());
         highFilter.process(juce::dsp::ProcessContextReplacing<float>(block));
-        break;
-    case false:
-        highSmoother.setTargetValue(20000.f);
-        sethighFilter(highSmoother.getNextValue());
-        break;
-    }
 
 }
 

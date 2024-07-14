@@ -26,15 +26,15 @@ public:
     void setmidsFilter(float newFreq);
     void sethighFilter(float newFreq);
 
+    void setNewSubBassFreq(float newFreq);
+    void setNewBassFreq(float newFreq);
+    void setNewMidsFreq(float newFreq);
+    void setNewHighFreq(float newFreq);
+
     void setSubBassStatus(bool newsubBassStatus);
     void setBassStatus(bool newbassStatus);
     void setMidsStatus(bool newmidsStatus);
     void setHighStatus(bool newhighStatus);
-
-    void subBassTarget(float newFreq);
-    void bassTarget(float newFreq);
-    void midsTarget(float newFreq);
-    void highTarget(float newFreq);
 
     std::vector<juce::dsp::IIR::Coefficients<float>*> getCoefficients();
 

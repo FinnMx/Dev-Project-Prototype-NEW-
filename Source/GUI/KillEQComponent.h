@@ -17,9 +17,9 @@
 //==============================================================================
 /*
 */
-class KillEQComponent  : public juce::AudioAppComponent,
-                         public juce::Slider::Listener,
-                         public juce::Button::Listener
+class KillEQComponent : public juce::AudioAppComponent,
+    public juce::Slider::Listener,
+    public juce::Button::Listener
 {
 public:
     KillEQComponent(FrequencyCutoffs* freqCutoffs);
@@ -37,7 +37,7 @@ public:
     void buttonClicked(juce::Button* button) override;
     void sliderValueChanged(juce::Slider* slider) override;
 
-    void paint (juce::Graphics&) override;
+    void paint(juce::Graphics&) override;
     void resized() override;
 
 private:
@@ -60,5 +60,5 @@ private:
 
     AudioVisualiserComponent visualiser;
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (KillEQComponent)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(KillEQComponent)
 };
