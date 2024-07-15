@@ -37,7 +37,10 @@ public:
 
     void updateAngleDelta();
 
+    void resetOscillators();
+
 private:
+
     CircularBuffer* circularBuffer;
 
     juce::AudioBuffer<float> copyBuffer;

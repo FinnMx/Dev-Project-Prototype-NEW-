@@ -24,6 +24,7 @@
 #include <Settings/AudioSettingsComponent.h>
 #include <Settings/keyBindingsComponent.h>
 #include <Settings/PopoutWindow.h>
+#include <Settings/SettingsHandler.h>
 
 
 //==============================================================================
@@ -70,6 +71,8 @@ private:
     juce::AudioDeviceManager deviceManager;
     std::unique_ptr<juce::AudioDeviceSelectorComponent> audioSettings;
 
+    SettingsHandler settingsHandler;
+
     //Setting windows
     juce::ScopedPointer<PopoutWindow> audioWindow;
     AudioSettingsComponent audioSettingsWindow;
@@ -105,7 +108,7 @@ private:
     KillEQComponent killEQComponent{ &freqCutoffs };
 
     DubSiren dubSirenPlayer{ &circularBuffer };
-    DubSirenComponent dubSiren{ &dubSirenPlayer };
+    DubSirenComponent dubSiren{ &dubSirenPlayer, &settingsHandler };
 
     TenBandComponent tenBandComponent{ &tenBandEQ };
 

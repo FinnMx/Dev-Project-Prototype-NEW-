@@ -62,7 +62,6 @@ void DubSiren::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFil
 
     const auto numChannels = juce::jmax(totalNumInputChannels, totalNumOutputChannels);
 
-
         copyBuffer.setSize(2, bufferToFill.buffer->getNumSamples());
         auto* data = bufferToFill.buffer->getReadPointer(0);
         copyBuffer.copyFrom(0, 0, data, bufferToFill.buffer->getNumSamples());
@@ -76,9 +75,9 @@ void DubSiren::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFil
         {
             lfoOscillator->setFrequency(lfoFrequency);
             auto lfoValue = lfoOscillator->processSample(0.0);
-            oscillator->setFrequency(frequency + (lfoValue * 100.f)); // 60.f IS THE "MODULATION DEPTH"
+            oscillator->setFrequency(frequency + (lfoValue * 100.f));
 
-            auto currentSample = oscillator->processSample(0.0); 
+            auto currentSample = oscillator->processSample(0.0);
             leftBuffer[sample] = currentSample * level;
             rightBuffer[sample] = currentSample * level;
         }
@@ -88,20 +87,25 @@ void DubSiren::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFil
         juce::AudioBuffer<float> tempBuffer(2, bufferToFill.buffer->getNumSamples());
         tempBuffer.clear();
 
-        if (trigger) {
-        //LAST FLOAT SHOULD BE A VOLUME VALUE
-        bufferToFill.buffer->addFrom(0, 0, leftBuffer, bufferToFill.buffer->getNumSamples(), volume);
-        bufferToFill.buffer->addFrom(1, 0, rightBuffer, bufferToFill.buffer->getNumSamples(), volume);
 
-        //hhhhmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
-        tempBuffer.addFrom(0, 0, leftBuffer, bufferToFill.buffer->getNumSamples(), volume);
-        tempBuffer.addFrom(1, 0, rightBuffer, bufferToFill.buffer->getNumSamples(), volume);
+        if (trigger) {
+            //LAST FLOAT SHOULD BE A VOLUME VALUE
+            bufferToFill.buffer->addFrom(0, 0, leftBuffer, bufferToFill.buffer->getNumSamples(), volume);
+            bufferToFill.buffer->addFrom(1, 0, rightBuffer, bufferToFill.buffer->getNumSamples(), volume);
+
+            //hhhhmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+            tempBuffer.addFrom(0, 0, leftBuffer, bufferToFill.buffer->getNumSamples(), volume);
+            tempBuffer.addFrom(1, 0, rightBuffer, bufferToFill.buffer->getNumSamples(), volume);
+
         }
-        circularBuffer->updateSirenBuffer(tempBuffer);
+            circularBuffer->updateSirenBuffer(tempBuffer);
+        
 }
 
 void DubSiren::setTrigger(bool newTrigger) {
     trigger = newTrigger;
+    if (trigger == false)
+        resetOscillators();
 }
 
 void DubSiren::setFrequency(float newFrequency) {
@@ -157,4 +161,9 @@ void DubSiren::releaseResources() {
 }
 
 void DubSiren::updateAngleDelta() {
+}
+
+void DubSiren::resetOscillators() {
+    oscillator->reset();
+    lfoOscillator->reset();
 }

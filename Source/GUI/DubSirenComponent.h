@@ -12,6 +12,7 @@
 
 #include <JuceHeader.h>
 #include <Audio/DubSiren.h>
+#include <Settings/SettingsHandler.h>
 
 //==============================================================================
 /*
@@ -21,7 +22,7 @@ class DubSirenComponent  : public juce::Component,
                            public juce::Slider::Listener
 {
 public:
-    DubSirenComponent(DubSiren* dubSiren);
+    DubSirenComponent(DubSiren* dubSiren, SettingsHandler* settingsHandler);
     ~DubSirenComponent() override;
 
     void initSlider();
@@ -40,13 +41,24 @@ public:
 
 private:
     DubSiren* dubSiren;
+    SettingsHandler* settingsHandler;
+
+    void applyPreset();
+    void savePreset();
 
     bool isFocused { false };
+
+    std::vector<std::array<float,4>> presets;
+    int currentPreset{ 0 };
+    juce::TextButton nextPreset{">"};
+    juce::TextButton prevPreset{"<"};
+
 
     juce::Slider frequencySlider;
     juce::Slider lfoFrequencySlider;
     juce::Slider volumeSlider;
     juce::Slider waveTypeSlider;
+    juce::Slider lfoWaveTypeSlider;
 
     juce::Slider presetSlider;
 
@@ -54,8 +66,10 @@ private:
 
     juce::Label frequencySliderLabel{ "Frequency", "Frequency" };
     juce::Label lfoFrequencySliderLabel{ "LfoFrequency", "LfoFrequency" };
-    juce::Label waveTypeSliderLabel{ "LfoFrequency", "LfoFrequency" };
+    juce::Label waveTypeSliderLabel{ "waveType", "waveType" };
     juce::Label volumeSliderLabel{ "Volume", "Volume" };
+    juce::Label lfoWaveTypeSliderLabel{ "lfoWaveType", "lfoWaveType" };
+
     juce::Label val{ "currentSliderVal", "" };
 
     juce::Label presetSliderLabel{ "Peset", "Preset" };

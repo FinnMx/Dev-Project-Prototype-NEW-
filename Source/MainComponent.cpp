@@ -290,21 +290,21 @@ void MainComponent::resized()
     dubSiren.setBounds(
         getX(),
         getHeight() * 0.39,
-        getWidth() * 0.15,
+        getWidth() * 0.25,
         getHeight() * 0.32
     );
 
     reverbComponent.setBounds(
-        getWidth() * 0.15,
+        getWidth() * 0.25,
         getHeight() * 0.39,
-        getWidth() * 0.85,
+        getWidth() * 0.75,
         getHeight() * 0.16
     );
 
     delayComponent.setBounds(
-        getWidth() * 0.15,
+        getWidth() * 0.25,
         getHeight() * 0.55,
-        getWidth() * 0.85,
+        getWidth() * 0.75,
         getHeight() * 0.16
     );
 

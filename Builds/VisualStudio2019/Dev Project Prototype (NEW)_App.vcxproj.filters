@@ -3120,6 +3120,9 @@
     <ClCompile Include="..\..\Source\Threads\FrequencyLevelThread.cpp">
       <Filter>Dev Project Prototype %28NEW%29\Source\Threads</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Settings\SettingsHandler.cpp">
+      <Filter>Dev Project Prototype %28NEW%29\Source\Settings</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\Audio\CircularBuffer.h">
@@ -6181,6 +6184,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\Threads\FrequencyLevelThread.h">
       <Filter>Dev Project Prototype %28NEW%29\Source\Threads</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Settings\SettingsHandler.h">
+      <Filter>Dev Project Prototype %28NEW%29\Source\Settings</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
