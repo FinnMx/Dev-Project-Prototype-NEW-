@@ -48,7 +48,7 @@ private:
 
     bool isFocused { false };
 
-    std::vector<std::array<float,4>> presets;
+    std::vector<std::array<float,5>> presets;
     int currentPreset{ 0 };
     juce::TextButton nextPreset{">"};
     juce::TextButton prevPreset{"<"};
@@ -59,6 +59,7 @@ private:
     juce::Slider volumeSlider;
     juce::Slider waveTypeSlider;
     juce::Slider lfoWaveTypeSlider;
+    juce::Slider modulationDepthSlider;
 
     juce::Slider presetSlider;
 
@@ -71,6 +72,7 @@ private:
     juce::Label waveTypeSliderLabel{ "waveType", "waveType" };
     juce::Label volumeSliderLabel{ "Volume", "Volume" };
     juce::Label lfoWaveTypeSliderLabel{ "lfoWaveType", "lfoWaveType" };
+    juce::Label modulationDepthSliderLabel{ "modulationDepth","modulationDepth" };
 
     juce::Label val{ "currentSliderVal", "" };
 

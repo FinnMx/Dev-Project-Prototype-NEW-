@@ -79,7 +79,7 @@ void DubSiren::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFil
         {
             lfoOscillator->setFrequency(lfoFrequency);
             auto lfoValue = lfoOscillator->processSample(0.0);
-            oscillator->setFrequency(frequency + (lfoValue * 100.f));
+            oscillator->setFrequency(frequency + (lfoValue * modulationDepth));
 
             auto currentSample = oscillator->processSample(0.0);
             leftBuffer[sample] = currentSample * level;

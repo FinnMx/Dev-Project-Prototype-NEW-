@@ -39,7 +39,7 @@ bool SettingsHandler::IfFileExists(const std::string& fileName) {
 void SettingsHandler::CreateDefaultDubSirenSettings(const std::string& fileName) {
     std::ofstream outfile(fileName);
     for (int i = 0; i < DUBSIREN_NUM_PRESETS; ++i) {
-        outfile << "100,25,1,2\n";  // Default values
+        outfile << "100,25,1,2,80\n";  // Default values
     }
     outfile.close();
 }

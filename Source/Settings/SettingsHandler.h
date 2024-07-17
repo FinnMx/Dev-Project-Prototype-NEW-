@@ -19,7 +19,7 @@ public:
 	SettingsHandler();
 	~SettingsHandler();
 
-	using Settings = std::vector<std::array<float, 4>>;
+	using Settings = std::vector<std::array<float, 5>>;
 
 	void SaveDubSirenSettings(const SettingsHandler::Settings& settings);
 	Settings LoadDubSirenSettings();
@@ -34,7 +34,7 @@ private:
 	std::string dubSirenSettingsFilePath;
 
     const int DUBSIREN_NUM_PRESETS = 5;
-	const int DUBSIREN_NUM_VALUES = 4;
+	const int DUBSIREN_NUM_VALUES = 5;
 
 };
 

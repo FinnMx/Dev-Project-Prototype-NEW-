@@ -48,7 +48,7 @@ private:
 
     float frequency{ 1300 };
     float lfoFrequency{ 0.1 };
-    float modulationDepth{ 60.0 };
+    float modulationDepth{ 60.0f };
     float volume{ 0.5f };
 
     juce::dsp::Oscillator<float>* oscillator;
