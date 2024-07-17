@@ -25,6 +25,10 @@ DubSirenComponent::DubSirenComponent(DubSiren* dubSiren, SettingsHandler* settin
     addAndMakeVisible(lfoWaveTypeSlider);
     //addAndMakeVisible(presetSlider);
 
+    addAndMakeVisible(currentPresetLabel);
+    //currentPresetLabel.attachToComponent(&prevPreset, false);
+    //currentPresetLabel.setJustificationType(juce::Justification::centredBottom);
+
     addAndMakeVisible(nextPreset);
     addAndMakeVisible(prevPreset);
 
@@ -37,6 +41,8 @@ DubSirenComponent::DubSirenComponent(DubSiren* dubSiren, SettingsHandler* settin
     frequencySlider.addListener(this);
     waveTypeSlider.addListener(this);
     volumeSlider.addListener(this);
+
+    currentPresetLabel.setText("Preset: " + juce::String(currentPreset + 1), juce::NotificationType{});
 }
 
 DubSirenComponent::~DubSirenComponent()
@@ -144,6 +150,7 @@ void DubSirenComponent::buttonClicked(juce::Button* button) {
             currentPreset = 0;
         applyPreset();
     }
+    currentPresetLabel.setText("Preset: " + juce::String(currentPreset + 1), juce::NotificationType{});
 }
 
 void DubSirenComponent::sliderValueChanged(juce::Slider* slider) {
@@ -270,5 +277,10 @@ void DubSirenComponent::resized()
         getHeight() * 0.9,
         getWidth() * 0.05,
         getHeight() * 0.05);
+
+    currentPresetLabel.setBounds(getWidth() * 0.3,
+        getHeight() * 0.9,
+        getWidth() * 0.2,
+        getHeight() * 0.075);
 
 }

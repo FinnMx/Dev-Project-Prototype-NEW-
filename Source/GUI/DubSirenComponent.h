@@ -64,6 +64,8 @@ private:
 
     juce::ToggleButton trigger;
 
+    juce::Label currentPresetLabel{ "currentPresetLabel", "currentPresetLabel" };
+
     juce::Label frequencySliderLabel{ "Frequency", "Frequency" };
     juce::Label lfoFrequencySliderLabel{ "LfoFrequency", "LfoFrequency" };
     juce::Label waveTypeSliderLabel{ "waveType", "waveType" };
