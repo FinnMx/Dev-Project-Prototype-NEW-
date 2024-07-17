@@ -177,12 +177,15 @@ void DubSirenComponent::handleMidi(int action, int value) {
     const juce::MessageManagerLock mmLock;
     switch (action) {
     case 0:
-        presetSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 1.f, 8.f));
+        prevPreset.triggerClick();
         break;
     case 1:
-        trigger.triggerClick();
+        nextPreset.triggerClick();
         break;
     case 2:
+        trigger.triggerClick();
+        break;
+    case 3:
         volumeSlider.setValue(juce::jmap((float)value, (float)0, (float)127, 0.f, 6.f));
         break;
     }

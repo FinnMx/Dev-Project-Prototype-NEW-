@@ -57,11 +57,11 @@ private:
     juce::TextButton inputBParameters[5];
     juce::TextButton thumbnailParameters[2];
     juce::TextButton tenBandParameters[12];
-    juce::TextButton dubSirenParameters[3];
+    juce::TextButton dubSirenParameters[4];
     juce::TextButton reverbParameters[3];
     juce::TextButton delayParameters[7];
     juce::TextButton killEQParameters[4];
-    int parameterSizes[8]{ 5, 5, 2, 12, 3, 3, 7, 4 };
+    int parameterSizes[8]{ 5, 5, 2, 12, 4, 3, 7, 4 };
     int numParameters{ sizeof(headings) / sizeof(*headings) };
 
     juce::TextButton* parameters[8];
@@ -73,7 +73,7 @@ private:
     float tenBandButtonBounds[12][4] = { {0.778,0.085,0.02,0.2} ,{0.8,0.085,0.02,0.2},{0.822,0.085,0.02,0.2},{0.844,0.085,0.02,0.2},{0.866,0.085,0.02,0.2},
                                          {0.888,0.085,0.02,0.2} ,{0.91,0.085,0.02,0.2},{0.932,0.085,0.02,0.2},{0.954,0.085,0.02,0.2},{0.976,0.085,0.02,0.2}, {0.7725,0.34,0.04,0.04} ,{0.965,0.34,0.04,0.04} };
 
-    float dubSirenButtonBounds[3][4] = { {0.012,0.495,0.05,0.075} ,{0.03,0.675,0.015,0.025},{0.087,0.63,0.05,0.075} };
+    float dubSirenButtonBounds[4][4] = { {0.012,0.495,0.05,0.075} ,{0.018,0.495,0.05,0.075} ,{0.03,0.625,0.015,0.025},{0.087,0.63,0.05,0.075} };
 
     float reverbButtonBounds[3][4] = { {0.362,0.42,0.075,0.1} , {0.512,0.42,0.075,0.1}, {0.662,0.42,0.075,0.1} };
 
