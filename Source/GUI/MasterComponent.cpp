@@ -43,7 +43,12 @@ void MasterComponent::timerCallback() {
     rmsLeft.repaint();
     rmsRight.repaint();
 
-    VolumeLabel.setText(juce::String(((int)*masterLeft + (int)*masterRight) / 2) + "Db", juce::NotificationType{});
+    timerMagic = timerMagic * 2;
+
+    if (timerMagic == 32) {
+        timerMagic = 1;
+        VolumeLabel.setText(juce::String(((int)*masterLeft + (int)*masterRight) / 2) + "Db", juce::NotificationType{});
+    }
 }
 
 void MasterComponent::paint (juce::Graphics& g)

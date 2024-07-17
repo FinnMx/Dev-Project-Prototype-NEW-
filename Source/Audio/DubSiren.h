@@ -54,6 +54,8 @@ private:
     juce::dsp::Oscillator<float>* oscillator;
     juce::dsp::Oscillator<float> square;
     juce::dsp::Oscillator<float> sawtooth;
+    juce::dsp::Oscillator<float> sine;
+    juce::dsp::Oscillator<float> triangle;
 
     juce::dsp::Oscillator<float>* lfoOscillator;
     juce::dsp::Oscillator<float> sineLFO;

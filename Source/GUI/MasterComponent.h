@@ -39,6 +39,8 @@ private:
     MeterComponent rmsRight;
     juce::Label VolumeLabel;
 
+    int timerMagic{ 1 };
+
     juce::MixerAudioSource* mixerSource;
     ExternalInput* externalInput;
 

@@ -1,330 +1,138 @@
-﻿  DubSiren.cpp
-  DubSirenComponent.cpp
-  KeyBindingsComponent.cpp
-  DelayComponent.cpp
-  Main.cpp
-  MainComponent.cpp
-  MidiHandler.cpp
-  SettingsHandler.cpp
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\SettingsHandler.cpp(59,58): warning C4244: '=': conversion from 'int' to '_Ty', possible loss of data
+﻿  DubSirenComponent.cpp
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\DubSiren.h(50,23): warning C4305: 'initializing': truncation from 'double' to 'float'
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(151,50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(153,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(155,62): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(157,54): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(159,60): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(163,57): warning C4100: 'slider': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(166,55): warning C4100: 'slider': unreferenced formal parameter
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(215,57): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
           with
           [
               _Ty=float
           ]
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\DubSiren.h(50,23): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\GUI\DubSirenComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\DubSiren.h(50,23): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Audio\DubSiren.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\DubSiren.cpp(40,66): warning C4100: 'sampleRate': unreferenced formal parameter
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(69,164): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Settings\KeyBindingsComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(70,159): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Settings\KeyBindingsComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(74,207): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Settings\KeyBindingsComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(76,118): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Settings\KeyBindingsComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(78,113): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Settings\KeyBindingsComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(81,90): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Settings\KeyBindingsComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(82,140): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Settings\KeyBindingsComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.cpp(146,161): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.cpp(146,124): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.cpp(146,88): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.cpp(146,51): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(114,50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(116,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(118,62): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(120,54): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(122,60): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(126,57): warning C4100: 'slider': unreferenced formal parameter
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(129,55): warning C4100: 'slider': unreferenced formal parameter
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(178,57): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(216,60): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
           with
           [
               _Ty=float
           ]
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(179,60): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(217,56): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
           with
           [
               _Ty=float
           ]
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(180,56): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(218,59): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
           with
           [
               _Ty=float
           ]
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(181,59): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
-          with
-          [
-              _Ty=float
-          ]
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(191,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(190,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(189,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(188,42): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(196,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(195,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(194,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(193,45): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(201,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(200,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(199,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(198,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(206,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(205,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(204,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(203,44): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(220,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(219,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(218,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(217,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(225,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(224,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(223,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(222,34): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(230,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(229,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(228,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(227,37): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(235,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(234,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(227,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(226,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(225,42): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(233,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(232,37): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\encodings.h(148,1): warning C4005: 'TRANS': macro redefinition (compiling source file ..\..\Source\MidiHandler.cpp)
-C:\JUCE\modules\juce_core\text\juce_LocalisedStrings.h(208): message : see previous definition of 'TRANS' (compiling source file ..\..\Source\MidiHandler.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(110,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,internal::MaybeAddConst<Const,rapidjson::GenericMember<Encoding,Allocator>>::Type,ptrdiff_t,internal::MaybeAddConst<Const,rapidjson::GenericMember<Encoding,Allocator>>::Type*,internal::MaybeAddConst<Const,rapidjson::GenericMember<Encoding,Allocator>>::Type&>': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning. (compiling source file ..\..\Source\MidiHandler.cpp)
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.29.30133\include\xutility(5911,54): message : see declaration of 'std::iterator' (compiling source file ..\..\Source\MidiHandler.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(194): message : see reference to class template instantiation 'rapidjson::GenericMemberIterator<Const,Encoding,Allocator>' being compiled (compiling source file ..\..\Source\MidiHandler.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(958,76): warning C4003: not enough arguments for function-like macro invocation 'max' (compiling source file ..\..\Source\MidiHandler.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(964,76): warning C4003: not enough arguments for function-like macro invocation 'min' (compiling source file ..\..\Source\MidiHandler.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(965,75): warning C4003: not enough arguments for function-like macro invocation 'max' (compiling source file ..\..\Source\MidiHandler.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(982,66): warning C4003: not enough arguments for function-like macro invocation 'max' (compiling source file ..\..\Source\MidiHandler.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(983,72): warning C4003: not enough arguments for function-like macro invocation 'max' (compiling source file ..\..\Source\MidiHandler.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(69,164): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\MidiHandler.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(70,159): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\MidiHandler.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(74,207): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\MidiHandler.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(76,118): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\MidiHandler.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\encodings.h(148,1): warning C4005: 'TRANS': macro redefinition (compiling source file ..\..\Source\MainComponent.cpp)
-C:\JUCE\modules\juce_core\text\juce_LocalisedStrings.h(208): message : see previous definition of 'TRANS' (compiling source file ..\..\Source\MainComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(78,113): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\MidiHandler.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(81,90): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\MidiHandler.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(82,140): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\MidiHandler.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(102,19): warning C4996: 'std::iterator<std::random_access_iterator_tag,rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,rapidjson::GenericMember<Encoding,Allocator> *,rapidjson::GenericMember<Encoding,Allocator> &>': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(232,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(231,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(230,45): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(238,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(237,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(236,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(235,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(243,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(242,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(241,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(240,44): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(257,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(256,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(255,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(254,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(262,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(261,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(260,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(259,34): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(267,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(266,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(265,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(264,37): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(272,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(271,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(270,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(269,37): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.29.30133\include\type_traits(1595,67): warning C4244: 'argument': conversion from '_Ty1' to 'float', possible loss of data
           with
           [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ] (compiling source file ..\..\Source\MidiHandler.cpp)
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.29.30133\include\xutility(5911,54): message : see declaration of 'std::iterator' (compiling source file ..\..\Source\MidiHandler.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(548): message : see reference to class template instantiation 'rapidjson::GenericMemberIterator<false,Encoding,Allocator>' being compiled
-          with
-          [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ] (compiling source file ..\..\Source\MidiHandler.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(2024): message : see reference to class template instantiation 'rapidjson::GenericValue<rapidjson::UTF8<char>,rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>>' being compiled (compiling source file ..\..\Source\MidiHandler.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MidiHandler.cpp(44): message : see reference to class template instantiation 'rapidjson::GenericDocument<rapidjson::UTF8<char>,rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>,rapidjson::CrtAllocator>' being compiled
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(110,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,rapidjson::GenericMember<Encoding,Allocator> *,rapidjson::GenericMember<Encoding,Allocator> &>': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
-          with
-          [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ] (compiling source file ..\..\Source\MidiHandler.cpp)
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.29.30133\include\xutility(5911,54): message : see declaration of 'std::iterator' (compiling source file ..\..\Source\MidiHandler.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(121,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,rapidjson::GenericMember<Encoding,Allocator> *,rapidjson::GenericMember<Encoding,Allocator> &>::pointer': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
-          with
-          [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ] (compiling source file ..\..\Source\MidiHandler.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(123,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,rapidjson::GenericMember<Encoding,Allocator> *,rapidjson::GenericMember<Encoding,Allocator> &>::reference': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
-          with
-          [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ] (compiling source file ..\..\Source\MidiHandler.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(125,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,rapidjson::GenericMember<Encoding,Allocator> *,rapidjson::GenericMember<Encoding,Allocator> &>::difference_type': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
-          with
-          [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ] (compiling source file ..\..\Source\MidiHandler.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(110,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,internal::MaybeAddConst<Const,rapidjson::GenericMember<Encoding,Allocator>>::Type,ptrdiff_t,internal::MaybeAddConst<Const,rapidjson::GenericMember<Encoding,Allocator>>::Type*,internal::MaybeAddConst<Const,rapidjson::GenericMember<Encoding,Allocator>>::Type&>': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning. (compiling source file ..\..\Source\MainComponent.cpp)
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.29.30133\include\xutility(5911,54): message : see declaration of 'std::iterator' (compiling source file ..\..\Source\MainComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(102,19): warning C4996: 'std::iterator<std::random_access_iterator_tag,const rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,const rapidjson::GenericMember<Encoding,Allocator> *,const rapidjson::GenericMember<Encoding,Allocator> &>': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
-          with
-          [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ] (compiling source file ..\..\Source\MidiHandler.cpp)
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.29.30133\include\xutility(5911,54): message : see declaration of 'std::iterator' (compiling source file ..\..\Source\MidiHandler.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(194): message : see reference to class template instantiation 'rapidjson::GenericMemberIterator<Const,Encoding,Allocator>' being compiled (compiling source file ..\..\Source\MainComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(549): message : see reference to class template instantiation 'rapidjson::GenericMemberIterator<true,Encoding,Allocator>' being compiled
-          with
-          [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ] (compiling source file ..\..\Source\MidiHandler.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(110,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,const rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,const rapidjson::GenericMember<Encoding,Allocator> *,const rapidjson::GenericMember<Encoding,Allocator> &>': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
-          with
-          [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ] (compiling source file ..\..\Source\MidiHandler.cpp)
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.29.30133\include\xutility(5911,54): message : see declaration of 'std::iterator' (compiling source file ..\..\Source\MidiHandler.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(121,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,const rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,const rapidjson::GenericMember<Encoding,Allocator> *,const rapidjson::GenericMember<Encoding,Allocator> &>::pointer': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
-          with
-          [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ] (compiling source file ..\..\Source\MidiHandler.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(123,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,const rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,const rapidjson::GenericMember<Encoding,Allocator> *,const rapidjson::GenericMember<Encoding,Allocator> &>::reference': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
-          with
-          [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ] (compiling source file ..\..\Source\MidiHandler.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(125,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,const rapidjson::GenericMember<Encoding,Allocator>,ptrdiff_t,const rapidjson::GenericMember<Encoding,Allocator> *,const rapidjson::GenericMember<Encoding,Allocator> &>::difference_type': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
-          with
-          [
-              Encoding=rapidjson::UTF8<char>,
-              Allocator=rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>
-          ] (compiling source file ..\..\Source\MidiHandler.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MidiHandler.cpp(75,53): warning C4100: 'document': unreferenced formal parameter
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MidiHandler.cpp(76,9): warning C4189: 'componentIndex': local variable is initialized but not referenced
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(69,164): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\MainComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(70,159): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\MainComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(74,207): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\MainComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(76,118): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\MainComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(78,113): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\MainComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(81,90): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\MainComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(82,140): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\MainComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\TenBandEQ.h(39,105): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\MainComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\DubSiren.h(50,23): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\MainComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.h(77,11): warning C4996: 'juce::ScopedPointer<PopoutWindow>': was declared deprecated (compiling source file ..\..\Source\MainComponent.cpp)
-C:\JUCE\modules\juce_core\memory\juce_ScopedPointer.h(34,1): message : see declaration of 'juce::ScopedPointer' (compiling source file ..\..\Source\MainComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.h(79,11): warning C4996: 'juce::ScopedPointer<PopoutWindow>': was declared deprecated (compiling source file ..\..\Source\MainComponent.cpp)
-C:\JUCE\modules\juce_core\memory\juce_ScopedPointer.h(34,1): message : see declaration of 'juce::ScopedPointer' (compiling source file ..\..\Source\MainComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(9,1): warning C4996: 'juce::ScopedPointer<PopoutWindow>::ScopedPointer': was declared deprecated
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(46,17): warning C4996: 'juce::ScopedPointer<PopoutWindow>::operator =': was declared deprecated
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(51): warning C4996: 'juce::ScopedPointer<PopoutWindow>::~ScopedPointer': was declared deprecated
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(116,74): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(116,55): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(116,13): warning C4996: 'juce::ScopedPointer<PopoutWindow>::operator ->': was declared deprecated
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(117,13): warning C4996: 'juce::ScopedPointer<PopoutWindow>::operator ->': was declared deprecated
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(120,79): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(120,60): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(110,91): warning C4100: 'menuName': unreferenced formal parameter
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(137,58): warning C4100: 'topLevelMenuIndex': unreferenced formal parameter
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(137,42): warning C4100: 'menuItemID': unreferenced formal parameter
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(141,64): warning C4100: 'source': unreferenced formal parameter
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(189,50): warning C4458: declaration of 'x' hides class member
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.h(68,9): message : see declaration of 'MainComponent::x' (compiling source file ..\..\Source\MainComponent.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(220,43): warning C4239: nonstandard extension used: 'argument': conversion from 'ElementType' to 'juce::MidiDeviceInfo &'
-          with
-          [
-              ElementType=juce::MidiDeviceInfo
+              _Ty1=double
           ]
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(220,43): message : A non-const reference may only be bound to an lvalue
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(240,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(249,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(248,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(247,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(256,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(255,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(254,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(253,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(263,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(262,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(261,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(260,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(270,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(269,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(268,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(267,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(277,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(276,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(275,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(274,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(284,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(283,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(282,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(281,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(294,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(293,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(292,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(301,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(300,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(299,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(298,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(308,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(307,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(306,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(305,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(319,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(317,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.cpp(323,78): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(116,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(117,57): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(118,78): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(119,80): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(115,55): warning C4100: 'slider': unreferenced formal parameter
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(123,55): warning C4100: 'slider': unreferenced formal parameter
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(127,53): warning C4100: 'slider': unreferenced formal parameter
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(132,72): warning C4100: 'sampleRate': unreferenced formal parameter
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(132,40): warning C4100: 'samplesPerBlockExpected': unreferenced formal parameter
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(177,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(176,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(175,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(174,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(184,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(183,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(182,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(181,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(190,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(189,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(188,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(187,49): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(196,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(195,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(194,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(193,48): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(202,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(201,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(200,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(199,32): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(207,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(206,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(205,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(204,36): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(212,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(211,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(210,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(209,36): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(217,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(216,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(215,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DelayComponent.cpp(214,37): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\encodings.h(148,1): warning C4005: 'TRANS': macro redefinition (compiling source file ..\..\Source\Main.cpp)
-C:\JUCE\modules\juce_core\text\juce_LocalisedStrings.h(208): message : see previous definition of 'TRANS' (compiling source file ..\..\Source\Main.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(110,5): warning C4996: 'std::iterator<std::random_access_iterator_tag,internal::MaybeAddConst<Const,rapidjson::GenericMember<Encoding,Allocator>>::Type,ptrdiff_t,internal::MaybeAddConst<Const,rapidjson::GenericMember<Encoding,Allocator>>::Type*,internal::MaybeAddConst<Const,rapidjson::GenericMember<Encoding,Allocator>>::Type&>': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning. (compiling source file ..\..\Source\Main.cpp)
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.29.30133\include\xutility(5911,54): message : see declaration of 'std::iterator' (compiling source file ..\..\Source\Main.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(194): message : see reference to class template instantiation 'rapidjson::GenericMemberIterator<Const,Encoding,Allocator>' being compiled (compiling source file ..\..\Source\Main.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(958,76): warning C4003: not enough arguments for function-like macro invocation 'max' (compiling source file ..\..\Source\Main.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(964,76): warning C4003: not enough arguments for function-like macro invocation 'min' (compiling source file ..\..\Source\Main.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(965,75): warning C4003: not enough arguments for function-like macro invocation 'max' (compiling source file ..\..\Source\Main.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(982,66): warning C4003: not enough arguments for function-like macro invocation 'max' (compiling source file ..\..\Source\Main.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\rapidjson\document.h(983,72): warning C4003: not enough arguments for function-like macro invocation 'max' (compiling source file ..\..\Source\Main.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(69,164): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Main.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(70,159): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Main.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(74,207): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Main.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(76,118): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Main.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(78,113): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Main.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(81,90): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Main.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Settings\KeyBindingsComponent.h(82,140): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Main.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\TenBandEQ.h(39,105): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Main.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Audio\DubSiren.h(50,23): warning C4305: 'initializing': truncation from 'double' to 'float' (compiling source file ..\..\Source\Main.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.h(77,11): warning C4996: 'juce::ScopedPointer<PopoutWindow>': was declared deprecated (compiling source file ..\..\Source\Main.cpp)
-C:\JUCE\modules\juce_core\memory\juce_ScopedPointer.h(34,1): message : see declaration of 'juce::ScopedPointer' (compiling source file ..\..\Source\Main.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\MainComponent.h(79,11): warning C4996: 'juce::ScopedPointer<PopoutWindow>': was declared deprecated (compiling source file ..\..\Source\Main.cpp)
-C:\JUCE\modules\juce_core\memory\juce_ScopedPointer.h(34,1): message : see declaration of 'juce::ScopedPointer' (compiling source file ..\..\Source\Main.cpp)
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Main.cpp(25,42): warning C4100: 'commandLine': unreferenced formal parameter
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\Main.cpp(47,54): warning C4100: 'commandLine': unreferenced formal parameter
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.29.30133\include\functional(752): message : see reference to function template instantiation 'juce::String std::invoke<_Callable&,_Ty,>(DubSirenComponent::initSlider::<lambda_2d3eda0ee7b735479f6b9ba0f3f75519>&,_Ty1 &&) noexcept(false)' being compiled
+          with
+          [
+              _Callable=DubSirenComponent::initSlider::<lambda_2d3eda0ee7b735479f6b9ba0f3f75519>,
+              _Ty=double,
+              _Ty1=double
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.29.30133\include\functional(919): message : see reference to function template instantiation '_Rx std::_Invoker_ret<_Rx,false>::_Call<_Callable&,_Ty>(_Fx,_Ty &&) noexcept(false)' being compiled
+          with
+          [
+              _Rx=juce::String,
+              _Callable=DubSirenComponent::initSlider::<lambda_2d3eda0ee7b735479f6b9ba0f3f75519>,
+              _Ty=double,
+              _Fx=DubSirenComponent::initSlider::<lambda_2d3eda0ee7b735479f6b9ba0f3f75519> &
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.29.30133\include\functional(920): message : see reference to function template instantiation '_Rx std::_Invoker_ret<_Rx,false>::_Call<_Callable&,_Ty>(_Fx,_Ty &&) noexcept(false)' being compiled
+          with
+          [
+              _Rx=juce::String,
+              _Callable=DubSirenComponent::initSlider::<lambda_2d3eda0ee7b735479f6b9ba0f3f75519>,
+              _Ty=double,
+              _Fx=DubSirenComponent::initSlider::<lambda_2d3eda0ee7b735479f6b9ba0f3f75519> &
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.29.30133\include\functional(919): message : while compiling class template member function '_Rx std::_Func_impl_no_alloc<DubSirenComponent::initSlider::<lambda_2d3eda0ee7b735479f6b9ba0f3f75519>,_Rx,double>::_Do_call(double &&)'
+          with
+          [
+              _Rx=juce::String
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.29.30133\include\functional(813): message : see reference to class template instantiation 'std::_Func_impl_no_alloc<DubSirenComponent::initSlider::<lambda_2d3eda0ee7b735479f6b9ba0f3f75519>,_Ret,double>' being compiled
+          with
+          [
+              _Ret=juce::String
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.29.30133\include\functional(1010): message : see reference to variable template 'const bool _Is_large<std::_Func_impl_no_alloc<<lambda_2d3eda0ee7b735479f6b9ba0f3f75519>,juce::String,double> >' being compiled
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.29.30133\include\functional(1143): message : see reference to function template instantiation 'void std::_Func_class<_Ret,double>::_Reset<DubSirenComponent::initSlider::<lambda_2d3eda0ee7b735479f6b9ba0f3f75519>>(_Fx &&)' being compiled
+          with
+          [
+              _Ret=juce::String,
+              _Fx=DubSirenComponent::initSlider::<lambda_2d3eda0ee7b735479f6b9ba0f3f75519>
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.29.30133\include\functional(1143): message : see reference to function template instantiation 'void std::_Func_class<_Ret,double>::_Reset<DubSirenComponent::initSlider::<lambda_2d3eda0ee7b735479f6b9ba0f3f75519>>(_Fx &&)' being compiled
+          with
+          [
+              _Ret=juce::String,
+              _Fx=DubSirenComponent::initSlider::<lambda_2d3eda0ee7b735479f6b9ba0f3f75519>
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.29.30133\include\functional(1198): message : see reference to function template instantiation 'std::function<juce::String (double)>::function<DubSirenComponent::initSlider::<lambda_2d3eda0ee7b735479f6b9ba0f3f75519>,0>(_Fx)' being compiled
+          with
+          [
+              _Fx=DubSirenComponent::initSlider::<lambda_2d3eda0ee7b735479f6b9ba0f3f75519>
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.29.30133\include\functional(1198): message : see reference to function template instantiation 'std::function<juce::String (double)>::function<DubSirenComponent::initSlider::<lambda_2d3eda0ee7b735479f6b9ba0f3f75519>,0>(_Fx)' being compiled
+          with
+          [
+              _Fx=DubSirenComponent::initSlider::<lambda_2d3eda0ee7b735479f6b9ba0f3f75519>
+          ]
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(125): message : see reference to function template instantiation 'std::function<juce::String (double)> &std::function<juce::String (double)>::operator =<DubSirenComponent::initSlider::<lambda_2d3eda0ee7b735479f6b9ba0f3f75519>,0>(_Fx &&)' being compiled
+          with
+          [
+              _Fx=DubSirenComponent::initSlider::<lambda_2d3eda0ee7b735479f6b9ba0f3f75519>
+          ]
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(107): message : see reference to function template instantiation 'std::function<juce::String (double)> &std::function<juce::String (double)>::operator =<DubSirenComponent::initSlider::<lambda_2d3eda0ee7b735479f6b9ba0f3f75519>,0>(_Fx &&)' being compiled
+          with
+          [
+              _Fx=DubSirenComponent::initSlider::<lambda_2d3eda0ee7b735479f6b9ba0f3f75519>
+          ]
   Generating code
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(125): warning C4715: '<lambda_2d3eda0ee7b735479f6b9ba0f3f75519>::operator()': not all control paths return a value
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(97): warning C4715: '<lambda_36000588e5dee3038db7fe56b0c96134>::operator()': not all control paths return a value
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(100): warning C4706: assignment within conditional expression
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(102): warning C4706: assignment within conditional expression
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\KillEQComponent.cpp(104): warning C4706: assignment within conditional expression

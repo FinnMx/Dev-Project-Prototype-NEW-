@@ -73,11 +73,28 @@ void DubSirenComponent::initSlider() {
 
     waveTypeSlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     waveTypeSlider.setTextBoxStyle(juce::Slider::NoTextBox, true, NULL, NULL);
-    waveTypeSlider.setRange(1.f, +2.f, 1.f);
+    waveTypeSlider.setRange(1.f, +4.f, 1.f);
     waveTypeSlider.setValue(presets[0][2]);
     waveTypeSliderLabel.attachToComponent(&waveTypeSlider, false);
     waveTypeSliderLabel.setJustificationType(juce::Justification::centredBottom);
     waveTypeSlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 200, 25);
+
+    waveTypeSlider.textFromValueFunction = [](float value) {
+        switch ((int)value) {
+        case 1:
+            return juce::String("square");
+            break;
+        case 2:
+            return juce::String("sawtooth");
+            break;
+        case 3:
+            return juce::String("sine");
+            break;
+        case 4:
+            return juce::String("triangle");
+            break;
+        }
+    };
 
     lfoWaveTypeSlider.setSliderStyle(juce::Slider::SliderStyle::Rotary);
     lfoWaveTypeSlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, NULL, NULL);
@@ -86,6 +103,26 @@ void DubSirenComponent::initSlider() {
     lfoWaveTypeSliderLabel.attachToComponent(&lfoWaveTypeSlider, false);
     lfoWaveTypeSliderLabel.setJustificationType(juce::Justification::centredBottom);
     lfoWaveTypeSlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 200, 25);
+
+    lfoWaveTypeSlider.textFromValueFunction = [](float value) {
+        switch ((int)value) {
+        case 1:
+            return juce::String("sine");
+            break;
+        case 2:
+            return juce::String("sawtooth");
+            break;
+        case 3:
+            return juce::String("triangle");
+            break;
+        case 4:
+            return juce::String("pulse");
+            break;
+        case 5:
+            return juce::String("square");
+            break;
+        }
+    };
 
 }
 

@@ -17,6 +17,8 @@ DubSiren::DubSiren(CircularBuffer* circularBuffer) : circularBuffer(circularBuff
 {
     square.initialise([](float x) {return  (x < 0.0f) ? -1.0f : 1.0f; });
     sawtooth.initialise([](float x) { return std::tanh(x); });
+    sine.initialise([](float x) { return std::sin(x * juce::MathConstants<float>::twoPi); });
+    triangle.initialise([](float x) {return 2.0f * std::fabs(x - 0.5f) - 1.0f; });
 
     sawtoothLFO.initialise([](float x) { return std::tanh(x); });
     sineLFO.initialise([](float x) { return std::sin(x * juce::MathConstants<float>::twoPi); });
@@ -45,6 +47,8 @@ void DubSiren::prepareToPlay(int samplesPerBlockExpected, double sampleRate) {
 
     square.prepare(spec);
     sawtooth.prepare(spec);
+    sine.prepare(spec);
+    triangle.prepare(spec);
 
     sawtoothLFO.prepare(spec);
     sineLFO.prepare(spec);
@@ -151,6 +155,12 @@ void DubSiren::setWaveType(int type) {
         break;
     case 2:
         oscillator = &sawtooth;
+        break;
+    case 3:
+        oscillator = &sine;
+        break;
+    case 4:
+        oscillator = &triangle;
         break;
     }
 }
