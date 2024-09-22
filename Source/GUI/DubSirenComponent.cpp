@@ -233,6 +233,7 @@ void DubSirenComponent::applyPreset() {
     lfoFrequencySlider.setValue(presets[currentPreset][1]);
     waveTypeSlider.setValue(presets[currentPreset][2]);
     lfoWaveTypeSlider.setValue(presets[currentPreset][3]);
+    modulationDepthSlider.setValue(presets[currentPreset][4]);
 }
 
 void DubSirenComponent::savePreset() {

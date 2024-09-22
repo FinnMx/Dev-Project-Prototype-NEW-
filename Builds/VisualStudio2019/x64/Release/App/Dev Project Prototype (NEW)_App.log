@@ -8,66 +8,71 @@ K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\Du
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(178,68): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(184,57): warning C4100: 'slider': unreferenced formal parameter
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(187,55): warning C4100: 'slider': unreferenced formal parameter
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(239,57): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(240,57): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
           with
           [
               _Ty=float
           ]
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(240,60): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(241,60): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
           with
           [
               _Ty=float
           ]
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(241,56): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(242,56): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
           with
           [
               _Ty=float
           ]
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(242,59): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(243,59): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
           with
           [
               _Ty=float
           ]
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(244,63): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(254,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(253,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(252,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(251,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(250,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(249,42): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(251,42): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(259,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(258,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(257,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(256,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(255,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(254,45): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(256,45): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(264,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(263,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(262,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(261,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(260,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(259,48): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(261,48): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(269,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(268,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(267,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(266,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(265,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(264,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(266,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(274,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(273,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(272,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(271,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(270,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(269,44): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(271,44): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(286,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(285,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(284,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(283,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(282,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(281,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(283,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(291,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(290,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(289,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(288,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(287,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(286,34): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(288,34): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(296,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(295,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(294,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(293,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(292,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(291,37): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(293,37): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(301,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(300,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(299,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(298,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(297,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(296,37): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(298,37): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(306,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(305,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(304,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(303,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(302,21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(301,45): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+K:\dev\NEW DEV PROTOTYPE (CORRECT ONE)\Dev Project Prototype (NEW)\Source\GUI\DubSirenComponent.cpp(303,45): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.29.30133\include\type_traits(1595,67): warning C4244: 'argument': conversion from '_Ty1' to 'float', possible loss of data
           with
           [
